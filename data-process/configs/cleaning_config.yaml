@@ -1,0 +1,42 @@
+# YuFormer 数据清洗配置
+#
+# 本文件是清洗管线的单一真源——所有阈值、开关、上下文长度阶梯均在此声明。
+# CLI 的 --config 参数可覆盖此文件中的质量策略部分。
+
+# ============ 上下文长度阶梯（阶段性学习支持）============
+# 对应 pretrain/midtrain 的渐进式上下文扩展阶段。
+# 处理时每个样本按 estimated tokens 分桶到 B{N}K / gt_{N}K。
+# 配比阶段用互斥前缀嵌套构造各阶段训练数据。
+context_lengths:
+  - 4096       # Stage 1: 基础预训练
+  - 16384      # Stage 2: 中期训练
+  - 65536      # Stage 3: 长上下文
+
+# ============ 基础阈值 ============
+min_chars: 16
+max_chars: 2000000
+
+# ============ 近似去重（默认禁用）============
+near_dedup: false
+near_dedup_threshold: 3      # Hamming 距离 ≤3 判近重
+near_dedup_bands: 4          # 4 band × 16 bit
+near_dedup_ngram: 5          # word-level 5-gram
+
+# ============ 来源与许可证 ============
+require_license: false
+
+# ============ 敏感词表（空 = 不检测敏感词）============
+sensitive_terms: []
+
+# ============ 代码过滤 ============
+code_denied_path_parts:
+  - "node_modules/"
+  - "vendor/"
+  - ".min.js"
+  - ".map"
+
+# ============ Web 过滤 ============
+web_boilerplate_limit: 4     # 样板命中 ≥4 → REVIEW
+
+# ============ 质量策略（由 quality_policies.json 覆盖）============
+# 见 configs/quality_policies.json

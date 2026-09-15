@@ -1,0 +1,15 @@
+{
+  "web": {
+    "score_field": "quality_mean",
+    "keep_min": 4.0,
+    "review_min": 3.0,
+    "require_score": false
+  },
+  "math": {
+    "score_field": "quality_score",
+    "keep_min": 0.8,
+    "review_min": 0.5,
+    "hard_error_field": "hard_error_score",
+    "hard_error_max": 3
+  }
+}
