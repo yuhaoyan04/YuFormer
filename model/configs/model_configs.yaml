@@ -1,0 +1,130 @@
+# YuFormer 模型配置矩阵
+#
+# 每个预设定义一组模型超参。用 ModelConfig.from_preset("name") 加载。
+# attention_every / rope_every 控制混合策略：
+#   attention_every=1  → 全部 Full Attention
+#   attention_every=6  → 每 6 层一个 Full，其余 SWA（ZGCM-1 规格）
+#   rope_every=1       → 全部 RoPE
+#   rope_every=3       → 每 3 层一个 RoPE，其余 NoPE
+
+presets:
+
+  tiny:
+    num_layers: 4
+    hidden_size: 256
+    intermediate_size: 512
+    num_heads: 4
+    num_kv_heads: 2
+    vocab_size: 8000
+    max_seq_len: 1024
+    window_size: 64
+    attention_every: 1        # 全 Full Attention（tiny 不做混合）
+    rope_every: 1
+    rope_base: 500000.0
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: true
+    notes: "管线验证用，~5M 参数"
+
+  small:
+    num_layers: 8
+    hidden_size: 512
+    intermediate_size: 1024
+    num_heads: 8
+    num_kv_heads: 4
+    vocab_size: 32000
+    max_seq_len: 4096
+    window_size: 128
+    attention_every: 4         # 8 层中 2 Full + 6 SWA
+    rope_every: 2              # 每 2 层一个 RoPE
+    rope_base: 500000.0
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: true
+    notes: "数据配比实验用，~30M 参数"
+
+  base:
+    num_layers: 12
+    hidden_size: 768
+    intermediate_size: 2048
+    num_heads: 12
+    num_kv_heads: 4
+    vocab_size: 65536
+    max_seq_len: 8192
+    window_size: 128
+    attention_every: 4         # 12 层中 3 Full + 9 SWA
+    rope_every: 3
+    rope_base: 500000.0
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: false
+    notes: "缩放律初步，~100M 参数"
+
+  medium:
+    num_layers: 24
+    hidden_size: 1024
+    intermediate_size: 2816
+    num_heads: 16
+    num_kv_heads: 8
+    vocab_size: 65536
+    max_seq_len: 16384
+    window_size: 128
+    attention_every: 6         # ZGCM-1 规格
+    rope_every: 3
+    rope_base: 500000.0
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: false
+    notes: "扩展验证，~350M 参数"
+
+  large:
+    num_layers: 32
+    hidden_size: 4096
+    intermediate_size: 11008
+    num_heads: 32
+    num_kv_heads: 8
+    vocab_size: 65536
+    max_seq_len: 262144
+    window_size: 127           # ZGCM-1 规格（128 token 窗口）
+    attention_every: 6         # 27 SWA + 5 Full
+    rope_every: 3
+    rope_base: 5000000.0       # ZGCM-1 pretrain 用 5M
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: false
+    notes: "ZGCM-1 规格，~7B 参数"
+
+  # ============ 消融实验配置 ============
+  small-full-attn:
+    num_layers: 8
+    hidden_size: 512
+    intermediate_size: 1024
+    num_heads: 8
+    num_kv_heads: 4
+    vocab_size: 32000
+    max_seq_len: 4096
+    window_size: 128
+    attention_every: 1         # 全 Full（消融基线）
+    rope_every: 1              # 全 RoPE
+    rope_base: 500000.0
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: true
+    notes: "消融实验 — 全 Full Attention + 全 RoPE（对比 small 的混合版）"
+
+  small-all-rope:
+    num_layers: 8
+    hidden_size: 512
+    intermediate_size: 1024
+    num_heads: 8
+    num_kv_heads: 4
+    vocab_size: 32000
+    max_seq_len: 4096
+    window_size: 128
+    attention_every: 4         # 混合注意力
+    rope_every: 1              # 全 RoPE（对比 small 的 RoPE/NoPE 交替）
+    rope_base: 500000.0
+    rope_percent: 0.334
+    norm_eps: 0.000001
+    tie_word_embeddings: true
+    notes: "消融实验 — 混合注意力但全 RoPE"
