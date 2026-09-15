@@ -1,0 +1,91 @@
+# YuFormer Tokenizer 实验配置矩阵
+#
+# 每个配置定义一个 tokenizer 实验。scripts/train_tokenizer.py --config NAME 可指定。
+
+defaults:
+  model: bpe
+  byte_fallback: true          # 未知字符回退到 UTF-8 字节
+  unk_token: "<|unk|>"
+  pad_token: "<|endoftext|>"
+  eos_token: "<|endoftext|>"
+
+# 预训练 tokenizer 特殊 token（thinking + chat template + tool call）
+special_tokens: &special_tokens
+  - "<|endoftext|>"             # EOS / PAD
+  - "<|unk|>"
+  - "<|im_start|>"              # message block start
+  - "<|im_end|>"                # message block end
+  - "system"
+  - "user"
+  - "assistant"
+  - "tool"
+  - "<|think_start|>"           # thinking block start (replaces raw text)
+  - "<|think_end|>"             # thinking block end
+
+tokenizers:
+
+  # ============ 词表大小消融 ============
+  - name: yf-32k-bpe
+    model: bpe
+    vocab_size: 32768
+    special_tokens: *special_tokens
+    notes: "词表大小消融实验 — 32k"
+
+  - name: yf-64k-bpe
+    model: bpe
+    vocab_size: 65536
+    special_tokens: *special_tokens
+    notes: "词表大小消融实验 — 64k（基线）"
+
+  - name: yf-128k-bpe
+    model: bpe
+    vocab_size: 131072
+    special_tokens: *special_tokens
+    notes: "词表大小消融实验 — 128k"
+
+  # ============ 模型类型消融 ============
+  - name: yf-64k-unigram
+    model: unigram
+    vocab_size: 65536
+    special_tokens: *special_tokens
+    notes: "模型类型消融 — Unigram vs BPE"
+
+  - name: yf-64k-wordpiece
+    model: wordpiece
+    vocab_size: 65536
+    special_tokens: *special_tokens
+    notes: "模型类型消融 — WordPiece"
+
+  # ============ 特殊 token 消融 ============
+  - name: yf-64k-bpe-nothink
+    model: bpe
+    vocab_size: 65536
+    special_tokens:
+      - "<|endoftext|>"
+      - "<|unk|>"
+    notes: "特殊 token 消融 — 无 thinking/chat token"
+
+  # ============ 语言配比消融 ============
+  - name: yf-64k-bpe-code-heavy
+    model: bpe
+    vocab_size: 65536
+    special_tokens: *special_tokens
+    corpus_weights:
+      code: 0.50
+      web: 0.20
+      math: 0.15
+      chinese: 0.05
+      academic: 0.10
+    notes: "语料配比消融 — 代码占比 50%"
+
+  - name: yf-64k-bpe-zh-heavy
+    model: bpe
+    vocab_size: 65536
+    special_tokens: *special_tokens
+    corpus_weights:
+      code: 0.10
+      web: 0.15
+      math: 0.10
+      chinese: 0.50
+      academic: 0.15
+    notes: "语料配比消融 — 中文占比 50%"
