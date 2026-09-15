@@ -1,0 +1,208 @@
+# YuFormer 预训练数据源配置
+#
+# 每个数据源的字段:
+#   name:           简短名称（用于本地目录名）
+#   domain:         领域分类
+#   repo_id:        HuggingFace 仓库 ID
+#   repo_type:      固定 dataset
+#   max_size_gb:    下载上限（累计文件大小达到即停，跳到下一个源）。0 = 无限制
+#   include_patterns: 文件路径 glob 过滤（fnmatch 语法），空 = 全部
+#   exclude_patterns: 排除路径 glob
+#   status:         待脚本测试后填充
+#   notes:          下载注意事项
+#
+# 调整 max_size_gb 即可控制每个源的下载量。例如 FineWeb 15T 太大，
+# 设 max_size_gb: 500 则下载到 500GB 就停止该源、继续下一个。
+
+sources:
+
+  # ============ 通用网页 ============
+  - name: fineweb-edu
+    domain: web
+    repo_id: HuggingFaceFW/fineweb-edu
+    max_size_gb: 200
+    include_patterns:
+      - "data/CC-MAIN-*/*.parquet"
+    notes: "1.3T tokens (score>=2)，教育质量分数可用于课程式排序"
+
+  - name: fineweb
+    domain: web
+    repo_id: HuggingFaceFW/fineweb
+    max_size_gb: 500
+    include_patterns:
+      - "data/CC-MAIN-*/*.parquet"
+    notes: "15T tokens 通用网页，按 CC-MAIN 快照分文件"
+
+  - name: dclm-baseline
+    domain: web
+    repo_id: mlfoundations/dclm-baseline-1.0
+    max_size_gb: 200
+    include_patterns:
+      - "global-shard_*/*.jsonl.zst"
+    notes: "4T tokens，OLMo-2 使用"
+
+  - name: c4
+    domain: web
+    repo_id: allenai/c4
+    max_size_gb: 100
+    include_patterns:
+      - "en.noblocklist/*.json.gz"
+    notes: "经典 C4 清洗版"
+
+  # ============ 代码 ============
+  - name: the-stack-v2-dedup
+    domain: code
+    repo_id: bigcode/the-stack-v2-dedup
+    max_size_gb: 100
+    include_patterns:
+      - "data/Python/*.parquet"
+      - "data/Java/*.parquet"
+      - "data/JavaScript/*.parquet"
+      - "data/C/*.parquet"
+      - "data/C++/*.parquet"
+      - "data/Rust/*.parquet"
+      - "data/Go/*.parquet"
+      - "data/TypeScript/*.parquet"
+      - "data/Shell/*.parquet"
+      - "data/C-Sharp/*.parquet"
+      - "data/HTML/*.parquet"
+      - "data/SQL/*.parquet"
+    notes: "语言目录首字母大写（GitHub Linguist 命名）；The Stack v2 需 GitHub 授权，dedup 版可直接下载"
+
+  - name: starcoderdata
+    domain: code
+    repo_id: bigcode/starcoderdata
+    max_size_gb: 50
+    include_patterns:
+      - "python/*.parquet"
+      - "java/*.parquet"
+      - "javascript/*.parquet"
+    notes: "StarCoder 训练集，86 语言代码"
+
+  # ============ 数学 ============
+  - name: proof-pile-2
+    domain: math
+    repo_id: EleutherAI/proof-pile-2
+    max_size_gb: 0
+    include_patterns:
+      - "open-web-math/train/*.jsonl.zst"
+      - "algebraic-stack/train/*.jsonl.zst"
+      - "arxiv-math/train/*.jsonl.zst"
+    notes: "55B tokens，合集：OpenWebMath + AlgebraicStack + arXiv-math"
+
+  - name: openwebmath
+    domain: math
+    repo_id: open-web-math/open-web-math
+    max_size_gb: 0
+    include_patterns:
+      - "data/*.parquet"
+    notes: "14.7B tokens 数学网页"
+
+  - name: automathtext
+    domain: math
+    repo_id: math-ai/AutoMathText
+    max_size_gb: 0
+    include_patterns:
+      - "*.jsonl"
+    notes: "~14B tokens，LLM 自动筛选数学文本，含中文"
+
+  - name: mathpile
+    domain: math
+    repo_id: GAIR/MathPile
+    max_size_gb: 0
+    include_patterns:
+      - "train/*.jsonl.gz"
+    notes: "~9.8B tokens 多源数学文本（arXiv+CommonCrawl+ProofWiki）"
+
+  # ============ 学术/科学 ============
+  - name: pes2o
+    domain: academic
+    repo_id: allenai/peS2o
+    max_size_gb: 50
+    include_patterns:
+      - "data/v1/*.json.gz"
+    notes: "~40M 篇学术论文清洗版，JSON.gz 格式"
+
+  - name: arxiv-latex-corpus
+    domain: academic
+    repo_id: KiteFishAI/arxiv-tex-corpus-full
+    max_size_gb: 0
+    include_patterns:
+      - "*.jsonl"
+    notes: "80GB arXiv LaTeX 源码"
+
+  # ============ 文学/书籍 ============
+  - name: pg19
+    domain: books
+    repo_id: deepmind/pg19
+    max_size_gb: 0
+    include_patterns: []
+    notes: "脚本型数据集——用 datasets.load_dataset('deepmind/pg19') 加载，数据托管在 GCS；或从 https://storage.googleapis.com/deepmind-gutenberg 直接下载 tar 文件"
+
+  # ============ 百科/常识 ============
+  - name: wikipedia-en
+    domain: encyclopedia
+    repo_id: wikimedia/wikipedia
+    max_size_gb: 0
+    include_patterns:
+      - "20231101.en/*.parquet"
+    notes: "英文维基百科"
+
+  - name: wikipedia-zh
+    domain: encyclopedia
+    repo_id: wikimedia/wikipedia
+    max_size_gb: 0
+    include_patterns:
+      - "20231101.zh/*.parquet"
+    notes: "中文维基百科"
+
+  - name: wikitext
+    domain: encyclopedia
+    repo_id: Salesforce/wikitext
+    max_size_gb: 0
+    include_patterns:
+      - "wikitext-103-raw-v1/*.parquet"
+    notes: "WikiText-103 精选文章"
+
+  # ============ StackExchange/问答 ============
+  - name: stack-exchange
+    domain: qa
+    repo_id: HuggingFaceH4/stack-exchange-preferences
+    max_size_gb: 20
+    include_patterns:
+      - "data/*.stackexchange.com/train-*.parquet"
+    notes: "StackExchange 全站问答 dump"
+
+  # ============ 中文 ============
+  - name: skypile-150b
+    domain: chinese
+    repo_id: Skywork/SkyPile-150B
+    max_size_gb: 100
+    include_patterns:
+      - "data/*.jsonl"
+    notes: "150B tokens 中文预训练语料"
+
+  - name: cci3-data
+    domain: chinese
+    repo_id: BAAI/CCI3-Data
+    max_size_gb: 50
+    include_patterns:
+      - "*.jsonl"
+    notes: "智源中文互联网语料"
+
+  - name: cci3-hq
+    domain: chinese
+    repo_id: BAAI/CCI3-HQ
+    max_size_gb: 20
+    include_patterns:
+      - "*.jsonl"
+    notes: "CCI3 高质量子集"
+
+  # ============ 多语言 ============
+  - name: fineweb-2
+    domain: multilingual
+    repo_id: HuggingFaceFW/fineweb-2
+    max_size_gb: 50
+    include_patterns:
+      - "data/*_Latn/train/*.parquet"
+    notes: "1000+ 语言，按需选语言"
