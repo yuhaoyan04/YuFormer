@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.python-version
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+uv.lock
+
+# Data & model artifacts
+data/
+*.bin
+*.idx
+*.npy
+*.npz
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+outputs/
+logs/
+wandb/
+swanlab/
+tensorboard/
+
+# Tokenizer assets (regenerable)
+tokenizer/*.json
+tokenizer/*.model
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Env files with secrets
+.env
+*.local.env
