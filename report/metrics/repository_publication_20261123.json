@@ -1,0 +1,21 @@
+{
+  "auth_method": "ISOLATED_OFFICIAL_GITHUB_CLI_DEVICE_AUTH_HTTPS",
+  "authenticated_login": "yuhaoyan04",
+  "branch": "main",
+  "bundle_bytes": 5816784,
+  "bundle_sha256": "dd9fb2682daf90c32a6cdc8afb733b788567afb55ac4d305be2b4d89abfeaae2",
+  "checked_at": "2026-11-23T04:46:22.980598+00:00",
+  "git_push_returncode": 0,
+  "previous_failures": {
+    "chat_connector_login": "Edenwu617",
+    "chat_connector_push": false,
+    "ssh_login": "dhh1995",
+    "ssh_permission": "DENIED"
+  },
+  "remote_before": "0e340e0af7f8033314ec9880c5a55c9613f86bcb",
+  "repository": "yuhaoyan04/YuFormer",
+  "repository_push_permission": true,
+  "scope": "Remote main matched this exact code/metrics/report snapshot at checked_at. Later documentation commits require independent push verification. Chat GitHub connector identity was not changed; no credentials are published.",
+  "status": "PASS_REMOTE_MAIN_VERIFIED_FOR_INITIAL_SNAPSHOT",
+  "verified_commit": "b41084f4d14565b1449f59f482d63c507ea12b8b"
+}

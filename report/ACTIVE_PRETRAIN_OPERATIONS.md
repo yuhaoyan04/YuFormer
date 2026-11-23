@@ -1,6 +1,6 @@
 # Active pretrain operations
 
-Updated 2026-11-23T02:16:09.537593+00:00. This file is the current handoff. Historical diaries were consolidated into `report/history/operations-consolidation-20261123/`; dated technical evidence remains in the report and incident registry.
+Updated 2026-11-23T04:48:00.616695+00:00. This file is the current handoff. Historical diaries were consolidated into `report/history/operations-consolidation-20261123/`; dated technical evidence remains in the report and incident registry.
 
 ## User instructions
 
@@ -48,7 +48,7 @@ Use `/opt/yuformer-torchtitan/bin/python`3.12 for CPU audits with CUDA_VISIBLE_D
 
 Next review 2026-11-23T12:46:12.619001+00:00. CPU-only source `/opt/yuformer-build/review_pretrain_every12h_20261118_v3.py`. Run once when due, inspect real exceptions/domain regression, report briefly, then sleep returned wait_ms. Do not restart a full12h countdown after user input; calculate remaining time from `data/health/assistant-monitoring-cadence.json`. V3 requires actual original process startup times and full history, intentionally requests manual review at a phase/attempt change.
 
-After a review, run `python tools/export_pretrain_report.py` and `MPLCONFIGDIR=/tmp/yuformer-report-matplotlib python tools/plot_pretrain_metrics.py`, inspect meaningful changes and publish if credentials permit. Use `tools/audit_repository.py` before commit. Current GitHub publication is blocked: SSH dhh1995 lacks write, connector Edenwu617 push=false, HTTPS helpergh missing. The local full snapshot commit/bundle status is recorded in data/health/repository-publication-20261123.json; check actual Git state before claiming publication. Keep pending credential request distinct from user authorization, which is already explicit.
+After a review, run `python tools/export_pretrain_report.py` and `MPLCONFIGDIR=/tmp/yuformer-report-matplotlib python tools/plot_pretrain_metrics.py`, inspect meaningful changes and publish if credentials permit. Use `tools/audit_repository.py` before commit. GitHub publication is unblocked: the user completed official device authorization as yuhaoyan04; first snapshot b41084f4d14565b1449f59f482d63c507ea12b8b was pushed and remote main independently verified at2026-11-23T04:46:22.980598+00:00. Public receipt: report/metrics/repository_publication_20261123.json. This repository has an HTTPS origin.pushurl and a repository-local credential helper using /opt/yuformer-build/github-cli-2.105.0/gh with isolated GH_CONFIG_DIR=/opt/yuformer-build/github-auth-yuhaoyan04 (directory700, credential file600). No global Git config, SSH identity or chat connector account was changed. Use normal non-force git push origin main, then verify remote SHA. Current publication details and initial bundle are recorded in data/health/repository-publication-20261123.json. Do not expose credential contents or overwrite unknown remote changes.
 
 Cleanup20261123 removed961files/13,661,559,135bytes from52obsolete caches/retired pre-calibration canary directories.391frozen dependencies unchanged; machine proof `report/metrics/cleanup_dependency_verification.json`, manifest `report/metrics/cleanup_20261123.json`. Training/weights/token streams/active releases untouched. Avoid broad deletion of data/ or all historical configs. Historical failure cases and referenced fixtures have a retention purpose.
 

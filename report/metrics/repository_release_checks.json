@@ -10,15 +10,16 @@
     "command": "python -m unittest discover -s tools/tests -v",
     "passed": 8
   },
-  "remote_write_access": "BLOCKED_SSH_AND_CONNECTED_ACCOUNT_LACK_WRITE",
-  "scope": "Local code/metrics/docs release; no claim of final model capability or successful GitHub publication.",
+  "publication_evidence": "report/metrics/repository_publication_20261123.json",
+  "remote_write_access": "VERIFIED_YUHAOYAN04_PUSH_TRUE",
+  "scope": "Code/metrics/docs snapshot published and exact remote SHA verified; no claim of final model capability.",
   "staged_audit": {
     "before_final_summary_files": 2056,
     "bytes_before_final_summary_files": 36198865,
     "max_blob_bytes": 4746730,
     "status": "PASS_STAGED_SIZE_SECRET_BOUNDARY_AND_CURRENT_LINK_CHECKS"
   },
-  "status": "PASS_LOCAL_RELEASE_CHECKS_REMOTE_PUBLICATION_PENDING",
+  "status": "PASS_LOCAL_RELEASE_CHECKS_INITIAL_SNAPSHOT_PUBLISHED",
   "syntax": {
     "checked_at": "2026-11-23T02:13:38.739688+00:00",
     "counts": {

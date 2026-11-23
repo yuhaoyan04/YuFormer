@@ -14,11 +14,13 @@
 
 清理后训练仍在推进，观测第61240步，loss 2.33931，每卡TPS 48503；守护无新告警。完整半日检查继续按原12小时节奏，不因仓库维护提高采样频率。
 
-## 远端阻塞
+## 初始阻塞与实际发布
 
-本次只读检查发现远端main为`0e340e0af7f8033314ec9880c5a55c9613f86bcb`。SSH认证身份`dhh1995`收到对目标仓库的Permission denied；GitHub连接器身份`Edenwu617`的仓库权限`push=false`；HTTPS helper指向缺失的gh程序且无可用token。未改远端历史，未宣称推送成功。
+本次只读检查发现远端main为`0e340e0af7f8033314ec9880c5a55c9613f86bcb`。SSH认证身份`dhh1995`收到对目标仓库的Permission denied；GitHub连接器身份`Edenwu617`的仓库权限`push=false`；HTTPS helper指向缺失的gh程序且无可用token。这次失败已保留为事故证据。
 
-先完成可审阅本地提交与离线bundle。取得目标仓库写权限后，用当前远端HEAD做非强制推送并核对远端commit；若有其他新提交，先整合再发布。凭据阻塞不会阻断本地文档更新或正在运行的pretrain。
+先完成本地提交 `b41084f4d14565b1449f59f482d63c507ea12b8b` 与已验证离线bundle（5,816,784字节，SHA256 `dd9fb2682daf90c32a6cdc8afb733b788567afb55ac4d305be2b4d89abfeaae2`）。用户随后完成本机 GitHub CLI 设备授权；实际账号核验为 `yuhaoyan04`、仓库 `push=true`。重新读取远端并确认祖先关系后，执行非强制 HTTPS 推送；UTC 2026-11-23 04:46:22 核验远端 main 等于该完整快照提交，正式发布成功。轻量机器证据见 [发布核验](metrics/repository_publication_20261123.json)。
+
+凭据保存在仓库外的隔离目录，目录700、凭据文件600。本仓库配置独立 HTTPS pushurl 和局部 credential helper，后续可直接 `git push origin main`；原SSH fetch URL、全局Git配置及聊天GitHub连接器未改。每次后续提交仍须独立检查实际远端SHA；设备授权不等于聊天连接器账号切换。
 
 ## 继续维护
 

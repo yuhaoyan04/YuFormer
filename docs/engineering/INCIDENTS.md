@@ -22,7 +22,7 @@
 | P014 | storage | 共享存储rename或hardlink被拒绝 | FIXED_FALLBACK |
 | P015 | operations | 外围SIGKILL而八卡仍在训练 | RECOVERED_SAME_LIVE_ATTEMPT |
 | P016 | validation | books短窗小幅回升 | OPEN_OBSERVATION |
-| P017 | repository | 旧归档进入待提交集合和远端写权限不足 | PUBLICATION_BLOCKED_BY_CREDENTIALS |
+| P017 | repository | 旧归档进入待提交集合和远端写权限不足 | RESOLVED_CLEANUP_AND_REMOTE_SNAPSHOT_VERIFIED |
 
 ## P001 校准样本与筛选哈希相关
 
@@ -250,17 +250,17 @@
 
 ## P017 旧归档进入待提交集合和远端写权限不足
 
-**症状：** 本地待整理集合约13.65GB为旧检查点/归档，远端仅早期代码；当前SSH和连接器无写权限。
+**症状：** 初次整理时约13.65GB旧检查点/归档进入待提交集合，远端仅早期代码；当时SSH和聊天连接器账号均无写权限。
 
 **根因/未知项：** 重型运行档案未完全排除，远端账号与仓库写权限不匹配。
 
-**处置：** 隔离运行归档，发布轻量指标、来源清单和当前报告；准备可审阅提交及离线bundle。
+**处置：** 排除重型运行资产并核验391份冻结依赖未变，保留本地提交与bundle。用户完成GitHub官方设备授权，以隔离CLI登录yuhaoyan04；仅配置本仓库HTTPS pushurl及credential helper，非强制推送后核对远端main。
 
-**验证与范围：** 远端只读检查与推送dry-run确认阻塞；最终发布结果以维护记录为准。
+**验证与范围：** 清理961文件/13,661,559,135字节；实际账号yuhaoyan04、push=true；2026-11-23T04:46:22.980598+00:00远端main核验等于b41084f4d14565b1449f59f482d63c507ea12b8b。聊天连接器与原SSH身份未改；后续提交需单独核验。
 
-**可复用规则：** 代码、结果、重型资产分生命周期管理；推送未成功不能写已同步。
+**可复用规则：** 分离重型资产与轻量结果；提交身份、SSH身份、连接器身份和CLI身份分别核验，仓库级隔离凭据避免改全局环境；以实际远端SHA确认发布。
 
-证据：`docs/engineering/REPOSITORY_MAINTENANCE.md`。
+证据：`docs/engineering/REPOSITORY_MAINTENANCE.md`, `report/REPOSITORY_MAINTENANCE_20261123.md`, `report/metrics/repository_publication_20261123.json`。
 
 ## 历史案例索引
 

@@ -2,7 +2,7 @@
 
 > 2026-11-23 当前事实：1.516600064B 正式八卡 pretrain 已于 11 月 15 日启动，4K stable 运行中；总预算 966254395392 labels 包含 WSD、16K 与 64K，上限 33 天。当前状态见 `report/metrics/latest_pretrain_status.json`、`report/TECHNICAL_REPORT.md` 和半日复核。下文早期的“未启动”、四卡和0.5B条目属于历史范围，不能覆盖当前生产事实。
 >
-> 用户于 2026-11-23 明确授权维护并更新 `git@github.com:yuhaoyan04/YuFormer.git`，包括提交/推送最新源码、轻量实验数据、动态技术报告，以及清理确认过期的本地文件；这项授权覆盖旧交接记录中“不提交/不推送”的限制。当前凭据的远端写权限存在阻塞，必须核实实际推送结果，不能把本地提交写成已发布。不强推覆盖未知远端变更。
+> 用户于 2026-11-23 明确授权维护并更新 `git@github.com:yuhaoyan04/YuFormer.git`，包括提交/推送最新源码、轻量实验数据、动态技术报告，以及清理确认过期的本地文件；这项授权覆盖旧交接记录中“不提交/不推送”的限制。已通过本机隔离 GitHub CLI 以 `yuhaoyan04` 登录，首次完整快照 `b41084f` 已推送并核验远端 main；后续每次发布仍须核对实际远端 SHA。聊天连接器未切换，本仓库推送使用独立 HTTPS 凭据。不强推覆盖未知远端变更。
 >
 > 新任务先读 `docs/engineering/PLAYBOOK.md` 和相关 `INCIDENTS.md`，复用事故反例及验证方法。新异常追加症状、证据、已知/未知根因、修复、验证和迁移规则。完整历史已索引在 `docs/engineering/incidents.json`，不把历史实验或计划中的SFT/RL写成已完成训练。
 >
