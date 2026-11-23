@@ -1,0 +1,70 @@
+mix_name: mix_warmup_50b
+total_tokens: 52092016778
+score_field: hybrid_v2
+seed: yuformer-warmup-v1
+included_sources:
+- automathtext
+- cci3-hq
+- dclm-baseline
+- dolma-books
+- fineweb
+- fineweb-2
+- fineweb-edu
+- github-code
+- pes2o
+- proof-pile-2
+- stack-exchange
+- starcoderdata
+- wikipedia-en
+- wikipedia-zh
+- wikitext
+quota_fill_policy: strict_top_k
+max_total_shortfall_tokens: 1000000
+domains:
+  web:
+    weight: 0.5993187996831
+    top_k: 0.1
+  code:
+    weight: 0.0795403690219
+    top_k: 0.1
+  math:
+    weight: 0.0502830246908
+    top_k: 0.1
+  chinese:
+    weight: 0.0768087700111
+    top_k: 0.15
+  academic:
+    weight: 0.0610527586794
+    top_k: 0.1
+  books:
+    weight: 0.0390100745908
+    top_k: 0.5
+  encyclopedia:
+    weight: 0.049068668182
+    top_k: 0.55
+  qa:
+    weight: 0.0149749167651
+    top_k: 0.7
+  multilingual:
+    weight: 0.0299426183758
+    top_k: 0.1
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+val:
+  tokens_per_domain: 50000000
+  max_fraction: 0.01
+target_final_tokens: 50000000000
+target_final_domain_weights:
+  web: 0.6000319942410366
+  code: 0.08002559539282929
+  math: 0.04999100161970845
+  chinese: 0.07999560079185747
+  academic: 0.0599792037433262
+  books: 0.03999280129576676
+  encyclopedia: 0.04999100161970845
+  qa: 0.014997300485912534
+  multilingual: 0.024995500809854226
+tokenizer_capacity_headroom: 0.02
+tokenizer_calibration_source: data/processed/audits/training_tokenizer_calibration.json

@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
-from typing import Iterator
+from typing import Iterable
 
 from tokenizers import Tokenizer
 from tokenizers.models import BPE, WordPiece, Unigram
@@ -15,7 +16,13 @@ from tokenizers.pre_tokenizers import (
 from tokenizers.decoders import ByteLevel as ByteLevelDecoder, Metaspace as MetaspaceDecoder
 from tokenizers.processors import TemplateProcessing
 
-from .special_tokens import DEFAULT_SPECIAL_TOKENS, EOS_TOKEN, PAD_TOKEN
+from .special_tokens import (
+    DEFAULT_SPECIAL_TOKENS,
+    EOS_TOKEN,
+    PAD_TOKEN,
+    UNK_TOKEN,
+    build_chat_template,
+)
 
 
 def _build_model(model_type: str, vocab_size: int, special_tokens: list[str]):
@@ -89,7 +96,7 @@ def create_tokenizer(
 
 
 def train_from_iterator(
-    text_iterator: Iterator[str],
+    text_iterator: Iterable[str] | Iterable[list[str]],
     *,
     model_type: str = "bpe",
     vocab_size: int = 65536,
@@ -104,12 +111,31 @@ def save_tokenizer(tokenizer: Tokenizer, output_dir: str | Path) -> None:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     tokenizer.save(str(out / "tokenizer.json"))
+    chat_template = build_chat_template()
     config = {
         "model_type": tokenizer.model.__class__.__name__,
         "vocab_size": tokenizer.get_vocab_size(),
+        "eos_token": EOS_TOKEN,
+        "pad_token": PAD_TOKEN,
+        "unk_token": UNK_TOKEN,
+        "chat_template": chat_template,
+        "chat_template_sha256": hashlib.sha256(chat_template.encode("utf-8")).hexdigest(),
+        "special_tokens": [
+            token for token in DEFAULT_SPECIAL_TOKENS if tokenizer.token_to_id(token) is not None
+        ],
     }
     (out / "tokenizer_config.json").write_text(
         json.dumps(config, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    (out / "special_tokens_map.json").write_text(
+        json.dumps(
+            {"eos_token": EOS_TOKEN, "pad_token": PAD_TOKEN, "unk_token": UNK_TOKEN},
+            indent=2,
+            ensure_ascii=False,
+            sort_keys=True,
+        )
+        + "\n",
+        encoding="utf-8",
     )
 
 

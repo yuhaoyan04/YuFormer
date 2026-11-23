@@ -11,16 +11,18 @@ from .layers import RMSNorm, SwiGLUMLP
 class TransformerBlock(nn.Module):
     """One transformer layer: Pre-norm GQA Attention + Pre-norm SwiGLU MLP.
 
-    Layer index determines attention type (SWA/Full) and position encoding (RoPE/NoPE).
+    Layer index determines attention type (full causal vs gated SWA) and
+    position encoding (RoPE/NoPE) via the 1-indexed rules in ModelConfig.
     """
 
     def __init__(self, config, layer_idx: int):
         super().__init__()
         self.config = config
         self.layer_idx = layer_idx
-        self.input_layernorm = RMSNorm(config.hidden_size, eps=config.norm_eps)
+        norm_fp32 = not config.bf16_hygiene
+        self.input_layernorm = RMSNorm(config.hidden_size, eps=config.norm_eps, fp32_variance=norm_fp32)
         self.self_attn = GQAAttention(config, layer_idx)
-        self.post_attention_layernorm = RMSNorm(config.hidden_size, eps=config.norm_eps)
+        self.post_attention_layernorm = RMSNorm(config.hidden_size, eps=config.norm_eps, fp32_variance=norm_fp32)
         self.mlp = SwiGLUMLP(config.hidden_size, config.intermediate_size)
 
     def forward(
@@ -31,12 +33,22 @@ class TransformerBlock(nn.Module):
         attention_mask: Optional[torch.Tensor] = None,
         position_ids: Optional[torch.Tensor] = None,
     ) -> torch.Tensor:
+        mode = self.config.selective_recompute
+        from torch.utils.checkpoint import checkpoint
+        use_ck = hidden_states.requires_grad
         residual = hidden_states
         hidden = self.input_layernorm(hidden_states)
-        attn_out = self.self_attn(hidden, rope_cos, rope_sin, attention_mask, position_ids)
+        if mode == "attn" and use_ck:
+            attn_out = checkpoint(self.self_attn, hidden, rope_cos, rope_sin,
+                                  attention_mask, position_ids, use_reentrant=False)
+        else:
+            attn_out = self.self_attn(hidden, rope_cos, rope_sin, attention_mask, position_ids)
         hidden = residual + attn_out
 
         residual = hidden
         hidden = self.post_attention_layernorm(hidden)
-        mlp_out = self.mlp(hidden)
+        if mode == "mlp" and use_ck:
+            mlp_out = checkpoint(self.mlp, hidden, use_reentrant=False)
+        else:
+            mlp_out = self.mlp(hidden)
         return residual + mlp_out

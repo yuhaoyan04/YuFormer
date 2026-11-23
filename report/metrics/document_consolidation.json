@@ -1,0 +1,13 @@
+{
+  "archives": {
+    "report/history/operations-consolidation-20261123/ACTIVE_PRETRAIN_OPERATIONS.md": {
+      "bytes": 349520,
+      "sha256": "1159787d87f28aee9dec9705440a0c954de8445c4788c4933416e1b40a5cdec0"
+    },
+    "report/history/operations-consolidation-20261123/PRETRAIN_CURRENT_GATE_STATUS_20261114.md": {
+      "bytes": 60540,
+      "sha256": "a0a9128b4534330d6ce8ff0ec499b9a8599f440d298362db8ad023b1df63948f"
+    }
+  },
+  "scope": "Retain historical evidence outsideGit while replacing stale active handoff with concise current facts."
+}

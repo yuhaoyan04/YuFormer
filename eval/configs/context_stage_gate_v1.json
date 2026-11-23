@@ -1,0 +1,44 @@
+{
+  "policy_id": "yuformer-native-context-stage-gate-v1-20261115",
+  "status": "FROZEN_BEFORE_ACTUAL_BASELINE_CANDIDATE_CAPABILITY_MEASUREMENTS",
+  "scope": "PRODUCTION_STAGE_DIAGNOSTIC_NOT_FULL_PUBLISHED_BENCHMARK",
+  "contexts": [16384, 65536],
+  "workers": 8,
+  "ruler": {
+    "revision": "db43f92ff634bbce1c33d1fb15858aec4bba509a",
+    "task_count": 13,
+    "samples_per_task": 32,
+    "require_strict_macro_improvement": true,
+    "require_non_needle_macro_nonregression": true,
+    "metric": "UNROUNDED_UPSTREAM_CASE_MATCH_FRACTIONS_DISPLAY_PERCENT"
+  },
+  "long_bpb": {
+    "domains": ["books", "code", "math"],
+    "samples_per_domain": 8,
+    "require_strict_equal_domain_macro_improvement": true,
+    "require_each_domain_nonregression": true,
+    "metric": "SUM_NATURAL_LOG_NLL_DIV_LN2_SUM_TRUE_ORIGINAL_UTF8_BYTES_PER_DOMAIN"
+  },
+  "long_qa_code": {
+    "dataset": "repoqa-2024-06-23",
+    "revision": "ae876deb1365dbf5a15b0533723c8ed123eee586",
+    "languages": ["python", "cpp", "java", "typescript", "rust", "go"],
+    "samples_per_language": 8,
+    "similarity_threshold": 0.8,
+    "require_context_macro_nonregression": true,
+    "require_context_minus_control_nonregression": true,
+    "require_at_least_one_correct_context_case": true,
+    "metric": "ORIGINAL_FUNCTION_BEST_MATCH_AND_WHITESPACE_BLEU_THRESHOLD",
+    "contamination_scope": "NOT_CERTIFIED_EXCLUDED_FROM_PRETRAINING_REPORT_NO_CONTEXT_CONTROLS"
+  },
+  "short_core": {
+    "domains": ["academic", "books", "chinese", "code", "encyclopedia", "math", "multilingual", "qa", "web"],
+    "samples_per_domain": 2816,
+    "target_tokens_per_case": 4096,
+    "relative_regression_margin": 0.0,
+    "require_every_domain_nonregression": true,
+    "metric": "SUM_NLL_DIV_SAME_ACTUAL_HELDOUT_TARGET_TOKENS"
+  },
+  "failure_behavior": "PRESERVE_MEASUREMENTS_AND_STOP_PROGRESSION_DO_NOT_CHANGE_THRESHOLDS_OR_TRAINING_RECIPE",
+  "note": "Finite metrics and actual complete checkpoint/source/worker/case bindings are prerequisites. Case preparation, source self-tests and throughput qualification cannot issue capability PASS."
+}

@@ -1,0 +1,89 @@
+{
+  "inputs": {
+    "data/health/anneal-training-block-permutation.json": "7fc158bb8b79a7eb4835990de689a7158d61bed1e297ea577c530ab0796d6bfb",
+    "data/health/pretrain-1t-anneal-mixture-preflight.json": "a06f9285a6b55250729819c23eddfc100e2f99324375345fd15695082ddbf996",
+    "data/health/pretrain-1t-stable-mixture-preflight.json": "a0c9798a8ba35f3d0fbdb835773a6b3d2f20dae088393f98a153ef9ee953ca5d",
+    "data/health/pretrain-1t-warmup-mixture-preflight.json": "3112ae53a4ae322deb1e5a048a9ea07354e5543cd16f722a362acdee0b491ae1",
+    "data/health/production-stage-order-recount.json": "6dd2faf0306840a2320680e7574093888deda964607719f742ab1ee3235945f4",
+    "data/health/stable-training-block-permutation.json": "b1757969d06436c581c7777faff676950782495caba7584c2971dd2d2545c4f6",
+    "data/health/warmup-training-block-permutation.json": "de6b2e36dc9dd678c8b5b6e91b63fd602538640f000ac6e67d3275b236da8d97",
+    "data/processed/releases/pretrain-1t-frozen.release.json": "dd284efd7c7155445df1dd5eddac903e5048d82159bb16fa54bb877a0dee7b53",
+    "data/processed/training_permutations/pretrain-total-runtime-966254395392-b8/manifest.json": "96c7a9d10fc3c1ab6a1ca8bada152b3391fade28b31498649162828af05a54c3",
+    "data/token_streams/pretrain-1t/anneal.meta.json": "6907552e614cd13ee37c88f8ca5c27baf425c0107c28b66e66685c507e79f974",
+    "data/token_streams/pretrain-1t/stable.meta.json": "8204123246f36a4600113a4a6ba479664efadc6d0b7bc9a2e7e31be232efa47f",
+    "data/token_streams/pretrain-1t/warmup.meta.json": "edd47da4f621a8887553c8f18dc0a6d1b3d909fddf4c21cb0850b6f0d2095ce1",
+    "experiments/e4_curriculum/scripts/audit_training_block_permutation.py": "db2e9b4ea45aa7536c1e4edf8a0047d38710d9f6717ccc12dd2779c7a67cf19a",
+    "experiments/e4_curriculum/scripts/training_block_permutation.py": "c7c0498423e355ffaf954dc209ea705ea56dc8aefdc297dd82921b68cf431c1b",
+    "pretrain/configs/pretrain_base.yaml": "e7687395d20ab38d56cf67702b2f0bfd8a812377438ffc1ccbdb4f68b0c7391a"
+  },
+  "phases": [
+    {
+      "phase": "warmup",
+      "report_sha256": "de6b2e36dc9dd678c8b5b6e91b63fd602538640f000ac6e67d3275b236da8d97",
+      "source_sample_offset": 0,
+      "target_interval": [
+        1,
+        50000297985
+      ],
+      "temporal_mixing_pass": true,
+      "whole_domain_token_counts": {
+        "academic": 2984464670,
+        "books": 1992333879,
+        "chinese": 3980775754,
+        "code": 4006707197,
+        "encyclopedia": 2486706834,
+        "math": 2484011487,
+        "multilingual": 1242757409,
+        "qa": 745926365,
+        "web": 30076614389
+      }
+    },
+    {
+      "phase": "stable",
+      "report_sha256": "b1757969d06436c581c7777faff676950782495caba7584c2971dd2d2545c4f6",
+      "source_sample_offset": 11795744,
+      "target_interval": [
+        48315367425,
+        764576661505
+      ],
+      "temporal_mixing_pass": true,
+      "whole_domain_token_counts": {
+        "academic": 25022006510,
+        "books": 2855294467,
+        "chinese": 25031350661,
+        "code": 86157470386,
+        "encyclopedia": 3571735421,
+        "math": 28555846354,
+        "multilingual": 14276295672,
+        "qa": 714164024,
+        "web": 530077130585
+      }
+    },
+    {
+      "phase": "anneal",
+      "report_sha256": "7fc158bb8b79a7eb4835990de689a7158d61bed1e297ea577c530ab0796d6bfb",
+      "source_sample_offset": 285160,
+      "target_interval": [
+        1168015361,
+        151164715009
+      ],
+      "temporal_mixing_pass": true,
+      "whole_domain_token_counts": {
+        "academic": 7548124070,
+        "books": 3778629050,
+        "chinese": 9057345993,
+        "code": 21123528711,
+        "encyclopedia": 3018260471,
+        "math": 12065077748,
+        "multilingual": 3018985654,
+        "qa": 1056503342,
+        "web": 89330244609
+      }
+    }
+  ],
+  "production_qualified": false,
+  "review_kind": "EXPLICIT_STATISTICAL_AND_EXACT_WINDOW_REVALIDATION",
+  "review_tool_sha256": "bc35125839b8a49a77c3507d316b84e4d379a1b579ac1f83f2c532e72bbf675a",
+  "schema_version": 1,
+  "status": "PASS_PRODUCTION_TEMPORAL_ADMISSION"
+}

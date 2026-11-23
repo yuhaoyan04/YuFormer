@@ -1,0 +1,21 @@
+{
+  "changes": {
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/validate_contract.py": {
+      "after": "8c687bad647876084bc377022b10f2071e1a92ac71f8fba5a8d42d444cb8b98e",
+      "before": "3ea439223da3eed90a40ee05807058b2c4cac7f83e17f92eb7ca0e77ac468cf7",
+      "preview": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/deterministic-runtime/validate_contract.py"
+    },
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/checkpoint.py": {
+      "after": "f2bba2765b97015a1f971588915b9aca0ccba275bffcd23b74e4fb8f92d18101",
+      "before": "6f36db7f28fc7d5eb6d72ff27f8d67d5b47d3c84081b97552e7273923211ea2e",
+      "preview": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/checkpoint-cpu-only-writer.py"
+    },
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/config_registry.py": {
+      "after": "fb757306438067d8d66bf11ff401607676eff598d15f94bf8a40ea7526a74e59",
+      "before": "639dff5b3b155216831ceb96e5333b855f290df36dee2f5baaeff4f917abd014",
+      "preview": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/deterministic-runtime/config_registry.py"
+    }
+  },
+  "formal_configuration_changed": false,
+  "status": "REVIEWABLE_PREVIEW_NOT_INSTALLED"
+}

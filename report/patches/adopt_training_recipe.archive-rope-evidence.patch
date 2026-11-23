@@ -1,0 +1,36 @@
+--- a/experiments/e4_curriculum/scripts/adopt_training_recipe.py
++++ b/experiments/e4_curriculum/scripts/adopt_training_recipe.py
+@@ -25,13 +25,14 @@
+ from freeze_1t_recipe import non_embedding_params, source_sha256, verify_identity_audit_snapshot
+ from training_data_origin import resolve_data_origin, read_bound, FROZEN, BASE
+ from publish_training_block_manifest import require_admission
+-from frozen_training_evidence import freeze_report_bindings, production_output_dir, production_mutation_lease, publish_checked
++from frozen_training_evidence import production_output_dir, production_mutation_lease, publish_checked
+ from validation_source_proof import require_validation_source_proof
+ from training_source_windows import require_window_admission, POLICY as WINDOW_POLICY
+ from temporal_order_admission import require_temporal_admission
+ from qualify_native_merge import require_native_qualification
+ from sustained_memory_review import review_memory_log
+ from allocator_retry_review import require_no_allocator_retries
++from adoption_research_evidence import freeze_adoption_research_evidence
+ 
+ PREFERENCE = 'data/health/model-scale-user-preference.json'
+ RELEASE = 'data/processed/releases/pretrain-1t-frozen.release.json'
+@@ -191,6 +192,8 @@
+             root/'experiments/e4_curriculum/scripts/sustained_memory_review.py'),
+         'experiments/e4_curriculum/scripts/allocator_retry_review.py': sha(
+             root/'experiments/e4_curriculum/scripts/allocator_retry_review.py'),
++        'experiments/e4_curriculum/scripts/adoption_research_evidence.py': sha(
++            root/'experiments/e4_curriculum/scripts/adoption_research_evidence.py'),
+         'experiments/e4_curriculum/scripts/training_data_origin.py': sha(root/'experiments/e4_curriculum/scripts/training_data_origin.py')}
+     for name, expected in selection['evidence_sha256'].items():
+         read_bound(root/name, expected)
+@@ -308,7 +311,7 @@
+     inputs['experiments/e4_curriculum/scripts/frozen_training_evidence.py'] = sha(
+         root/'experiments/e4_curriculum/scripts/frozen_training_evidence.py')
+     original_inputs = dict(inputs)
+-    inputs, proof_archive = freeze_report_bindings(root, inputs)
++    inputs, proof_archive = freeze_adoption_research_evidence(root, inputs)
+     frozen = copy.deepcopy(parent)
+     frozen.update(frozen_at=datetime.now(timezone.utc).isoformat(), inputs=inputs,
+         outputs={name: sha(root/name) for name in parent['outputs']},

@@ -1,0 +1,701 @@
+{
+  "actual": {
+    "cuda_available": true,
+    "dcp": true,
+    "executable": "/opt/yuformer-torchtitan/bin/python",
+    "fsdp2": true,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "nvidia_driver": "535.161.08",
+    "python": "3.12.16",
+    "torch": "2.14.0+cu126",
+    "torch_checkpointing": "0.1.0",
+    "torch_cuda": "12.6",
+    "torchao": "0.18.0+cu126",
+    "torchtitan": "0.3.0",
+    "torchtitan_commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+    "torchtitan_source_dirty": false,
+    "torchtitan_source_root": "/opt/torchtitan-v0.3.0",
+    "torchvision": "0.29.0+cu126",
+    "triton": "3.8.0"
+  },
+  "checks": {
+    "clean_pinned_source": true,
+    "cuda_available": true,
+    "cuda_build_matches_lock": true,
+    "distributed_checkpoint": true,
+    "fsdp2": true,
+    "hopper_or_newer": true,
+    "nvidia_driver": true,
+    "pinned_source_commit": true,
+    "python_3_12": true,
+    "pytorch_2_14_0": true,
+    "torch_checkpointing_0_1_0": true,
+    "torchao_0_18_0": true,
+    "torchtitan_0_3": true,
+    "torchvision_0_29_0": true,
+    "triton_3_8_0": true
+  },
+  "expected": {
+    "cuda": {
+      "compatibility_mode": "cuda_12_minor_version_compatibility",
+      "minimum_driver_linux": "525.60.13",
+      "pytorch_index_url": "https://download.pytorch.org/whl/cu126",
+      "toolkit": "12.6",
+      "validated_host_driver": "535.161.08"
+    },
+    "hardware": {
+      "bf16_dense_peak_flops_per_device": 989000000000000,
+      "form_factor": "SXM",
+      "gpu_name": "H800",
+      "observed_max_power_watts": 700,
+      "specification": "NVIDIA H800 Tensor Core GPU datasheet; BF16 sparsity peak 1979 TFLOPS, dense approximately half",
+      "specification_url": "https://chaoqing-i.com/upload/20231128/NVIDIA%20H800%20GPU%20Datasheet.pdf"
+    },
+    "python": "3.12",
+    "pytorch": "2.14.0",
+    "schema_version": 1,
+    "torch_checkpointing": "0.1.0",
+    "torchao": "0.18.0",
+    "torchtitan": {
+      "commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+      "repository": "https://github.com/pytorch/torchtitan.git",
+      "tag": "v0.3.0"
+    },
+    "torchvision": "0.29.0",
+    "triton": "3.8.0"
+  },
+  "failed_checks": [],
+  "schema_version": 1,
+  "status": "ready"
+}
+{"identity": {"backend": "torchtitan-v0.3.0", "dataset_id": "yuformer-data-86f5860c47e6162e6ba0", "identity_sha256": "24685e7f7b54bf12f302f93afd1fc88cd6fe9193350607f153b20023df096109", "model_configs": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/long_context_system_20261114/context_65536.model.yaml", "model_configs_sha256": "33da336d100ac52233194545e679be8dff580184605be09e527e6ee503cb5293", "release_manifest": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/releases/mix_m3_e1_100b-20261019.release.json", "release_manifest_sha256": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c", "resolved_config_sha256": "6b8ab7692f9d8f21267f382b8485ac1b5d1660313ba25d407e69128e5166a185", "run_name": "context_65536_b1_ac1", "runtime_state_schema_version": 2, "schema_version": 1, "snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5", "source_sha256": "6a53b6054b8892ddbe69518bcc12155fbd1b2729a25a59c17209d36389a41157", "streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.tokens.bin", "capacity_samples": 1502770, "edge_sha256": "fb75ddaf3ea4c4fdc96cbdf2a8bf7f0d3622574603db3aabc4dd05358e3a50e4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json", "meta_sha256": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c", "sample_limit": 1502770}], "token_stream_audit": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json", "token_stream_audit_sha256": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d", "tokenizer_artifact_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "tokenizer_gate": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/TOKENIZER_READY.json", "tokenizer_gate_sha256": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866", "tokenizer_id": "yuformer-tokenizer-20df5ca9ba356e303082", "tokenizer_path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json", "tokenizer_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "training_sample_order": null, "validation_streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.tokens.bin", "capacity_samples": 294, "edge_sha256": "94fea8f60c2ce47060dbb8241a9471ff0ad9607ad9aaee18ea8d2e1e5e1a4402", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.meta.json", "meta_sha256": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3", "sample_limit": 294}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.tokens.bin", "capacity_samples": 304, "edge_sha256": "55983f0436fb247f50ee6eef959db67a73789110ee46a1dc72fae179393abda9", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.meta.json", "meta_sha256": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64", "sample_limit": 304}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.tokens.bin", "capacity_samples": 321, "edge_sha256": "6c48dcc609500522940bc5a79a874d2ff5f970d71ed2f7f8b769344255629726", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.meta.json", "meta_sha256": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767", "sample_limit": 321}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.tokens.bin", "capacity_samples": 302, "edge_sha256": "f2ecf69e459f4804a551c54f5da0ab911a96d785615c11f16370cfcf3b7d12b4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.meta.json", "meta_sha256": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4", "sample_limit": 302}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.tokens.bin", "capacity_samples": 312, "edge_sha256": "8594a651b8cc4c2222c3bbfc4693d5595bd800307b8d48f1998db3eef2252f4e", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json", "meta_sha256": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea", "sample_limit": 312}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.tokens.bin", "capacity_samples": 298, "edge_sha256": "c2bb8daf539ff9cc9012698f5410c7b10bff59447959b49c24dc0ad718591401", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.meta.json", "meta_sha256": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec", "sample_limit": 298}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.tokens.bin", "capacity_samples": 260, "edge_sha256": "31c6b95625e4001fdab1068c2de94f6154bf45f7fbfdcb8b488712fb7a24dec7", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json", "meta_sha256": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2", "sample_limit": 260}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.tokens.bin", "capacity_samples": 180, "edge_sha256": "2ce3553c8672f09fad91822184d967f4c6e45722709a0e4fa1258bef7a1ee55d", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.meta.json", "meta_sha256": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54", "sample_limit": 180}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.tokens.bin", "capacity_samples": 309, "edge_sha256": "c6f3522532c177de5cb1c988533874b263802de116e8455d57213ab0d3705e8f", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.meta.json", "meta_sha256": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899", "sample_limit": 309}]}, "out_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1", "status": "PASS"}
+W1114 20:28:00.392000 295463 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:00.591000 295463 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:01.597000 295461 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:01.733000 295467 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:01.750000 295462 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:01.803000 295461 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:01,824 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+W1114 20:28:01.842000 295465 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:01.873000 295466 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:01,922 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+W1114 20:28:02.029000 295467 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:02.046000 295462 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:02.067000 295465 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:02,070 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+W1114 20:28:02.089000 295466 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:28:02.091000 295468 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:02,117 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_2.20261114-202802-SH7BC6.jsonl
+W1114 20:28:02.177000 295464 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:02,341 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:02,358 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+W1114 20:28:02.363000 295468 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:02,398 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:02,399 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:02,402 - root - INFO - Building yuformer long-system
+W1114 20:28:02.408000 295464 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:28:02,458 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:02,498 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:02,498 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:02,501 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:02,503 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:02,523 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:03,105 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,129 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:03,129 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:03,129 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:03,130 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:03,133 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:03,133 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:03,135 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:03,163 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,172 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,232 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,256 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,271 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_6.20261114-202803-7H7VPH.jsonl
+[titan] 2026-11-14 20:28:03,365 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,379 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,383 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_0.20261114-202803-5JFQSU.jsonl
+[titan] 2026-11-14 20:28:03,383 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:03,393 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:03,396 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,397 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,427 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:03,428 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:03,430 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:03,431 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,457 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,467 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,468 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:03,487 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:03,487 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:03,490 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:03,491 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:03,507 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:03,525 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,529 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:03,532 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,541 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_5.20261114-202803-7IFC9K.jsonl
+[titan] 2026-11-14 20:28:03,544 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:03,584 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:03,585 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:03,588 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:03,599 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,623 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_1.20261114-202803-5U2CD5.jsonl
+[titan] 2026-11-14 20:28:03,661 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,674 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_4.20261114-202803-JRW0B3.jsonl
+[titan] 2026-11-14 20:28:03,709 - root - INFO - TensorBoard logging enabled. Logs will be saved at /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/tb/20261114-2028
+[titan] 2026-11-14 20:28:03,709 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:03,746 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:03,747 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:03,751 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:03,751 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,752 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:03,781 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:03,810 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:03,810 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,821 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:03,834 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:28:03,854 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:03,855 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:03,858 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:03,883 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:03,895 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,902 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:03,902 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:03,910 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:03,930 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:03,940 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:03,940 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:03,944 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:03,945 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:03,947 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:03,948 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:03,949 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:03,951 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:03,969 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:03,970 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:03,971 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:03,972 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_7.20261114-202803-I2VBNV.jsonl
+[titan] 2026-11-14 20:28:03,973 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:04,011 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:04,015 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:04,035 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:04,051 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/structured_logs/training.global_rank_3.20261114-202804-NRXX73.jsonl
+[titan] 2026-11-14 20:28:04,058 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,058 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,062 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:04,088 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,089 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,090 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:04,092 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:04,093 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:04,110 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:04,117 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:04,166 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:04,188 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:04,219 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:28:04,221 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,221 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,221 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:04,222 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:04,225 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:04,226 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:04,228 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:04,228 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:04,230 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:04,234 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:04,235 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:28:04,294 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:28:04,295 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:28:04,298 - root - INFO - Building yuformer long-system
+[titan] 2026-11-14 20:28:04,299 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:04,328 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,329 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,333 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:04,335 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:04,339 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:28:04,359 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,359 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,362 - root - INFO - [34mModel yuformer long-system [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:28:04,363 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:04,363 - root - INFO - Applied FullAC activation checkpointing to the model
+[titan] 2026-11-14 20:28:04,380 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:28:04,482 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:04,489 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,489 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,489 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:04,490 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:04,493 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:04,493 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:04,494 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:04,529 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,529 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,529 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:04,530 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:04,533 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:04,533 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:04,535 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:04,684 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,684 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,684 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:04,684 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:04,687 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:04,687 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:04,688 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:04,692 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:04,788 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:04,788 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:04,788 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:04,789 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:04,791 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:04,792 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:04,793 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:04,795 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:04,875 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:05,043 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:05,043 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:05,043 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:05,043 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:05,047 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:05,047 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:05,049 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:05,059 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:05,105 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:28:05,105 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:28:05,105 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:28:05,106 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:28:05,109 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:28:05,109 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:28:05,111 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:28:05,301 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:05,366 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:28:05,390 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,390 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,390 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,390 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,390 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,390 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,391 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,391 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,391 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,391 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,391 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,392 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,392 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,392 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,393 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,392 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,392 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,393 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,393 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,393 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,393 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,393 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,393 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,393 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,396 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,396 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/long_context_system_20261114/context_65536_b1_ac1/checkpoint
+[titan] 2026-11-14 20:28:05,397 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,398 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,398 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:28:05,399 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 24 (warmup 4)
+[titan] 2026-11-14 20:28:05,399 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:28:05,400 - root - INFO - Training starts at step 1
+[rank0]:[W1114 20:28:43.613621674 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank1]:[W1114 20:28:43.616993524 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 1 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank3]:[W1114 20:28:43.617114829 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 3 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank2]:[W1114 20:28:43.618721893 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 2 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank6]:[W1114 20:28:43.620954534 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 6 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank4]:[W1114 20:28:43.621287069 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 4 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank7]:[W1114 20:28:43.626864249 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 7 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[rank5]:[W1114 20:28:43.627543584 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 5 while trying to allocate 77594624 bytes (free: 47644672, total: 85176483840).
+[titan] 2026-11-14 20:28:59,196 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,196 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,196 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,196 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,197 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,196 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,197 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 20:28:59,197 - root - INFO - Destroying the purge thread.
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank2]:   File "<frozen runpy>", line 88, in _run_code
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank2]:     main()
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank2]:     trainer.train()
+[rank2]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank2]:     super().train()
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank2]:     return f(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank2]:     self.train_step(data_iterator)
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank2]:     self.optimizers.step()
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank2]:     out = func(*args, **kwargs)
+[rank2]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank2]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank2]: RuntimeError: non-finite gradients; optimizer update refused
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank1]:   File "<frozen runpy>", line 88, in _run_code
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank1]:     main()
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank1]:     trainer.train()
+[rank1]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank1]:     super().train()
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank1]:     return f(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank1]:     self.train_step(data_iterator)
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank1]:     self.optimizers.step()
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank1]:     out = func(*args, **kwargs)
+[rank1]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank1]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank1]: RuntimeError: non-finite gradients; optimizer update refused
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank6]:   File "<frozen runpy>", line 88, in _run_code
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank6]:     main()
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank6]:     trainer.train()
+[rank6]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank6]:     super().train()
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank6]:     return f(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank6]:     self.train_step(data_iterator)
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank6]:     self.optimizers.step()
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank6]:     out = func(*args, **kwargs)
+[rank6]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank6]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank6]: RuntimeError: non-finite gradients; optimizer update refused
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank0]:   File "<frozen runpy>", line 88, in _run_code
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank0]:     main()
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank0]:     super().train()
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank0]:     return f(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank0]:     self.train_step(data_iterator)
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank0]:     self.optimizers.step()
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank0]:     out = func(*args, **kwargs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank0]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank0]: RuntimeError: non-finite gradients; optimizer update refused
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank3]:   File "<frozen runpy>", line 88, in _run_code
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank3]:     main()
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank3]:     trainer.train()
+[rank3]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank3]:     super().train()
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank3]:     return f(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank3]:     self.train_step(data_iterator)
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank3]:     self.optimizers.step()
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank3]:     out = func(*args, **kwargs)
+[rank3]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank3]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank3]: RuntimeError: non-finite gradients; optimizer update refused
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank7]:   File "<frozen runpy>", line 88, in _run_code
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank7]:     main()
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank7]:     trainer.train()
+[rank7]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank7]:     super().train()
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank7]:     return f(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank7]:     self.train_step(data_iterator)
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank7]:     self.optimizers.step()
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank7]:     out = func(*args, **kwargs)
+[rank7]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank7]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank7]: RuntimeError: non-finite gradients; optimizer update refused
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank5]:   File "<frozen runpy>", line 88, in _run_code
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank5]:     main()
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank5]:     trainer.train()
+[rank5]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank5]:     super().train()
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank5]:     return f(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank5]:     self.train_step(data_iterator)
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank5]:     self.optimizers.step()
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank5]:     out = func(*args, **kwargs)
+[rank5]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank5]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank5]: RuntimeError: non-finite gradients; optimizer update refused
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank4]:   File "<frozen runpy>", line 88, in _run_code
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank4]:     main()
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank4]:     trainer.train()
+[rank4]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank4]:     super().train()
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank4]:     return f(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank4]:     self.train_step(data_iterator)
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+[rank4]:     self.optimizers.step()
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+[rank4]:     out = func(*args, **kwargs)
+[rank4]:           ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+[rank4]:     raise RuntimeError("non-finite gradients; optimizer update refused")
+[rank4]: RuntimeError: non-finite gradients; optimizer update refused
+W1114 20:29:03.416000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295461 closing signal SIGTERM
+W1114 20:29:03.417000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295462 closing signal SIGTERM
+W1114 20:29:03.417000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295464 closing signal SIGTERM
+W1114 20:29:03.417000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295465 closing signal SIGTERM
+W1114 20:29:03.419000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295466 closing signal SIGTERM
+W1114 20:29:03.420000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295467 closing signal SIGTERM
+W1114 20:29:03.421000 295457 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 295468 closing signal SIGTERM
+E1114 20:29:04.769000 295457 torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 2 (pid: 295463) of binary: /opt/yuformer-torchtitan/bin/python
+E1114 20:29:04.777000 295457 torch/distributed/elastic/multiprocessing/errors/error_handler.py:157] no error file defined for parent, to copy child error file (/tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/2/error.json)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+torchtitan.train FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 295461)  (SIGTERM)
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/0/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+[2]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 295462) 
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/1/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+[3]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 295464) 
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/3/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+[4]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 295465) 
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/4/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+[5]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 295466)  (SIGTERM)
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/5/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+[6]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 295467)  (SIGTERM)
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/6/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+[7]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 295468) 
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/7/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-14_20:28:59
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 295463) 
+  error_file: /tmp/torchelastic_shawz1ys/none_g20cdrww/attempt_0/2/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 948, in train_step
+      self.optimizers.step()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py", line 549, in wrapper
+      out = func(*args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py", line 28, in step
+      raise RuntimeError("non-finite gradients; optimizer update refused")
+  RuntimeError: non-finite gradients; optimizer update refused
+  
+============================================================

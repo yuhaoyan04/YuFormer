@@ -1,0 +1,47 @@
+{
+  "automatic_batch_extensions": {
+    "enabled": true,
+    "lower_multipliers": [
+      0.5,
+      0.25
+    ],
+    "max_extensions_per_batch": 4,
+    "max_new_arms": 6,
+    "maximum_additional_tokens": 12000000000,
+    "maximum_learning_rate": 0.04,
+    "minimum_learning_rate": 1e-06,
+    "upper_multipliers": [
+      2.0,
+      4.0
+    ]
+  },
+  "automatic_lr_extensions": {
+    "budget_tokens_per_arm": 500000000,
+    "enabled": true,
+    "lower_multipliers": [
+      0.6666666666666666,
+      0.5,
+      0.25
+    ],
+    "max_extensions_per_size": 9,
+    "max_new_arms": 9,
+    "maximum_additional_tokens": 4500000000,
+    "maximum_learning_rate": 0.02,
+    "minimum_learning_rate": 1e-06,
+    "upper_multipliers": [
+      1.5,
+      2.0,
+      4.0
+    ]
+  },
+  "batch_can_start_from_qualified_200m_anchor": true,
+  "enabled": true,
+  "monitoring": {
+    "guard_seconds": 60,
+    "stable_seconds": 7200,
+    "transition_seconds": 900,
+    "wake_on_completion": true
+  },
+  "resource_policy": "GPU admission is bounded by data/health/gpu-resource-policy.json; one owned job per admitted GPU; user reservation overrides all prior sharing policies.",
+  "schema_version": 1
+}

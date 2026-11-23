@@ -1,0 +1,57 @@
+# 自动生成（gen_e1e2_arms.py）——e2_swaoff
+run_name: e2_swaoff
+backend: torchtitan-v0.3.0
+seed: 20261001
+
+model:
+  preset: e2-swaoff
+  configs: ${YUFORMER_MODEL_CONFIGS}
+
+out_dir: ${YUFORMER_PRETRAIN_OUT}
+
+data:
+  require_release: true
+  require_eod: true
+  release_manifest: ${YUFORMER_DATA_RELEASE}
+  tokenizer_gate: ${YUFORMER_TOKENIZER_GATE}
+  token_stream_audit: ${YUFORMER_TOKEN_STREAM_AUDIT}
+  stages:
+    - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.tokens.bin
+  meta:
+    - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.meta.json
+  val_dir: ${YUFORMER_TOKEN_STREAMS}
+  seq_len: 4096
+  epochs: 1
+  val_samples_per_domain: 64
+  val_max_tokens_per_domain: 20_000_000
+
+optim:
+  optimizer: adamw
+  lr: 0.0002
+  weight_decay: 0.1
+  warmup_steps: 38
+  lr_schedule: cosine
+  min_lr_ratio: 0.1
+  adam_betas: [0.9, 0.95]
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+  clip_grad: 1.0
+
+train:
+  budget_tokens: 1000000000
+  micro_batch_size: 4
+  grad_accum: 16
+  expected_iters: 3814
+  activation_checkpointing: false
+  cuda_graphs: false
+  bf16: true
+  eval_every: 500
+  log_every: 10
+  save_every: 953
+  keep_last_n: 2
+  keep_every: 50000
+
+parallel:
+  world_size: 1
+  sharding: full_shard

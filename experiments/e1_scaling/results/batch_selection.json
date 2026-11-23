@@ -1,0 +1,428 @@
+{
+  "analysis_tool_sha256": "0e010b2d1fba3e03f1c6621948fd618916587d9cd6dd3ad35bab15b6261208fa",
+  "blocking_boundary_selections": [],
+  "boundary_selections": [
+    {
+      "batch": "2m",
+      "learning_rate": 0.027152900396,
+      "level": "ext27152900"
+    },
+    {
+      "batch": "4m",
+      "learning_rate": 0.0006,
+      "level": "ext600000"
+    }
+  ],
+  "curves": {
+    "1m": [
+      {
+        "batch": "1m",
+        "identity_sha256": "3e01229d3f27d9d69b6b275d79c0565ce0c9937514547118a3c66a88db8dd1dc",
+        "learning_rate": 0.0012,
+        "level": "low",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_1m_low",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 1048576,
+        "trained_steps": 1904,
+        "trained_tokens": 1996488704,
+        "validation_loss": 3.590649127960205
+      },
+      {
+        "batch": "1m",
+        "identity_sha256": "3a75e23104b74d8fe4c99d8248739a33cc1c0a8e382f629835bf3a2095065222",
+        "learning_rate": 0.0024,
+        "level": "mid",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_1m_mid",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 1048576,
+        "trained_steps": 1904,
+        "trained_tokens": 1996488704,
+        "validation_loss": 3.7017459869384766
+      },
+      {
+        "batch": "1m",
+        "identity_sha256": "46f1a5e96bab8830bc95e7b77b6dd0e705578bd1e3dcdf632d42201fffa2a095",
+        "learning_rate": 0.0048,
+        "level": "high",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_1m_high",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 1048576,
+        "trained_steps": 1904,
+        "trained_tokens": 1996488704,
+        "validation_loss": 3.58441162109375
+      },
+      {
+        "batch": "1m",
+        "identity_sha256": "23f49771d9f323a15247dc29a49200d40e6f1e70e86495285608fafdcc7dc748",
+        "learning_rate": 0.0096,
+        "level": "ext9600000",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_1m_ext9600000",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 1048576,
+        "trained_steps": 1904,
+        "trained_tokens": 1996488704,
+        "validation_loss": 3.5740153789520264
+      },
+      {
+        "batch": "1m",
+        "identity_sha256": "0adcba5beade02480b57ae50c71e6ccd019bd286a256934594212a6472c9d800",
+        "learning_rate": 0.0192,
+        "level": "ext19200000",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_1m_ext19200000",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 1048576,
+        "trained_steps": 1904,
+        "trained_tokens": 1996488704,
+        "validation_loss": 3.5805251598358154
+      }
+    ],
+    "2m": [
+      {
+        "batch": "2m",
+        "identity_sha256": "bd7e842282eaf49ca5a0155dcd0572a52feec4b598a1d6d62960bf05e32a4b84",
+        "learning_rate": 0.001697056275,
+        "level": "low",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_2m_low",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 2097152,
+        "trained_steps": 952,
+        "trained_tokens": 1996488704,
+        "validation_loss": 4.255683898925781
+      },
+      {
+        "batch": "2m",
+        "identity_sha256": "a9c7ff2aa7c55adf40481a56750c926313c6b7e504648e3b36758739b3139eac",
+        "learning_rate": 0.00339411255,
+        "level": "mid",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_2m_mid",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 2097152,
+        "trained_steps": 952,
+        "trained_tokens": 1996488704,
+        "validation_loss": 4.200819492340088
+      },
+      {
+        "batch": "2m",
+        "identity_sha256": "4d5c526de7f0aa035e5ca9dbd982dcebb2327a5bef481a64fc61815cf098b6ef",
+        "learning_rate": 0.006788225099,
+        "level": "high",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_2m_high",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 2097152,
+        "trained_steps": 952,
+        "trained_tokens": 1996488704,
+        "validation_loss": 4.1623382568359375
+      },
+      {
+        "batch": "2m",
+        "identity_sha256": "8dc7cb834af3801101484fd91548d0bd6bcb7c0dd7d3e0f2f74e366006466ff5",
+        "learning_rate": 0.013576450198,
+        "level": "ext13576450",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_2m_ext13576450",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 2097152,
+        "trained_steps": 952,
+        "trained_tokens": 1996488704,
+        "validation_loss": 4.225039005279541
+      },
+      {
+        "batch": "2m",
+        "identity_sha256": "b8159e89001b03b919822f938b390578372b061859d8c04addd547fec4af4c81",
+        "learning_rate": 0.027152900396,
+        "level": "ext27152900",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_2m_ext27152900",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 2097152,
+        "trained_steps": 952,
+        "trained_tokens": 1996488704,
+        "validation_loss": 4.078759670257568
+      }
+    ],
+    "4m": [
+      {
+        "batch": "4m",
+        "identity_sha256": "8d69872580428dd599395ffab13de7467f6e7d64f680a7b646752028d3c2cd89",
+        "learning_rate": 0.0024,
+        "level": "low",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_4m_low",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 4194304,
+        "trained_steps": 476,
+        "trained_tokens": 1996488704,
+        "validation_loss": 5.6051249504089355
+      },
+      {
+        "batch": "4m",
+        "identity_sha256": "cd06c0da949538a33f2f84df879a9b44fc8c78eff68012815b175a753bd1ff7b",
+        "learning_rate": 0.0048,
+        "level": "mid",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_4m_mid",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 4194304,
+        "trained_steps": 476,
+        "trained_tokens": 1996488704,
+        "validation_loss": 5.655421733856201
+      },
+      {
+        "batch": "4m",
+        "identity_sha256": "3d3a8fbd009100f634d0cbdcaa602506516e382e64e88c36d54fed24a69259cf",
+        "learning_rate": 0.0096,
+        "level": "high",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_4m_high",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 4194304,
+        "trained_steps": 476,
+        "trained_tokens": 1996488704,
+        "validation_loss": 5.7776713371276855
+      },
+      {
+        "batch": "4m",
+        "identity_sha256": "ecef7442b987ce3b68bc906382e5428b3673f0cbc6d2b6565f864b1930e731ca",
+        "learning_rate": 0.0012,
+        "level": "ext1200000",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_4m_ext1200000",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 4194304,
+        "trained_steps": 476,
+        "trained_tokens": 1996488704,
+        "validation_loss": 5.5559611320495605
+      },
+      {
+        "batch": "4m",
+        "identity_sha256": "300c126e1eb5dd9f552ada1a5c90fb39ac93427a09253243a07b3941d95d6f4e",
+        "learning_rate": 0.0006,
+        "level": "ext600000",
+        "loss_only": true,
+        "performance_metrics_excluded": [
+          "throughput(tps)",
+          "mfu(%)",
+          "wall_time"
+        ],
+        "run_name": "batch_4m_ext600000",
+        "throughput_tps_per_device": null,
+        "tokens_per_step": 4194304,
+        "trained_steps": 476,
+        "trained_tokens": 1996488704,
+        "validation_loss": 5.547908782958984
+      }
+    ]
+  },
+  "duplicates": [],
+  "expected_results": 15,
+  "expected_run_names": [
+    "batch_1m_ext19200000",
+    "batch_1m_ext9600000",
+    "batch_1m_high",
+    "batch_1m_low",
+    "batch_1m_mid",
+    "batch_2m_ext13576450",
+    "batch_2m_ext27152900",
+    "batch_2m_high",
+    "batch_2m_low",
+    "batch_2m_mid",
+    "batch_4m_ext1200000",
+    "batch_4m_ext600000",
+    "batch_4m_high",
+    "batch_4m_low",
+    "batch_4m_mid"
+  ],
+  "invalid": [],
+  "loss_evidence_qualification": {
+    "group_run_identities": {
+      "batch_1m_ext19200000": "0adcba5beade02480b57ae50c71e6ccd019bd286a256934594212a6472c9d800",
+      "batch_1m_ext9600000": "23f49771d9f323a15247dc29a49200d40e6f1e70e86495285608fafdcc7dc748",
+      "batch_1m_high": "46f1a5e96bab8830bc95e7b77b6dd0e705578bd1e3dcdf632d42201fffa2a095",
+      "batch_1m_low": "3e01229d3f27d9d69b6b275d79c0565ce0c9937514547118a3c66a88db8dd1dc",
+      "batch_1m_mid": "3a75e23104b74d8fe4c99d8248739a33cc1c0a8e382f629835bf3a2095065222",
+      "batch_2m_ext13576450": "8dc7cb834af3801101484fd91548d0bd6bcb7c0dd7d3e0f2f74e366006466ff5",
+      "batch_2m_ext27152900": "b8159e89001b03b919822f938b390578372b061859d8c04addd547fec4af4c81",
+      "batch_2m_high": "4d5c526de7f0aa035e5ca9dbd982dcebb2327a5bef481a64fc61815cf098b6ef",
+      "batch_2m_low": "bd7e842282eaf49ca5a0155dcd0572a52feec4b598a1d6d62960bf05e32a4b84",
+      "batch_2m_mid": "a9c7ff2aa7c55adf40481a56750c926313c6b7e504648e3b36758739b3139eac",
+      "batch_4m_ext1200000": "ecef7442b987ce3b68bc906382e5428b3673f0cbc6d2b6565f864b1930e731ca",
+      "batch_4m_ext600000": "300c126e1eb5dd9f552ada1a5c90fb39ac93427a09253243a07b3941d95d6f4e",
+      "batch_4m_high": "3d3a8fbd009100f634d0cbdcaa602506516e382e64e88c36d54fed24a69259cf",
+      "batch_4m_low": "8d69872580428dd599395ffab13de7467f6e7d64f680a7b646752028d3c2cd89",
+      "batch_4m_mid": "cd06c0da949538a33f2f84df879a9b44fc8c78eff68012815b175a753bd1ff7b"
+    },
+    "qualification_sha256": "63cff4cdc186fb10b0de37657cafbded9f10e7e11559a7070c16e3f3eaa96bbf",
+    "qualification_tool_sha256": "ab2c643f0346d1f407d867f467c49f365bd860e7f9725431133afa622438c3aa",
+    "scope": "loss-based selection only; shared throughput/MFU/wall_time remain excluded"
+  },
+  "missing": [],
+  "observed_at": "2026-10-26T04:07:11.906712+00:00",
+  "observed_results": 15,
+  "per_batch_optima": [
+    {
+      "batch": "1m",
+      "identity_sha256": "23f49771d9f323a15247dc29a49200d40e6f1e70e86495285608fafdcc7dc748",
+      "learning_rate": 0.0096,
+      "level": "ext9600000",
+      "loss_only": true,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "run_name": "batch_1m_ext9600000",
+      "throughput_tps_per_device": null,
+      "tokens_per_step": 1048576,
+      "trained_steps": 1904,
+      "trained_tokens": 1996488704,
+      "validation_loss": 3.5740153789520264
+    },
+    {
+      "batch": "2m",
+      "identity_sha256": "b8159e89001b03b919822f938b390578372b061859d8c04addd547fec4af4c81",
+      "learning_rate": 0.027152900396,
+      "level": "ext27152900",
+      "loss_only": true,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "run_name": "batch_2m_ext27152900",
+      "throughput_tps_per_device": null,
+      "tokens_per_step": 2097152,
+      "trained_steps": 952,
+      "trained_tokens": 1996488704,
+      "validation_loss": 4.078759670257568
+    },
+    {
+      "batch": "4m",
+      "identity_sha256": "300c126e1eb5dd9f552ada1a5c90fb39ac93427a09253243a07b3941d95d6f4e",
+      "learning_rate": 0.0006,
+      "level": "ext600000",
+      "loss_only": true,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "run_name": "batch_4m_ext600000",
+      "throughput_tps_per_device": null,
+      "tokens_per_step": 4194304,
+      "trained_steps": 476,
+      "trained_tokens": 1996488704,
+      "validation_loss": 5.547908782958984
+    }
+  ],
+  "rejected": [],
+  "research_scope_sha256": "2b3045a598ae7b06e2aac2217e828b6cd8a88b16e73718258f5a50d0f9a182cf",
+  "schema_version": 1,
+  "search_contract_sha256": "9d64d2bf52fb54b4a860fd88730ae7c68c21c9d0e8ea4d85a78d39d96dee2b62",
+  "selection": {
+    "batch": "1m",
+    "identity_sha256": "23f49771d9f323a15247dc29a49200d40e6f1e70e86495285608fafdcc7dc748",
+    "learning_rate": 0.0096,
+    "level": "ext9600000",
+    "loss_only": true,
+    "performance_metrics_excluded": [
+      "throughput(tps)",
+      "mfu(%)",
+      "wall_time"
+    ],
+    "run_name": "batch_1m_ext9600000",
+    "throughput_tps_per_device": null,
+    "tokens_per_step": 1048576,
+    "trained_steps": 1904,
+    "trained_tokens": 1996488704,
+    "validation_loss": 3.5740153789520264
+  },
+  "selection_claim": "fixed batch baseline with bracketed learning rate; no globally optimal batch-size claim",
+  "selection_policy": {
+    "batch": "1m",
+    "claim_limit": "Fixed 1M-token baseline; 2M and 4M LR optima remain unresolved at search boundaries. No globally optimal batch-size or statistically significant superiority claim.",
+    "declared_after_pilots": true,
+    "declared_at": "2026-10-25T06:43:49.674394+00:00",
+    "mode": "fixed_baseline",
+    "reason": "Prioritize the user-requested E1 scaling study after all bounded pilot trials completed; use a fixed batch with an internally bracketed LR instead of continuing batch-size optimization",
+    "tokens_per_step": 1048576
+  },
+  "status": "PASS"
+}

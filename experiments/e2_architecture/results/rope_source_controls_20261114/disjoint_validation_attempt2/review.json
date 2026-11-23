@@ -1,0 +1,199 @@
+{
+  "comparisons": {
+    "larger_lr2e4_b8": {
+      "academic": {
+        "candidate_mean": 5.586647977883166,
+        "control_mean": 6.1202512735670265,
+        "delta": -0.5336032956838608,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.5393995178355413,
+          -0.5282700035721064
+        ]
+      },
+      "books": {
+        "candidate_mean": 5.740783725272525,
+        "control_mean": 6.273080099712718,
+        "delta": -0.5322963744401932,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.5429999910972335,
+          -0.5196852577003566
+        ]
+      },
+      "chinese": {
+        "candidate_mean": 7.862435185096481,
+        "control_mean": 7.954226614399389,
+        "delta": -0.09179142930290916,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.0947413099760359,
+          -0.08896083117208697
+        ]
+      },
+      "code": {
+        "candidate_mean": 6.014226110144095,
+        "control_mean": 6.517470546744087,
+        "delta": -0.5032444365999915,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.5223051113838499,
+          -0.48536730567840014
+        ]
+      },
+      "encyclopedia": {
+        "candidate_mean": 6.3495409190654755,
+        "control_mean": 6.796968339519068,
+        "delta": -0.4474274204535918,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.4561766967854717,
+          -0.4374123232608492
+        ]
+      },
+      "math": {
+        "candidate_mean": 5.612782688303427,
+        "control_mean": 6.129778824069283,
+        "delta": -0.516996135765856,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.5337358514016325,
+          -0.4965461180630056
+        ]
+      },
+      "multilingual": {
+        "candidate_mean": 8.426402005282315,
+        "control_mean": 8.632225945591927,
+        "delta": -0.20582394030961124,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.21214688802984627,
+          -0.19921263774687595
+        ]
+      },
+      "qa": {
+        "candidate_mean": 5.799090094187043,
+        "control_mean": 6.272210003300146,
+        "delta": -0.4731199091131037,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.4772183085707101,
+          -0.4694445522671396
+        ]
+      },
+      "web": {
+        "candidate_mean": 5.730421516028318,
+        "control_mean": 6.241952256722883,
+        "delta": -0.5115307406945662,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.5147738100452857,
+          -0.5084122986617414
+        ]
+      }
+    },
+    "matched_baseline_b8": {
+      "academic": {
+        "candidate_mean": 5.586647977883166,
+        "control_mean": 5.709380029277368,
+        "delta": -0.1227320513942025,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.12620799009772865,
+          -0.11931578638878736
+        ]
+      },
+      "books": {
+        "candidate_mean": 5.740783725272525,
+        "control_mean": 5.846659684723074,
+        "delta": -0.10587595945054834,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.11204447786916386,
+          -0.0993369864130562
+        ]
+      },
+      "chinese": {
+        "candidate_mean": 7.862435185096481,
+        "control_mean": 7.851010287349874,
+        "delta": 0.011424897746606306,
+        "mean_strictly_improves": false,
+        "paired_bootstrap_95_ci": [
+          0.009195566177368164,
+          0.013621230321851642
+        ]
+      },
+      "code": {
+        "candidate_mean": 6.014226110144095,
+        "control_mean": 6.122334111820567,
+        "delta": -0.10810800167647275,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.11447686790065331,
+          -0.10185053846375508
+        ]
+      },
+      "encyclopedia": {
+        "candidate_mean": 6.3495409190654755,
+        "control_mean": 6.451844288544222,
+        "delta": -0.1023033694787459,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.1078123141080141,
+          -0.09667524918913842
+        ]
+      },
+      "math": {
+        "candidate_mean": 5.612782688303427,
+        "control_mean": 5.736238276416605,
+        "delta": -0.1234555881131779,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.13144870796664193,
+          -0.11719166219911792
+        ]
+      },
+      "multilingual": {
+        "candidate_mean": 8.426402005282315,
+        "control_mean": 8.416455095464533,
+        "delta": 0.009946909817782316,
+        "mean_strictly_improves": false,
+        "paired_bootstrap_95_ci": [
+          0.005978387323292819,
+          0.0140243510292335
+        ]
+      },
+      "qa": {
+        "candidate_mean": 5.799090094187043,
+        "control_mean": 5.878602688962763,
+        "delta": -0.07951259477572008,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.08184107460758903,
+          -0.07729537561535836
+        ]
+      },
+      "web": {
+        "candidate_mean": 5.730421516028318,
+        "control_mean": 5.855168051340363,
+        "delta": -0.1247465353120457,
+        "mean_strictly_improves": true,
+        "paired_bootstrap_95_ci": [
+          -0.1264871882782741,
+          -0.12302866310558536
+        ]
+      }
+    }
+  },
+  "formal_pretrain_started": false,
+  "primary_review_preserved_as_failed": true,
+  "production_qualified": false,
+  "protocol": "experiments/e2_architecture/results/rope_source_controls_20261114/disjoint_validation_protocol.json",
+  "protocol_sha256": "e4f25b3cb2438822d27244c0f0fa0f0ed98b1a16044c6377b115cd632a0f0f25",
+  "report_sha256": {
+    "data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/scores.json": "a3d4771ade1cd64f02d1393465c137cf7d3a67a7522ef867338c5a8baaf59971",
+    "data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr2e4_b8/scores.json": "aea5d759a7e44dc6f3c09058500336c0a7b4e1b541e210d0401a1e5ab4dda2c4",
+    "data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/matched_baseline_b8/scores.json": "6eda05de34ec859d4375bbc1b4ffc0c57bfa812efd897c1c9ead61ce9a1e6b2b"
+  },
+  "status": "FAIL_DISJOINT_ALL_NINE_MEAN_IMPROVEMENT"
+}

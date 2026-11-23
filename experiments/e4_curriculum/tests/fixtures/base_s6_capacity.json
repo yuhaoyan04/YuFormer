@@ -1,0 +1,68 @@
+{
+  "baseline_manifest_sha256": "4b09b85e419633d867cbbf8e9d96d371042969f7ea36d1523a73c47ed1b995cb",
+  "included_sources": [
+    "automathtext",
+    "cci3-hq",
+    "dclm-baseline",
+    "dolma-books",
+    "fineweb",
+    "fineweb-2",
+    "fineweb-edu",
+    "github-code",
+    "pes2o",
+    "proof-pile-2",
+    "stack-exchange",
+    "starcoderdata",
+    "wikipedia-en",
+    "wikipedia-zh",
+    "wikitext"
+  ],
+  "per_domain": {
+    "academic": {
+      "candidate_tokens": 8147776048,
+      "pool_tokens": 74390994034,
+      "val_tokens": 50002456
+    },
+    "books": {
+      "candidate_tokens": 4399746200,
+      "pool_tokens": 4444326592,
+      "val_tokens": 44580392
+    },
+    "chinese": {
+      "candidate_tokens": 33433747573,
+      "pool_tokens": 33483748172,
+      "val_tokens": 50000599
+    },
+    "code": {
+      "candidate_tokens": 31680537848,
+      "pool_tokens": 263829132994,
+      "val_tokens": 50002814
+    },
+    "encyclopedia": {
+      "candidate_tokens": 5339084016,
+      "pool_tokens": 5389084970,
+      "val_tokens": 50000948
+    },
+    "math": {
+      "candidate_tokens": 18539403743,
+      "pool_tokens": 81261610294,
+      "val_tokens": 50014644
+    },
+    "multilingual": {
+      "candidate_tokens": 4023849991,
+      "pool_tokens": 46118632710,
+      "val_tokens": 50000137
+    },
+    "qa": {
+      "candidate_tokens": 1193782467,
+      "pool_tokens": 1205841190,
+      "val_tokens": 12058723
+    },
+    "web": {
+      "candidate_tokens": 180346386661,
+      "pool_tokens": 1937019734497,
+      "val_tokens": 50002985
+    }
+  },
+  "upstream_snapshot_sha256": "8a243b088a0818954761e10bb8f453d0a754e5c282e9c31e131871ccd4db8084"
+}

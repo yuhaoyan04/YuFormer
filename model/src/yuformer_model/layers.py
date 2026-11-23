@@ -6,13 +6,17 @@ import torch.nn.functional as F
 
 
 class RMSNorm(nn.Module):
-    def __init__(self, hidden_size: int, eps: float = 1e-6):
+    def __init__(self, hidden_size: int, eps: float = 1e-6, fp32_variance: bool = True):
         super().__init__()
         self.weight = nn.Parameter(torch.ones(hidden_size))
         self.eps = eps
+        self.fp32_variance = fp32_variance
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
-        variance = x.float().pow(2).mean(-1, keepdim=True)
+        if self.fp32_variance:
+            variance = x.float().pow(2).mean(-1, keepdim=True)
+        else:
+            variance = x.pow(2).mean(-1, keepdim=True)
         x = x * torch.rsqrt(variance + self.eps).to(x.dtype)
         return self.weight * x
 

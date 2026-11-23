@@ -1,0 +1,34 @@
+{
+  "frozen_dependency_verification": {
+    "baseline_file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/repository_maintenance/20261123-protected-before-cleanup.json",
+    "baseline_sha256": "ebb30981b3e7fea7f3914559c71dd1fd88f351dfba0a4fcaffd176685e9024d5",
+    "dependency_count": 391,
+    "scope": "Small bound files rehashed; large files checked by exact stat identity, not a repeated full-data byte audit.",
+    "status": "PASS_391_FROZEN_DEPENDENCIES_UNCHANGED_AFTER_CLEANUP"
+  },
+  "maintenance_tests": {
+    "command": "python -m unittest discover -s tools/tests -v",
+    "passed": 8
+  },
+  "remote_write_access": "BLOCKED_SSH_AND_CONNECTED_ACCOUNT_LACK_WRITE",
+  "scope": "Local code/metrics/docs release; no claim of final model capability or successful GitHub publication.",
+  "staged_audit": {
+    "before_final_summary_files": 2056,
+    "bytes_before_final_summary_files": 36198865,
+    "max_blob_bytes": 4746730,
+    "status": "PASS_STAGED_SIZE_SECRET_BOUNDARY_AND_CURRENT_LINK_CHECKS"
+  },
+  "status": "PASS_LOCAL_RELEASE_CHECKS_REMOTE_PUBLICATION_PENDING",
+  "syntax": {
+    "checked_at": "2026-11-23T02:13:38.739688+00:00",
+    "counts": {
+      "json": 272,
+      "python": 585
+    },
+    "errors": [],
+    "scope": "Syntax and JSON parsing only; no imports/CUDA/training execution.",
+    "status": "PASS"
+  },
+  "training_source_note": "Qualified source bytes preserved; only maintenance tooling/docs/exports were changed in this maintenance action. Existing source-bound CPU/GPU evidence retained.",
+  "training_source_requalified": false
+}

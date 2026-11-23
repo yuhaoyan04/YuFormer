@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "compute_optimal_frontier.png": "69b6422222d4775cde91a14bd1cab336505e6515168e76c374fee74577436724",
+    "compute_optimal_frontier.svg": "7ae321df601151c5be06c4707148e773ccfbbcfbc8743c1e28283a914d715fe4",
+    "endpoints.csv": "acff4993f120a7e9257047f9a03d570eb836f94be999a33a27bc516e20c0f7fd",
+    "scaling_curves.png": "f3f44484268189fb105e59068aa05eb5ec4b0b496c13a4f22c0b0c5eb747275b",
+    "scaling_curves.svg": "c47edd2399fecaa079f2784a96a993c81e97a12fb46706a8b06e973faaa56db4"
+  },
+  "audited_endpoints": 24,
+  "claim_limit": "Each point is the arithmetic mean across 3 seeds. Parameter intervals use joint seed-index resampling across design points to preserve paired-seed covariance. The predeclared fit-quality gate failed; frontier is withheld and residuals are diagnostic only. The 1T prediction extrapolates beyond observed budgets; lines join measured means, including nonmonotonic results.",
+  "compute_optimal_frontier_families": [],
+  "compute_optimal_frontier_status": "WITHHELD_FIT_GATE_FAIL",
+  "excluded": [],
+  "expected_endpoints": 24,
+  "fit_nrmse": 0.03663488823335412,
+  "fit_quality_gate": "FAIL",
+  "fit_status": "FAIL",
+  "input_sha256": "992f0baa93035de02897d0a29ecc3d02d34ac78deec79ebd60ff75654017bfcf",
+  "parameter_basis": "non-embedding parameters",
+  "schema_version": 1,
+  "status": "EXPLORATORY_PROGRESS"
+}

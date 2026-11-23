@@ -17,9 +17,13 @@ def evaluate_tokenizer(
     total_bytes = 0
     total_tokens = 0
     total_chars = 0
+    unk_count = 0
+    roundtrip_ok = 0
     token_freq: Counter = Counter()
     sample_count = 0
     empty_count = 0
+
+    unk_id = tokenizer.token_to_id("<|unk|>")
 
     for text in text_iterator:
         if sample_count >= max_samples:
@@ -33,6 +37,10 @@ def evaluate_tokenizer(
         encoding = tokenizer.encode(text)
         total_tokens += len(encoding.ids)
         token_freq.update(encoding.ids)
+        if unk_id is not None:
+            unk_count += encoding.ids.count(unk_id)
+        if tokenizer.decode(encoding.ids) == text:
+            roundtrip_ok += 1
 
     if total_tokens == 0:
         return {"error": "no tokens produced", "samples": sample_count}
@@ -51,6 +59,9 @@ def evaluate_tokenizer(
         "vocab_size": vocab_size,
         "vocab_utilization": round(used_tokens / vocab_size, 4),
         "used_tokens": used_tokens,
+        "unk_tokens": unk_count,
+        "unk_rate": round(unk_count / total_tokens, 6),
+        "roundtrip_rate": round(roundtrip_ok / sample_count, 4) if sample_count else 0,
         "empty_samples": empty_count,
         "top_10_tokens": [
             {"id": tid, "token": tokenizer.decode([tid]), "count": cnt}

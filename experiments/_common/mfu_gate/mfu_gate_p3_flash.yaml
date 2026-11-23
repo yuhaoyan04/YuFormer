@@ -1,0 +1,55 @@
+# MFU 门禁复测配置（单卡等价版）：= pretrain_v1.yaml（IGNITION §7.3 落地后）
+# 仅改 4 处：world_size 4→1、expected_iters 按 ws=1 重算、eval/save 关闭（稳态口径）、
+# run_name/out_dir/data 指向当前已物化的真实流（mix_m2 full S6 未物化，见 §9 测量口径）。
+# 其余键（mbs12/accum16/compile default/sel-mlp/adamw/ce_chunk8192/bf16/lr2e-4）与 v1 逐键一致。
+experiment_status: probe_only
+backend: pytorch-fsdp1-compat
+run_name: mfu_gate_p3_flash
+seed: 20261013
+
+model:
+  preset: pretrain-0.5b
+  configs: ${YUFORMER_MODEL_CONFIGS}
+
+out_dir: ${YUFORMER_PRETRAIN_OUT}
+
+data:
+  stages:
+    - ${YUFORMER_TOKEN_STREAMS}/mix_m3_e1_100b_fast_stage1.tokens.bin
+  meta:
+    - ${YUFORMER_TOKEN_STREAMS}/mix_m3_e1_100b_fast_stage1.meta.json
+  val_dir: null
+  seq_len: 4096
+  epochs: 1
+
+optim:
+  optimizer: adamw
+  lr: 2.0e-4
+  weight_decay: 0.1
+  warmup_steps: 2000
+  lr_schedule: constant
+  min_lr_ratio: 0.1
+  adam_betas: [0.9, 0.95]
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+
+train:
+  budget_tokens: 157286400       # 200-step bounded MFU probe; not a training budget
+  micro_batch_size: 12
+  grad_accum: 16
+  expected_iters: 200             # 157,286,400 / (4096×12×16×1)
+  activation_checkpointing: false
+  compile: true
+  compile_mode: default
+  selective_recompute: mlp
+  bf16: true
+  ce_chunk: 8192
+  eval_every: 0                    # 稳态测量口径：无 eval 暂停
+  log_every: 20                    # 每 log 点记录 gpu_util_all/gpu_mem_mb_all（E-50 基线）
+  save_every: 0                    # 稳态测量口径：无 ckpt 写入
+  attn_impl: flash                  # E-52 flash 内核（window/GQA 原生）
+
+parallel:
+  world_size: 1
+  sharding: no_shard

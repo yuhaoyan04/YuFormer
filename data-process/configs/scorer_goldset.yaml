@@ -1,0 +1,117 @@
+# S4 质量打分器 gold-set 构造与训练配置（2026-09-17 锁定）
+#
+# 说明:
+#   positive/negative 为采样规则列表，按序执行、各取 quota 篇（不足则全取）。
+#   采样 = 确定性水库抽样（blake2b(seed|规则名) 驱动），shard 列表按 (source, relpath)
+#   排序、行序固定，同一快照下重跑结果一致。
+#   positive 规则可带 upstream_min/upstream_max 过滤 s1 的 upstream_score 列。
+#   "@s1_audit" 为特殊源：扫 out-root 下全部 s1_audit 分片（drop 样本，正文列为
+#   text_head ≤200 字符），reasons_any 限定 drop 原因子集。
+#
+# 偏差记录（2026-09-17）:
+#   * 规格中"负样本 = fineweb 上游 score ≤1 尾部"——fineweb 源无上游分数字段
+#     （ingest_profiles.yaml 验证过），改用同样有 0-1 上游分的 dclm-baseline 低分尾部。
+#   * s1_audit 仅存 text_head（200 字符），负样本长度受此约束（对垃圾判别无实质影响）。
+
+seed: 20260917
+min_text_chars: 100        # 太短无判别信号
+max_text_chars: 1024       # 训练/推理统一截断（2026-09-17 规格修订 4096→1024，理由见 scorer.yaml；须与 inference.max_score_chars 一致）
+model_params:              # 固定参数保证确定性；禁 autotune；thread=1 保证可复现 md5
+  dim: 50                  # 2026-09-17 规格修订 100→50：fasttext predict 随 dim 线性，换 ~2× 提速；留一源 CV 门禁仍适用
+  wordNgrams: 3            # 2026-09-26: 2→3——CJK 字符三元组捕捉更多中文句法（zh 0.624→目标 0.7+）
+  epoch: 4                  # 2026-09-26: CJK 修复后回到 4（特征空间变大，需要更多轮）
+  lr: 0.1                   # 2026-09-27: 0.2→0.1——goldset v2（153 万行 + 中文负样本）上 0.2 复发 NaN
+                            # （E-19 规则：NaN 排查第一步 lr 减半；百万级样本 lr 上界 0.1-0.2）
+  minCount: 3              # 2026-09-26: 5→3——保留更多中频汉字特征
+  loss: softmax               # 2026-09-25: ova→softmax——ova 在全量 gold-set 上 epoch>=2 必现 NaN（S4 代理踩坑记录 + 本次实录），二分类下 softmax 等价且数值稳定
+  thread: 1
+quantize: true             # 训练后产出 .ftz（量化不 retrain，推理提速 ~2-4x）
+auc_target: 0.85
+
+# BERT 回归档训练参数（bert_train.py；2026-09-20 新增）。与 fasttext 共用本文件 gold-set
+# 规则与 seed；留一源 CV 划分完全一致（rule_rng("cv-test-<held>")），门禁 mean AUC ≥0.85
+# 且每源 ≥0.75。单卡即可（4×H800 数据阶段闲置算力），AMP fp16。
+bert_train:
+  max_len: 256             # 规格：对齐 1024 字符截断
+  batch_size: 64
+  lr: 2.0e-5
+  epochs: 3                  # 2026-09-25: 2→3——CV mean AUC 0.847 贴门（0.85），一轮廉价调参重试
+  warmup_ratio: 0.05
+  seed: 20260917
+  amp_fp16: true
+  eval_batch_size: 256
+
+positive:
+  - rule: fineweb-edu-high
+    source: fineweb-edu
+    quota: 200000
+    upstream_min: 4.0      # fineweb-edu score ∈ [0,5]
+    max_shards: 50         # 路径哈希无偏选 50 shard（~5 千万行）再水库抽样
+  - rule: wikipedia-en
+    source: wikipedia-en
+    quota: 100000
+    max_shards: 100
+  - rule: wikipedia-zh
+    source: wikipedia-zh
+    quota: 150000           # 2026-09-26: 50k→150k——zh 反偏置上采样（配合 CJK 逐字切分修复）
+    max_shards: 50
+  - rule: cci3-hq-pos        # 2026-09-26 新增：中文高质量源正样本（智源清洗子集）
+    source: cci3-hq
+    quota: 100000
+    max_shards: 50
+  - rule: dolma-books
+    source: dolma-books
+    quota: 50000
+    max_shards: 10         # 每 shard ~2.4 万行（长文）
+  - rule: pes2o
+    source: pes2o
+    quota: 100000
+    max_shards: 100
+  - rule: automathtext       # 2026-09-19 新增：math 域正样本（否则打分器对 math/code 域是纯外推盲区）
+    source: automathtext
+    quota: 50000
+    max_shards: 20
+
+negative:
+  # 结构原则（2026-09-19 用户关切落锤）：硬负样本（平庸但正常的文本）占比必须 ≥50%，
+  # 显而易见垃圾（乱码/HTML）只给判别下限，不能主导训练——否则分类器学会"识别垃圾"
+  # 而非"排序质量"，top-k 选取失去区分度。
+  - rule: s1-audit-dropped
+    source: "@s1_audit"
+    quota: 200000            # 300k→200k：显而易见垃圾降权
+    reasons_any:           # 限定"乱码/HTML/太短"类 drop（与 S1 规则名对齐）
+      - empty_or_short
+      - garbled_replacement_char
+      - garbled_latin1_mojibake
+      - garbled_control_chars
+      - html_tag_ratio
+      - html_script_style_block
+      - html_entity_flood
+      - base64_blob
+      - web_line_dup
+  - rule: dclm-low-tail        # 原规格 fineweb≤1；fineweb 无上游分，用 dclm 0-1 分尾部替代
+    source: dclm-baseline
+    quota: 200000
+    upstream_max: 0.02       # 尾部 ~2%（对应 fineweb-edu ≤1/5 的相对位置）
+    max_shards: 100
+  - rule: dclm-mid-tail        # 2026-09-26 v2：中段负样本（stratified 低/中分层，CV 建议采纳）
+    source: dclm-baseline     # 只有低分尾部时分类器学"垃圾 vs 好"，中段拉开排序区分度
+    quota: 100000
+    upstream_min: 0.2
+    upstream_max: 0.5
+    max_shards: 60
+  - rule: edu-low-tail         # 硬负样本主力，与最大池（fineweb 系）同分布族
+    source: fineweb-edu
+    quota: 200000
+    upstream_max: 2.69       # 2026-09-26 v2 修复：fineweb-edu 实际分数下限 2.5（edu≥3 筛选子集），
+    max_shards: 50           # 旧值 1.0 永远匹配 0 行（goldset summary sampled=0 实锤）
+  - rule: cci3-low-tail        # 2026-09-26 v2：中文硬负样本——修 zh fold（0.624）的关键
+    source: cci3-hq          # cci3-hq raw upstream 3-4.5 分制，底部 p25≈3.19
+    quota: 100000
+    upstream_max: 3.19
+    max_shards: 50
+
+# 负样本结构审计（S4 预检门，见 PIPELINE_DESIGN）：硬负（dclm 低/中 + edu 尾 + cci3 尾）600k : 软负（垃圾）200k = 75:25 ✓
+# v2 结构性修复（2026-09-26，CV 0.821 红灯复盘）：
+#   * 中文负样本 0 → 100k（zh fold 崩的根因：负样本全英文，分类器学"英文风格=质量"）
+#   * 中段负样本 0 → 100k（只有尾部时 top-k 选取在中段失去区分度）

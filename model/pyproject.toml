@@ -1,0 +1,19 @@
+[project]
+name = "yuformer-model"
+version = "0.1.0"
+description = "YuFormer model architecture: from-scratch dense transformer with gated SWA + full hybrid attention (ZGCM-1 style)"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+# E-52：flash 后端要求 window_size kwarg，上游 flash-attn 自 v2.3.0 起提供；
+# 2.0.x 装了包也会在首个调用处 TypeError（代码侧有 fail-fast guard）。
+flash = ["flash-attn>=2.3"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+where = ["src"]

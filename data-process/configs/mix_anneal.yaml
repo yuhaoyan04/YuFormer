@@ -1,0 +1,70 @@
+mix_name: mix_anneal_150b
+total_tokens: 155550771759
+score_field: hybrid_v2
+seed: yuformer-anneal
+included_sources:
+- automathtext
+- cci3-hq
+- dclm-baseline
+- dolma-books
+- fineweb
+- fineweb-2
+- fineweb-edu
+- github-code
+- pes2o
+- proof-pile-2
+- stack-exchange
+- starcoderdata
+- wikipedia-en
+- wikipedia-zh
+- wikitext
+domains:
+  web:
+    weight: 0.59410362578308
+    top_k: 0.1
+  code:
+    weight: 0.139838966324
+    top_k: 0.1
+  math:
+    weight: 0.081264533454
+    top_k: 0.1
+  academic:
+    weight: 0.0514720728871
+    top_k: 0.1
+  chinese:
+    weight: 0.057625312504
+    top_k: 0.35
+  books:
+    weight: 0.0246225443445
+    top_k: 0.95
+  encyclopedia:
+    weight: 0.0197927809438
+    top_k: 0.65
+  qa:
+    weight: 0.00705250332652
+    top_k: 0.98
+  multilingual:
+    weight: 0.024227660433
+    top_k: 0.1
+quota_fill_policy: strict_top_k
+max_total_shortfall_tokens: 1000000
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+val:
+  tokens_per_domain: 50000000
+  max_fraction: 0.01
+target_final_tokens: 150000000000
+target_final_domain_weights:
+  web: 0.595546479284137
+  code: 0.14087893405228133
+  math: 0.08047925395731581
+  chinese: 0.06034938056124219
+  academic: 0.05031462358343938
+  books: 0.02514976686166119
+  encyclopedia: 0.020119813489328953
+  qa: 0.007041934721265133
+  multilingual: 0.020119813489328953
+tokenizer_capacity_headroom: 0.02
+tokenizer_calibration_source: data/processed/audits/training_tokenizer_calibration.json

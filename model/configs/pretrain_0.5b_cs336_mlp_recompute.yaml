@@ -1,0 +1,20 @@
+presets:
+  pretrain-0.5b-cs336:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1536
+    intermediate_size: 4096
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 候选架构（非当前生产锁定）：16L/H1536/FFN4096，宽深比96，SwiGLU 8/3，24Q/6KV，每头64维，tied，解析参数量约530.1M
+    num_heads: 24
+    num_kv_heads: 6
+    num_layers: 16
+    qk_norm: true
+    rope_base: 5000000.0
+    selective_recompute: mlp
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128

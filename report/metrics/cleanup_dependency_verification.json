@@ -1,0 +1,7 @@
+{
+  "status": "PASS_391_FROZEN_DEPENDENCIES_UNCHANGED_AFTER_CLEANUP",
+  "dependency_count": 391,
+  "baseline_file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/repository_maintenance/20261123-protected-before-cleanup.json",
+  "baseline_sha256": "ebb30981b3e7fea7f3914559c71dd1fd88f351dfba0a4fcaffd176685e9024d5",
+  "scope": "Small bound files rehashed; large files checked by exact stat identity, not a repeated full-data byte audit."
+}

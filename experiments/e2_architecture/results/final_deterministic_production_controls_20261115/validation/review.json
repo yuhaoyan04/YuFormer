@@ -1,0 +1,199 @@
+{
+  "aggregate_passed": true,
+  "baseline_aggregate_mean_loss": 6.0816543875920654,
+  "candidate": "larger_lr1e4_b8",
+  "candidate_aggregate_mean_loss": 6.0091760539346275,
+  "expanded_all_nine_passed": true,
+  "expanded_comparison": {
+    "academic": {
+      "candidate_mean": 5.505286116491664,
+      "delta": -0.07868335734714162,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.08109187483787537,
+        -0.07628288065845315
+      ],
+      "reference_mean": 5.583969473838806
+    },
+    "books": {
+      "candidate_mean": 5.5335413407195695,
+      "delta": -0.08775470609014685,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.09204605912620371,
+        -0.08276488814841616
+      ],
+      "reference_mean": 5.621296046809717
+    },
+    "chinese": {
+      "candidate_mean": 7.445335052230141,
+      "delta": -0.006151711398904974,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.00815631638873707,
+        -0.0042801046913320375
+      ],
+      "reference_mean": 7.451486763629046
+    },
+    "code": {
+      "candidate_mean": 5.620744951746681,
+      "delta": -0.09120289304039696,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.0967355659400875,
+        -0.08548855876380747
+      ],
+      "reference_mean": 5.711947844787077
+    },
+    "encyclopedia": {
+      "candidate_mean": 6.202362048355016,
+      "delta": -0.06519829549572685,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.07194429686801,
+        -0.06024701317602938
+      ],
+      "reference_mean": 6.267560343850743
+    },
+    "math": {
+      "candidate_mean": 5.1249273460019715,
+      "delta": -0.07756108045578003,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.08442850146781315,
+        -0.07220332856205376
+      ],
+      "reference_mean": 5.202488426457752
+    },
+    "multilingual": {
+      "candidate_mean": 7.253561678257856,
+      "delta": -0.13206580687652936,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.1369633655317805,
+        -0.12718679051507603
+      ],
+      "reference_mean": 7.385627485134385
+    },
+    "qa": {
+      "candidate_mean": 5.483781111511317,
+      "delta": -0.0548378432338888,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.05704806453802369,
+        -0.05279593284834515
+      ],
+      "reference_mean": 5.538618954745206
+    },
+    "web": {
+      "candidate_mean": 5.913044840097427,
+      "delta": -0.05884930897842754,
+      "mean_strictly_improves": true,
+      "paired_bootstrap_95_ci": [
+        -0.06009642322632399,
+        -0.05760776966132901
+      ],
+      "reference_mean": 5.971894149075855
+    }
+  },
+  "formal_pretrain_started": false,
+  "interpretation": "Actual production-distribution development confirmation; all prior research failures retained; no unseen-test or final1T capability claim.",
+  "primary_all_nine_passed": true,
+  "primary_comparison": {
+    "academic": {
+      "baseline": 5.590693950653076,
+      "candidate": 5.50411319732666,
+      "delta": -0.08658075332641602,
+      "mean_strictly_improves": true
+    },
+    "books": {
+      "baseline": 5.383998394012451,
+      "candidate": 5.281950950622559,
+      "delta": -0.10204744338989258,
+      "mean_strictly_improves": true
+    },
+    "chinese": {
+      "baseline": 7.462089538574219,
+      "candidate": 7.439967632293701,
+      "delta": -0.022121906280517578,
+      "mean_strictly_improves": true
+    },
+    "code": {
+      "baseline": 5.782089710235596,
+      "candidate": 5.679017543792725,
+      "delta": -0.1030721664428711,
+      "mean_strictly_improves": true
+    },
+    "encyclopedia": {
+      "baseline": 6.311483383178711,
+      "candidate": 6.246851444244385,
+      "delta": -0.06463193893432617,
+      "mean_strictly_improves": true
+    },
+    "math": {
+      "baseline": 5.312982559204102,
+      "candidate": 5.257389545440674,
+      "delta": -0.055593013763427734,
+      "mean_strictly_improves": true
+    },
+    "multilingual": {
+      "baseline": 7.283487796783447,
+      "candidate": 7.152400493621826,
+      "delta": -0.1310873031616211,
+      "mean_strictly_improves": true
+    },
+    "qa": {
+      "baseline": 5.541556358337402,
+      "candidate": 5.487111568450928,
+      "delta": -0.05444478988647461,
+      "mean_strictly_improves": true
+    },
+    "web": {
+      "baseline": 6.030178070068359,
+      "candidate": 5.970435619354248,
+      "delta": -0.05974245071411133,
+      "mean_strictly_improves": true
+    }
+  },
+  "production_qualified": false,
+  "reference": "matched_baseline_b8",
+  "source_inputs": {
+    "data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/checkpoint/step-200/.metadata": "a050cc2e45558d8cf4f9e12cd990cf5841ef16540e18fe6856022e01d0605702",
+    "data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/resolved_config.yaml": "c6ab6531026e8a4adbcf50aecea8fda1d208a24901596f6a4d90527700655e49",
+    "data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/result.json": "92ae8e012113c6847405e6aa0cb4ac149d9513dceecbc890cc3d584c63434337",
+    "data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/run_identity.json": "e93fad60f74199c1e1fe78a68421bd591e319c6ed0f68d0614adc239e186bc38",
+    "data/experiments/final_deterministic_production_controls_20261115/matched_baseline_b8/checkpoint/step-200/.metadata": "fcafec45a4610f04fb293dd2ecda65e4ec6d369885968c8c54ca7c1f4f69fe26",
+    "data/experiments/final_deterministic_production_controls_20261115/matched_baseline_b8/resolved_config.yaml": "b518a3daf0b142ef662021a19903815b68dbbb755622931f1aaa00e15dc3204b",
+    "data/experiments/final_deterministic_production_controls_20261115/matched_baseline_b8/result.json": "69a3930df02fbdaf1fc73d7262627b01295f163f0a4801e72c26fb87c7175ddf",
+    "data/experiments/final_deterministic_production_controls_20261115/matched_baseline_b8/run_identity.json": "436ba2b61f513975da469ee1f2c3098d66229822ac31999314e3097ffbe966f6",
+    "data/experiments/final_deterministic_production_controls_20261115/validation/larger_lr1e4_b8/scores.json": "baf902e469db50e7bbd9f48b7ed779b8efa684aeabb568972c3a09a85226c2d6",
+    "data/experiments/final_deterministic_production_controls_20261115/validation/matched_baseline_b8/scores.json": "04d040eb02417d009f77ef17ccd1ba54b2885931e42a90f818795e157a1187ab",
+    "data/health/final-deterministic-production-controls.json": "4a3dc4dec237208d2fed03791256af2b58e426ae363223e3dd0a23f94ba59d74",
+    "data/processed/audits/pretrain_1t_token_streams.json": "3af2636a399a65a18c4b3beacad983189e7eb8b379ecf918e3b0202b0a716767",
+    "data/token_streams/m3_20261020_yf64k/val_academic.meta.json": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3",
+    "data/token_streams/m3_20261020_yf64k/val_books.meta.json": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64",
+    "data/token_streams/m3_20261020_yf64k/val_chinese.meta.json": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767",
+    "data/token_streams/m3_20261020_yf64k/val_code.meta.json": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4",
+    "data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea",
+    "data/token_streams/m3_20261020_yf64k/val_math.meta.json": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec",
+    "data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2",
+    "data/token_streams/m3_20261020_yf64k/val_qa.meta.json": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54",
+    "data/token_streams/m3_20261020_yf64k/val_web.meta.json": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899",
+    "experiments/e2_architecture/configs/final_deterministic_production_controls_20261115/larger_lr1e4_b8.env": "3f5eb19787e977bd69bf80df92a214508fd84b261f7f6cd1a31dbfb01c567225",
+    "experiments/e2_architecture/configs/final_deterministic_production_controls_20261115/larger_lr1e4_b8.model.yaml": "b21943c014e08f3212b2178513a89e5e0a2cd42dcef8eb14fab0ac9f680728ba",
+    "experiments/e2_architecture/configs/final_deterministic_production_controls_20261115/matched_baseline_b8.env": "302fdddf5366cba8933055fe0987085da8b5b082795083754995cbd064154c36",
+    "experiments/e2_architecture/configs/final_deterministic_production_controls_20261115/matched_baseline_b8.model.yaml": "3ed648d59b3e285f70fd6cfd2e2b0541c2bb5db04f18538ef515fead30debfe2",
+    "experiments/e2_architecture/configs/final_deterministic_production_controls_20261115/validation/larger_lr1e4_b8.yaml": "ad812d0ae95cfaf7373a7fbfeadb7a891ac8cfca3612efa27ea520b66d71d4bf",
+    "experiments/e2_architecture/configs/final_deterministic_production_controls_20261115/validation/matched_baseline_b8.yaml": "b82c10c9f7233e3818347a7c1ed1da74feca90155b01d661ea61531d6fefa9a9",
+    "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/protocol.json": "6ed453cb5f9d9fd65a4476a25ff9e59d7445872ae98a0beff29f141499124f33",
+    "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/validation/plan.json": "e08537cdb8f0471789ebf9349c3b3298941a5781f3da80e0e38be64e0168ef9a",
+    "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/validation/protocol.json": "1687fb92ca14aa36b7f4e1efdbe10e822736df68af497934889b87463a56b620",
+    "experiments/e2_architecture/scripts/benchmark_model_sizes.py": "dffd9e00f086eb271ce84fcf4c9ca9182921063b7ffef0b4e00b8728e7406b63",
+    "experiments/e2_architecture/scripts/development_validation_review.py": "6b00ca4b31dcc35b040bf8f499b7b5e80c6485bd178c48d7bfb005e3a4afb98b",
+    "experiments/e2_architecture/scripts/evaluate_disjoint_validation.py": "5c18ddab483a17e00b5b1314fac960d44d183e4342e7e5ded27ab4969424b590",
+    "experiments/e2_architecture/scripts/review_final_deterministic_production_controls.py": "6f5b0d430083fde9a7194df50e746002224548f3443d88e8e12df05ac895146f",
+    "experiments/e2_architecture/scripts/review_production_matched_controls.py": "dec6e8b4049416e6a01f0c3fcaf6782543752a4f26684057566fb559d776e885"
+  },
+  "status": "PASS_PRODUCTION_PRIMARY_AND_EXPANDED_ALL_NINE",
+  "training_source_sha256": "af54b5e072aafbdae6033e04dc7434a4167ea1654d19b3882f08b8a2711dfc3a"
+}

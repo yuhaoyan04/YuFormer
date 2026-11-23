@@ -1,0 +1,49 @@
+{
+  "admission_policy": "idle_GPU_only; contended throughput is ineligible",
+  "generated": [
+    {
+      "config": "pretrain/configs/e1_performance/e1_perf_50m.yaml",
+      "config_sha256": "145d67764e45f91b7535bc01cd28bc1b1b0557dc52c667eeba26fb184be9e72a",
+      "name": "e1_perf_50m",
+      "source_config": "pretrain/configs/e1/e1_ln_50m.yaml",
+      "source_sha256": "c79ee7341b1577debf82223eb4c75d0e2fa4775d3149204fe141a6c86922974b",
+      "tokens_per_update": 262144
+    },
+    {
+      "config": "pretrain/configs/e1_performance/e1_perf_100m.yaml",
+      "config_sha256": "8c592ec7a803a9f12bf5db5111898924ef33fa212252e892e93d3eab6657b440",
+      "name": "e1_perf_100m",
+      "source_config": "pretrain/configs/e1/e1_ln_100m.yaml",
+      "source_sha256": "e07d539362c5a2a6d6bca0581269ce014bf4f8b685cac922fa44feb906a5903c",
+      "tokens_per_update": 262144
+    },
+    {
+      "config": "pretrain/configs/e1_performance/e1_perf_200m.yaml",
+      "config_sha256": "602a72f8713d5bfa9f9a1ed1e77308d908fff031480a22cbc47f92244c6a46ea",
+      "name": "e1_perf_200m",
+      "source_config": "pretrain/configs/e1/e1_ln_200m.yaml",
+      "source_sha256": "2d2d57e3ad70ff158e14c81c154e477bd0c93de287ee0fd9205b254ab7e980af",
+      "tokens_per_update": 262144
+    },
+    {
+      "config": "pretrain/configs/e1_performance/e1_perf_400m.yaml",
+      "config_sha256": "45c2a16f7b8029fb7e07a250b1fb969532bbf1dd79a7ee79ba509bd29190dbf8",
+      "name": "e1_perf_400m",
+      "source_config": "pretrain/configs/e1/e1_ln_400m.yaml",
+      "source_sha256": "1fa3648366500ca4e34113df41c8cfa9108dab6029d87e586ef9455822868469",
+      "tokens_per_update": 262144
+    },
+    {
+      "config": "pretrain/configs/e1_performance/e1_perf_800m.yaml",
+      "config_sha256": "29ca4d6c214e00037e0cefd771840a1ba6644d69859458ca138058fd7fc2f3a3",
+      "name": "e1_perf_800m",
+      "source_config": "pretrain/configs/e1/e1_ln_800m.yaml",
+      "source_sha256": "2a3d503f801f6350c0a5fecae51c565bc2dfcc7bce4a0c6af1db563be85c56c1",
+      "tokens_per_update": 262144
+    }
+  ],
+  "lr_resolution_sha256": "e9b83fdbdb250c21a4806d161bc580296f077a89ea54f9fc23cade6da3cf6209",
+  "schema_version": 1,
+  "status": "PASS",
+  "steps": 32
+}

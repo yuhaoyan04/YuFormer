@@ -25,6 +25,8 @@ def main():
     print(f"  full_attn_layers={config.num_full_attn_layers}, "
           f"swa_layers={config.num_swa_layers}")
     print(f"  window_size={config.window_size}, rope_base={config.rope_base}")
+    print(f"  qk_norm={config.qk_norm}, attention_output_gate={config.attention_output_gate}, "
+          f"tied={config.tie_word_embeddings}")
 
     model = create_model(config)
     device = "cuda" if torch.cuda.is_available() else "cpu"

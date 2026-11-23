@@ -1,0 +1,73 @@
+# S4 质量打分推理配置（2026-09-17 锁定）
+#
+# 双轨复合分: composite = w_u * normalize(upstream_score) + w_s * self_score
+#   upstream_score 缺失（null）时 composite = self_score。
+#   normalize = 按源线性 min/max 归一到 [0,1] 并 clamp；未列出的源默认 [0,1]。
+
+model: ../data/models/yuformer_quality_scorer.ftz   # 不存在时回退同名 .bin
+model_fallback_bin: ../data/models/yuformer_quality_scorer.bin
+bert_model: ../data/models/yuformer_quality_bert     # BERT 回归档目录（HF 格式）
+
+composite:
+  upstream_weight: 0.5
+  self_weight: 0.5
+
+# 三轨融合（2026-09-20 新增，S4 ensemble 第二 learned 轨）：
+#   composite_v2 = w_u·upstream_norm + w_f·fasttext_score + w_b·bert_score，
+#   按行重归一（某轨缺失时其权重置 0，其余轨按原比例归一）；
+#   bert 分整轨缺失（s4_bert 未跑）时退化为双轨 composite（数值 = legacy composite）。
+composite_v2:
+  upstream_weight: 0.25
+  fasttext_weight: 0.35
+  bert_weight: 0.40
+
+# goldrule 蒸馏轨（2026-09-28，LLM 内容级标签训练——修复来源代理标签的文体偏置）：
+#   llm_distill = TF-IDF(char_wb 2-5) + LR(C=4)，4,700 条 Qwen3-8B rubric 标注训练；
+#   holdout AUC 0.899 / zh 0.825 / 零膨胀 0% / 垃圾深杀（VPN 0.009、中文软文 0.17-0.21）。
+#   hybrid_v2 = 0.5·llm_distill + 0.3·upstream_norm + 0.2·rule_score（缺失轨按权重归一）
+#   ——生产选取轨（fast track 与正式版共用）；S6 score_field=hybrid_v2。
+goldrule_model: ../data/models/goldrule_scorer_v2/goldrule_scorer_v2.joblib
+fasttext_track: false          # 2026-10-10 用户裁定（E-36 收官 + fasttext 退役）：
+                               # fasttext CV 未达标（0.642<0.85）→ 轨关闭，不重训，转研究 backlog；
+                               # full 版选取轨 = hybrid_v2 不依赖 fasttext。显式布尔 false
+                               # 消灭 yaml 1.1 off→False 字符串比较陷阱。
+                               # ⚠️ 口径注意：10-08 前全语料 composite_v2 是 fasttext 参与打分的；
+                               # 本开关生效后任何重算分片将走 fasttext=0 公式（hybrid_v2 选取不受影响）
+hybrid_v2:
+  llm_distill_weight: 0.5
+  upstream_weight: 0.3
+  rule_weight: 0.2
+
+# 截断策略（2026-09-20 用户裁定，fasttext/BERT 两轨共用）：
+#   window_scoring=true 时，归一化后 > long_doc_chars 字符的长文档（books/academic/code）
+#   用 head/mid/tail 三窗各 max_chars/256token 均分；短文档（≤1024 字符）头部直打。
+#   校准脚本 scale/truncation_calibration.py 输出相关矩阵与策略建议。
+window_scoring: true
+long_doc_chars: 4096
+
+upstream_normalize:        # per-source [min, max]
+  fineweb-edu: [0.0, 5.0]
+  dclm-baseline: [0.0, 1.0]
+  cci3-hq: [0.0, 5.0]
+
+inference:
+  batch_size: 1000         # fasttext predict 批量调用粒度
+  # 2026-09-17 规格修订：4096→1024。理由：实测 fasttext predict 为瓶颈
+  # O(tokens×dim)，4096 字符单核仅 ~0.8-2.6k 篇/s；质量信号集中在文档前部，
+  # 1024 字符换 ~2.5× 提速，配合训练 dim 100→50（见 scorer_goldset.yaml），
+  # 160 核全池 50 亿篇 ≤1 小时可达。验收口径从"≥2 万篇/秒/核"改为
+  # "160 核聚合 ≥5 万篇/秒（全池 ≤1 小时墙钟）"。
+  max_score_chars: 1024    # 与 gold-set 训练截断一致（scorer_goldset.yaml max_text_chars）
+  preprocess: lowercase_whitespace
+
+bert:                      # BERT 回归档推理（score_bert.py，GPU；2026-09-20 新增）
+  max_len: 256             # mBERT token 截断（与训练一致；推理按 batch 最长动态 padding）
+  max_score_chars: 1024    # 文本截断（与 fasttext 档 / gold-set 一致）
+  batch_size: 512          # FP16 批量
+  score_quantum: 1.0e-4    # bert_score 量化步长（GPU 数值不确定性处理，重跑 ±1e-4 抖动属预期）
+  domain_allowlist: null   # 超时降级开关：null = 全域；["web", ...] = 只扫白名单域
+  torch_compile: false     # 超时优化路径 1：torch.compile（实测无增益，留作开关）
+
+quantile:
+  precision: 1.0e-6        # 分数量化步长（线性插值 CDF 逆，同值同分、决胜无关）
+  unknown_domain_fallback: null   # 新领域无分位表时置 null（聚合文件缺失即 fail-fast，不应发生）

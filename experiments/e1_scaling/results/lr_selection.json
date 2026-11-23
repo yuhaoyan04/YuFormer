@@ -1,0 +1,218 @@
+{
+  "analysis_tool_sha256": "bd18063887b377f0c61aa445e26fe1c27525c720100cb01ef93b5f3b5b8ee1b6",
+  "boundary_selections": [],
+  "curves": {
+    "200m": [
+      {
+        "learning_rate": 7.5e-05,
+        "level": "vlow",
+        "run_name": "e1_lr_200m_vlow",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.6378021240234375
+      },
+      {
+        "learning_rate": 0.00015,
+        "level": "low",
+        "run_name": "e1_lr_200m_low",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.079349517822266
+      },
+      {
+        "learning_rate": 0.0003,
+        "level": "mid",
+        "run_name": "e1_lr_200m_mid",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.63198184967041
+      },
+      {
+        "learning_rate": 0.0006,
+        "level": "high",
+        "run_name": "e1_lr_200m_high",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.120088577270508
+      },
+      {
+        "learning_rate": 0.0012,
+        "level": "vhigh",
+        "run_name": "e1_lr_200m_vhigh",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.116907119750977
+      },
+      {
+        "learning_rate": 0.0018,
+        "level": "ext1800",
+        "run_name": "e1_lr_200m_ext1800",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.126101016998291
+      },
+      {
+        "learning_rate": 0.0024,
+        "level": "ext2400",
+        "run_name": "e1_lr_200m_ext2400",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.154641151428223
+      },
+      {
+        "learning_rate": 0.0048,
+        "level": "ext4800",
+        "run_name": "e1_lr_200m_ext4800",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.202056884765625
+      }
+    ],
+    "50m": [
+      {
+        "learning_rate": 0.00015,
+        "level": "vlow",
+        "run_name": "e1_lr_50m_vlow",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.74640417098999
+      },
+      {
+        "learning_rate": 0.0003,
+        "level": "low",
+        "run_name": "e1_lr_50m_low",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.065502166748047
+      },
+      {
+        "learning_rate": 0.0006,
+        "level": "mid",
+        "run_name": "e1_lr_50m_mid",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.429688930511475
+      },
+      {
+        "learning_rate": 0.0012,
+        "level": "high",
+        "run_name": "e1_lr_50m_high",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.156659126281738
+      },
+      {
+        "learning_rate": 0.0024,
+        "level": "vhigh",
+        "run_name": "e1_lr_50m_vhigh",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.521978855133057
+      }
+    ],
+    "800m": [
+      {
+        "learning_rate": 3.75e-05,
+        "level": "vlow",
+        "run_name": "e1_lr_800m_vlow",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.602614879608154
+      },
+      {
+        "learning_rate": 7.5e-05,
+        "level": "low",
+        "run_name": "e1_lr_800m_low",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.052044868469238
+      },
+      {
+        "learning_rate": 0.00015,
+        "level": "mid",
+        "run_name": "e1_lr_800m_mid",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.6469950675964355
+      },
+      {
+        "learning_rate": 0.0003,
+        "level": "high",
+        "run_name": "e1_lr_800m_high",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.169349670410156
+      },
+      {
+        "learning_rate": 0.0006,
+        "level": "vhigh",
+        "run_name": "e1_lr_800m_vhigh",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.126461505889893
+      },
+      {
+        "learning_rate": 0.0009,
+        "level": "ext900000",
+        "run_name": "e1_lr_800m_ext900000",
+        "trained_tokens": 499908608,
+        "validation_loss": 3.9985666275024414
+      },
+      {
+        "learning_rate": 0.0012,
+        "level": "ext1200000",
+        "run_name": "e1_lr_800m_ext1200000",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.073138236999512
+      },
+      {
+        "learning_rate": 0.0024,
+        "level": "ext2400000",
+        "run_name": "e1_lr_800m_ext2400000",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.0622124671936035
+      }
+    ]
+  },
+  "duplicates": [],
+  "expected_results": 21,
+  "expected_run_names": [
+    "e1_lr_200m_ext1800",
+    "e1_lr_200m_ext2400",
+    "e1_lr_200m_ext4800",
+    "e1_lr_200m_high",
+    "e1_lr_200m_low",
+    "e1_lr_200m_mid",
+    "e1_lr_200m_vhigh",
+    "e1_lr_200m_vlow",
+    "e1_lr_50m_high",
+    "e1_lr_50m_low",
+    "e1_lr_50m_mid",
+    "e1_lr_50m_vhigh",
+    "e1_lr_50m_vlow",
+    "e1_lr_800m_ext1200000",
+    "e1_lr_800m_ext2400000",
+    "e1_lr_800m_ext900000",
+    "e1_lr_800m_high",
+    "e1_lr_800m_low",
+    "e1_lr_800m_mid",
+    "e1_lr_800m_vhigh",
+    "e1_lr_800m_vlow"
+  ],
+  "invalid": [],
+  "missing": [],
+  "observed_at": "2026-10-24T09:31:47.443757+00:00",
+  "observed_results": 21,
+  "rejected": [],
+  "schema_version": 1,
+  "search_contract_sha256": "cfe302dfecdbfd7110b3fb8d1400df93312bf154b6cab997b4d1cfc65d7ceae8",
+  "selections": {
+    "200m": {
+      "identity_sha256": "8d93c82b753da9e34053266973ee3cc8c76e61dcb10626c2be87917155796ab2",
+      "learning_rate": 0.0012,
+      "level": "vhigh",
+      "run_name": "e1_lr_200m_vhigh",
+      "trained_tokens": 499908608,
+      "validation_loss": 4.116907119750977
+    },
+    "50m": {
+      "identity_sha256": "6e74ef33b761d7064b58b66738c126a909ca52524d4d8ee7aaca7515e3ab0cf4",
+      "learning_rate": 0.0012,
+      "level": "high",
+      "run_name": "e1_lr_50m_high",
+      "trained_tokens": 499908608,
+      "validation_loss": 4.156659126281738
+    },
+    "800m": {
+      "identity_sha256": "812faf8ba77daf8f0f596c97db31f3eb77b3dc0f24b1256b8b2434dc47f229d7",
+      "learning_rate": 0.0009,
+      "level": "ext900000",
+      "run_name": "e1_lr_800m_ext900000",
+      "trained_tokens": 499908608,
+      "validation_loss": 3.9985666275024414
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,17 @@
+[project]
+name = "yuformer-pretrain"
+version = "0.1.0"
+description = "YuFormer pretrain training loop: FSDP + AdamW/Muon, deterministic cursor resume, S6 order-table data contract"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "pyyaml", "numpy", "pyarrow", "tokenizers"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+analysis = ["scipy", "matplotlib>=3.8,<4"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+where = ["src"]

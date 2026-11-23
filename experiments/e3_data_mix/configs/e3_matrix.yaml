@@ -1,0 +1,34 @@
+schema_version: 1
+experiment: e3_data_mix
+source_release: data/processed/releases/mix_m3_e1_100b-20261019.release.json
+source_members: data/processed/mix_members/mix_m3_e1_100b.parquet
+source_manifest: data/processed/mix_order/mix_m3_e1_100b.manifest.json
+tokenizer_gate: data/TOKENIZER_READY.json
+budget_tokens_per_arm: 10000000000
+seed: yuformer-e3-20261021
+domains: [web, code, math, chinese, academic, books, encyclopedia, qa, multilingual]
+arms:
+  e3_m2_base:
+    selection: deterministic_broad
+    weights: {web: 0.740, code: 0.120, math: 0.040, chinese: 0.035, academic: 0.035, books: 0.004, encyclopedia: 0.005, qa: 0.001, multilingual: 0.020}
+  e3_code_2x:
+    selection: deterministic_broad
+    weights: {web: 0.620, code: 0.240, math: 0.040, chinese: 0.035, academic: 0.035, books: 0.004, encyclopedia: 0.005, qa: 0.001, multilingual: 0.020}
+  e3_math_2x:
+    selection: deterministic_broad
+    weights: {web: 0.700, code: 0.120, math: 0.080, chinese: 0.035, academic: 0.035, books: 0.004, encyclopedia: 0.005, qa: 0.001, multilingual: 0.020}
+  e3_chinese_2x:
+    selection: deterministic_broad
+    weights: {web: 0.705, code: 0.120, math: 0.040, chinese: 0.070, academic: 0.035, books: 0.004, encyclopedia: 0.005, qa: 0.001, multilingual: 0.020}
+  e3_academic_2x:
+    selection: deterministic_broad
+    weights: {web: 0.705, code: 0.120, math: 0.040, chinese: 0.035, academic: 0.070, books: 0.004, encyclopedia: 0.005, qa: 0.001, multilingual: 0.020}
+  e3_encyclopedia_2x:
+    selection: deterministic_broad
+    weights: {web: 0.735, code: 0.120, math: 0.040, chinese: 0.035, academic: 0.035, books: 0.004, encyclopedia: 0.010, qa: 0.001, multilingual: 0.020}
+  e3_m1_native:
+    selection: deterministic_broad
+    weights: {web: 0.860, code: 0.055, math: 0.018, chinese: 0.035, academic: 0.012, books: 0.005, encyclopedia: 0.008, qa: 0.004, multilingual: 0.003}
+  e3_m3_quality:
+    selection: quality_prefix
+    weights: {web: 0.890, code: 0.055, math: 0.018, chinese: 0.015, academic: 0.012, books: 0.002, encyclopedia: 0.002, qa: 0.0005, multilingual: 0.0055}

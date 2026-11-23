@@ -1,0 +1,13 @@
+# Long context runtime provenance
+
+The long stages reuse the qualified TorchTitan v0.3.0/PyTorch runtime through the explicit shared backend path. The 4K training source is `af54b5e072aafbdae6033e04dc7434a4167ea1654d19b3882f08b8a2711dfc3a`; adding the separate midtrain adapters does not modify that source.
+
+`window_records.py`, `window_release.py` and `data.py` implement independently indexed S+1 windows over the original admitted token streams, exact global consumption order, 25% short replay and resumable per-rank cursors. They do not reinterpret overlapping windows as a flat stride-S token stream. Nine-domain validation retains the original physical release; the window release is a separate training dependency.
+
+`runtime.py` compares all 165 learned tensors against the native parent checkpoint before the first update of a new context stage. Context transitions load weights only and reset optimizer, scheduler, RNG and data state. Local continuation restores full native checkpoint state. `checkpoint_contract.py` and `evaluation_contract.py` independently require complete parents and the actual capability evidence needed for production progression.
+
+`checkpoint.py` provides a 64K-only subclass of the shared checkpoint manager and upstream `DefaultStager`. The upstream staging worker can create a CUDA context on device 0 before selecting the rank's staging stream. At 64K, seven foreign contexts consumed approximately 3.55 GiB on GPU 0 and caused an actual save-time OOM. The subclass creates the stager eagerly, enters the rank's CUDA device before staging, and releases unused activation cache before saving. It preserves the inherited asynchronous pinned-memory save, completion and durability protocol. The 16K and 4K dispatch paths retain their qualified implementations.
+
+The actual eight-GPU qualification completed 4K→16K→64K weight-only transitions and SIGKILL/full-state restoration in both long stages. All compared post-resume losses were exactly equal. The independent NVML admission maps container and host PID namespaces and verifies the reduction from 15 CUDA contexts to eight. See `data/health/midtrain-actual-eight-gpu-stage-qualification.json` and `data/health/rank-bound-stager-nvml-admission.json`.
+
+Failed attempts and their original source bytes are retained under `report/history/midtrain-stage-flat-auditor-failure-20261115T0812`, `midtrain-validation-release-failure-20261115T0816`, `midtrain64k-stager-oom-20261115T0836` and `midtrain64-lazy-stager-entry-failure-20261115T0900`. System qualification does not certify long-context capability; trained checkpoints must pass the separately bound evaluations.

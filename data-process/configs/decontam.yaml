@@ -1,0 +1,159 @@
+# S7 评测去污染配置（2026-09-25 锁定）
+#
+# 方法：GPT-3/LLaMA 同类 n-gram 重叠去污染。默认共享 ≥1 个不同 8-gram 即 drop；
+# 可按 benchmark 用 min_distinct_hits 提高阈值（C-Eval=2），决策表记命中基准名。
+# 阈值依据：GPT-3 用 13-gram、LLaMA 用 10-gram；本模型 0.5B 远小于 GPT-3/LLaMA，
+# 对污染更敏感（ memorization 下限更低、评测集更小），取 8-gram 更严格。
+#
+# 归一化：复用 dedup_common.normalize_for_hash（NFKC + casefold + 空白折叠，S1 H3 决议，
+# 与 S2/S3 完全同一规范化，不另实现）。
+#
+# 哈希方案（与规范原文 blake2b-8 的偏差，记录在案）：词→id 用 FNV-1a-64、词组用
+# 多项式 rolling hash（mod 2^64），numpy 全向量化——blake2b 无法向量化，达不到
+# ≥5 万行/秒/核的全池扫描目标（E-12）。64-bit 空间全池 ~1e12 次查询假命中期望 <1e-4，
+# 决策表带 hit_benchmark 可审计抽样复核。
+#
+# 基准源（2026-09-25 逐个经 hf-mirror 验证可用，HTTP 206 + parquet schema 实读确认；
+# revision 构建时解析为 commit sha 记录进 index.meta.json）：
+#   mmlu       cais/mmlu                all/test（全学科 14,042 题，题面+选项）
+#   gsm8k      openai/gsm8k             main/test（题面+答案，<<...>> 计算器标注剔除）
+#   math       EleutherAI/hendrycks_math 7 学科 test（题面+解答；hendrycks/competition_math
+#              为脚本数据集无静态 parquet，按任务规格用 EleutherAI 镜像）
+#   humaneval  openai/openai_humaneval  test（prompt+canonical_solution+test）
+#   ceval      ceval/ceval-exam         52 学科 test（题面+四选项+解析）
+# 备用源（主源不可用时按名替换 repo/paths，构建日志记录实际使用）：
+#   math  ← hendrycks/competition_math（原始 tar，需 datasets 库，本环境未装）
+#   ceval ← https://github.com/SJTU-LIT/ceval（公开 repo JSON；hf-mirror 该数据集
+#            parquet 可用，备用源未启用）
+
+ngram_n: 8                    # 8-gram 词组（默认共享 ≥1 个不同 shingle 即 drop）
+# Full-document scan.  The former 50k prefix cap produced false negatives when
+# benchmark text appeared later in books and other long documents.  S1 already
+# enforces max_chars=2M, so this remains memory bounded.
+max_shingles_per_doc: null
+# Decision-set transition used by S5's certified compact-table delta: replacing
+# a prefix scan by a full scan can only add drops when all other rules match.
+monotonic_from_max_shingles_per_doc: 50000
+input_stage: s3               # 扫描输入阶段产物（text 列）；S6 物化硬前置门
+index_dir: ../data/decontam_index   # 基准索引（8B/shingle 排序 bin + meta；外部资产不入库）
+memory_cap_gb: 4.0            # 索引 memmap 共享 page cache，per-worker RSS 极小；留作扩展护栏
+require_pinned_revisions: true # 正式索引禁止解析浮动 HEAD；每个 benchmark 固定 commit SHA
+
+benchmarks:
+  - name: mmlu
+    repo: cais/mmlu
+    revision: c30699e8356da336a370243923dbaf21066bb9fe
+    paths:
+      - all/test-00000-of-00001.parquet
+    fields:
+      - question
+      - {name: choices, join: true}   # 选项列表展开并入（答案即选项之一，全纳入）
+
+  - name: gsm8k
+    repo: openai/gsm8k
+    revision: 740312add88f781978c0658806c59bc2815b9866
+    paths:
+      - main/test-00000-of-00001.parquet
+    fields:
+      - question
+      - answer
+    clean:
+      - strip_calculator_annotations  # <<64*3=192>> 计算器标注与题面正文无关，剔除
+
+  - name: math
+    repo: EleutherAI/hendrycks_math
+    revision: 21a5633873b6a120296cce3e2df9d5550074f4a3
+    paths:
+      - algebra/test-00000-of-00001.parquet
+      - counting_and_probability/test-00000-of-00001.parquet
+      - geometry/test-00000-of-00001.parquet
+      - intermediate_algebra/test-00000-of-00001.parquet
+      - number_theory/test-00000-of-00001.parquet
+      - prealgebra/test-00000-of-00001.parquet
+      - precalculus/test-00000-of-00001.parquet
+    fields:
+      - problem
+      - solution
+
+  - name: humaneval
+    repo: openai/openai_humaneval
+    revision: 7dce6050a7d6d172f3cc5c32aa97f52fa1a2e544
+    paths:
+      - openai_humaneval/test-00000-of-00001.parquet
+    fields:
+      - prompt                 # 含函数签名与 docstring
+      - canonical_solution
+      - test                   # 单元测试文本（答案/判分依据）
+
+  - name: ceval
+    # 中文常见八字片段单命中误杀率高；要求同一文档命中至少两个不同 shingle。
+    repo: ceval/ceval-exam
+    revision: 617524a00b307ff6f9933702f724131fe12ca7ce
+    paths:
+      - accountant/test-00000-of-00001.parquet
+      - advanced_mathematics/test-00000-of-00001.parquet
+      - art_studies/test-00000-of-00001.parquet
+      - basic_medicine/test-00000-of-00001.parquet
+      - business_administration/test-00000-of-00001.parquet
+      - chinese_language_and_literature/test-00000-of-00001.parquet
+      - civil_servant/test-00000-of-00001.parquet
+      - clinical_medicine/test-00000-of-00001.parquet
+      - college_chemistry/test-00000-of-00001.parquet
+      - college_economics/test-00000-of-00001.parquet
+      - college_physics/test-00000-of-00001.parquet
+      - college_programming/test-00000-of-00001.parquet
+      - computer_architecture/test-00000-of-00001.parquet
+      - computer_network/test-00000-of-00001.parquet
+      - discrete_mathematics/test-00000-of-00001.parquet
+      - education_science/test-00000-of-00001.parquet
+      - electrical_engineer/test-00000-of-00001.parquet
+      - environmental_impact_assessment_engineer/test-00000-of-00001.parquet
+      - fire_engineer/test-00000-of-00001.parquet
+      - high_school_biology/test-00000-of-00001.parquet
+      - high_school_chemistry/test-00000-of-00001.parquet
+      - high_school_chinese/test-00000-of-00001.parquet
+      - high_school_geography/test-00000-of-00001.parquet
+      - high_school_history/test-00000-of-00001.parquet
+      - high_school_mathematics/test-00000-of-00001.parquet
+      - high_school_physics/test-00000-of-00001.parquet
+      - high_school_politics/test-00000-of-00001.parquet
+      - ideological_and_moral_cultivation/test-00000-of-00001.parquet
+      - law/test-00000-of-00001.parquet
+      - legal_professional/test-00000-of-00001.parquet
+      - logic/test-00000-of-00001.parquet
+      - mao_zedong_thought/test-00000-of-00001.parquet
+      - marxism/test-00000-of-00001.parquet
+      - metrology_engineer/test-00000-of-00001.parquet
+      - middle_school_biology/test-00000-of-00001.parquet
+      - middle_school_chemistry/test-00000-of-00001.parquet
+      - middle_school_geography/test-00000-of-00001.parquet
+      - middle_school_history/test-00000-of-00001.parquet
+      - middle_school_mathematics/test-00000-of-00001.parquet
+      - middle_school_physics/test-00000-of-00001.parquet
+      - middle_school_politics/test-00000-of-00001.parquet
+      - modern_chinese_history/test-00000-of-00001.parquet
+      - operating_system/test-00000-of-00001.parquet
+      - physician/test-00000-of-00001.parquet
+      - plant_protection/test-00000-of-00001.parquet
+      - probability_and_statistics/test-00000-of-00001.parquet
+      - professional_tour_guide/test-00000-of-00001.parquet
+      - sports_science/test-00000-of-00001.parquet
+      - tax_accountant/test-00000-of-00001.parquet
+      - teacher_qualification/test-00000-of-00001.parquet
+      - urban_and_rural_planner/test-00000-of-00001.parquet
+      - veterinary_medicine/test-00000-of-00001.parquet
+    fields:
+      - question
+      - A
+      - B
+      - C
+      - D
+      - explanation   # test split 多为空，非空则纳入
+
+# C-Eval 的固定中文套话在中文通用语料中会产生单一 8-gram 假阳性。人工复核显示
+# 以下三源要求两个不同命中可保留全部已确认真污染，同时救回主要误杀。该阈值不能
+# 全局应用，否则会降低英文、代码等其他来源对 C-Eval 污染的召回率。
+source_min_distinct_hits:
+  cci3-hq: {ceval: 2}
+  skypile-150b: {ceval: 2}
+  wikipedia-zh: {ceval: 2}

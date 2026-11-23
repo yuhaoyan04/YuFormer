@@ -1,0 +1,476 @@
+{
+  "failed": [
+    "test_anneal_continuation"
+  ],
+  "invalidation_reason": "report contains out-of-scope V6 fragments and a recorded failed item; rerun run_all.sh in the locked environment",
+  "items": {
+    "test_anneal_continuation": {
+      "checks": {},
+      "error": "tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3003/test_anneal_continuation0'), vreport = {'name': 'test_anneal_continuation', 'status': 'PASS', 'checks': {}}\n\n    def test_anneal_continuation(tmp_path, vreport):\n        # tiny 预设 vocab=32768；token 数覆盖 60×tps 与 40×tps（多 epoch 由 epochs=10 兜）\n        stream_a = make_token_stream(tmp_path, \"a\", n_tokens=400_000, seed=11, pattern=\"chain\")\n        stream_c = make_token_stream(tmp_path, \"c\", n_tokens=400_000, seed=22, pattern=\"chain\")\n        tps = 1024 * 1 * 4\n    \n        (tmp_path / \"cfg_a\").mkdir(parents=True, exist_ok=True)\n        (tmp_path / \"cfg_c\").mkdir(parents=True, exist_ok=True)\n        cfg_a = write_config(\n            tmp_path / \"cfg_a\", run_name=\"v6-stageA\", out_dir=tmp_path / \"outA\",\n            stages=[stream_a[0]], metas=[stream_a[1]], seq_len=1024,\n            budget_tokens=60 * tps, micro_batch_size=1, grad_accum=4,\n            lr=2e-4, warmup_steps=5, lr_schedule=\"constant\", save_every=60, eval_every=0,\n        )\n        proc_a, _, _log_a = run_trainer(cfg_a, extra=[\"--max-iters\", \"60\"])\n>       assert proc_a.returncode == 0, proc_a\nE       AssertionError: CompletedProcess(args=['/opt/miniforge3/envs/director/bin/python', '-m', 'yuformer_pretrain.trainer', '--config', '/tm....  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\nE         ')\nE       assert 1 == 0\nE        +  where 1 = CompletedProcess(args=['/opt/miniforge3/envs/director/bin/python', '-m', 'yuformer_pretrain.trainer', '--config', '/tm....  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\\n').returncode\n\ntests/verify/test_v6_anneal_continuation.py:43: AssertionError",
+      "status": "FAIL"
+    },
+    "test_anneal_continuation_cpu": {
+      "checks": {
+        "anneal_continuation_cpu": {
+          "config_parse": {
+            "init_weights_from": "/tmp/pytest-of-root/pytest-32/test_anneal_continuation_cpu0/ckptA",
+            "result": "PASS"
+          },
+          "fresh_optimizer": {
+            "optim_is_new": true,
+            "result": "PASS"
+          },
+          "loss_continuity": {
+            "ln(vocab)": 10.397,
+            "loss@A-end": 4.822,
+            "loss@C-start": 4.822,
+            "note": "同权重同输入同 loss（1e-4 容差）且远低于全新模型的 ln(V)——载权重语义正确",
+            "result": "PASS"
+          },
+          "result": "PASS",
+          "strict_load": {
+            "missing": 0,
+            "result": "PASS",
+            "unexpected": 0
+          }
+        }
+      },
+      "status": "PASS"
+    },
+    "test_checkpoint_integrity_and_cursor": {
+      "checks": {
+        "checkpoint_integrity": {
+          "consumed@100": 400,
+          "consumed@300": 1200,
+          "expected": [
+            400,
+            1200
+          ],
+          "files": [
+            "model.pt",
+            "optim.pt",
+            "cursor.json",
+            "rng.pt"
+          ],
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_cosine_endpoints": {
+      "checks": {
+        "cosine_endpoints": {
+          "lr@end": 2e-05,
+          "lr@mid": 0.00011000000000000002,
+          "lr@warmup": 0.0002,
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_data_order_replay": {
+      "checks": {
+        "data_order_replay": {
+          "mismatches": 0,
+          "result": "PASS",
+          "samples_compared": 800
+        }
+      },
+      "status": "PASS"
+    },
+    "test_forward_64k_cpu": {
+      "checks": {
+        "forward_64k": {
+          "device": "cpu",
+          "loss": 10.4219,
+          "result": "PASS",
+          "seq_len": 65536
+        }
+      },
+      "status": "PASS"
+    },
+    "test_logged_lr_matches_schedule": {
+      "checks": {
+        "integration_logged_lr": {
+          "lr@1": 2e-05,
+          "lr@final": 2.017759444145556e-05,
+          "lr@warmup_end": 0.0002,
+          "mismatches": 0,
+          "result": "PASS",
+          "steps_checked": 60
+        }
+      },
+      "status": "PASS"
+    },
+    "test_loss_parity_across_crash": {
+      "checks": {
+        "loss_parity": {
+          "bit_identical": true,
+          "loss_A@300": 1.8008114695549011,
+          "loss_B@300": 1.8008114695549011,
+          "max_abs_diff": 0.0,
+          "result": "PASS",
+          "steps_compared": 21,
+          "tolerance": 0.002,
+          "worst_step": 101
+        }
+      },
+      "status": "PASS"
+    },
+    "test_manifest_records_switch": {
+      "checks": {
+        "manifest_switch": {
+          "result": "PASS",
+          "stage_samples": [
+            40,
+            160
+          ],
+          "switch_at": [
+            40
+          ]
+        }
+      },
+      "status": "PASS"
+    },
+    "test_marker_negative": {
+      "checks": {
+        "marker_rejects_wrong_resume_iter": {
+          "exit_code": 4,
+          "expected": 4,
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_mask_cache_key_isolation": {
+      "checks": {
+        "mask_cache_keys": {
+          "cache_keys": [
+            "('swa', 16384, 128, 'cuda:0')",
+            "('swa', 4096, 128, 'cuda:0')"
+          ],
+          "result": "PASS",
+          "roundtrip_stable": true,
+          "window_isolation": true
+        }
+      },
+      "status": "PASS"
+    },
+    "test_midstage2_resume": {
+      "checks": {
+        "midstage2_resume": {
+          "bit_identical": true,
+          "ckpt_consumed": 80,
+          "max_abs_diff": 0.0,
+          "result": "PASS",
+          "stage1_end": 40,
+          "steps_compared": 3,
+          "tolerance": 0.002,
+          "worst_step": 41
+        }
+      },
+      "status": "PASS"
+    },
+    "test_muon_tail_loss": {
+      "checks": {
+        "muon_tail_le_adamw_plus_1pct": {
+          "adamw_tail": 1.514,
+          "muon_tail": 1.5121,
+          "pass": true,
+          "result": "PASS",
+          "threshold": 1.5291
+        }
+      },
+      "status": "PASS"
+    },
+    "test_no_nan_and_curves": {
+      "checks": {
+        "loss_curves": {
+          "adamw": {
+            "head_loss_mean10": 3.0246,
+            "loss_curve": [
+              11.1984,
+              3.952,
+              2.1944,
+              1.9665,
+              1.8564,
+              1.8983,
+              1.7886,
+              1.8846,
+              1.7999,
+              1.7067,
+              1.7111,
+              1.6514,
+              1.7777,
+              1.7103,
+              1.7062,
+              1.5938,
+              1.7176,
+              1.6543,
+              1.4483,
+              1.4841,
+              1.7027,
+              1.5511,
+              1.4627,
+              1.4537,
+              1.6336,
+              1.4697,
+              1.4581,
+              1.6389,
+              1.491,
+              1.5094,
+              1.4722
+            ],
+            "tail_loss_mean10": 1.514
+          },
+          "muon": {
+            "head_loss_mean10": 3.2762,
+            "loss_curve": [
+              11.1984,
+              6.5354,
+              2.3604,
+              1.9711,
+              1.831,
+              1.8615,
+              1.7454,
+              1.8436,
+              1.7488,
+              1.6663,
+              1.6696,
+              1.6097,
+              1.7556,
+              1.6708,
+              1.6846,
+              1.5698,
+              1.6994,
+              1.6429,
+              1.4351,
+              1.4795,
+              1.7093,
+              1.5444,
+              1.4472,
+              1.4565,
+              1.6222,
+              1.4694,
+              1.46,
+              1.6482,
+              1.4901,
+              1.5119,
+              1.4708
+            ],
+            "tail_loss_mean10": 1.5121
+          },
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_param_groups_receive_lr[adamw]": {
+      "checks": {},
+      "error": "self = <test_v2_lr_schedule.TestV2OptimizerWiring object at 0x7f0fb3b53d00>, optimizer = 'adamw'\nvreport = {'checks': {}, 'name': 'test_param_groups_receive_lr[adamw]', 'status': 'PASS'}\n\n    @pytest.mark.parametrize(\"optimizer\", [\"adamw\", \"muon\"])\n    def test_param_groups_receive_lr(self, optimizer, vreport):\n        import torch\n    \n        torch.manual_seed(0)\n        model = torch.nn.Sequential(\n            torch.nn.Embedding(64, 32), torch.nn.Linear(32, 64), torch.nn.Tanh(),\n            torch.nn.Linear(64, 32),\n>       ).to(\"cuda\")\n\npretrain/tests/verify/test_v2_lr_schedule.py:80: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:1161: in to\n    return self._apply(convert)\n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:811: in _apply\n    module._apply(fn)\n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:834: in _apply\n    param_applied = fn(param)\n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:1159: in convert\n    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _lazy_init():\n        global _initialized, _queued_calls\n        if is_initialized() or hasattr(_tls, \"is_initializing\"):\n            return\n        with _initialization_lock:\n            # We be double-checked locking, boys!  This is OK because\n            # the above test was GIL protected anyway.  The inner test\n            # is for when a thread blocked on some other thread which was\n            # doing the initialization; when they get the lock, they will\n            # find there is nothing left to do.\n            if is_i",
+      "status": "FAIL"
+    },
+    "test_param_groups_receive_lr[muon]": {
+      "checks": {},
+      "error": "self = <test_v2_lr_schedule.TestV2OptimizerWiring object at 0x7f0fa42c7250>, optimizer = 'muon'\nvreport = {'checks': {}, 'name': 'test_param_groups_receive_lr[muon]', 'status': 'PASS'}\n\n    @pytest.mark.parametrize(\"optimizer\", [\"adamw\", \"muon\"])\n    def test_param_groups_receive_lr(self, optimizer, vreport):\n        import torch\n    \n        torch.manual_seed(0)\n        model = torch.nn.Sequential(\n            torch.nn.Embedding(64, 32), torch.nn.Linear(32, 64), torch.nn.Tanh(),\n            torch.nn.Linear(64, 32),\n>       ).to(\"cuda\")\n\npretrain/tests/verify/test_v2_lr_schedule.py:80: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:1161: in to\n    return self._apply(convert)\n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:811: in _apply\n    module._apply(fn)\n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:834: in _apply\n    param_applied = fn(param)\n/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py:1159: in convert\n    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n    def _lazy_init():\n        global _initialized, _queued_calls\n        if is_initialized() or hasattr(_tls, \"is_initializing\"):\n            return\n        with _initialization_lock:\n            # We be double-checked locking, boys!  This is OK because\n            # the above test was GIL protected anyway.  The inner test\n            # is for when a thread blocked on some other thread which was\n            # doing the initialization; when they get the lock, they will\n            # find there is nothing left to do.\n            if is_ini",
+      "status": "FAIL"
+    },
+    "test_seq_change_resume_rejected_explicitly": {
+      "checks": {
+        "seq_change_resume_rejected": {
+          "guard": "config_sha256",
+          "note": "跨 seq resume 无协议——点火前决策项 D1",
+          "result": "PASS",
+          "returncode": 1
+        }
+      },
+      "status": "PASS"
+    },
+    "test_stage1_trains_and_saves": {
+      "checks": {
+        "stage1_ckpt": {
+          "files_ok": true,
+          "iter": 100,
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_stage_order_and_boundary": {
+      "checks": {
+        "stage_order": {
+          "probes": {
+            "0": [
+              0,
+              1
+            ],
+            "100": [
+              1,
+              2
+            ],
+            "199": [
+              1,
+              2
+            ],
+            "20": [
+              0,
+              1
+            ],
+            "39": [
+              0,
+              1
+            ],
+            "40": [
+              1,
+              2
+            ],
+            "41": [
+              1,
+              2
+            ]
+          },
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_throughput_and_mfu": {
+      "checks": {
+        "mfu_adamw": {
+          "flops_per_token_swa_corrected": 177792000,
+          "flops_per_token_uncorrected": 324068352,
+          "mean_step_time_s": 0.1093,
+          "mfu_swa_corrected": 0.0067,
+          "mfu_uncorrected": 0.0123,
+          "peak_vram_delta_mb": 2411,
+          "tflops_swa_corrected": 6.66,
+          "tflops_uncorrected": 12.15,
+          "tokens_per_s": 37478.1
+        },
+        "mfu_muon": {
+          "flops_per_token_swa_corrected": 177792000,
+          "flops_per_token_uncorrected": 324068352,
+          "mean_step_time_s": 0.1247,
+          "mfu_swa_corrected": 0.0059,
+          "mfu_uncorrected": 0.0108,
+          "peak_vram_delta_mb": 2332,
+          "tflops_swa_corrected": 5.84,
+          "tflops_uncorrected": 10.64,
+          "tokens_per_s": 32844.3
+        },
+        "mfu_table": {
+          "adamw": {
+            "flops_per_token_swa_corrected": 177792000,
+            "flops_per_token_uncorrected": 324068352,
+            "mean_step_time_s": 0.1093,
+            "mfu_swa_corrected": 0.0067,
+            "mfu_uncorrected": 0.0123,
+            "peak_vram_delta_mb": 2411,
+            "tflops_swa_corrected": 6.66,
+            "tflops_uncorrected": 12.15,
+            "tokens_per_s": 37478.1
+          },
+          "formula": "6*N_nonemb + 12*h*(n_swa*w + n_full*S) [corrected] | 6*N_nonemb + 12*L*S*h [uncorrected]",
+          "model": {
+            "full_layers": 2,
+            "hidden": 512,
+            "layers": 8,
+            "preset": "small",
+            "seq": 4096,
+            "swa_layers": 6,
+            "window": 128
+          },
+          "muon": {
+            "flops_per_token_swa_corrected": 177792000,
+            "flops_per_token_uncorrected": 324068352,
+            "mean_step_time_s": 0.1247,
+            "mfu_swa_corrected": 0.0059,
+            "mfu_uncorrected": 0.0108,
+            "peak_vram_delta_mb": 2332,
+            "tflops_swa_corrected": 5.84,
+            "tflops_uncorrected": 10.64,
+            "tokens_per_s": 32844.3
+          },
+          "n_nonemb": 20456960,
+          "n_params": 54011392,
+          "peak_tflops_h800_bf16": 989.0,
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_token_checksum_conservation": {
+      "checks": {
+        "conservation": {
+          "distinct": 2,
+          "expected": 6600,
+          "result": "PASS",
+          "samples": 120,
+          "switch_at": 40,
+          "token_sum": 6600
+        }
+      },
+      "status": "PASS"
+    },
+    "test_vram_budget": {
+      "checks": {
+        "vram": {
+          "budget_mb": 3200,
+          "peak_delta_mb": 316,
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_warmup_boundary_then_constant_exact": {
+      "checks": {
+        "constant_exact": {
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_warmup_linear_exact": {
+      "checks": {
+        "warmup_linear_exact": {
+          "expected[0]": 2e-05,
+          "lr[0]": 2e-05,
+          "lr[9]": 0.0002,
+          "result": "PASS"
+        }
+      },
+      "status": "PASS"
+    },
+    "test_weight_only_load_16k": {
+      "checks": {
+        "weight_only_load_16k": {
+          "finite": true,
+          "logits_diff_head": 0.00231,
+          "logits_diff_tail": 0.00325,
+          "loss": 11.0631,
+          "result": "PASS",
+          "rope_base_new": 10000000.0,
+          "rope_buffer_len": 16384
+        }
+      },
+      "status": "PASS"
+    },
+    "test_window_semantics_16k_vs_4k": {
+      "checks": {
+        "swa_16k_vs_4k": {
+          "compare_window": [
+            127,
+            4096
+          ],
+          "max_abs_diff": 0.0,
+          "result": "PASS",
+          "tolerance": 0.001
+        }
+      },
+      "status": "PASS"
+    }
+  },
+  "scope": "MIXED-HISTORICAL-V1-V6",
+  "status": "INVALIDATED",
+  "suite": "yuformer-pretrain-verify"
+}

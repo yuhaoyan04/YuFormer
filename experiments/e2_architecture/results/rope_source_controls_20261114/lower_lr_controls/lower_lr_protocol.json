@@ -1,0 +1,27 @@
+{
+  "broader_review_is_development_set_lr_ablation_not_an_unseen_test_claim": true,
+  "declared_at": "2026-11-14T23:29:51.567940+00:00",
+  "fixed_actual_source_control": "larger_lr1e4_b8",
+  "formal_pretrain_started": false,
+  "grad_accum": 16,
+  "microbatch": 8,
+  "model_parameters": 1516600064,
+  "peak_lr": 8e-05,
+  "production_qualified": false,
+  "reason": "Larger disjoint review confirms Chinese regression at LR1e-4; test a lower peak LR without changing model/data/budget",
+  "seed": 20260926,
+  "status": "PREDECLARED_BEFORE_LOWER_LR_TRAINING",
+  "steps": 200,
+  "success_criteria": {
+    "aggregate_lower_than_baseline": true,
+    "complete_finite_training_and_checkpoint": true,
+    "expanded_2816_sample_all_nine_means_strictly_lower_than_baseline_and_lr2e4": true,
+    "no_allocator_retries": true,
+    "no_quality_margin": true,
+    "original_64_sample_all_nine_means_strictly_lower_than_baseline": true,
+    "p10_projection_days_at_duty_09_maximum": 33
+  },
+  "training_source_sha256": "f1273103b7da176d0c2c0d1f0c7cba30dbab09946cd71d50d1f0647441684f45",
+  "training_tokens": 838860800,
+  "world_size": 8
+}

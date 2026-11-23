@@ -1,0 +1,661 @@
+{
+  "active_candidate": "selected_sustained",
+  "active_started_at": "2026-11-14T05:17:40.296524+00:00",
+  "active_variant": "selected_sustained_b8",
+  "aggregate_validation_improved": false,
+  "authorized_33_day_ceiling_met": true,
+  "baseline_result_sha256": "5e884dbb9dc06d327865a0b656bd0ec2f20d8debf5cedd84e32e332b7a3ea45a",
+  "cases": {
+    "selected_sustained_b8": {
+      "candidate": "selected_sustained",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 35.563554763793945,
+        "median_tps_per_device": 53739.220703125,
+        "p10_tps_per_device": 53616.4921875,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 29.981638531000616,
+        "status": "PASS_SCREENING",
+        "steady_points": 150,
+        "within_30_days": true,
+        "within_33_days": true
+      },
+      "finished_at": "2026-11-14T05:51:42.208648+00:00",
+      "identity_sha256": "c976e4dbacfedd7919bfd4bede328264ebfc37a8578f3f36d3c16f9c3c70db45",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/selected_sustained_20261114/selected_sustained_b8.log",
+      "parameters": 1060163584,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 55966.0,
+          "power_w": 730.06,
+          "temperature_c": 76.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 734.36,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 743.38,
+          "temperature_c": 76.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 731.59,
+          "temperature_c": 65.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 734.19,
+          "temperature_c": 65.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 737.71,
+          "temperature_c": 76.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 733.16,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 45729.0,
+          "power_w": 746.86,
+          "temperature_c": 74.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "9673a4b8960da9031d06e7a681d9058d6422d67a5c27efa5cef78b91c7f88fa9",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/selected_sustained_20261114/selected_sustained_b8.yaml",
+        "config_sha256": "55d6e7863e104fcb279d1fc355ff58a314a99b5da8f1520d7af5df9f33534529",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/selected_sustained_20261114/selected_sustained_b8.env",
+        "env_sha256": "02e2253295e1e34dc5f1dac7319f312ba68dab58942f6c3fc64f75c7eb8078a6",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "selected_sustained_b8"
+      },
+      "wall_seconds": 2041.9
+    }
+  },
+  "child_pid": 237238,
+  "current_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45955.0,
+      "power_w": 125.1,
+      "temperature_c": 45.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 43783.0,
+      "power_w": 119.45,
+      "temperature_c": 36.0,
+      "utilization_pct": 3.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 5.0,
+      "power_w": 102.05,
+      "temperature_c": 43.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 5.0,
+      "power_w": 115.49,
+      "temperature_c": 36.0,
+      "utilization_pct": 8.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 43791.0,
+      "power_w": 115.29,
+      "temperature_c": 35.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 5.0,
+      "power_w": 102.59,
+      "temperature_c": 43.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 43783.0,
+      "power_w": 117.18,
+      "temperature_c": 35.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 43783.0,
+      "power_w": 125.08,
+      "temperature_c": 44.0,
+      "utilization_pct": 0.0
+    }
+  ],
+  "current_log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/selected_sustained_20261114/selected_sustained_b8.log",
+  "data_preprocessing_must_continue": true,
+  "elapsed_seconds": 2026.9,
+  "evaluation": {
+    "issues": [],
+    "median_mfu_pct": 35.563554763793945,
+    "median_tps_per_device": 53739.220703125,
+    "p10_tps_per_device": 53616.4921875,
+    "production_qualified": false,
+    "projected_1t_days_duty_09": 29.981638531000616,
+    "status": "PASS_SCREENING",
+    "steady_points": 150,
+    "within_30_days": true,
+    "within_33_days": true
+  },
+  "note": "Learning-curve comparison is diagnostic; formal model adoption/LR/recovery/identity gates still required.",
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 55966.0,
+      "power_w": 730.06,
+      "temperature_c": 76.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 734.36,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 743.38,
+      "temperature_c": 76.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 731.59,
+      "temperature_c": 65.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 734.19,
+      "temperature_c": 65.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 737.71,
+      "temperature_c": 76.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 733.16,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45729.0,
+      "power_w": 746.86,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "pid": 234400,
+  "plan_sha256": "e1aee47efc87066f202d3abadbcc383e77ad8bc85fd599205979f8b85983aa2a",
+  "production_qualified": false,
+  "purpose": "SUSTAINED_MODEL_SELECTION_NOT_PRODUCTION_QUALIFICATION",
+  "quality_comparison": {
+    "validation_metrics/domain/academic/loss": {
+      "baseline": 5.70073127746582,
+      "candidate": 5.933132648468018,
+      "delta": 0.23240137100219727,
+      "relative_delta": 0.04076694018552441
+    },
+    "validation_metrics/domain/books/loss": {
+      "baseline": 5.668323516845703,
+      "candidate": 5.823962688446045,
+      "delta": 0.1556391716003418,
+      "relative_delta": 0.027457707933888634
+    },
+    "validation_metrics/domain/chinese/loss": {
+      "baseline": 7.87195348739624,
+      "candidate": 7.879082679748535,
+      "delta": 0.007129192352294922,
+      "relative_delta": 0.0009056446234990399
+    },
+    "validation_metrics/domain/code/loss": {
+      "baseline": 6.201968193054199,
+      "candidate": 6.362061500549316,
+      "delta": 0.1600933074951172,
+      "relative_delta": 0.025813306761942326
+    },
+    "validation_metrics/domain/encyclopedia/loss": {
+      "baseline": 6.479658603668213,
+      "candidate": 6.693105697631836,
+      "delta": 0.21344709396362305,
+      "relative_delta": 0.032941101841814334
+    },
+    "validation_metrics/domain/math/loss": {
+      "baseline": 5.700981616973877,
+      "candidate": 5.8498711585998535,
+      "delta": 0.14888954162597656,
+      "relative_delta": 0.026116474605474737
+    },
+    "validation_metrics/domain/multilingual/loss": {
+      "baseline": 8.344186782836914,
+      "candidate": 8.390016555786133,
+      "delta": 0.04582977294921875,
+      "relative_delta": 0.005492419350377632
+    },
+    "validation_metrics/domain/qa/loss": {
+      "baseline": 5.88664436340332,
+      "candidate": 6.067481994628906,
+      "delta": 0.18083763122558594,
+      "relative_delta": 0.03071998579527505
+    },
+    "validation_metrics/domain/web/loss": {
+      "baseline": 5.904796123504639,
+      "candidate": 6.126097202301025,
+      "delta": 0.22130107879638672,
+      "relative_delta": 0.03747819131561128
+    },
+    "validation_metrics/loss": {
+      "baseline": 6.417693614959717,
+      "candidate": 6.569423675537109,
+      "delta": 0.15173006057739258,
+      "relative_delta": 0.023642459375702835
+    }
+  },
+  "quality_review_required": true,
+  "selected_screening": {
+    "allocation_retry_warnings_steady": 0,
+    "allocation_retry_warnings_total": 0,
+    "candidate": "size_1b_h3072_l8",
+    "eligible_throughput_screening": true,
+    "grad_accum": 16,
+    "group": "width_and_batch",
+    "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_width_followup_20261114/size_1b_h3072_l8_b8.log",
+    "median_mfu_pct": 36.00181770324707,
+    "microbatch": 8,
+    "p10_tps_per_device": 54280.3671875,
+    "parameters": 1060163584,
+    "production_qualified": false,
+    "projected_1t_days_duty_09": 29.614948670355172,
+    "requires_smaller_batch_comparison": false,
+    "status": "PASS_SCREENING",
+    "throughput_ratio_vs_group_baseline": 0.7225904394155576,
+    "variant": "size_1b_h3072_l8_b8",
+    "within_10pct_slowdown_without_memory_pressure": false,
+    "within_30_days_without_memory_pressure": true
+  },
+  "source_qualification_identity": {
+    "files": [
+      {
+        "bytes": 2580,
+        "path": "data/TOKENIZER_READY.json",
+        "sha256": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866"
+      },
+      {
+        "bytes": 16116,
+        "path": "data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json",
+        "sha256": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d"
+      },
+      {
+        "bytes": 33592,
+        "path": "data/processed/releases/mix_m3_e1_100b-20261019.release.json",
+        "sha256": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c"
+      },
+      {
+        "bytes": 1658,
+        "path": "data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json",
+        "sha256": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c"
+      },
+      {
+        "bytes": 11198,
+        "path": "model/configs/model_configs.yaml",
+        "sha256": "743d3d6040e2416b7a1f6fdafdc9db69c282d93ac1905b312f731cfc86c4009b"
+      },
+      {
+        "bytes": 218,
+        "path": "model/src/yuformer_model/__init__.py",
+        "sha256": "9229a98a77f311c981ae49cfc8438c7411883eb4e2e17451695d88fb072e5db6"
+      },
+      {
+        "bytes": 12136,
+        "path": "model/src/yuformer_model/attention.py",
+        "sha256": "95ffd71976444cfd84a1738bb2dfbeb30aee03a9d79ca7ebc64fec019bb7e7b4"
+      },
+      {
+        "bytes": 5831,
+        "path": "model/src/yuformer_model/config.py",
+        "sha256": "abf813702258d614b2bbabc5625d87fc18b66dd105717e0f01a9b9b45a3a7219"
+      },
+      {
+        "bytes": 1368,
+        "path": "model/src/yuformer_model/layers.py",
+        "sha256": "e30b21c2dc85f1b6d86f0617e375020a548b3f1ae09dbc10d10ae2186f70cb3f"
+      },
+      {
+        "bytes": 8108,
+        "path": "model/src/yuformer_model/model.py",
+        "sha256": "12c77312850221d6262ad3e48fbe7945d87d9abbc58526efcbadf736010c9220"
+      },
+      {
+        "bytes": 2135,
+        "path": "model/src/yuformer_model/transformer.py",
+        "sha256": "4d8e13f988dddfabf9903a029fd2e60686e5f072040334dd64c1883a62f38b10"
+      },
+      {
+        "bytes": 5976,
+        "path": "pretrain/backends/torchtitan/attention_parity.py",
+        "sha256": "f072c4fd13c1e9cefc6f2a9f4649e17e50861608ee217252fdf3ff5f790ffb3d"
+      },
+      {
+        "bytes": 980,
+        "path": "pretrain/backends/torchtitan/backend.lock.json",
+        "sha256": "6717a63df42a24f0e01e2e3758afb35621571c6714addd4e017ee6a6dd38b7bd"
+      },
+      {
+        "bytes": 878,
+        "path": "pretrain/backends/torchtitan/bootstrap_env.sh",
+        "sha256": "b8dba4635d60361f5d0a3c5f978e4efec17ccd50d60bfb5861101b9ba6ef154a"
+      },
+      {
+        "bytes": 6876,
+        "path": "pretrain/backends/torchtitan/distributed_parity.py",
+        "sha256": "15406126865274b8685c2c0f0f33f140e787b23b2823b78775979386fbd484ab"
+      },
+      {
+        "bytes": 6649,
+        "path": "pretrain/backends/torchtitan/launch.sh",
+        "sha256": "6f5b5c2452b39a089bbdef9a02d85f5e7fbdff689392acbe8e9fd75231087f58"
+      },
+      {
+        "bytes": 4533,
+        "path": "pretrain/backends/torchtitan/lr_schedule_contract.py",
+        "sha256": "f3b0f3b738368208b5397fb3de0e3e1c2797cf1c5e81794a6b732dce4ab89ced"
+      },
+      {
+        "bytes": 6273,
+        "path": "pretrain/backends/torchtitan/numerical_parity.py",
+        "sha256": "72740dab92f0fc4b27d2562cd089afa7367bf11539ea459a792e44dde21fcbf4"
+      },
+      {
+        "bytes": 6893,
+        "path": "pretrain/backends/torchtitan/preflight.py",
+        "sha256": "d3532b377db25aa61454b93bfa364e014a4aad69a357c3f26d69cb3f6cead5d0"
+      },
+      {
+        "bytes": 6250,
+        "path": "pretrain/backends/torchtitan/prepare_env.sh",
+        "sha256": "f0e86f39a568b10bbd341d9f857e3dfd6dbedd14be97219367745b11a00a0042"
+      },
+      {
+        "bytes": 27834,
+        "path": "pretrain/backends/torchtitan/validate_contract.py",
+        "sha256": "7dadfcc649f38ef8040f81186c949d42945d52c139a10a4a859312db717f49c0"
+      },
+      {
+        "bytes": 7003,
+        "path": "pretrain/backends/torchtitan/validate_userspace.py",
+        "sha256": "6a69047f65fb471ce9ba2e08ad453be80445c941f5f593d1a7b92de3b6fadca7"
+      },
+      {
+        "bytes": 691,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/__init__.py",
+        "sha256": "3aec1c582c2472f6f28a25f2653e8c114d905ca653c9ce189c7469fcce9ae8e1"
+      },
+      {
+        "bytes": 1178,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/checkpoint.py",
+        "sha256": "0e7679a9a94fe67e4d17b6a2f406391a24bfd0369cc7f591df69d37d41679d52"
+      },
+      {
+        "bytes": 9432,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/config_registry.py",
+        "sha256": "dc406a6240232eb152c64273ce52ccd7f8d074596141185d904aaf9a8f515722"
+      },
+      {
+        "bytes": 10532,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/data.py",
+        "sha256": "579a3fa223c9b4658a4c64c8c3144c59df2c2f71452902a4662a4c6f805f4ecf"
+      },
+      {
+        "bytes": 1574,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/metrics.py",
+        "sha256": "fec8133f078cfc6b823db5423d7208ae8e8738bb8e1151ecfc38e52cb8fbd3df"
+      },
+      {
+        "bytes": 4687,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/model.py",
+        "sha256": "f3a99fca6af1dbf7ea5e415d1c1c5d869b580cce4131c826f0e6105de88a495c"
+      },
+      {
+        "bytes": 1806,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/optim.py",
+        "sha256": "8ce0fb51f3238683ac5a4f57c70c67c6d0b194abf9084d3efdcb9027c10f98d0"
+      },
+      {
+        "bytes": 3111,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/parallelize.py",
+        "sha256": "00f29ab04bb880db76d8b2e340bf0189176d9226be07718335f3eacd23727d1d"
+      },
+      {
+        "bytes": 6375,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/runtime.py",
+        "sha256": "40b3ff8d6c5d7914fa261694955f684e17ec4fc636e309a5fbf236f5d1ef8073"
+      },
+      {
+        "bytes": 3573,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/stream_math.py",
+        "sha256": "920b23d7d6b9788e084c90a0058d89369dc9e3737cc574c3dfeb04c444842cf5"
+      },
+      {
+        "bytes": 4203,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/validation.py",
+        "sha256": "837b3134dc34e11407ec103b077289717f2fdfa2f90b66d13de22d8d638ab495"
+      },
+      {
+        "bytes": 1566,
+        "path": "pretrain/configs/pretrain_base.yaml",
+        "sha256": "cdf60f653774b6aeddc5a225defa324c7a54b9404b491e4d26a96a1e0ff3641d"
+      },
+      {
+        "bytes": 1029,
+        "path": "pretrain/configs/qualification/q1_single_gpu.env",
+        "sha256": "f2f5463106a8cf12c27195fb48f1c46d39b7e547232069caa98e32d6329d5d58"
+      },
+      {
+        "bytes": 1115,
+        "path": "pretrain/configs/qualification/q1_single_gpu.yaml",
+        "sha256": "e4c038c4e58398d471dd174d1f46598bd3ac4b432d75ac6fd759698d36ef0a4a"
+      },
+      {
+        "bytes": 1027,
+        "path": "pretrain/configs/qualification/q2_fsdp4_dcp.env",
+        "sha256": "8f257a52625a35abf273594b2270648e1f1cb7a45e4be7ee28b9b8fb5dfeb7b9"
+      },
+      {
+        "bytes": 1115,
+        "path": "pretrain/configs/qualification/q2_fsdp4_dcp.yaml",
+        "sha256": "736a626042594c753cb708d356effd7acd01be53a9aa486a975799bc11983e25"
+      },
+      {
+        "bytes": 1037,
+        "path": "pretrain/configs/qualification/q3_load_interrupt.env",
+        "sha256": "77ff90801bed3aba08f0e020f18531e4ed98273a3b183b3c442ed514cbf94774"
+      },
+      {
+        "bytes": 1120,
+        "path": "pretrain/configs/qualification/q3_load_interrupt.yaml",
+        "sha256": "0dc1863ef98e387f24080d5ac4ed0bfa1ee09f60525a65b7567f03ea1de18d87"
+      },
+      {
+        "bytes": 1045,
+        "path": "pretrain/configs/qualification/q3_recovery_reference.env",
+        "sha256": "46043282bfa2cbbfd1097294b9579cde97d8328cbb96ac6318e28ecd4bbd5cf1"
+      },
+      {
+        "bytes": 1124,
+        "path": "pretrain/configs/qualification/q3_recovery_reference.yaml",
+        "sha256": "2384c9adc7e452a615fb9b6cf9920401441c048bac5c0ddc5a5982587f341b52"
+      },
+      {
+        "bytes": 1037,
+        "path": "pretrain/configs/qualification/q3_save_interrupt.env",
+        "sha256": "c6857831be8eb0a63af830208f74f989ec2a6823d5fad2891c66f9bd813086f7"
+      },
+      {
+        "bytes": 1120,
+        "path": "pretrain/configs/qualification/q3_save_interrupt.yaml",
+        "sha256": "6ed01ead37c683f956fb015c684abe295ec3390ae6abf6dfa23741ffa46e80c2"
+      },
+      {
+        "bytes": 1039,
+        "path": "pretrain/configs/qualification/q3_train_interrupt.env",
+        "sha256": "03f8f69588bfbb8d8d07d0009a24ebb42033029c73ede1ff5e6cc7f96e83d53b"
+      },
+      {
+        "bytes": 1121,
+        "path": "pretrain/configs/qualification/q3_train_interrupt.yaml",
+        "sha256": "a76ccac86a6a29f5798927ea7ce78ce7da627b61f75a346fc25c2b88922de625"
+      },
+      {
+        "bytes": 1033,
+        "path": "pretrain/configs/qualification/q4_reshard_4to2.env",
+        "sha256": "0873d6e157b70d25f908ca5d0f3add5e078492de8e11d630838c24287e0688bd"
+      },
+      {
+        "bytes": 1118,
+        "path": "pretrain/configs/qualification/q4_reshard_4to2.yaml",
+        "sha256": "989c36f22dacb704fe13cec31d9a41d4ed9b6059741852118219401f4f3c758e"
+      },
+      {
+        "bytes": 1033,
+        "path": "pretrain/configs/qualification/q5_reshard_4to8.env",
+        "sha256": "9f3a62775bf1c07abb08dd9bf907045b91f9c372a161241131f1338fa1122c90"
+      },
+      {
+        "bytes": 1118,
+        "path": "pretrain/configs/qualification/q5_reshard_4to8.yaml",
+        "sha256": "d71a06b97be2effd9512d3e41ed19ab6d71921d43150f42e5e695d2271daed16"
+      },
+      {
+        "bytes": 1045,
+        "path": "pretrain/configs/qualification/q6_large_accumulation.env",
+        "sha256": "b64cd9e8bfcac3771ee340f898bc2e99d1df8fcb0a81e36893195f29bf9b7fa9"
+      },
+      {
+        "bytes": 1124,
+        "path": "pretrain/configs/qualification/q6_large_accumulation.yaml",
+        "sha256": "532c64d948113d8eb25e389e574ae7b5759e0b08eaa4d9e6d2baea15bdcc665c"
+      },
+      {
+        "bytes": 717,
+        "path": "pretrain/scripts/artifact_archive.py",
+        "sha256": "ce0201cd11f7765a9e3343221835c99b7f25378041dd7cc6af06d88644e49185"
+      },
+      {
+        "bytes": 1522,
+        "path": "pretrain/scripts/assert_run_lease.py",
+        "sha256": "e7875844ed16967fdf59ec7bd28811d8f65b72d7e4bb984443b186e2670c9faa"
+      },
+      {
+        "bytes": 12717,
+        "path": "pretrain/scripts/collect_torchtitan_result.py",
+        "sha256": "e608591de8f1abfb37839a5c37bcd3e910eba818ade032b8c0c5f9c5c6d5b532"
+      },
+      {
+        "bytes": 1817,
+        "path": "pretrain/scripts/process_control.py",
+        "sha256": "a499c0b48d5537d154caceb3c0bc2c2083edd0b57af17e81c0e749d4926dfaca"
+      },
+      {
+        "bytes": 4972,
+        "path": "pretrain/scripts/qualification_identity.py",
+        "sha256": "e2b870861fb7548cdebff03ad1350846681c6ecb16f75bd358a5910ec2af77f6"
+      },
+      {
+        "bytes": 24516,
+        "path": "pretrain/scripts/run_torchtitan_qualification.py",
+        "sha256": "5c65bcfec08dca887f634569b04f552b9670ecacf84035dcef4ddf677dee237b"
+      },
+      {
+        "bytes": 3390,
+        "path": "pretrain/scripts/run_with_lease.py",
+        "sha256": "074399ef0def80ee17e565a2421f84f4ffc65bffa70b5c33c70c60970e0abe6e"
+      },
+      {
+        "bytes": 7016,
+        "path": "pretrain/src/yuformer_pretrain/lease.py",
+        "sha256": "b14178e8a9428e519f039c33569ba03703dbd4178e9a4954ce56421fd5cff8e2"
+      },
+      {
+        "bytes": 4746730,
+        "path": "tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json",
+        "sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e"
+      }
+    ],
+    "schema_version": 1,
+    "sha256": "a1f67ae7274cb56c332f8502f13c57c0043c01dea73d19e91bdd74d140844132"
+  },
+  "status": "PASS_SUSTAINED_SCREENING",
+  "updated_at": "2026-11-14T05:51:43.551693+00:00",
+  "within_30_day_target": true,
+  "wrapper_tool_sha256": "a654b93d51fbbdbfbcd51ff56a218b72661c7f7adcd03519b52629e5311bc25a"
+}

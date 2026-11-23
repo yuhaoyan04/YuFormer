@@ -1,0 +1,50 @@
+{
+  "active_studies": [
+    "e1_scaling",
+    "matched_lr_and_batch_pilots",
+    "independent_performance"
+  ],
+  "baseline": {
+    "architecture_preset": "pretrain-0.5b",
+    "mixture_origin": "Existing mix_stable_800b / e3_m2_base broad-mixture baseline; fixed by design, not selected by an ablation.",
+    "mixture_weights": {
+      "academic": 0.035,
+      "books": 0.004,
+      "chinese": 0.035,
+      "code": 0.12,
+      "encyclopedia": 0.005,
+      "math": 0.04,
+      "multilingual": 0.02,
+      "qa": 0.001,
+      "web": 0.74
+    }
+  },
+  "batch_selection_policy": {
+    "batch": "1m",
+    "claim_limit": "Fixed 1M-token baseline; 2M and 4M LR optima remain unresolved at search boundaries. No globally optimal batch-size or statistically significant superiority claim.",
+    "declared_after_pilots": true,
+    "declared_at": "2026-10-25T06:43:49.674394+00:00",
+    "mode": "fixed_baseline",
+    "reason": "Prioritize the user-requested E1 scaling study after all bounded pilot trials completed; use a fixed batch with an internally bracketed LR instead of continuing batch-size optimization",
+    "tokens_per_step": 1048576
+  },
+  "claim_limit": "Architecture, mixture, curriculum and batch size are fixed baseline choices; E2/E3 comparisons and global batch optimality are not claimed.",
+  "deferred_studies": [
+    "e2_architecture",
+    "e3_data_mix",
+    "e2_confirmation",
+    "e3_confirmation"
+  ],
+  "preserve_gates": [
+    "data_quality_and_release",
+    "tokenizer_identity",
+    "matched_scaling_evidence",
+    "gpu_correctness_and_resume",
+    "independent_performance",
+    "production_canary",
+    "final_data_capacity_and_overlap"
+  ],
+  "profile": "scaling_only",
+  "reason": "User defers E2 architecture and E3 mixture ablations and their confirmations to prioritize entry into pretraining.",
+  "schema_version": 1
+}

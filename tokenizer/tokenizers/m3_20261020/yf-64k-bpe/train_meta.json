@@ -1,0 +1,154 @@
+{
+  "actual_vocab_size": 65536,
+  "artifacts": {
+    "special_tokens_map.json": {
+      "bytes": 93,
+      "sha256": "7913aa6135573598fa980d149163c99d4d3f70914fc191780d4f153972362ee5"
+    },
+    "tokenizer.json": {
+      "bytes": 4746730,
+      "sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1059,
+      "sha256": "c16546922ed9f9b67dbb685429ba5e14ff5c8b340d94f908cd473ef5af517ba6"
+    }
+  },
+  "complete_corpus": true,
+  "config_name": "yf-64k-bpe",
+  "config_path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/configs/tokenizer_configs.yaml",
+  "config_sha256": "86c4873ad8d671172f4de43061ac0e5b6c671de75ccb717073262190f8be9e89",
+  "corpus": [
+    {
+      "dataset_id": "yuformer-data-86f5860c47e6162e6ba0",
+      "manifest": "data/tokenizer_corpus_m3_20261019/manifest.json",
+      "manifest_sha256": "85fff415e24aef1e20c9998ca435ce950e27742bcd16c9ffe24ea271bdf4faa8",
+      "path": "data/tokenizer_corpus_m3_20261019",
+      "snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5",
+      "status": "PASS",
+      "totals": {
+        "docs": 4403273,
+        "reference_tokens": 6500023165,
+        "utf8_bytes": 26678038147
+      }
+    }
+  ],
+  "corpus_artifacts_verified": true,
+  "environment": {
+    "pyarrow": "12.0.1",
+    "python": "3.10.12",
+    "tokenizers": "0.22.2"
+  },
+  "finished_at": "2026-10-20T04:00:19.346626+00:00",
+  "iterator_batch_size": 1024,
+  "max_samples": 0,
+  "model": "bpe",
+  "observed_corpus": {
+    "samples": 4403273,
+    "utf8_bytes": 26678038147
+  },
+  "requested_vocab_size": 65536,
+  "run_identity_sha256": "9845f37e49d53d1c47174992f2064c574e5fc5a1b0534a804be10730838d3823",
+  "schema_version": 1,
+  "special_tokens": [
+    {
+      "id": 0,
+      "token": "<|endoftext|>"
+    },
+    {
+      "id": 1,
+      "token": "<|unk|>"
+    },
+    {
+      "id": 2,
+      "token": "<|im_start|>"
+    },
+    {
+      "id": 3,
+      "token": "<|im_end|>"
+    },
+    {
+      "id": 4,
+      "token": "<|think_start|>"
+    },
+    {
+      "id": 5,
+      "token": "<|think_end|>"
+    },
+    {
+      "id": 6,
+      "token": "<|tool_call_start|>"
+    },
+    {
+      "id": 7,
+      "token": "<|tool_call_end|>"
+    }
+  ],
+  "started_at": "2026-10-20T01:58:39.005266+00:00",
+  "status": "PASS",
+  "text_field": "text",
+  "training_contract": {
+    "config": {
+      "bytes": 3426,
+      "path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/configs/tokenizer_configs.yaml",
+      "sha256": "86c4873ad8d671172f4de43061ac0e5b6c671de75ccb717073262190f8be9e89"
+    },
+    "config_name": "yf-64k-bpe",
+    "corpus": [
+      {
+        "dataset_id": "yuformer-data-86f5860c47e6162e6ba0",
+        "manifest": "data/tokenizer_corpus_m3_20261019/manifest.json",
+        "manifest_sha256": "85fff415e24aef1e20c9998ca435ce950e27742bcd16c9ffe24ea271bdf4faa8",
+        "path": "data/tokenizer_corpus_m3_20261019",
+        "snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5",
+        "status": "PASS",
+        "totals": {
+          "docs": 4403273,
+          "reference_tokens": 6500023165,
+          "utf8_bytes": 26678038147
+        }
+      }
+    ],
+    "environment": {
+      "malloc_arena_max": "8",
+      "pyarrow": "12.0.1",
+      "python": "3.10.12",
+      "rayon_num_threads": "16",
+      "tokenizers": "0.22.2"
+    },
+    "formal": true,
+    "iterator_batch_size": 1024,
+    "max_samples": 0,
+    "model": "bpe",
+    "sources": [
+      {
+        "bytes": 15846,
+        "path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/scripts/train_tokenizer.py",
+        "sha256": "ba272b69063baf4cca26980d6d639ad546ff2f35e63909ba13719711fafcbc07"
+      },
+      {
+        "bytes": 4775,
+        "path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/src/yuformer_tokenizer/trainer.py",
+        "sha256": "9f83d09daad58d96d8e4acd8d0a5fd7af191440f3da4b9d51dbdec3028fdd802"
+      },
+      {
+        "bytes": 2002,
+        "path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/src/yuformer_tokenizer/special_tokens.py",
+        "sha256": "206186edce3c27fd6cad11555c030d7aed280e79e63c519636816a8cb52d0003"
+      }
+    ],
+    "special_tokens": [
+      "<|endoftext|>",
+      "<|unk|>",
+      "<|im_start|>",
+      "<|im_end|>",
+      "<|think_start|>",
+      "<|think_end|>",
+      "<|tool_call_start|>",
+      "<|tool_call_end|>"
+    ],
+    "text_field": "text",
+    "vocab_size": 65536
+  },
+  "wall_seconds": 7300.341
+}

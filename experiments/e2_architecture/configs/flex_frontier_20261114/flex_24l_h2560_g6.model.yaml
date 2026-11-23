@@ -1,0 +1,18 @@
+presets:
+  size-sweep:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 2560
+    intermediate_size: 6912
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    num_heads: 40
+    num_kv_heads: 10
+    num_layers: 24
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128

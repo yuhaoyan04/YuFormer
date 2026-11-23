@@ -1,0 +1,47 @@
+{
+  "attempt_id": "66874bca6209bacdfde8b2ec5684fa85",
+  "checked_lr_points": 400,
+  "checkpoint": {
+    "expected_saved_optimizer_lr": 1e-05,
+    "global_tokens_seen": 838860800,
+    "metadata_sha256": "a050cc2e45558d8cf4f9e12cd990cf5841ef16540e18fe6856022e01d0605702",
+    "next_logical_stage_index": null,
+    "optimizer_groups_checked": 164,
+    "path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/checkpoint/step-200",
+    "samples_consumed": 204800,
+    "saved_optimizer_lr": 1e-05,
+    "status": "PASS",
+    "step": 200
+  },
+  "checkpoint_expected_lr_uses_epoch": "saved_step",
+  "config_sha256": "c6ab6531026e8a4adbcf50aecea8fda1d208a24901596f6a4d90527700655e49",
+  "event_files": 1,
+  "identity_sha256": "15ee198fe0a4f8e00c809b212c5147a53ded72e22250aab8099dafe356cbedf2",
+  "last_learning_rates": [
+    {
+      "actual": 1.0006151569541544e-05,
+      "expected": 1.0006151275338897e-05,
+      "step": 200,
+      "tag": "lr/AdamW/0"
+    },
+    {
+      "actual": 1.0006151569541544e-05,
+      "expected": 1.0006151275338897e-05,
+      "step": 200,
+      "tag": "lr/AdamW/1"
+    }
+  ],
+  "latest_logged_step": 200,
+  "latest_lr_step": 200,
+  "logged_lr_expected_epoch": "optimizer_update_step_minus_one",
+  "lr_groups": 2,
+  "observer_tool_sha256": "b19c0749b5cc73dbd2023bc9437e70bab8b1b6150977b9fb48f5ee207242ef24",
+  "reference_scheduler": {
+    "maximum_multiplier_error": 1.1102230246251565e-16,
+    "scheduler_epochs_checked": 201,
+    "scheduler_source_sha256": "b76299da76a222db0980ad0cbd5d9c2e2a938a3dcb34dbad1ebfd69c7b2da146",
+    "status": "PASS"
+  },
+  "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8",
+  "status": "PASS_OBSERVED_PREFIX"
+}

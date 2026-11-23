@@ -1,0 +1,301 @@
+{
+  "corpus_dir": "../data/tokenizer_corpus",
+  "max_chars": 8192,
+  "per_source": 20000,
+  "seed": "e0-full-v1",
+  "tokenizers": [
+    {
+      "overall_bytes_per_token": 3.9233,
+      "per_domain": {
+        "academic": {
+          "bytes": 108159473,
+          "bytes_per_token": 4.0029,
+          "chars": 108090520,
+          "chars_per_token": 4.0003,
+          "samples": 28524,
+          "tokens": 27020525,
+          "tokens_per_word": 1.747,
+          "words": 15467249
+        },
+        "books": {
+          "bytes": 16666096,
+          "bytes_per_token": 4.0366,
+          "chars": 16661174,
+          "chars_per_token": 4.0354,
+          "samples": 2046,
+          "tokens": 4128778,
+          "tokens_per_word": 1.5356,
+          "words": 2688723
+        },
+        "chinese": {
+          "bytes": 158970428,
+          "bytes_per_token": 4.2017,
+          "chars": 57663881,
+          "chars_per_token": 1.5241,
+          "samples": 36258,
+          "tokens": 37835110,
+          "tokens_per_word": 0.7894,
+          "words": 47928534
+        },
+        "code": {
+          "bytes": 112510940,
+          "bytes_per_token": 3.346,
+          "chars": 107130925,
+          "chars_per_token": 3.186,
+          "samples": 35002,
+          "tokens": 33625204,
+          "tokens_per_word": 2.2303,
+          "words": 15076494
+        },
+        "encyclopedia": {
+          "bytes": 166192543,
+          "bytes_per_token": 3.6686,
+          "chars": 88507694,
+          "chars_per_token": 1.9538,
+          "samples": 39568,
+          "tokens": 45300759,
+          "tokens_per_word": 1.095,
+          "words": 41370800
+        },
+        "math": {
+          "bytes": 231055304,
+          "bytes_per_token": 3.9018,
+          "chars": 230887867,
+          "chars_per_token": 3.899,
+          "samples": 33644,
+          "tokens": 59217746,
+          "tokens_per_word": 2.1987,
+          "words": 26932741
+        },
+        "qa": {
+          "bytes": 19133736,
+          "bytes_per_token": 3.5315,
+          "chars": 19115441,
+          "chars_per_token": 3.5281,
+          "samples": 10685,
+          "tokens": 5418085,
+          "tokens_per_word": 1.7779,
+          "words": 3047407
+        },
+        "web": {
+          "bytes": 176763563,
+          "bytes_per_token": 4.4575,
+          "chars": 176025493,
+          "chars_per_token": 4.4389,
+          "samples": 55529,
+          "tokens": 39655475,
+          "tokens_per_word": 1.349,
+          "words": 29395129
+        }
+      },
+      "per_source": {
+        "arxiv-latex-corpus": {
+          "bytes": 83642057,
+          "bytes_per_token": 3.8132,
+          "chars": 83641350,
+          "chars_per_token": 3.8132,
+          "domain": "academic",
+          "samples": 10235,
+          "throughput_mb_s": 1.21,
+          "tokens": 21934906,
+          "tokens_per_word": 1.8466,
+          "words": 11878389
+        },
+        "automathtext": {
+          "bytes": 122282393,
+          "bytes_per_token": 3.9171,
+          "chars": 122257611,
+          "chars_per_token": 3.9163,
+          "domain": "math",
+          "samples": 15212,
+          "throughput_mb_s": 1.07,
+          "tokens": 31217561,
+          "tokens_per_word": 1.8834,
+          "words": 16575306
+        },
+        "cci3-hq": {
+          "bytes": 109828690,
+          "bytes_per_token": 4.1106,
+          "chars": 40291372,
+          "chars_per_token": 1.508,
+          "domain": "chinese",
+          "samples": 18424,
+          "throughput_mb_s": 2.8,
+          "tokens": 26718583,
+          "tokens_per_word": 0.7949,
+          "words": 33610985
+        },
+        "dclm-baseline": {
+          "bytes": 66269233,
+          "bytes_per_token": 4.3358,
+          "chars": 66013251,
+          "chars_per_token": 4.319,
+          "domain": "web",
+          "samples": 18432,
+          "throughput_mb_s": 2.71,
+          "tokens": 15284332,
+          "tokens_per_word": 1.3635,
+          "words": 11209389
+        },
+        "dolma-books": {
+          "bytes": 16666096,
+          "bytes_per_token": 4.0366,
+          "chars": 16661174,
+          "chars_per_token": 4.0354,
+          "domain": "books",
+          "samples": 2046,
+          "throughput_mb_s": 1.44,
+          "tokens": 4128778,
+          "tokens_per_word": 1.5356,
+          "words": 2688723
+        },
+        "fineweb": {
+          "bytes": 44009341,
+          "bytes_per_token": 4.4637,
+          "chars": 43786051,
+          "chars_per_token": 4.4411,
+          "domain": "web",
+          "samples": 18432,
+          "throughput_mb_s": 2.47,
+          "tokens": 9859339,
+          "tokens_per_word": 1.3347,
+          "words": 7386804
+        },
+        "fineweb-2": {
+          "bytes": 1378896,
+          "bytes_per_token": 2.5858,
+          "chars": 1371221,
+          "chars_per_token": 2.5715,
+          "domain": "web",
+          "samples": 233,
+          "throughput_mb_s": 0.54,
+          "tokens": 533247,
+          "tokens_per_word": 1.9526,
+          "words": 273100
+        },
+        "fineweb-edu": {
+          "bytes": 65106093,
+          "bytes_per_token": 4.6576,
+          "chars": 64854970,
+          "chars_per_token": 4.6396,
+          "domain": "web",
+          "samples": 18432,
+          "throughput_mb_s": 4.2,
+          "tokens": 13978557,
+          "tokens_per_word": 1.328,
+          "words": 10525836
+        },
+        "github-code": {
+          "bytes": 60904422,
+          "bytes_per_token": 3.8982,
+          "chars": 60584595,
+          "chars_per_token": 3.8777,
+          "domain": "code",
+          "samples": 18432,
+          "throughput_mb_s": 2.74,
+          "tokens": 15623891,
+          "tokens_per_word": 2.5143,
+          "words": 6214062
+        },
+        "pes2o": {
+          "bytes": 24517416,
+          "bytes_per_token": 4.8209,
+          "chars": 24449170,
+          "chars_per_token": 4.8075,
+          "domain": "academic",
+          "samples": 18289,
+          "throughput_mb_s": 1.97,
+          "tokens": 5085619,
+          "tokens_per_word": 1.4171,
+          "words": 3588860
+        },
+        "proof-pile-2": {
+          "bytes": 108772911,
+          "bytes_per_token": 3.8847,
+          "chars": 108630256,
+          "chars_per_token": 3.8796,
+          "domain": "math",
+          "samples": 18432,
+          "throughput_mb_s": 3.19,
+          "tokens": 28000185,
+          "tokens_per_word": 2.7034,
+          "words": 10357435
+        },
+        "skypile-150b": {
+          "bytes": 49141738,
+          "bytes_per_token": 4.4206,
+          "chars": 17372509,
+          "chars_per_token": 1.5628,
+          "domain": "chinese",
+          "samples": 17834,
+          "throughput_mb_s": 2.9,
+          "tokens": 11116527,
+          "tokens_per_word": 0.7764,
+          "words": 14317549
+        },
+        "stack-exchange": {
+          "bytes": 19133736,
+          "bytes_per_token": 3.5315,
+          "chars": 19115441,
+          "chars_per_token": 3.5281,
+          "domain": "qa",
+          "samples": 10685,
+          "throughput_mb_s": 2.01,
+          "tokens": 5418085,
+          "tokens_per_word": 1.7779,
+          "words": 3047407
+        },
+        "starcoderdata": {
+          "bytes": 51606518,
+          "bytes_per_token": 2.8668,
+          "chars": 46546330,
+          "chars_per_token": 2.5857,
+          "domain": "code",
+          "samples": 16570,
+          "throughput_mb_s": 2.53,
+          "tokens": 18001313,
+          "tokens_per_word": 2.0312,
+          "words": 8862432
+        },
+        "wikipedia-en": {
+          "bytes": 40067383,
+          "bytes_per_token": 4.0636,
+          "chars": 39915283,
+          "chars_per_token": 4.0482,
+          "domain": "encyclopedia",
+          "samples": 18346,
+          "throughput_mb_s": 2.29,
+          "tokens": 9860123,
+          "tokens_per_word": 1.5603,
+          "words": 6319306
+        },
+        "wikipedia-zh": {
+          "bytes": 124847343,
+          "bytes_per_token": 3.5524,
+          "chars": 47316622,
+          "chars_per_token": 1.3464,
+          "domain": "encyclopedia",
+          "samples": 18428,
+          "throughput_mb_s": 6.4,
+          "tokens": 35144115,
+          "tokens_per_word": 1.0095,
+          "words": 34812041
+        },
+        "wikitext": {
+          "bytes": 1277817,
+          "bytes_per_token": 4.3094,
+          "chars": 1275789,
+          "chars_per_token": 4.3025,
+          "domain": "encyclopedia",
+          "samples": 2794,
+          "throughput_mb_s": 0.1,
+          "tokens": 296521,
+          "tokens_per_word": 1.2383,
+          "words": 239453
+        }
+      },
+      "tokenizer": "qwen2.5-151k",
+      "vocab_size": 151665
+    }
+  ]
+}

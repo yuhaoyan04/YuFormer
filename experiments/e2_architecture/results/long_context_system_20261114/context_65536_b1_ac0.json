@@ -1,0 +1,92 @@
+{
+  "candidate": "context_65536",
+  "error_tail": "d. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_20:27:24\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 0 (local_rank: 0)\n  exitcode  : 1 (pid: 294584) \n  error_file: /tmp/torchelastic_gct4xm7n/none_6qps8t1o/attempt_0/0/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 814, in _forward_backward_body\n      pred = self.model_parts[0](inputs, **extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl\n      return self._call_impl(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/model.py\", line 102, in forward\n      hidden = layer(\n               ^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1781, in _wrapped_call_impl\n      return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1261, in compile_wrapper\n      result = fn(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/model/src/yuformer_model/transformer.py\", line 28, in forward\n      def forward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1548, in _fn\n      return fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py\", line 1289, in forward\n      return compiled_fn(full_args)\n             ^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 1189, in runtime_wrapper\n      result = _codegen_runtime_wrapper(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(runtime_wrapper_orchestration)\", line 11, in _runtime_wrapper\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 118, in g\n      return f(*args)\n             ^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 3521, in forward\n      return CompiledFunction._fwd_fn(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(compiled_function_forward)\", line 2, in _compiled_forward\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_inductor/output_code.py\", line 828, in __call__\n      return self.current_callable(inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/tmp/yuformer-inductor-cudnn-qualified-v3/cz/cczap7atbopbtzz5dibcqy3ybdjffb7ovp4q47odacaq222usms7.py\", line 1593, in call\n      buf22 = empty_strided_cuda((65536, 2560), (2560, 1), torch.bfloat16)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 320.00 MiB. GPU 0 has a total capacity of 79.33 GiB of which 127.44 MiB is free. Process 2413083 has 79.20 GiB memory in use. Of the allocated memory 76.88 GiB is allocated by PyTorch, and 297.86 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n============================================================\n",
+  "evaluation": {
+    "issues": [
+      "launch_failed"
+    ],
+    "status": "OOM"
+  },
+  "finished_at": "2026-11-14T20:27:44.955465+00:00",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/long_context_system_20261114/context_65536_b1_ac0.log",
+  "parameters": 1516600064,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 121.6,
+      "temperature_c": 39.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 122.31,
+      "temperature_c": 33.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 125.32,
+      "temperature_c": 38.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 119.76,
+      "temperature_c": 32.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 121.36,
+      "temperature_c": 31.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 123.1,
+      "temperature_c": 39.0,
+      "utilization_pct": 31.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 117.58,
+      "temperature_c": 31.0,
+      "utilization_pct": 36.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 77987.0,
+      "power_w": 127.75,
+      "temperature_c": 38.0,
+      "utilization_pct": 75.0
+    }
+  ],
+  "production_qualified": false,
+  "returncode": 1,
+  "variant": {
+    "activation_checkpointing": false,
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/long_context_system_20261114/context_65536_b1_ac0.yaml",
+    "config_sha256": "ccedd4741d60855497cf124e94fad363f7499ae79123e0083175d54b96ef7830",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/long_context_system_20261114/context_65536_b1_ac0.env",
+    "env_sha256": "82fb08c48f53f5c76c6885bf371bc4b0630cac03f621602d8d6a0d50e73da01a",
+    "grad_accum": 8,
+    "microbatch": 1,
+    "name": "context_65536_b1_ac0"
+  },
+  "wall_seconds": 61.3
+}

@@ -1,0 +1,59 @@
+run_name: e1_seedrep_e1_ld_300m_300m_s2
+backend: torchtitan-v0.3.0
+seed: 20261002
+model:
+  preset: e1-300m
+  configs: ${YUFORMER_MODEL_CONFIGS}
+out_dir: ${YUFORMER_PRETRAIN_OUT}
+data:
+  require_release: true
+  require_eod: true
+  release_manifest: ${YUFORMER_DATA_RELEASE}
+  tokenizer_gate: ${YUFORMER_TOKENIZER_GATE}
+  token_stream_audit: ${YUFORMER_TOKEN_STREAM_AUDIT}
+  stages:
+  - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.tokens.bin
+  meta:
+  - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.meta.json
+  val_dir: ${YUFORMER_TOKEN_STREAMS}
+  seq_len: 4096
+  epochs: 1
+  val_samples_per_domain: 64
+  val_max_tokens_per_domain: 20000000
+optim:
+  optimizer: adamw
+  lr: 0.004606559696
+  weight_decay: 0.1
+  warmup_steps: 11
+  lr_schedule: cosine
+  min_lr_ratio: 0.1
+  adam_betas:
+  - 0.9
+  - 0.95
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+  clip_grad: 1.0
+  lr_resolution:
+    method: log_linear_power_law_plus_batch_pilot
+    pilot_selection_sha256: d839e0c4773d9f5df6583dfb566ef82fa7ced0ceb0b05b634ea399290e184518
+    batch_selection_sha256: 9721252f7d7db81730d768bc8cb34b75311ca3ba75c5c6d0f8eadee90e6b2be7
+    non_embedding_params: 232863616
+    tokens_per_step: 262144
+    batch_lr_factor: 4.407924366259461
+train:
+  budget_tokens: 300000000
+  micro_batch_size: 4
+  grad_accum: 16
+  expected_iters: 1144
+  activation_checkpointing: false
+  cuda_graphs: false
+  bf16: true
+  eval_every: 286
+  log_every: 10
+  save_every: 286
+  keep_last_n: 2
+  keep_every: 50000
+parallel:
+  world_size: 1
+  sharding: full_shard

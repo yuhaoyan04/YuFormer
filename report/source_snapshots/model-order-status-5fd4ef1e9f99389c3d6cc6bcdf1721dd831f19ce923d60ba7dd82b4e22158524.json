@@ -1,0 +1,297 @@
+{
+  "accepted_quality_policy": {
+    "actual_chinese_1_08_percent_explicitly_accepted": true,
+    "decision": "data/health/model-scale-quality-tradeoff-preference.json",
+    "fresh_backend_review_required": true,
+    "strict_original_fail_preserved": true
+  },
+  "actual_production_pair": {
+    "baseline_macro": 6.118171438123241,
+    "candidate_macro": 6.026154186840009,
+    "candidate_p10_tps_per_device": 49859.08984375,
+    "candidate_projected_days": 32.24106763889012,
+    "chinese": {
+      "candidate_mean": 7.497652901844545,
+      "delta": 0.08016340028155934,
+      "mean_strictly_improves": false,
+      "paired_bootstrap_95_ci": [
+        0.07813263853842561,
+        0.0820689269426194
+      ],
+      "reference_mean": 7.417489501562986
+    },
+    "quality_report": "experiments/e2_architecture/results/production_matched_controls_20261115/validation/review.json",
+    "status": "FAIL_PRODUCTION_PRIMARY_OR_EXPANDED_ALL_NINE",
+    "training_health": "data/health/production-matched-controls.json"
+  },
+  "actual_stable_consumption_blocker": {
+    "absolute_tolerance": 0.002,
+    "actual_selected_counts_match_research": true,
+    "candidate_window_code_not_yet_implemented": false,
+    "formal_start_still_blocked": true,
+    "live_data_controller_untouched": 199465,
+    "new_controller_pid": 285092,
+    "owned_qualification_supervisor_retired": 281991,
+    "physical_data_release_unchanged": true,
+    "relative_tolerance": 0.1,
+    "report": "data/health/stable-staging-consumption-diagnostic.json",
+    "selected_source_sample_offset": 2015232,
+    "selected_target_interval": [
+      8254390273,
+      808254963713
+    ],
+    "selected_web_actual_weight": 0.7400090438227674,
+    "status": "PASS_EXACT_WINDOW_ADMISSION_PRODUCTION_QUALIFICATION_PENDING",
+    "web_actual_weight": 0.7420705119126071,
+    "web_target_weight": 0.74
+  },
+  "actual_temporal_diagnostics": {
+    "stable": {
+      "pid": 290281,
+      "report": "data/health/actual-stable-window-diagnostic.json",
+      "status": "PASS_ACTUAL_DATA_DIAGNOSTIC"
+    },
+    "warmup": {
+      "report": "data/health/actual-warmup-window-diagnostic.json",
+      "status": "PASS_ACTUAL_DATA_DIAGNOSTIC"
+    }
+  },
+  "actual_training_order": {
+    "canonical_frozen_overlap_still_required": true,
+    "exact_new_mixtures_published": true,
+    "manifest": "data/processed/training_permutations/pretrain-total-runtime-966254395392-b8/manifest.json",
+    "new_overlap_diagnostic": "data/health/runtime-budget-overlap-diagnostic.json",
+    "new_overlap_fraction": 0.19967530421597154,
+    "offsets": [
+      0,
+      11795744,
+      285160
+    ],
+    "sha256": "96c7a9d10fc3c1ab6a1ca8bada152b3391fade28b31498649162828af05a54c3"
+  },
+  "blocks": [
+    "Finish final source-matched canonical13GPU stages and actual1.52B four-case WSD recovery",
+    "Finish independent current-window temporal recount/admission",
+    "Update whole-chain static plan, stack/canary runtime accounting and legitimate training-only ADOPT",
+    "Frozen production200canary, final canonical overlap and unfilteredCPU/preflight/productioncontract/stackREADY",
+    "Complete and qualify midtrain launch/data/weight-only full-resume integration before automated long-stage transitions"
+  ],
+  "canonical_e1_identity": {
+    "report": "report/experiment_identity_audit_latest.json",
+    "roster_exact": true,
+    "sha256": "022a0e3493d6634915a26dbffb0eae0c5c6b213a18b10209c1bb264935a9d19a",
+    "status": "BLOCKED_SOURCE_DRIFT_ONLY_AUTHORIZED_EXCEPTION_SCOPE",
+    "total": 113
+  },
+  "checkpoint_directory_durability": "PASS_CURRENT_BACKEND_CPU7_REQUIRES_FULL_GPU_RECOVERY",
+  "current_deterministic_recovery_diagnostic": {
+    "canonical_four_fault_cases_still_required": true,
+    "loss_difference": 0.0,
+    "report": "data/health/deterministic-flash-wsd-recovery-diagnostic.json",
+    "status": "PASS_PRIVATE_DIAGNOSTIC_NOT_CANONICAL_ADMISSION"
+  },
+  "current_gpu_qualification": {
+    "health": "data/health/final-pretrain-system-qualification.json",
+    "pid": 394939,
+    "report": "data/health/torchtitan-qualification.json",
+    "required_stages": 13,
+    "status": "RUNNING_FINAL_CANONICAL_Q13"
+  },
+  "current_qualification_identity": "4841d297d3674e00949d0cf0229bb7fbc28f0094e56740115c5dbcb19de0553c",
+  "current_system_pipeline": "data/health/current-a138-gpu-recovery-pipeline.json",
+  "current_training_source_sha256": "af54b5e072aafbdae6033e04dc7434a4167ea1654d19b3882f08b8a2711dfc3a",
+  "formal_pretrain_started": false,
+  "fresh_model_controls": {
+    "chinese_expanded_delta": -0.006151711398904974,
+    "health": "data/health/final-deterministic-production-controls.json",
+    "no_regression_waiver_used": true,
+    "review": "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/validation/review.json",
+    "status": "PASS_PRODUCTION_PRIMARY_AND_EXPANDED_ALL_NINE",
+    "strict_all_nine_passed": true
+  },
+  "full_physical_audit": "PASS",
+  "global_budget": {
+    "actual_pretrain_tokens": 916258291712,
+    "actual_pretrain_updates": 218453,
+    "actual_total_tokens": 966254395392,
+    "allocation_applied_to_base_configuration": true,
+    "effective_allocation": "experiments/e4_curriculum/results/effective_total_training_budget.json",
+    "full_chain_projected_days": 32.799910229132344,
+    "launch_ceiling_days": 33,
+    "nominal_user_decision": "data/health/user-total-pretrain-and-length-budget.json",
+    "planning_ceiling_days": 32.8
+  },
+  "historical_source_6a_model_controls": {
+    "active_variant": "larger_lr1e4_b8",
+    "actual_p10_tps_per_device": 49385.34375,
+    "current_source_sha256": "6a53b6054b8892ddbe69518bcc12155fbd1b2729a25a59c17209d36389a41157",
+    "projected_1t_days_duty_09": 32.550351298624776,
+    "report": "data/health/model-window-source-controls.json",
+    "selected_parameters": 1516600064,
+    "selected_peak_lr": 0.0001,
+    "selection_refreshed": true,
+    "selection_sha256": "1dc314149d316500675b6c73023f1cff4278e0ab37f818a9602b685106ee71dd",
+    "status": "COMPLETE_SUSTAINED_CONTROLS"
+  },
+  "independent_validation_review_pid": 327302,
+  "independent_validation_review_status": "FAIL_DISJOINT_ALL_NINE_MEAN_IMPROVEMENT",
+  "long_context_allocator_diagnostic": {
+    "pid": 300134,
+    "production_qualified": false,
+    "report": "data/health/allocator-headroom-diagnostics.json"
+  },
+  "long_context_current_source_system": {
+    "long_capability_qualified": false,
+    "status": "PASS_SUPPORTED_16K_AND_64K_SYSTEM_NOT_CAPABILITY",
+    "unsupported_full_ac64k": "FAIL_NONFINITE_GRADIENTS_PRESERVED"
+  },
+  "long_context_system_screening": {
+    "long_capability_qualified": false,
+    "pid": 293086,
+    "production_qualified": false,
+    "reason": "64K baseline OOM; full checkpoint nonfinite gradients; MLP-selective ran4finiteupdates but checkpoint NCCL/CUDA failed under memory pressure. No64Kpassadmitted.",
+    "report": "data/health/long-context-system-screening.json",
+    "status": "BLOCKED_LONG_SHAPE_SYSTEM"
+  },
+  "lower_lr_control_pid": 332560,
+  "lower_lr_control_status": "RUNNING",
+  "native_writeback": {
+    "actual_passing_tests": 15,
+    "report": "data/health/native-merge-writeback-qualification.json",
+    "source_sha256": "9cbb8abfa1b2e72af915a590b929866162bb7f209fee873e2d0e3a5e33a75744",
+    "status": "PASS_CANONICAL_NATIVE_WRITEBACK"
+  },
+  "numerical_remediation": {
+    "actual_long_component_reports": "data/health/long-attention-direct-slice-*.json",
+    "fresh_control_health": "data/health/model-rope-source-controls.json",
+    "fresh_control_runner_pid": 317733,
+    "historical_source_6a_forecast_days": 32.550351298624776,
+    "source_sha256": "f1273103b7da176d0c2c0d1f0c7cba30dbab09946cd71d50d1f0647441684f45",
+    "status": "CURRENT_SOURCE_COMPONENT_8_PASS_AWAITING_4K_AND_FRESH_SCIENCE"
+  },
+  "pid": 363739,
+  "post_encoding_queue_active": false,
+  "post_encoding_queue_pid": 322063,
+  "post_encoding_queue_status": "FAIL_CLOSED_TEMPORAL_WRAPPER_FIELD_FIXED_AND_DATA_GATES_COMPLETED_MANUALLY",
+  "pre_adoption_overlap_status": "PASS",
+  "primary_current_source_quality": {
+    "aggregate_baseline": 6.4237823486328125,
+    "aggregate_candidate": 6.336938858032227,
+    "candidate_projected_days": 32.374688818456974,
+    "chinese_baseline": 7.8666911125183105,
+    "chinese_candidate": 7.8738861083984375,
+    "source_sha256": "f1273103b7da176d0c2c0d1f0c7cba30dbab09946cd71d50d1f0647441684f45",
+    "status": "FAIL_ALL_NINE_MEAN_IMPROVEMENT"
+  },
+  "production_qualified": false,
+  "production_recovery": {
+    "all_rank_cursors": "PASS",
+    "max_observed_partial_loss_delta": 0.6161317825317383,
+    "original_loss_tolerance": 0.02,
+    "reference": "PASS",
+    "report": "data/health/production-recovery-qualification.json",
+    "scope": "Partial prefix observation; not a completed loss parity report.",
+    "status": "FAIL",
+    "training_failure": "CHECKPOINT_PROCESS_CUDA_OOM"
+  },
+  "production_temporal_admission": "PASS",
+  "protected_stable_producer_pid": 214752,
+  "protected_token_controller_active": false,
+  "protected_token_controller_pid": 285092,
+  "publication_durability_remediation": {
+    "formal_start_still_blocked": true,
+    "full_auditor_sha256": "1f2dbc511568ec5c4a00077f6baa698286cb2e143bd3316d56b4bb75e75ca251",
+    "must_wait_original_controller_exit_before_native_patch": 199465,
+    "native_preview": "report/patches/merge_token_parts.checked-fsync.c",
+    "native_preview_sha256": "9cbb8abfa1b2e72af915a590b929866162bb7f209fee873e2d0e3a5e33a75744",
+    "native_production_source_still_original": true,
+    "original_native_injected_error_tests_failed": 4,
+    "post_encoding_supervisor_pid": 281991,
+    "preview_targeted_tests_passed": 14,
+    "status": "CHECKED_FSYNC_GATE_IMPLEMENTED_NATIVE_FIX_PREVIEW_TESTED"
+  },
+  "quality_preference": "User accepts oldresearch~.15% quantified tradeoff; actualproduction1.08% magnitude clarification pending",
+  "reason": "Actual1.52B resumed training crashed during async checkpoint writer CUDA current_stream initialization. Before crash, post-restore loss prefix also exceeded original parity tolerance. Both require independent diagnosis; no numeric/recovery waiver.",
+  "remediation_progress": {
+    "actual_model_dependency_identity": "APPLIED_PENDING_CURRENT_GPU_QUALIFICATION",
+    "block_order_runtime": "APPLIED_CPU_VERIFIED_PENDING_ACTUAL_PRODUCTION_RECOVERY",
+    "calibration_report_sha256": "075303bcbf7d9697440c75bf4a94f92027d5c89fa41bdac03f76dc8e16e0170d",
+    "current_core_source_sha256": "2a7e15593e5173f87c15423ae93900208b3d0098b679f0cbb291852b1c03805e",
+    "formal_pretrain_started": false,
+    "independent_calibration": "APPLIED_AND_CURRENT_SCHEMA2_PASS",
+    "independent_validation_reencode_completed_domains": [
+      "academic",
+      "books",
+      "chinese",
+      "code",
+      "encyclopedia",
+      "math",
+      "multilingual",
+      "qa",
+      "web"
+    ],
+    "independent_validation_reencode_report": "data/health/validation-full-reencode-audit.json",
+    "independent_validation_reencode_status": "PASS_ALL_NINE_FULL_VALIDATION_STREAMS",
+    "post_encoding_qualification_supervisor_pid": 276552,
+    "preferred_model_parameters": 1516600064,
+    "preferred_model_short_p10_tps_per_gpu": 50572.88671875,
+    "preferred_model_short_projected_days": 31.78601010074151,
+    "production_model_contract": "PUBLISHED_REQUIRES_FRESH_QUALIFICATION",
+    "production_selection": "experiments/e2_architecture/results/model-scale-production-selection.json",
+    "readonly_training_contract_observer_pid": 264871,
+    "recovery_loss_coverage_guard": "APPLIED_TARGETED_48_TESTS_PASS_REQUIRES_FRESH_ACTUAL_GPU_RECOVERY",
+    "selected_model_parameters": 1516600064,
+    "selected_peak_lr": 0.0001,
+    "selected_projected_days_duty_09": 32.43292202229197,
+    "selected_sustained_p10_tps_per_gpu": 49564.15234375,
+    "selected_topology_gradient_reference": "PASS_EIGHT_GPU_HSDP2X4_FP32_REFERENCE",
+    "selected_topology_gradient_reference_report": "data/health/selected-eight-gpu-gradient-parity-20261114-bound.json",
+    "selected_variant": "larger_lr1e4_b8",
+    "sustained_quality_controls": "COMPLETE_ALL_THREE_200_UPDATES",
+    "sustained_quality_controls_pid": 260134,
+    "validation_source_proof_archive": "data/processed/training_evidence/manifests/037365ae313347b1b6bb96800b0fb7213820d4a91b6cc7c6307e15de46f9168c.json",
+    "validation_source_proof_freeze_gate": "APPLIED_TARGETED_40_TESTS_AND_REAL_EXISTING_VALIDATION_AUDIT_PASS"
+  },
+  "retired_launch_coordinator_pid": 186272,
+  "shape_followup": {
+    "pid": 364224,
+    "protocol": "experiments/e2_architecture/results/production_shape_lr_controls_20261115_authorized/protocol.json",
+    "status": "WAITING_CURRENT_SOURCE_SYSTEM_PIPELINE"
+  },
+  "source_evidence": {
+    "E133": "data/health/calibration-prefix-source-bias.json",
+    "E134": "data/health/warmup-training-order-balance.json",
+    "E136": "data/health/recovery-model-identity-gap.json"
+  },
+  "source_selection_current": false,
+  "stage": "diagnose_actual_production_recovery",
+  "status": "BLOCKED_FINAL_CANONICAL_SYSTEM_GATES_TRAINING_ADOPTION_AND_CANARY",
+  "temporal_window_diagnostics": {
+    "anneal": {
+      "counts_unchanged": true,
+      "permuted_max_window_absolute_error": 0.0005826677144089576,
+      "source_sample_offset": 285160,
+      "status": "PASS_DIAGNOSTIC",
+      "temporal_mixing_pass": true
+    },
+    "stable": {
+      "counts_unchanged": true,
+      "permuted_max_window_absolute_error": 0.0002111940706160942,
+      "source_sample_offset": 2015232,
+      "status": "PASS_DIAGNOSTIC",
+      "temporal_mixing_pass": true
+    },
+    "warmup": {
+      "counts_unchanged": true,
+      "permuted_max_window_absolute_error": 0.002696757879844025,
+      "source_sample_offset": 0,
+      "status": "PASS_DIAGNOSTIC",
+      "temporal_mixing_pass": true
+    }
+  },
+  "tokenization_continues_after_launch_coordinator_retired": true,
+  "tokenization_jobs": 12,
+  "tokenization_status": "PASS",
+  "updated_at": "2026-11-15T07:06:26.580889+00:00",
+  "window_remediation_controller_pid": 285092
+}

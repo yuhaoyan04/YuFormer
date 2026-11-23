@@ -1,0 +1,74 @@
+{
+  "base_200m_lr": 0.0012,
+  "configs": [
+    {
+      "config": "pretrain/configs/batch_pilot/batch_1m_high.yaml",
+      "config_sha256": "6904c853de4e997b4ad302fe1eadc0eec0a2c5169592301686347ced8cfe2169",
+      "learning_rate": 0.0048,
+      "run_name": "batch_1m_high",
+      "tokens_per_step": 1048576
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_1m_low.yaml",
+      "config_sha256": "b978a77fefd788b387cac2076be1bada19f67631b9d8fbfac7e5daa5716d4b33",
+      "learning_rate": 0.0012,
+      "run_name": "batch_1m_low",
+      "tokens_per_step": 1048576
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_1m_mid.yaml",
+      "config_sha256": "ffd887428b520e260fb9fa28e32c9265e90e3027b9912792e45e7941057fe1c3",
+      "learning_rate": 0.0024,
+      "run_name": "batch_1m_mid",
+      "tokens_per_step": 1048576
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_2m_high.yaml",
+      "config_sha256": "ce8f016eb81eb963ffbb00c71820f921dafb23ac29bb4cf93e990a5f3ac12fef",
+      "learning_rate": 0.006788225099,
+      "run_name": "batch_2m_high",
+      "tokens_per_step": 2097152
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_2m_low.yaml",
+      "config_sha256": "8aa6706be52553da15cf8845dec4a828eaac0c0a939ec29c868b504ff8b47ec3",
+      "learning_rate": 0.001697056275,
+      "run_name": "batch_2m_low",
+      "tokens_per_step": 2097152
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_2m_mid.yaml",
+      "config_sha256": "da00140ea6adda2fcaebb285528195c1d31d2248a98a804368585c87aebd0738",
+      "learning_rate": 0.00339411255,
+      "run_name": "batch_2m_mid",
+      "tokens_per_step": 2097152
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_4m_high.yaml",
+      "config_sha256": "06535f373cf7998f03f267cdda39ab83794f9afdb496112e779b22b97326ebba",
+      "learning_rate": 0.0096,
+      "run_name": "batch_4m_high",
+      "tokens_per_step": 4194304
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_4m_low.yaml",
+      "config_sha256": "22a808b39018d80a38101dad8cb840f61876afe9c8270466df6e75ddbf93da28",
+      "learning_rate": 0.0024,
+      "run_name": "batch_4m_low",
+      "tokens_per_step": 4194304
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_4m_mid.yaml",
+      "config_sha256": "194142ecb83f262046e29a2af5ccdaa7f0120150b145ebe77ba0f698240bab91",
+      "learning_rate": 0.0048,
+      "run_name": "batch_4m_mid",
+      "tokens_per_step": 4194304
+    }
+  ],
+  "lr_selection": "experiments/e1_scaling/results/lr_200m_batch_anchor.json",
+  "lr_selection_sha256": "a5259b3ad807841e2f94863cfa49b138db9f2ea854a150a3ec10841497aeb554",
+  "observed_at": "2026-10-22T17:22:35.874495+00:00",
+  "preparer_tool_sha256": "869344f5423ce621253838f8737f3e288dc4c88779e60ce04e6bae778e6d3ab5",
+  "schema_version": 1,
+  "status": "PASS"
+}

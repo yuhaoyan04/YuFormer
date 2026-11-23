@@ -1,0 +1,198 @@
+# S0/S1 摄取与硬过滤逐源配置（2026-09-17 锁定）
+#
+# 列名均经 pretrain-raw 已下载文件抽样验证（除标注 optional/unverified 者）。
+# 字段:
+#   domain:      领域（canonical schema 的 domain 列 + S1 领域规则路由）
+#   extensions:  该源 shard 文件后缀（相对 data-root/<source>，排除 .cache）
+#   text_fields: 正文字段候选列表，按序取第一个存在的非空字符串
+#   path_fields: 路径/URL 字段候选（写入 meta，供 S1 code 规则与审计用）
+#   score_fields: 上游分数字段候选（float；无则 null）
+#   lang_fields: 上游语言字段候选（dict 取 argmax；无则 S1 用 fasttext 补）
+#   lang_default: 无 lang_fields 时直接写死的语言（S1 不再检测）
+#   mode:        特殊模式；qa = question/answers 拼 Q:/A:
+#   exclude_dirs: 遍历排除的相对子目录
+#   optional:    磁盘目录可不存在（尚未下载完），fail-fast 不报错
+#
+# 已验证样本:
+#   wikitext parquet: ['text']
+#   fineweb parquet:  ['text','id','dump','url','date','file_path','language','language_score','token_count']（无 score 列）
+#   fineweb-edu parquet: 同上 + ['score','int_score']
+#   dclm jsonl.zst: ['text','url','metadata','language_id_whole_page_fasttext'(dict),
+#                    'fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train_prob'(float)]
+#   c4 json.gz: ['text','timestamp','url']
+#   starcoderdata parquet: ['content','max_stars_repo_path','max_stars_repo_name','max_stars_count','id']
+#   stack-exchange parquet: ['qid','question','answers'(str-of-list, 元素含 text/pm_score/selected),'date','metadata']
+#   proof-pile-2 jsonl.zst: ['text','meta']
+#   pes2o zst(jsonl): ['id','source','version','added','created','text','metadata']
+#   dolma-books json.gz: ['text','id','source','metadata','added','created','version']
+#   automathtext jsonl: ['url','title','abstract','text','meta'(含 language)]
+#   skypile jsonl: ['text']
+#   cci3-hq jsonl: ['id','text','score']
+#   wikipedia-en/zh parquet: ['id','url','title','text']
+#   fineweb-2 parquet: 同 fineweb + ['language_script','minhash_cluster_size','top_langs']
+#   pg19 txt: 整文件一篇文档
+
+profiles:
+
+  fineweb-edu:
+    domain: web
+    extensions: [".parquet"]
+    text_fields: [text]
+    path_fields: [url, file_path]
+    score_fields: [score]
+    lang_fields: [language]
+
+  fineweb:
+    domain: web
+    extensions: [".parquet"]
+    text_fields: [text]
+    path_fields: [url, file_path]
+    score_fields: []
+    lang_fields: [language]
+
+  dclm-baseline:
+    domain: web
+    extensions: [".jsonl.zst"]
+    text_fields: [text]
+    path_fields: [url]
+    score_fields: [fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train_prob]
+    lang_fields: [language_id_whole_page_fasttext]
+
+  c4:
+    domain: web
+    extensions: [".json.gz"]
+    text_fields: [text]
+    path_fields: [url]
+    score_fields: []
+    lang_fields: []
+
+  starcoderdata:
+    domain: code
+    extensions: [".parquet"]
+    text_fields: [content]
+    path_fields: [max_stars_repo_path, fpath]
+    score_fields: []
+    lang_fields: [language]
+
+  github-code:
+    domain: code
+    extensions: [".parquet"]
+    text_fields: [content]
+    path_fields: [path, repo_name]
+    score_fields: []
+    lang_fields: []
+    optional: true   # HF codeparrot/github-code 未下载完成；列名按公开 schema 预设
+
+  proof-pile-2:
+    domain: math
+    extensions: [".jsonl.zst"]
+    text_fields: [text]
+    path_fields: [hexsha]
+    score_fields: []
+    lang_fields: []
+
+  automathtext:
+    domain: math
+    extensions: [".jsonl"]
+    text_fields: [text]
+    path_fields: [url]
+    score_fields: []
+    lang_fields: []
+
+  pes2o:
+    domain: academic
+    extensions: [".zst"]
+    text_fields: [text]
+    path_fields: [source]
+    score_fields: []
+    lang_fields: []
+
+  arxiv-latex-corpus:
+    domain: academic
+    extensions: [".jsonl"]
+    text_fields: [text, content]
+    path_fields: [url, id]
+    score_fields: []
+    lang_fields: []
+    optional: true   # 未下载完成；列名未抽样验证，按 text 主字段预设
+
+  pg19:
+    domain: books
+    extensions: [".txt"]
+    text_fields: []
+    path_fields: []
+    score_fields: []
+    lang_fields: []
+    exclude_dirs: [lists]
+
+  dolma-books:
+    domain: books
+    extensions: [".json.gz"]
+    text_fields: [text]
+    path_fields: [id]
+    score_fields: []
+    lang_fields: []
+
+  wikipedia-en:
+    domain: encyclopedia
+    extensions: [".parquet"]
+    text_fields: [text]
+    path_fields: [url, title]
+    score_fields: []
+    lang_fields: []
+    lang_default: en
+
+  wikipedia-zh:
+    domain: encyclopedia
+    extensions: [".parquet"]
+    text_fields: [text]
+    path_fields: [url, title]
+    score_fields: []
+    lang_fields: []
+    lang_default: zh
+
+  wikitext:
+    domain: encyclopedia
+    extensions: [".parquet"]
+    text_fields: [text]
+    path_fields: []
+    score_fields: []
+    lang_fields: []
+    lang_default: en
+
+  stack-exchange:
+    domain: qa
+    extensions: [".parquet"]
+    mode: qa
+    q_field: question
+    a_field: answers
+    path_fields: [metadata]
+    score_fields: []
+    lang_fields: []
+    lang_default: en
+
+  skypile-150b:
+    domain: chinese
+    extensions: [".jsonl"]
+    text_fields: [text]
+    path_fields: []
+    score_fields: []
+    lang_fields: []
+    lang_default: zh
+
+  cci3-hq:
+    domain: chinese
+    extensions: [".jsonl"]
+    text_fields: [text]
+    path_fields: [id]
+    score_fields: [score]
+    lang_fields: []
+    lang_default: zh
+
+  fineweb-2:
+    domain: multilingual
+    extensions: [".parquet"]
+    text_fields: [text]
+    path_fields: [url, file_path]
+    score_fields: []
+    lang_fields: [language]

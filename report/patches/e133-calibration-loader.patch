@@ -1,0 +1,65 @@
+--- pretrain/scripts/training_tokenizer_calibration.py
++++ pretrain/scripts/training_tokenizer_calibration.py
+@@ -12,6 +12,8 @@
+ 
+ REPORT = 'data/processed/audits/training_tokenizer_calibration.json'
+ TOOL = 'experiments/e4_curriculum/scripts/calibrate_training_tokens.py'
++SAMPLER = 'experiments/e4_curriculum/scripts/uniform_selected_sample.py'
++SAMPLING = 'independent-blake2b-domain-rank-permutation-v1'
+ 
+ 
+ def load_training_ratios(root: Path, captured_inputs: dict[str, str]) -> dict[str, dict[str, float]]:
+@@ -21,13 +23,15 @@
+     path = root / REPORT
+     raw = path.read_bytes()
+     report = json.loads(raw)
+-    if (report.get('schema_version') != 1 or report.get('status') != 'PASS'
++    if (report.get('schema_version') != 2 or report.get('status') != 'PASS'
+             or report.get('purpose') != 'TRAINING_TOKENIZER_CALIBRATION'
+             or report.get('includes_appended_eod') is not True
+-            or report.get('sampling') != 'per-domain-hash-prefix'
++            or report.get('sampling') != SAMPLING
++            or not isinstance(report.get('seed'), str) or not report['seed']
++            or report.get('sampler_tool_sha256') != module.digest(root / SAMPLER)
+             or report.get('tool_sha256') != module.digest(root / TOOL)
+             or set(report.get('stages', {})) != {'warmup', 'stable', 'anneal'}):
+-        raise ValueError('invalid or stale training tokenizer calibration report')
++        raise ValueError('invalid, biased-prefix, or stale training tokenizer calibration report')
+     target = report.get('minimum_reference_tokens_per_domain')
+     if type(target) is not int or target < module.MIN_REFERENCE_TOKENS:
+         raise ValueError('training tokenizer calibration sample is too small')
+@@ -36,6 +40,7 @@
+         raise ValueError('training tokenizer calibration tokenizer differs from release')
+     captured_inputs[REPORT] = module.hashlib.sha256(raw).hexdigest()
+     captured_inputs[TOOL] = module.digest(root / TOOL)
++    captured_inputs[SAMPLER] = module.digest(root / SAMPLER)
+     captured_inputs['pretrain/scripts/training_tokenizer_calibration.py'] = module.digest(
+         root / 'pretrain/scripts/training_tokenizer_calibration.py')
+     captured_inputs['data/TOKENIZER_READY.json'] = module.digest(root / 'data/TOKENIZER_READY.json')
+@@ -73,6 +78,16 @@
+             raise ValueError('training tokenizer calibration tokenizer bytes changed')
+         captured_inputs[str(tokenizer)] = report['tokenizer_sha256']
+         selection = json.loads(one('selection.json').read_text())
++        parent_phase = parent['stages'][stage]
++        population = module.selected_population(root, parent, parent_phase)
++        manifest_name = parent_phase['manifest']
++        captured_inputs[manifest_name] = module.digest(root/manifest_name)
++        if (selection.get('sampling') != SAMPLING or selection.get('seed') != report['seed']
++                or selection.get('phase') != stage
++                or selection.get('sampler_tool_sha256') != report['sampler_tool_sha256']
++                or selection.get('population_docs_by_domain') != {d: population[d]['selected_docs'] for d in module.DOMAINS}
++                or selection.get('population_reference_tokens_by_domain') != {d: population[d]['selected_tokens'] for d in module.DOMAINS}):
++            raise ValueError('training calibration lacks independent full-population sampling provenance')
+         order, ledger = one('sample.parquet'), one('sample.doc_lengths.u32')
+         parent_record = next(item for item in parent['artifacts']
+                              if item['path'] == parent['stages'][stage]['order'])
+@@ -89,7 +104,8 @@
+             raise ValueError(f'training tokenizer calibration stream provenance mismatch: {stage}')
+         measured = module.measure(order, ledger, expected_order_sha256=meta['order_sha256'],
+                                   expected_lengths_sha256=meta['doc_lengths']['sha256'])
+-        if measured != row['domains'] or sum(v['actual_tokens_with_eod'] for v in measured.values()) != meta['total_tokens']:
++        if (measured != row['domains'] or sum(v['actual_tokens_with_eod'] for v in measured.values()) != meta['total_tokens']
++                or sum(v['docs'] for v in measured.values()) != selection.get('docs')):
+             raise ValueError(f'training tokenizer calibration measured counts differ: {stage}')
+         ratios = {}
+         for domain, measurement in measured.items():

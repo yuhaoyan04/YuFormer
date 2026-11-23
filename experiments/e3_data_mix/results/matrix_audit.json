@@ -1,0 +1,146 @@
+{
+  "analysis_policy": {
+    "maximum_domain_relative_regression_vs_m2": 0.02,
+    "path": "experiments/e3_data_mix/configs/e3_analysis_policy.yaml",
+    "practical_equivalence_absolute_loss": 0.002,
+    "schema_version": 1,
+    "sha256": "a3073213ed3101394a095fb3415bcaa5443e2bcc3881637dcf10624248074884"
+  },
+  "arms": [
+    {
+      "arm": "e3_academic_2x",
+      "quotas": {
+        "academic": 700000000,
+        "books": 40000000,
+        "chinese": 350000000,
+        "code": 1200000000,
+        "encyclopedia": 50000000,
+        "math": 400000000,
+        "multilingual": 200000000,
+        "qa": 10000000,
+        "web": 7050000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_chinese_2x",
+      "quotas": {
+        "academic": 350000000,
+        "books": 40000000,
+        "chinese": 700000000,
+        "code": 1200000000,
+        "encyclopedia": 50000000,
+        "math": 400000000,
+        "multilingual": 200000000,
+        "qa": 10000000,
+        "web": 7050000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_code_2x",
+      "quotas": {
+        "academic": 350000000,
+        "books": 40000000,
+        "chinese": 350000000,
+        "code": 2400000000,
+        "encyclopedia": 50000000,
+        "math": 400000000,
+        "multilingual": 200000000,
+        "qa": 10000000,
+        "web": 6200000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_encyclopedia_2x",
+      "quotas": {
+        "academic": 350000000,
+        "books": 40000000,
+        "chinese": 350000000,
+        "code": 1200000000,
+        "encyclopedia": 100000000,
+        "math": 400000000,
+        "multilingual": 200000000,
+        "qa": 10000000,
+        "web": 7350000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_m1_native",
+      "quotas": {
+        "academic": 120000000,
+        "books": 50000000,
+        "chinese": 350000000,
+        "code": 550000000,
+        "encyclopedia": 80000000,
+        "math": 180000000,
+        "multilingual": 30000000,
+        "qa": 40000000,
+        "web": 8600000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_m2_base",
+      "quotas": {
+        "academic": 350000000,
+        "books": 40000000,
+        "chinese": 350000000,
+        "code": 1200000000,
+        "encyclopedia": 50000000,
+        "math": 400000000,
+        "multilingual": 200000000,
+        "qa": 10000000,
+        "web": 7400000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_m3_quality",
+      "quotas": {
+        "academic": 120000000,
+        "books": 20000000,
+        "chinese": 150000000,
+        "code": 550000000,
+        "encyclopedia": 20000000,
+        "math": 180000000,
+        "multilingual": 55000000,
+        "qa": 5000000,
+        "web": 8900000000
+      },
+      "selection": "quality_prefix",
+      "shortages": {}
+    },
+    {
+      "arm": "e3_math_2x",
+      "quotas": {
+        "academic": 350000000,
+        "books": 40000000,
+        "chinese": 350000000,
+        "code": 1200000000,
+        "encyclopedia": 50000000,
+        "math": 800000000,
+        "multilingual": 200000000,
+        "qa": 10000000,
+        "web": 7000000000
+      },
+      "selection": "deterministic_broad",
+      "shortages": {}
+    }
+  ],
+  "budget_tokens_per_arm": 10000000000,
+  "defects": [],
+  "observed_at": "2026-11-06T13:11:10.701669+00:00",
+  "schema_version": 1,
+  "source_snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5",
+  "status": "PASS",
+  "train_budget_tokens_per_arm": 1000000000
+}

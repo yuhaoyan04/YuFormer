@@ -1,0 +1,65 @@
+# SUPERSEDED: 旧 1.44T 单阶段点火配置，仅保留审计；启动时必须 fail-fast。
+# 单一真源（宪法 2）：本文件 = pretrain_base.yaml + IGNITION §7.3 点火裁定（E-51/E-52）。
+# 外部资产（宪法 3）：${VAR} 占位符由 launch env 文件注入，缺失即 fail-fast。
+# 迭代数推导（宪法 6）：tokens_per_step = seq 4096 × mbs 12 × accum 16 × world 4 = 3,145,728
+#   iters = 1.44e12 / 3,145,728 = 457,763（身份守卫；改预算/mbs/accum/world 必须同步改）
+# 数据：mix_m2 确定性全局打乱流（full 版 S6 物化后可用；当前 fail-fast 前置）
+run_name: pretrain_v1
+backend: torchtitan-v0.3.0
+experiment_status: superseded
+seed: 20261013
+
+model:
+  preset: pretrain-0.5b
+  configs: ${YUFORMER_MODEL_CONFIGS}   # model/configs/model_configs.yaml
+
+out_dir: ${YUFORMER_PRETRAIN_OUT}     # <out>/checkpoints + <out>/results
+
+data:
+  require_release: true
+  require_eod: true
+  release_manifest: ${YUFORMER_DATA_RELEASE}
+  stages:
+    - ${YUFORMER_TOKEN_STREAMS}/mix_m2_stage2.tokens.bin
+  meta:
+    - ${YUFORMER_TOKEN_STREAMS}/mix_m2_stage2.meta.json
+  val_dir: ${YUFORMER_TOKEN_STREAMS}   # val_<domain>.tokens.bin
+  seq_len: 4096
+  epochs: 1
+  val_samples_per_domain: 16
+  val_max_tokens_per_domain: 4000000
+
+optim:
+  optimizer: adamw         # §7.3 裁定：0.5B 档 AdamW 完胜 Muon（NS5 贵 3-8 点 MFU），Muon 留研究臂
+  lr: 2.0e-4               # 候选 peak LR；E1 scaling 完成前不得称为最终最优值
+  weight_decay: 0.1
+  warmup_steps: 2000       # 真键在此（train.warmup_iters 为死键，已删）
+  lr_schedule: wsd
+  decay_steps: 45776               # 最后 10% cosine decay，保留独立 high-quality anneal 消融
+  min_lr_ratio: 0.1
+  adam_betas: [0.9, 0.95]
+  muon_momentum: 0.95      # muon 研究臂开关（optimizer=adamw 时不参与计算）
+  muon_nesterov: true
+  muon_ns_steps: 5
+
+train:
+  budget_tokens: 1440000000000      # 1.44T
+  micro_batch_size: 12              # §7.3 裁定（§7.4：单卡峰值 ~62GB 含邻居口径，MFU 峰值档）
+  grad_accum: 16
+  expected_iters: 457763            # 身份守卫：budget/tokens_per_step
+  activation_checkpointing: false
+  compile: true                     # §7.3 裁定（E-51 主杠杆 +9~13 点；首 iter 编译 ~2-4 min 一次性）
+  compile_mode: default             # max-autotune 与 FSDP 状态机冲突（§7.1 crash 记录），勿改
+  selective_recompute: mlp          # E-49（+2.9 点 vs none；与全层重计算互斥）
+  bf16: true
+  ce_chunk: 8192                    # E-48 分块融合 CE（解除 fp32 logits 对 mbs 的锁死）
+  eval_every: 2000
+  log_every: 20
+  save_every: 20000
+  keep_last_n: 2                  # 最近两个可恢复点
+  keep_every: 100000              # 另保留长期里程碑，控制 0.5B full-state 磁盘增长
+
+parallel:
+  world_size: 4                     # 与 pretrain_base 一致（4×H800 no_shard FSDP；单机实际 8 卡，
+                                    # 另 4 卡由实验舰队调度占用——§7.3 前置的 4 卡 compile smoke 即此口径）
+  sharding: no_shard                # 0.5B 显存充裕：DDP 语义（梯度 all-reduce）

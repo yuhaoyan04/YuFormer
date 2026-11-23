@@ -1,0 +1,26 @@
+{
+  "candidate": {
+    "model_path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/rope_source_controls_20261114/lower_lr_controls/larger_lr8e5_b8.model.yaml",
+    "model_sha256": "d8eae8d7377d890136c699c78d1bb26850408d5b951f4a7f522d68a6b6976e8f",
+    "name": "larger_lr8e5",
+    "parameters": 1516600064
+  },
+  "protocol": "lower_lr_protocol.json",
+  "source_inputs": {
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/rope_source_controls_20261114/lower_lr_controls/lower_lr_protocol.json": "2a6b829eb1305ba8b668184a9eca59ea83eb9ae41e3a6c8f87692b038b419ab5",
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/benchmark_model_sizes.py": "dffd9e00f086eb271ce84fcf4c9ca9182921063b7ffef0b4e00b8728e7406b63",
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/research_control_identity.py": "3d382569945e636e080def62e05821f5239c18d3ae89b98ef3f05acfb4b75dba",
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/run_lower_lr_control.py": "75db22346ef839099cdee35485051dee553daaaba7d36ec0e5d74200165cd5ca",
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e4_curriculum/scripts/allocator_retry_review.py": "f7d125321fb23a0b259e62069b2ab5acefecfdafc4d662ea51dc14088275794c",
+    "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e4_curriculum/scripts/sustained_memory_review.py": "c8b5d8529198e557034052d57b46ff81f542b688955607db8463813cdc283114"
+  },
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/rope_source_controls_20261114/lower_lr_controls/larger_lr8e5_b8.yaml",
+    "config_sha256": "e361ae120992af7aec186b5a812d865391eea6f41c0e716a81f71996a2b9e4b0",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/rope_source_controls_20261114/lower_lr_controls/larger_lr8e5_b8.env",
+    "env_sha256": "49f5363ac9cae3c0bd769b92ef1fb3afb5eaa8c557a8d290e2da04ce0c9690ad",
+    "grad_accum": 16,
+    "microbatch": 8,
+    "name": "larger_lr8e5_b8"
+  }
+}

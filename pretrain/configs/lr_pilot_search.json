@@ -1,0 +1,54 @@
+{
+  "extensions": [
+    {
+      "group": "e1_pilot_extension",
+      "learning_rate": 0.0018,
+      "level": "ext1800",
+      "run_name": "e1_lr_200m_ext1800",
+      "size": "200m"
+    },
+    {
+      "group": "e1_pilot_extension",
+      "learning_rate": 0.0024,
+      "level": "ext2400",
+      "run_name": "e1_lr_200m_ext2400",
+      "size": "200m"
+    },
+    {
+      "group": "e1_pilot_extension",
+      "learning_rate": 0.0048,
+      "level": "ext4800",
+      "run_name": "e1_lr_200m_ext4800",
+      "size": "200m"
+    },
+    {
+      "boundary_parent": "e1_lr_800m_vhigh",
+      "group": "e1_pilot_extension",
+      "learning_rate": 0.0009,
+      "level": "ext900000",
+      "origin": "automatic_night_search",
+      "run_name": "e1_lr_800m_ext900000",
+      "size": "800m"
+    },
+    {
+      "boundary_parent": "e1_lr_800m_vhigh",
+      "group": "e1_pilot_extension",
+      "learning_rate": 0.0012,
+      "level": "ext1200000",
+      "origin": "automatic_night_search",
+      "run_name": "e1_lr_800m_ext1200000",
+      "size": "800m"
+    },
+    {
+      "boundary_parent": "e1_lr_800m_vhigh",
+      "group": "e1_pilot_extension",
+      "learning_rate": 0.0024,
+      "level": "ext2400000",
+      "origin": "automatic_night_search",
+      "run_name": "e1_lr_800m_ext2400000",
+      "size": "800m"
+    }
+  ],
+  "reason": "200M minimum validation loss was at the original upper LR boundary; matched-budget supplemental trials use idle GPUs.",
+  "schema_version": 1
+}

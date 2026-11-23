@@ -1,0 +1,350 @@
+{
+  "audit_tool_sha256": "6cbfbaa607ea7e572d91fe43a657636056a3f56f866d896c6d068edfeb4a250a",
+  "evidence_snapshot": {
+    "data/TOKENIZER_READY.json": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866",
+    "data/experiments/e1/e1_iso_c2_800m/current_attempt.json": "458c7c4ac1e7fdf245941561c44791a47aab947a7cecf9c077b07058d0aa2596",
+    "data/experiments/e1/e1_iso_c2_800m/result.json": "e135725b2c984a1db7d68634ea18d9b15dd7c5f1eb334c035b2cc356e9a5de90",
+    "data/experiments/e1/e1_iso_c2_800m/run_identity.json": "7d86dcab23ce292394f25ca76664b2e4bc03cdf6196ca19e826442ed2e97d713",
+    "data/experiments/e1/e1_iso_c2_800m/training_complete.json": "128fcc57d8e4d13c32959af371d858b216447e55afaaa235bf981880f00e0c03",
+    "data/experiments/e1/e1_ld_300m_3b/current_attempt.json": "e297d4883a1a7433777e711cf6b4b127a32d8a0b621cda06106ca1d877f2775c",
+    "data/experiments/e1/e1_ld_300m_3b/result.json": "bea7d4c3c994c5f021ee2623b5278f9436e5c584e4124c8cca669dbb1248cb41",
+    "data/experiments/e1/e1_ld_300m_3b/run_identity.json": "a8bb091195d3a18a6c88e88ec929bf353a007015b6ee648891f8da6c2e6aeb75",
+    "data/experiments/e1/e1_ld_300m_3b/training_complete.json": "d96300bfeb60078148038c374faad870822d20f8815a280dcc9078b5c562fde9",
+    "data/experiments/e1/e1_ln_800m/current_attempt.json": "215dbd43428187d8eaa8b17b75b50c91b4f39259b0a381379d4174d1d7f4bd09",
+    "data/experiments/e1/e1_ln_800m/result.json": "eda6cec03902ef0773712c00ed557a49d0b4a691f7a498897dde865160b6a6a8",
+    "data/experiments/e1/e1_ln_800m/run_identity.json": "5ed212f8f7e22dda89a3ae78a9833ecc39c4ac185b3a3539ee6089a851cca2d0",
+    "data/experiments/e1/e1_ln_800m/training_complete.json": "4392cad4611a077d85f7aec81dbe2dbf8e7a08b46338661d049a99e84f151f3b",
+    "data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d",
+    "data/processed/releases/mix_m3_e1_100b-20261019.release.json": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c",
+    "model/configs/model_configs.yaml": "743d3d6040e2416b7a1f6fdafdc9db69c282d93ac1905b312f731cfc86c4009b",
+    "pretrain/configs/e1/e1_iso_c0_100m.env": "bc7acfb616b40803c597b5fa2bb22f80c63b4234939ec5eb4a2e448d9f80dd3d",
+    "pretrain/configs/e1/e1_iso_c0_200m.env": "bb081cbdedc3552ab8c14a20ef38df9b96c05b865c8e7afa6c4e89623aa09e4f",
+    "pretrain/configs/e1/e1_iso_c0_400m.env": "adbdba2e194f1d4ee5262fdd8c9f4c00e3b44d2c690c5e20f372f3639670ec41",
+    "pretrain/configs/e1/e1_iso_c0_50m.env": "b104c665058facd7da6dc373fca92d9cfd88364389f56de6753cd63d81822f7d",
+    "pretrain/configs/e1/e1_iso_c0_800m.env": "0e9a364323e0bc2c7509fb2dfab151bebd0c29ad76b6c4c8301108b23b6943b0",
+    "pretrain/configs/e1/e1_iso_c1_100m.env": "a1b71d778a162731af47f026a9e5c0894806b9bf440cf190b5bba0776248c5e7",
+    "pretrain/configs/e1/e1_iso_c1_200m.env": "0fa45ef3a3e8511129c8eaa8be5a75126ed6d2b6e8db0f8d395968bbc2d9d92f",
+    "pretrain/configs/e1/e1_iso_c1_400m.env": "dae89379e1365a646b142cc42fbcc13c86cf445dc00f61c7da4bc1345390e298",
+    "pretrain/configs/e1/e1_iso_c1_50m.env": "f138630143b6156801b5bb133faeb61e667400bcfb411f1204515cd749b81010",
+    "pretrain/configs/e1/e1_iso_c1_800m.env": "a67aed3035ebbc16b865e3d7e82890917be52f4e42c8d8d52e3ea1ac0e9e877e",
+    "pretrain/configs/e1/e1_iso_c2_100m.env": "d5be9e77976473482f9a61cd3625bcff80ad0dddba3a6347f3fd4e5b32bdfe32",
+    "pretrain/configs/e1/e1_iso_c2_200m.env": "be22d102496e11130a6693d2cfa0976349f315d7b43caf6b23b27102b6877274",
+    "pretrain/configs/e1/e1_iso_c2_400m.env": "978655ee813ad199cd76114920f7cc0ddf920104e989d9241c9de44fbfeee179",
+    "pretrain/configs/e1/e1_iso_c2_800m.env": "b7561c9b165057d7f475fb4c6012dd7c2ab4110e9081e5748be5aaf6ca6ce29b",
+    "pretrain/configs/e1/e1_iso_c2_800m.yaml": "053d40107dd906acff01b2c5cb5de6305eb00ce464c5366ad2aa3bd51280a85d",
+    "pretrain/configs/e1/e1_ld_300m_100m.env": "066a4cfb6661bba4fad7ae0254e61e19f6db1598a721bb516a39f2ca0e2915df",
+    "pretrain/configs/e1/e1_ld_300m_1b.env": "932ee87abf8acba0b05e1b6d0207c246a9822cb7cc3b5eac25ded85da5eee870",
+    "pretrain/configs/e1/e1_ld_300m_300m.env": "b3c3c7161cebab079c128aa5e22b2ba52a9cea19e74b48b6963952cbeca96176",
+    "pretrain/configs/e1/e1_ld_300m_3b.env": "d490ea666f69b694a23836c04d3c216f9ce0783259aa43f5160486a453da9a4e",
+    "pretrain/configs/e1/e1_ld_300m_3b.yaml": "4ec927e763ae98cf937882318b6203c85f634c21f30c8ccf16c7d57b0808be9a",
+    "pretrain/configs/e1/e1_ld_300m_9p85b.env": "42ba123444a2db6d829b4e35b25a64176e049a5f713a3d5928f1634f10e318fc",
+    "pretrain/configs/e1/e1_ln_100m.env": "f31cd996ede56bd82c80c0e6e290ffbe6c321de2da006892c51d796666440d22",
+    "pretrain/configs/e1/e1_ln_200m.env": "58c780ac3c00dfe6cef364ee0d1ceb7bca0573e1feccb67edd5f4990e7ecb2a2",
+    "pretrain/configs/e1/e1_ln_400m.env": "a637f4368c625aab0d75dfe575a2f218ffd1951cbae3b624ed72a07775a16983",
+    "pretrain/configs/e1/e1_ln_50m.env": "b127d1f0e06c63b997f3c63fdf03ec8022da88061c96f86e72b6d90a312d608b",
+    "pretrain/configs/e1/e1_ln_800m.env": "d8ef17d8bdc5c0361049e347c3c44cafe3be7f4061ca7003bc9cccf83eefab11",
+    "pretrain/configs/e1/e1_ln_800m.yaml": "2a3d503f801f6350c0a5fecae51c565bc2dfcc7bce4a0c6af1db563be85c56c1"
+  },
+  "evidence_snapshot_count": 43,
+  "expected_by_group": {
+    "e1": 3
+  },
+  "missing_by_group": {
+    "e1": []
+  },
+  "observed_at": "2026-10-26T04:07:11.699294+00:00",
+  "observed_by_group": {
+    "e1": 24
+  },
+  "passed": 3,
+  "roster_exact": false,
+  "rows": [
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c0_100m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_100m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c0_100m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c0_200m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_200m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c0_200m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c0_400m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_400m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c0_400m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c0_50m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_50m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c0_50m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c0_800m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_800m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c0_800m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c1_100m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_100m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c1_100m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c1_200m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_200m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c1_200m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c1_400m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_400m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c1_400m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c1_50m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_50m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c1_50m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c1_800m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_800m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c1_800m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c2_100m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_100m/training_complete.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c2_100m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c2_200m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_200m/training_complete.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c2_200m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_iso_c2_400m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_400m/training_complete.json'"
+      ],
+      "group": "e1",
+      "name": "e1_iso_c2_400m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1/e1_iso_c2_800m.yaml",
+      "env": "pretrain/configs/e1/e1_iso_c2_800m.env",
+      "errors": [],
+      "group": "e1",
+      "name": "e1_iso_c2_800m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_800m",
+      "status": "PASS"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ld_300m_100m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_100m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ld_300m_100m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ld_300m_1b.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_1b/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ld_300m_1b",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ld_300m_300m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_300m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ld_300m_300m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1/e1_ld_300m_3b.yaml",
+      "env": "pretrain/configs/e1/e1_ld_300m_3b.env",
+      "errors": [],
+      "group": "e1",
+      "name": "e1_ld_300m_3b",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_3b",
+      "status": "PASS"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ld_300m_9p85b.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_9p85b/training_complete.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ld_300m_9p85b",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ln_100m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_100m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ln_100m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ln_200m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_200m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ln_200m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ln_400m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_400m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ln_400m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": ".",
+      "env": "pretrain/configs/e1/e1_ln_50m.env",
+      "errors": [
+        "FileNotFoundError:[Errno 2] No such file or directory: '/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_50m/run_identity.json'"
+      ],
+      "group": "e1",
+      "name": "e1_ln_50m",
+      "run_dir": ".",
+      "status": "FAIL"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1/e1_ln_800m.yaml",
+      "env": "pretrain/configs/e1/e1_ln_800m.env",
+      "errors": [],
+      "group": "e1",
+      "name": "e1_ln_800m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_800m",
+      "status": "PASS"
+    }
+  ],
+  "schema_version": 1,
+  "source_sha256": "49c889e445806382698c53f1a0a424428cad3d27bc3a28b8998a7f7bb15beb7e",
+  "status": "BLOCKED",
+  "total": 3,
+  "unexpected_by_group": {
+    "e1": [
+      "e1_iso_c0_100m",
+      "e1_iso_c0_200m",
+      "e1_iso_c0_400m",
+      "e1_iso_c0_50m",
+      "e1_iso_c0_800m",
+      "e1_iso_c1_100m",
+      "e1_iso_c1_200m",
+      "e1_iso_c1_400m",
+      "e1_iso_c1_50m",
+      "e1_iso_c1_800m",
+      "e1_iso_c2_100m",
+      "e1_iso_c2_200m",
+      "e1_iso_c2_400m",
+      "e1_ld_300m_100m",
+      "e1_ld_300m_1b",
+      "e1_ld_300m_300m",
+      "e1_ld_300m_9p85b",
+      "e1_ln_100m",
+      "e1_ln_200m",
+      "e1_ln_400m",
+      "e1_ln_50m"
+    ]
+  }
+}

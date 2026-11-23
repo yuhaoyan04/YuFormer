@@ -1,0 +1,75 @@
+# S2/S3 去重配置（2026-09-17 锁定）
+#
+# source_priority: 组内 survivor 选取的源优先级（越靠前越优先；未列出的源排最后，doc_id 字典序决胜）。
+#                  质量源（fineweb-edu / cci3-hq）优先，与 S2/S3 规格一致。
+# s2:  精确去重（sha256 归一化文本，num_buckets 个桶两趟扫描）
+# s3:  MinHash-LSH 近重去重（5-gram shingles + 128 排列，16 band × 8 行，真实 Jaccard ≥ 0.8 判重）
+
+source_priority:
+  - fineweb-edu
+  - cci3-hq
+  - dclm-baseline
+
+s2:
+  num_buckets: 4096        # 哈希前 4 位 hex 分桶目录（s2_hash_parts/<domain>/ 内按桶列过滤）
+  reduce_range: 64         # 每个 reduce 任务处理的连续桶数（4096/64 = 64 任务/域）
+  memory_cap_gb: 6.0       # 单 reduce 任务加载上限；超限报错（不许 OOM）
+
+s3:
+  shingle_n: 5             # 5-gram 词组（空白切词）
+  sig_perms: 128           # MinHash 排列数（= bands × rows_per_band）
+  bands: 16                # LSH band 数
+  rows_per_band: 8         # 每 band 行数（候选阈值 t ≈ 0.71）
+  lsh_buckets: 2048        # band_key % 2048 落桶
+  truncate_chars: 100000   # 签名输入截断（超长文档防拖垮吞吐，截断计数入 summary）
+  group_pair_cap: 50       # 单 band 组内文档数上限：超过则星型归约到 doc_id 最小者
+  jaccard_threshold: 0.8   # 真实 Jaccard 判重阈值
+  verify_shingle_cap: 100000  # 验证时单篇 shingle 抽样上限（排序后取前 cap，确定性）
+  reduce_range: 64         # band reduce 任务桶范围（lsh_buckets/64 = 32 任务/band）
+  memory_cap_gb: 6.0       # band reduce / docstore run 内存上限
+  docstore_run_rows: 100000   # 候选正文外排 run 行数
+  verify_bucket_cap_gb: 16.0  # verify 单桶正文加载上限（截断后 2048 字符/篇，留 3-5 倍余量）
+  verify_text_chars: 2048     # verify 用正文前缀截断：2048 字符 ≈ 400 shingles，
+                              # 0.8 相似对前缀 Jaccard 期望仍 >0.6 >> 随机对 ~0，判别力足够
+  pairs_cap_gb: 320.0         # 候选对/验证对集合内存上限。2026-09-20 三次触界（4/12/64 全破）实测：
+                             # web 域"逐文件 unique 数组 concat 峰值"超 64GiB——候选规模超出原型预估。
+                             # 机器 2TB 内存，上限放到 320 留余量。
+                             # TODO(S7): 增量 k-way 外存归并替代内存 concat，把峰值压到真实 unique 规模
+
+# ndv2：web/code 候选签名验证 + direct-edge dominance，以全文抽样审计约束精度。
+# S5 直接消费 lookup；--stage ndv2_refresh 只为仍读取 S3 decision 列的外部消费者保留。
+s3_v2:
+  domains: [code, web]      # 正式 release 两域均须完成；已有桶按输入指纹幂等续跑
+  verification_method: minhash_signature
+  signature_bits: 4        # b-bit MinHash；128 permutations 压为 64B/doc，共享索引可驻留 page cache
+  # 128-permutation 有限样本在点估计 0.80 时会放入约 7.6% 的全文 J<0.8 边；
+  # code 1,024 边校准选择 0.83（>=108/128 个 4-bit match），全文精度 97.87%。
+  minhash_jaccard_threshold: 0.83
+  signature_chunk_pairs: 250000
+  # 每条通过验证的边独立决定较差端点；不做传递闭包，避免少量 MinHash 假阳性桥接
+  # 把两个大簇级联误删。16 路外排后逐分区归并，内存与全域边数解耦。
+  clustering_method: edge_dominance_external
+  decision_partitions: 16
+  decision_partition_cap_gb: 24.0
+  # 近似签名只在抽样全文复核通过后才允许生成删除决策。
+  precision_audit_sample_size: 1024
+  precision_audit_text_cap_gb: 4.0
+  precision_audit_min: 0.97
+  precision_audit_wilson_min: 0.95
+  # 128-permutation precision-first gate intentionally targets strong duplicates:
+  # at J=0.85, >=108 matches has 74.3% acceptance probability (>=70% gate);
+  # at the exact boundary J=0.8 it is 21.7%, and at J=0.9 it is 99.2%.
+  recall_reference_jaccard: 0.85
+  min_theoretical_recall_at_reference: 0.70
+  truncate_chars: 100000    # 全文验证输入截断（与签名一致；禁用 2048 前缀——E-17 死因①）
+  shingle_cap: 100000       # 单篇验证 shingle 上限（排序后取前 cap，确定性均匀采样）
+  pre_filter_min_agree: 0.65  # MinHash 签名一致率预筛：J_est<0.65 ⇒ 真实 J≥0.8 概率 ~1e-5（4.2σ），
+                             # 预筛只误放不误杀；0 = 关闭预筛（无 csig 时自动降级为全量全文验证）
+  a_chunk_docs: 12000       # 2026-09-30: 20000→12000——code/c0 桶实测 4.02GiB 贴脸撞穿 cap 4.0（E-6 第三次重演），降块留 40% 余量（块内计算即弃，E-12 流式审查）
+  chunk_text_cap_gb: 2.0    # 单块正文加载上限（超限报错不许 OOM）
+  b_cache_cap_gb: 9.0       # 2026-10-01: 6→9GB——E-13 复核：9(b_cache)+8(其他)×48w=816GB < 953GiB cgroup（16GB 版会 1.15TB OOM，未爆发即回滚）
+  pairs_cap_gb: 8.0         # 单字节桶候选对加载上限（web 单桶 ~1GB）
+  edges_cap_gb: 32.0        # connected_components 审计/回退路径上限（正式路径不累加全域边）
+  component_mem_cap_gb: 96.0  # connected_components 审计/回退路径内存上限
+  verify_workers: 48        # E-13 并发核算：单任务峰值 ~8GB × 48 = 384GB << 1TB cgroup
+  refresh_workers: 64       # s3/<source>/ 分片 s3_decision 列重写并发

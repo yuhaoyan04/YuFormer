@@ -1,0 +1,16 @@
+{
+  "artifacts": {
+    "endpoints.csv": "319f8a684082e06660281211a5e6a6b325cb81c3d94be0f62ce4e1b22c58d08b",
+    "scaling_curves.png": "e5753067c4b875a3bc169f849bb4db197a3b8806b8ce09a0a0f60823c4159adc",
+    "scaling_curves.svg": "320d8f9468dae0ba05943e5a1177abb63518fdc66b509a691a7eff93e362dcc7"
+  },
+  "audited_endpoints": 24,
+  "claim_limit": "Single-seed screening; cross-point bootstrap does not measure seed variance. Lines join all eligible observations, including nonmonotonic results.",
+  "excluded": [],
+  "expected_endpoints": 24,
+  "fit_status": "FAIL",
+  "input_sha256": "6fdfb851a6c8f38ac1c0b88b0e14614ef1de05b69d3f8edd06161baba3bf3bc9",
+  "parameter_basis": "non-embedding parameters",
+  "schema_version": 1,
+  "status": "EXPLORATORY_PROGRESS"
+}

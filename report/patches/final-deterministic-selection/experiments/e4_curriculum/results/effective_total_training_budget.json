@@ -1,0 +1,67 @@
+{
+  "actual_total_tokens": 966254395392,
+  "allocation_role": "PREPARED_EXECUTION_REQUIRES_FINAL_PRODUCTION_GATES",
+  "applied_to_production_configuration": true,
+  "data_origin_must_be_preserved": "original113 frozen data recipe / DD28 physical release; training consumption changes require new exact counts/order/overlap/temporal admission, not retokenization or overwriting the original recipe",
+  "formal_pretrain_started": false,
+  "launch_total_runtime_ceiling_days": 33,
+  "parameters": 1516600064,
+  "performance_gate": "Sum of all three stage wall-time forecasts at duty.9 <=33days, using current qualified execution policies and actual long-stage throughput; old32.6day estimate is not admission evidence",
+  "question_id": "[\"request_user_input_async\",\"call_55fdaed7a0b146e5816490e17a04a7e5\",0]",
+  "runtime_budget_derivation": {
+    "execution_plan_file": "experiments/e4_curriculum/results/final-measured-total-runtime-execution-plan.json",
+    "execution_plan_sha256": "255f4678303e39f7866fed703fc362a3f6aefbe30a7cf61dc1e8e3f868353202",
+    "nominal_budget_file": "data/health/user-total-pretrain-and-length-budget.json",
+    "nominal_budget_sha256": "d488b1c64942118d1f9d9af8517c7dc4302d68db2d9a8cc6d32a5ef81af9bae4"
+  },
+  "schema_version": 1,
+  "stages": [
+    {
+      "name": "4k-pretrain",
+      "phases": [
+        {
+          "name": "warmup",
+          "samples": 12207104,
+          "tokens": 50000297984,
+          "updates": 11921
+        },
+        {
+          "name": "stable",
+          "samples": 174868480,
+          "tokens": 716261294080,
+          "updates": 170770
+        },
+        {
+          "name": "decay",
+          "samples": 36620288,
+          "tokens": 149996699648,
+          "updates": 35762
+        }
+      ],
+      "seq_len": 4096,
+      "tokens": 916258291712,
+      "updates": 218453
+    },
+    {
+      "name": "16k-midtrain",
+      "seq_len": 16384,
+      "short_replay_fraction": 0.25,
+      "tokens": 29997662208,
+      "updates": 7152
+    },
+    {
+      "name": "64k-midtrain",
+      "seq_len": 65536,
+      "short_replay_fraction": 0.25,
+      "tokens": 19998441472,
+      "updates": 4768
+    }
+  ],
+  "status": "ACTIVE_USER_APPROVED_TOTAL_1T_INCLUDING_LONG_CONTEXT",
+  "target_total_tokens": 1000000000000,
+  "tokens_per_update": 4194304,
+  "total_optimizer_updates": 230373,
+  "updated_at": "2026-11-15T04:48:23.128120+00:00",
+  "user_answer": "\u603b\u7ea6 1T \u5305\u542b\u957f\u5ea6\u5916\u63a8\uff0c\u6574\u5957\u4f18\u5148\u63a7\u5236\u5728 33 \u5929\u5185",
+  "world_size": 8
+}

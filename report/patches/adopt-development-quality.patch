@@ -1,0 +1,18 @@
+*** Begin Patch
+*** Update File: experiments/e4_curriculum/scripts/adopt_training_recipe.py
+@@
+ from adoption_research_evidence import freeze_adoption_research_evidence
++from development_selection_evidence import require_development_review
+@@
+     verify_sustained_result(root, selection, inputs)
++    inputs.update(require_development_review(root, selection))
+*** Update File: experiments/e4_curriculum/scripts/adoption_research_evidence.py
+@@
+                 if name.startswith(('data/experiments/rope_source_controls_20261114/',
+-                                    'experiments/e2_architecture/configs/rope_source_controls_20261114/'))
+-                or name == 'data/health/model-rope-source-controls.json'}
++                                    'experiments/e2_architecture/configs/rope_source_controls_20261114/',
++                                    'experiments/e2_architecture/scripts/',
++                                    'data/health/nearby-lr-', 'data/health/lower-lr-'))
++                or name == 'data/health/model-rope-source-controls.json'}
+*** End Patch

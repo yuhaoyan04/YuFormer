@@ -1,0 +1,18 @@
+name: m3_coverage_balanced_v2
+
+# All vocabulary-size arms consume these exact documents. The distribution is
+# deliberately flatter than the 100B pretrain mix so rare scripts and technical
+# domains receive enough merge statistics; model training still uses the M3 mix.
+domain_weights:
+  # The released train roster contains 299,997,632 multilingual tokens.  A 5%
+  # share of this 6.5B corpus would request 325M and is impossible.  Keep a
+  # 7.5M whole-document safety margin and move the remaining 0.5% to web.
+  web: 0.355
+  code: 0.20
+  academic: 0.10
+  chinese: 0.10
+  math: 0.10
+  encyclopedia: 0.05
+  multilingual: 0.045
+  books: 0.025
+  qa: 0.025

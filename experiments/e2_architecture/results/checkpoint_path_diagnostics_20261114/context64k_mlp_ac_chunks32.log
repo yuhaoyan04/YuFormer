@@ -1,0 +1,626 @@
+{
+  "actual": {
+    "cuda_available": true,
+    "dcp": true,
+    "executable": "/opt/yuformer-torchtitan/bin/python",
+    "fsdp2": true,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "nvidia_driver": "535.161.08",
+    "python": "3.12.16",
+    "torch": "2.14.0+cu126",
+    "torch_checkpointing": "0.1.0",
+    "torch_cuda": "12.6",
+    "torchao": "0.18.0+cu126",
+    "torchtitan": "0.3.0",
+    "torchtitan_commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+    "torchtitan_source_dirty": false,
+    "torchtitan_source_root": "/opt/torchtitan-v0.3.0",
+    "torchvision": "0.29.0+cu126",
+    "triton": "3.8.0"
+  },
+  "checks": {
+    "clean_pinned_source": true,
+    "cuda_available": true,
+    "cuda_build_matches_lock": true,
+    "distributed_checkpoint": true,
+    "fsdp2": true,
+    "hopper_or_newer": true,
+    "nvidia_driver": true,
+    "pinned_source_commit": true,
+    "python_3_12": true,
+    "pytorch_2_14_0": true,
+    "torch_checkpointing_0_1_0": true,
+    "torchao_0_18_0": true,
+    "torchtitan_0_3": true,
+    "torchvision_0_29_0": true,
+    "triton_3_8_0": true
+  },
+  "expected": {
+    "cuda": {
+      "compatibility_mode": "cuda_12_minor_version_compatibility",
+      "minimum_driver_linux": "525.60.13",
+      "pytorch_index_url": "https://download.pytorch.org/whl/cu126",
+      "toolkit": "12.6",
+      "validated_host_driver": "535.161.08"
+    },
+    "hardware": {
+      "bf16_dense_peak_flops_per_device": 989000000000000,
+      "form_factor": "SXM",
+      "gpu_name": "H800",
+      "observed_max_power_watts": 700,
+      "specification": "NVIDIA H800 Tensor Core GPU datasheet; BF16 sparsity peak 1979 TFLOPS, dense approximately half",
+      "specification_url": "https://chaoqing-i.com/upload/20231128/NVIDIA%20H800%20GPU%20Datasheet.pdf"
+    },
+    "python": "3.12",
+    "pytorch": "2.14.0",
+    "schema_version": 1,
+    "torch_checkpointing": "0.1.0",
+    "torchao": "0.18.0",
+    "torchtitan": {
+      "commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+      "repository": "https://github.com/pytorch/torchtitan.git",
+      "tag": "v0.3.0"
+    },
+    "torchvision": "0.29.0",
+    "triton": "3.8.0"
+  },
+  "failed_checks": [],
+  "schema_version": 1,
+  "status": "ready"
+}
+{"identity": {"backend": "torchtitan-v0.3.0", "dataset_id": "yuformer-data-86f5860c47e6162e6ba0", "identity_sha256": "46fc3eda758637cb1dc66420d006c1b4bec54244af612bbe2ecfe72cb661e1d2", "model_configs": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32.model.yaml", "model_configs_sha256": "2e332ac580750792d04bf420bfd967a64cb8df9accb45d33c4e8c2d072613bf2", "release_manifest": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/releases/mix_m3_e1_100b-20261019.release.json", "release_manifest_sha256": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c", "resolved_config_sha256": "167bf3a2112ab841857db1b7486e333401375ae511c6c2ed1d4ad82f896946bc", "run_name": "context64k_mlp_ac_chunks32", "runtime_state_schema_version": 2, "schema_version": 1, "snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5", "source_sha256": "6a53b6054b8892ddbe69518bcc12155fbd1b2729a25a59c17209d36389a41157", "streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.tokens.bin", "capacity_samples": 1502770, "edge_sha256": "fb75ddaf3ea4c4fdc96cbdf2a8bf7f0d3622574603db3aabc4dd05358e3a50e4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json", "meta_sha256": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c", "sample_limit": 1502770}], "token_stream_audit": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json", "token_stream_audit_sha256": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d", "tokenizer_artifact_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "tokenizer_gate": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/TOKENIZER_READY.json", "tokenizer_gate_sha256": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866", "tokenizer_id": "yuformer-tokenizer-20df5ca9ba356e303082", "tokenizer_path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json", "tokenizer_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "training_sample_order": null, "validation_streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.tokens.bin", "capacity_samples": 294, "edge_sha256": "94fea8f60c2ce47060dbb8241a9471ff0ad9607ad9aaee18ea8d2e1e5e1a4402", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.meta.json", "meta_sha256": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3", "sample_limit": 294}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.tokens.bin", "capacity_samples": 304, "edge_sha256": "55983f0436fb247f50ee6eef959db67a73789110ee46a1dc72fae179393abda9", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.meta.json", "meta_sha256": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64", "sample_limit": 304}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.tokens.bin", "capacity_samples": 321, "edge_sha256": "6c48dcc609500522940bc5a79a874d2ff5f970d71ed2f7f8b769344255629726", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.meta.json", "meta_sha256": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767", "sample_limit": 321}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.tokens.bin", "capacity_samples": 302, "edge_sha256": "f2ecf69e459f4804a551c54f5da0ab911a96d785615c11f16370cfcf3b7d12b4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.meta.json", "meta_sha256": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4", "sample_limit": 302}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.tokens.bin", "capacity_samples": 312, "edge_sha256": "8594a651b8cc4c2222c3bbfc4693d5595bd800307b8d48f1998db3eef2252f4e", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json", "meta_sha256": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea", "sample_limit": 312}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.tokens.bin", "capacity_samples": 298, "edge_sha256": "c2bb8daf539ff9cc9012698f5410c7b10bff59447959b49c24dc0ad718591401", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.meta.json", "meta_sha256": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec", "sample_limit": 298}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.tokens.bin", "capacity_samples": 260, "edge_sha256": "31c6b95625e4001fdab1068c2de94f6154bf45f7fbfdcb8b488712fb7a24dec7", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json", "meta_sha256": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2", "sample_limit": 260}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.tokens.bin", "capacity_samples": 180, "edge_sha256": "2ce3553c8672f09fad91822184d967f4c6e45722709a0e4fa1258bef7a1ee55d", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.meta.json", "meta_sha256": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54", "sample_limit": 180}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.tokens.bin", "capacity_samples": 309, "edge_sha256": "c6f3522532c177de5cb1c988533874b263802de116e8455d57213ab0d3705e8f", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.meta.json", "meta_sha256": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899", "sample_limit": 309}]}, "out_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32", "status": "PASS"}
+W1114 20:44:57.877000 298938 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:57.995000 298941 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:58.032000 298938 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:58.150000 298941 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:58,783 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:44:58,852 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:44:58,888 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+W1114 20:44:58.891000 298939 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:58.910000 298945 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:58.914000 298944 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:58,929 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+W1114 20:44:58.929000 298942 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:58,935 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:44:58,959 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_1.20261114-204458-I7LQ0J.jsonl
+W1114 20:44:58.995000 298943 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:59,005 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:44:59,016 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_3.20261114-204459-G2V790.jsonl
+W1114 20:44:59.050000 298937 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:59,326 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:44:59,339 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:44:59,340 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+W1114 20:44:59.341000 298939 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:59,355 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+W1114 20:44:59.364000 298937 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:59,368 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+W1114 20:44:59.368000 298942 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:59,368 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:44:59,370 - root - INFO - Building yuformer checkpoint-diag
+W1114 20:44:59.372000 298944 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:59.378000 298943 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 20:44:59.384000 298945 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 20:44:59,390 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:44:59,391 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:44:59,393 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:44:59,404 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:44:59,427 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:44:59,427 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:44:59,431 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:44:59,436 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:44:59,446 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:44:59,463 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:44:59,463 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:44:59,467 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:44:59,485 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:44:59,834 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:44:59,835 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:44:59,835 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:44:59,835 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:44:59,837 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:44:59,837 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:44:59,844 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:44:59,901 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:44:59,901 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:44:59,901 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:44:59,901 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:44:59,903 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:44:59,903 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:44:59,904 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:44:59,980 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,036 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,189 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:45:00,231 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,233 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:45:00,254 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:45:00,277 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,283 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:45:00,298 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:45:00,301 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,306 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 20:45:00,308 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,317 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_6.20261114-204500-BFDVSM.jsonl
+[titan] 2026-11-14 20:45:00,331 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,348 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,355 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,374 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,387 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_2.20261114-204500-VKVM9B.jsonl
+[titan] 2026-11-14 20:45:00,399 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,416 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_4.20261114-204500-QYGDHA.jsonl
+[titan] 2026-11-14 20:45:00,426 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,438 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,443 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:45:00,444 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:00,452 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:45:00,454 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_0.20261114-204500-KR0T7J.jsonl
+[titan] 2026-11-14 20:45:00,459 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_7.20261114-204500-6IYKQ5.jsonl
+[titan] 2026-11-14 20:45:00,465 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/structured_logs/training.global_rank_5.20261114-204500-0D3HW9.jsonl
+[titan] 2026-11-14 20:45:00,487 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:45:00,488 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:45:00,490 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:45:00,532 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:45:00,549 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:00,549 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:00,552 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:45:00,568 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:45:00,751 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:45:00,758 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:45:00,760 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:45:00,762 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:45:00,773 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:45:00,774 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:45:00,775 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:45:00,775 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 20:45:00,782 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:45:00,785 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 20:45:00,801 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:45:00,802 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:45:00,803 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:45:00,803 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:45:00,804 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:45:00,806 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:45:00,811 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:45:00,811 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:45:00,814 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:45:00,817 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:45:00,818 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:45:00,819 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 20:45:00,819 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 20:45:00,820 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:45:00,821 - root - INFO - Building yuformer checkpoint-diag
+[titan] 2026-11-14 20:45:00,845 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:45:00,847 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:45:00,856 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:45:00,863 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:45:00,879 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:00,879 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:00,881 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:45:00,898 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:00,898 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:00,898 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:00,898 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:00,898 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:00,898 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:00,901 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:45:00,901 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:45:00,901 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:45:00,910 - root - INFO - TensorBoard logging enabled. Logs will be saved at /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/tb/20261114-2045
+[titan] 2026-11-14 20:45:00,910 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 20:45:00,916 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:45:00,919 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:45:00,919 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:45:00,920 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:45:00,949 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:00,949 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:00,952 - root - INFO - [34mModel yuformer checkpoint-diag [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 20:45:00,971 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 20:45:01,000 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:01,000 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:01,000 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:45:01,000 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:45:01,002 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:45:01,002 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:45:01,003 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:45:01,135 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:01,377 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:01,378 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:01,378 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:45:01,378 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:45:01,381 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:45:01,384 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:45:01,384 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:01,384 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:01,384 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:01,384 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:01,384 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:01,384 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:01,384 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:45:01,384 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:45:01,384 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:45:01,385 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:45:01,385 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:45:01,385 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:45:01,385 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:45:01,387 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:45:01,387 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:45:01,387 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:45:01,387 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:45:01,387 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:45:01,387 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:45:01,388 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:45:01,388 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:45:01,388 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:45:01,426 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 20:45:01,426 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 20:45:01,426 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 20:45:01,427 - root - INFO - CUDA memory usage for model: 73.66GiB(92.85%)
+[titan] 2026-11-14 20:45:01,429 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 20:45:01,429 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 1e-05, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 20:45:01,430 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 20:45:01,532 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:01,534 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:01,535 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:01,542 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:01,584 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,602 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,603 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,603 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,603 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,603 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,603 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,604 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,604 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,604 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,604 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,604 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,604 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/checkpoint_path_diagnostics_20261114/context64k_mlp_ac_chunks32/checkpoint
+[titan] 2026-11-14 20:45:01,604 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,605 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,605 - root - INFO - Trainer is initialized with local batch size 1, global batch size 64, gradient accumulation steps 8, sequence length 65536, total steps 4 (warmup 1)
+[titan] 2026-11-14 20:45:01,606 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,606 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 20:45:01,606 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 20:45:01,606 - root - INFO - Training starts at step 1
+[rank6]:[W1114 20:45:23.694106902 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 6 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank4]:[W1114 20:45:23.694531980 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 4 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank5]:[W1114 20:45:23.695121783 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 5 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank7]:[W1114 20:45:23.695305577 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 7 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank0]:[W1114 20:45:23.702207538 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank1]:[W1114 20:45:23.702700851 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 1 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank3]:[W1114 20:45:23.702703631 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 3 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank2]:[W1114 20:45:23.703906437 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 2 while trying to allocate 77594624 bytes (free: 39256064, total: 85176483840).
+[rank6]:[W1114 20:45:24.646309423 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 6 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank4]:[W1114 20:45:24.652693417 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 4 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank5]:[W1114 20:45:24.653149956 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 5 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank0]:[W1114 20:45:24.653491005 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank7]:[W1114 20:45:24.654613308 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 7 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank1]:[W1114 20:45:24.655223276 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 1 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank3]:[W1114 20:45:24.655943765 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 3 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[rank2]:[W1114 20:45:24.660899712 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 2 while trying to allocate 77594624 bytes (free: 14090240, total: 85176483840).
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 14,175  [36mtflops: 215.44  [35mmfu: 21.78%[39m
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 14,303  [36mtflops: 217.38  [35mmfu: 21.98%[39m
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 14,310  [36mtflops: 217.49  [35mmfu: 21.99%[39m
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 14,310  [36mtflops: 217.49  [35mmfu: 21.99%[39m
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 13,758  [36mtflops: 209.10  [35mmfu: 21.14%[39m
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 14,310  [36mtflops: 217.49  [35mmfu: 21.99%[39m
+[titan] 2026-11-14 20:45:37,535 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 13,771  [36mtflops: 209.29  [35mmfu: 21.16%[39m
+[titan] 2026-11-14 20:45:37,537 - root - INFO - [31mstep:  1  [32mloss: 11.60197  [38;2;180;60;0mgrad_norm:  4.7290  [38;2;54;234;195mmemory: 76.77GiB(96.77%)  [34mtps: 14,330  [36mtflops: 217.80  [35mmfu: 22.02%[39m
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,803[39m
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,803[39m
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,803[39m
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,804[39m
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,803[39m
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,804[39m
+[titan] 2026-11-14 20:45:48,922 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,803[39m
+[titan] 2026-11-14 20:45:48,923 - root - INFO - [33mvalidate step:  1  [32mloss: 11.3285  [38;2;54;234;195mmemory: 73.29GiB(92.39%)  [34mtps: 51,811[39m
+[titan] 2026-11-14 20:45:48,924 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,924 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,924 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,925 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,928 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,928 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,929 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:45:48,936 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,321  [36mtflops: 521.62  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,321  [36mtflops: 521.63  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,322  [36mtflops: 521.63  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,321  [36mtflops: 521.62  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,322  [36mtflops: 521.64  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,322  [36mtflops: 521.63  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,199 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:04,199 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,322  [36mtflops: 521.63  [35mmfu: 52.74%[39m
+[titan] 2026-11-14 20:46:04,200 - root - INFO - [31mstep:  2  [32mloss: 11.07071  [38;2;180;60;0mgrad_norm:  6.4175  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,324  [36mtflops: 521.67  [35mmfu: 52.75%[39m
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.49  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.49  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.49  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.49  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.49  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.49  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,509 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,246  [36mtflops: 520.48  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:19,510 - root - INFO - [31mstep:  3  [32mloss: 10.58752  [38;2;180;60;0mgrad_norm: 11.1951  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,250  [36mtflops: 520.54  [35mmfu: 52.63%[39m
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.20  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.20  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.20  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.20  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - WARNING - 2 CUDA memory allocation retries.
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.21  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.21  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,856 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,162  [36mtflops: 519.20  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,857 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:34,858 - root - INFO - [31mstep:  4  [32mloss: 10.01920  [38;2;180;60;0mgrad_norm:  9.5149  [38;2;54;234;195mmemory: 74.14GiB(93.46%)  [34mtps: 34,165  [36mtflops: 519.25  [35mmfu: 52.50%[39m
+[titan] 2026-11-14 20:46:34,858 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 20:46:34,858 - root - INFO - Saving a full checkpoint at last step, step 4.
+[titan] 2026-11-14 20:46:36,406 - root - INFO - Destroying the purge thread.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank0]:   File "<frozen runpy>", line 88, in _run_code
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank0]:     main()
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank0]:     super().train()
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank0]:     return f(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1044, in train
+[rank0]:     self.checkpointer.save(
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/base.py", line 175, in save
+[rank0]:     return self._save(curr_step, last_step)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/dcp.py", line 414, in _save
+[rank0]:     self._save_last_step(curr_step)
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/dcp.py", line 786, in _save_last_step
+[rank0]:     self.dcp_save(
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/dcp.py", line 310, in dcp_save
+[rank0]:     ret = dcp.save(
+[rank0]:           ^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/logger.py", line 90, in wrapper
+[rank0]:     result = func(*args, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py", line 488, in inner_func
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 196, in save
+[rank0]:     return _save_state_dict(
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 487, in _save_state_dict
+[rank0]:     central_plan = distW.reduce_scatter("plan", local_step, global_step)
+[rank0]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py", line 220, in reduce_scatter
+[rank0]:     result = self.scatter_object(all_results)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py", line 163, in scatter_object
+[rank0]:     dist.scatter_object_list(
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4910, in scatter_object_list
+[rank0]:     scatter(
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 5704, in scatter
+[rank0]:     work = group.scatter(output_tensors, input_tensors, opts)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: NCCL Error 1: unhandled cuda error (run with NCCL_DEBUG=INFO for details)
+W1114 20:46:39.275000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298938 closing signal SIGTERM
+W1114 20:46:39.277000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298939 closing signal SIGTERM
+W1114 20:46:39.282000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298941 closing signal SIGTERM
+W1114 20:46:39.286000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298942 closing signal SIGTERM
+W1114 20:46:39.288000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298943 closing signal SIGTERM
+W1114 20:46:39.293000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298944 closing signal SIGTERM
+W1114 20:46:39.295000 298917 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 298945 closing signal SIGTERM
+E1114 20:46:42.122000 298917 torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 0 (pid: 298937) of binary: /opt/yuformer-torchtitan/bin/python
+E1114 20:46:42.126000 298917 torch/distributed/elastic/multiprocessing/errors/error_handler.py:157] no error file defined for parent, to copy child error file (/tmp/torchelastic_99t9lowz/none_dp8udfrp/attempt_0/0/error.json)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+torchtitan.train FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 298938)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298938
+[2]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 298939)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298939
+[3]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 298941)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298941
+[4]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 298942)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298942
+[5]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 298943)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298943
+[6]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 298944)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298944
+[7]:
+  time      : 2026-11-14_20:46:42
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 298945)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 298945
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-14_20:46:36
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 298937) 
+  error_file: /tmp/torchelastic_99t9lowz/none_dp8udfrp/attempt_0/0/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1044, in train
+      self.checkpointer.save(
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/base.py", line 175, in save
+      return self._save(curr_step, last_step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/dcp.py", line 414, in _save
+      self._save_last_step(curr_step)
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/dcp.py", line 786, in _save_last_step
+      self.dcp_save(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/checkpointer/dcp.py", line 310, in dcp_save
+      ret = dcp.save(
+            ^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/logger.py", line 90, in wrapper
+      result = func(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py", line 488, in inner_func
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 196, in save
+      return _save_state_dict(
+             ^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/state_dict_saver.py", line 487, in _save_state_dict
+      central_plan = distW.reduce_scatter("plan", local_step, global_step)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py", line 220, in reduce_scatter
+      result = self.scatter_object(all_results)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py", line 163, in scatter_object
+      dist.scatter_object_list(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 4910, in scatter_object_list
+      scatter(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 5704, in scatter
+      work = group.scatter(output_tensors, input_tensors, opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  RuntimeError: NCCL Error 1: unhandled cuda error (run with NCCL_DEBUG=INFO for details)
+  
+============================================================

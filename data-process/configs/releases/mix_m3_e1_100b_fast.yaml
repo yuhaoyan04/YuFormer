@@ -1,0 +1,157 @@
+schema_version: 1
+release_name: mix_m3_e1_100b_fast-20261018
+snapshot_root: data/processed
+audit_scope:
+  included_sources:
+    - arxiv-latex-corpus
+    - automathtext
+    - cci3-hq
+    - dclm-baseline
+    - dolma-books
+    - fineweb
+    - fineweb-2
+    - fineweb-edu
+    - github-code
+    - pes2o
+    - proof-pile-2
+    - skypile-150b
+    - stack-exchange
+    - starcoderdata
+    - wikipedia-en
+    - wikipedia-zh
+    - wikitext
+  excluded_sources:
+    c4: disabled in data_sources.yaml; redundant Common Crawl source was never admitted downstream
+    pg19: disabled after incompatible raw-text ingestion; dolma-books supplies the books domain
+artifacts:
+  - mix_members/mix_m3_e1_100b_fast.parquet
+  - mix_order/mix_m3_e1_100b_fast_stage2.parquet
+  - mix_order/mix_m3_e1_100b_fast.manifest.json
+  - stage_s6_global_summary.json
+  - val_sets/_val_global_summary.json
+  - val_sets/academic.ids.bin
+  - val_sets/academic.parquet
+  - val_sets/academic.summary.json
+  - val_sets/books.ids.bin
+  - val_sets/books.parquet
+  - val_sets/books.summary.json
+  - val_sets/chinese.ids.bin
+  - val_sets/chinese.parquet
+  - val_sets/chinese.summary.json
+  - val_sets/code.ids.bin
+  - val_sets/code.parquet
+  - val_sets/code.summary.json
+  - val_sets/encyclopedia.ids.bin
+  - val_sets/encyclopedia.parquet
+  - val_sets/encyclopedia.summary.json
+  - val_sets/math.ids.bin
+  - val_sets/math.parquet
+  - val_sets/math.summary.json
+  - val_sets/multilingual.ids.bin
+  - val_sets/multilingual.parquet
+  - val_sets/multilingual.summary.json
+  - val_sets/qa.ids.bin
+  - val_sets/qa.parquet
+  - val_sets/qa.summary.json
+  - val_sets/web.ids.bin
+  - val_sets/web.parquet
+  - val_sets/web.summary.json
+  - goldrule_research/mix_m3_e1_100b_fast.parquet
+gates:
+  A1:
+    status: PASS
+    verification: machine
+    detail: 当前 snapshot 的 17 个纳入源在 s1→s2→s3→decontam 间分片数与行数守恒，全部成功产物 footer 已核验
+    evidence: [data/processed/audit_consistency_20261018.json]
+    assertions:
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /output_footers_verified, equals: true}
+  A2:
+    status: PASS
+    verification: machine
+    detail: 当前 snapshot 的 17 个纳入源均满足 s0 out == s1 in，s0/s1 分片数一致且产物 footer 无错误
+    evidence: [data/processed/audit_consistency_20261018.json]
+    assertions:
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /totals/s0/n_artifact_errors, equals: 0}
+  A3: {status: PENDING, detail: s0-s3/decontam 的范围内错误为 0，但历史 global summary 被局部重跑覆盖且 ndv2 summary 缺失，尚不能签收全阶段, evidence: [data/processed/audit_consistency_20261018.json]}
+  A4:
+    status: PASS
+    verification: machine
+    detail: stack-exchange 398 分片与 dolma-books 3 分片均在 s3/decontam 一一对齐
+    evidence: [data/processed/audit_consistency_20261018.json]
+    assertions:
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /reconciliation_table/5/source, equals: dolma-books}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /reconciliation_table/5/s3_shards, equals: 3}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /reconciliation_table/5/decontam_shards, equals: 3}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /reconciliation_table/14/source, equals: stack-exchange}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /reconciliation_table/14/s3_shards, equals: 398}
+      - {path: data/processed/audit_consistency_20261018.json, json_pointer: /reconciliation_table/14/decontam_shards, equals: 398}
+  B1: {status: BLOCKED, detail: web/code near-dedup 被 fast-track 豁免, evidence: [data/processed/stage_s5_global_summary.json]}
+  B2:
+    status: PASS
+    verification: machine
+    detail: 当前 fast snapshot 的逐域 S2/S3 decision parquet 行数与 S5 exact/near/decontam drop 账闭合；B1 的 near-dedup 质量缺口仍独立阻塞
+    evidence: [data/processed/audit_s6_metadata_20261018.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261018.json, json_pointer: /gates/B2/status, equals: PASS}
+  B3: {status: BLOCKED, detail: 中文 distinct-hit 修复尚未生产重跑, evidence: [data/audit_data_quality_20261012/report.json]}
+  C1:
+    status: PASS
+    verification: manual
+    reviewer: user-decision-20261010
+    detail: 生产 score_field 已裁定为 goldrule hybrid_v2；fasttext 轨退役，holdout AUC 0.899
+    evidence: [data-process/docs/DECISION_RECORD_20261010.md]
+  C2:
+    status: PASS
+    verification: machine
+    detail: 全量 12,829 个 S4 分片按 17 来源与 203 语言审计 hybrid_v2/domain_quantile；119 个达到统计门槛的语言全部健康，中文域内 rank 中位数不低于英文
+    evidence: [data/processed/audit_score_distributions_20261018.json]
+    assertions:
+      - {path: data/processed/audit_score_distributions_20261018.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_score_distributions_20261018.json, json_pointer: /files_scanned, equals: 12829}
+      - {path: data/processed/audit_score_distributions_20261018.json, json_pointer: /language_bias/passed, equals: true}
+  C3:
+    status: PASS
+    verification: machine
+    detail: hybrid_v2 mmap 分位表覆盖全部 9 域，dtype/单调分位/行数与 S5 输入逐域一致
+    evidence: [data/processed/audit_s6_metadata_20261018.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261018.json, json_pointer: /gates/C3/status, equals: PASS}
+  C4: {status: BLOCKED, detail: goldrule research 仅约 1.36M 行，低于 10M 门槛, evidence: [data/processed/stage_s6_global_summary.json]}
+  D1:
+    status: PASS
+    verification: machine
+    detail: 分域 selected/shortfall/quota、分源 token 和总 selected token 闭合，web shortfall <10%
+    evidence: [data/processed/audit_s6_metadata_20261018.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261018.json, json_pointer: /gates/D1/status, equals: PASS}
+  D2: {status: BLOCKED, detail: 新配置已禁用伪 curriculum 并改为单一随机顺序；当前 S6 artifact 仍是旧 upstream_score 两阶段顺序，须重物化后才能签收, evidence: [data/processed/audit_s6_metadata_20261018.json]}
+  D3:
+    status: PASS
+    verification: machine
+    detail: 精确扫描 75,673,876 个 train IDs 与 337,305 个唯一 validation IDs，交集为 0；九域 token 配额均满足
+    evidence: [data/processed/audit_train_val_ids_20261018.json]
+    assertions:
+      - {path: data/processed/audit_train_val_ids_20261018.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_train_val_ids_20261018.json, json_pointer: /train_val_intersection_rows, equals: 0}
+  D4:
+    status: PASS
+    verification: machine
+    detail: 全量外排审计确认 75,673,876 个 member doc_id 唯一，与 stage1+stage2 order 的 doc_id 多重集精确相等，且各阶段 position 连续
+    evidence: [data/processed/audit_mix_identity_20261018.json]
+    assertions:
+      - {path: data/processed/audit_mix_identity_20261018.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_mix_identity_20261018.json, json_pointer: /duplicate_member_ids, equals: 0}
+      - {path: data/processed/audit_mix_identity_20261018.json, json_pointer: /duplicate_order_ids, equals: 0}
+      - {path: data/processed/audit_mix_identity_20261018.json, json_pointer: /member_rows, equals: 75673876}
+      - {path: data/processed/audit_mix_identity_20261018.json, json_pointer: /order_rows, equals: 75673876}
+  E1: {status: PENDING, detail: fast mix 质量抽检需按最终 release 重跑, evidence: [data/audit_data_quality_20261012/report.json]}
+  E2: {status: PENDING, detail: 人审样本尚未签名, evidence: [data/audit_data_quality_20261012/report.json]}
+  E3: {status: BLOCKED, detail: B4K 占比 97.5364% 高于 90%-96% 诊断区间，正式 release 需解释或调整, evidence: [data/processed/audit_s6_metadata_20261018.json]}
+  E4: {status: BLOCKED, detail: 当前训练流缺 EOD，需重物化并抽样对拍, evidence: [data/experiments/e0q2/INVALIDATED_20261018.json]}
+  F1: {status: PENDING, detail: S6 幂等复验未执行, evidence: []}
+  F2: {status: BLOCKED, detail: 当前 S6 manifest 缺 upstream_snapshot_sha256 与逐产物快照, evidence: [data/processed/audit_s6_metadata_20261018.json]}
+  F3: {status: PASS, detail: 全链审计已归档, reviewer: codex-audit-20261018, evidence: [report/PROJECT_AUDIT_20261018.md]}
+  G1: {status: BLOCKED, detail: 17 个纳入源尚未记录下载时的 immutable revision，且部分源的 license evidence 待复核, evidence: [data/processed/audit_source_governance_20261018.json, data/pretrain-raw/DOWNLOAD_PROVENANCE_INVALIDATED_20261018.json]}
+  G2: {status: BLOCKED, detail: training use、redistribution、PII 和 opt-out 的逐源复核尚未签名, evidence: [data/processed/audit_source_governance_20261018.json]}

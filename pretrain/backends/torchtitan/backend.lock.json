@@ -1,0 +1,29 @@
+{
+  "cuda": {
+    "compatibility_mode": "cuda_12_minor_version_compatibility",
+    "minimum_driver_linux": "525.60.13",
+    "pytorch_index_url": "https://download.pytorch.org/whl/cu126",
+    "toolkit": "12.6",
+    "validated_host_driver": "535.161.08"
+  },
+  "hardware": {
+    "gpu_name": "H800",
+    "form_factor": "SXM",
+    "bf16_dense_peak_flops_per_device": 989000000000000,
+    "observed_max_power_watts": 700,
+    "specification": "NVIDIA H800 Tensor Core GPU datasheet; BF16 sparsity peak 1979 TFLOPS, dense approximately half",
+    "specification_url": "https://chaoqing-i.com/upload/20231128/NVIDIA%20H800%20GPU%20Datasheet.pdf"
+  },
+  "python": "3.12",
+  "pytorch": "2.14.0",
+  "schema_version": 1,
+  "torchao": "0.18.0",
+  "torch_checkpointing": "0.1.0",
+  "torchvision": "0.29.0",
+  "triton": "3.8.0",
+  "torchtitan": {
+    "commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+    "repository": "https://github.com/pytorch/torchtitan.git",
+    "tag": "v0.3.0"
+  }
+}

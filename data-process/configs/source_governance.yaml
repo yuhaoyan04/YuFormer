@@ -1,0 +1,180 @@
+schema_version: 2
+provenance_report: data/processed/source_provenance/recovered_source_provenance_20261019.json
+provenance_report_sha256: 679fba1aed4f51e0d1b8e89ff6cbe937f3879e9331ac6ff8d9be3a2fcdbc7c91
+policy:
+  scope: internal non-production LLM research under G2 controls signed by user-decision-20261019-g2
+  redistribution: raw text, token streams, and reconstructable row-level exports are prohibited while any redistribution_review
+    is PENDING
+  model_release: requires a separate legal/policy review; G2 training PASS does not grant model-release approval
+  deletion: record source/doc_id tombstones and rebuild affected content-addressed snapshots before subsequent training runs
+sources:
+  arxiv-latex-corpus:
+    upstream: KiteFishAI/arxiv-tex-corpus-full
+    immutable_revision: 02b5b67c83a6f2736cb8db4f2b56faa601d4e4af
+    declared_license: mixed per-paper arXiv licenses; repository metadata MIT does not override content licenses
+    evidence_url: https://huggingface.co/datasets/KiteFishAI/arxiv-tex-corpus-full/tree/02b5b67c83a6f2736cb8db4f2b56faa601d4e4af
+    training_use_review: PENDING
+    redistribution_review: PENDING
+    pii_review: PENDING
+    opt_out_review: PENDING
+    reviewer: null
+  automathtext:
+    upstream: math-ai/AutoMathText
+    immutable_revision: 221818ca115f0c1f63eccd4f600ed963866ae5d9
+    declared_license: CC-BY-SA-4.0 (dataset card)
+    evidence_url: https://huggingface.co/datasets/math-ai/AutoMathText/tree/221818ca115f0c1f63eccd4f600ed963866ae5d9
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  cci3-hq:
+    upstream: BAAI/CCI3-HQ
+    immutable_revision: d6f3aa30cebfef497e822ff968ed68a18bf90b8f
+    declared_license: NO BLANKET LICENSE DECLARED; gated no-harm access terms
+    evidence_url: https://huggingface.co/datasets/BAAI/CCI3-HQ/tree/d6f3aa30cebfef497e822ff968ed68a18bf90b8f
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  dclm-baseline:
+    upstream: mlfoundations/dclm-baseline-1.0
+    immutable_revision: a3b142c183aebe5af344955ae20836eb34dcf69b
+    declared_license: CC-BY-4.0 (dataset card; research-only intended-use note)
+    evidence_url: https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0/tree/a3b142c183aebe5af344955ae20836eb34dcf69b
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  dolma-books:
+    upstream: dolma-v1_6/books
+    immutable_revision: 8c5c879b90cb0c5cedb73023b639c3251634cf8b1046a90bbb730eecb6db6c8c
+    declared_license: ODC-By-1.0 database license; underlying content rights remain separate
+    evidence_url: https://huggingface.co/datasets/allenai/dolma/blob/main/LICENSE.md
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  fineweb:
+    upstream: HuggingFaceFW/fineweb
+    immutable_revision: 9bb295ddab0e05d785b879661af7260fed5140fc
+    declared_license: ODC-By-1.0 database license; underlying content rights remain separate
+    evidence_url: https://huggingface.co/datasets/HuggingFaceFW/fineweb/tree/9bb295ddab0e05d785b879661af7260fed5140fc
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  fineweb-2:
+    upstream: HuggingFaceFW/fineweb-2
+    immutable_revision: af9c13333eb981300149d5ca60a8e9d659b276b9
+    declared_license: ODC-By-1.0 database license; underlying content rights remain separate
+    evidence_url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-2/tree/af9c13333eb981300149d5ca60a8e9d659b276b9
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  fineweb-edu:
+    upstream: HuggingFaceFW/fineweb-edu
+    immutable_revision: 87f09149ef4734204d70ed1d046ddc9ca3f2b8f9
+    declared_license: ODC-By-1.0 database license; underlying content rights remain separate
+    evidence_url: https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/tree/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  github-code:
+    upstream: codeparrot/github-code
+    immutable_revision: b5661e6b17396364b2bcf8e68977b0d28e1ebd19
+    declared_license: mixed per-repository licenses recorded per sample; dataset card license=other
+    evidence_url: https://huggingface.co/datasets/codeparrot/github-code/tree/b5661e6b17396364b2bcf8e68977b0d28e1ebd19
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  pes2o:
+    upstream: allenai/peS2o
+    immutable_revision: 636a503e44a3ca1b58e01fb61eab0825cd574de0
+    declared_license: ODC-By-1.0 (dataset card)
+    evidence_url: https://huggingface.co/datasets/allenai/peS2o/tree/636a503e44a3ca1b58e01fb61eab0825cd574de0
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  proof-pile-2:
+    upstream: EleutherAI/proof-pile-2
+    immutable_revision: 901a9273a770e9d4138c5ddd91802f9c5c6cdc4b
+    declared_license: mixed underlying licenses; dataset explicitly does not alter them
+    evidence_url: https://huggingface.co/datasets/EleutherAI/proof-pile-2/tree/901a9273a770e9d4138c5ddd91802f9c5c6cdc4b
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  skypile-150b:
+    upstream: Skywork/SkyPile-150B
+    immutable_revision: d6395caa3005bcbf21dd80585c15f60004f77ccb
+    declared_license: Skywork Community License; dataset card states commercial use subject to its terms
+    evidence_url: https://huggingface.co/datasets/Skywork/SkyPile-150B/tree/d6395caa3005bcbf21dd80585c15f60004f77ccb
+    training_use_review: PENDING
+    redistribution_review: PENDING
+    pii_review: PENDING
+    opt_out_review: PENDING
+    reviewer: null
+  stack-exchange:
+    upstream: HuggingFaceH4/stack-exchange-preferences
+    immutable_revision: c7bda74048748f55749cd663c3d8d1025a841fd9
+    declared_license: CC-BY-SA-4.0 with attribution requirements
+    evidence_url: https://huggingface.co/datasets/HuggingFaceH4/stack-exchange-preferences/tree/c7bda74048748f55749cd663c3d8d1025a841fd9
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  starcoderdata:
+    upstream: bigcode/starcoderdata
+    immutable_revision: 9fc30b578cedaec69e47302df72cf00feed7c8c4
+    declared_license: mixed original repository licenses plus The Stack Terms of Use
+    evidence_url: https://huggingface.co/datasets/bigcode/starcoderdata/tree/9fc30b578cedaec69e47302df72cf00feed7c8c4
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  wikipedia-en:
+    upstream: wikimedia/wikipedia
+    immutable_revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa
+    declared_license: CC-BY-SA-3.0 and GFDL (dataset metadata)
+    evidence_url: https://huggingface.co/datasets/wikimedia/wikipedia/tree/b04c8d1ceb2f5cd4588862100d08de323dccfbaa
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  wikipedia-zh:
+    upstream: wikimedia/wikipedia
+    immutable_revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa
+    declared_license: CC-BY-SA-3.0 and GFDL (dataset metadata)
+    evidence_url: https://huggingface.co/datasets/wikimedia/wikipedia/tree/b04c8d1ceb2f5cd4588862100d08de323dccfbaa
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2
+  wikitext:
+    upstream: Salesforce/wikitext
+    immutable_revision: b08601e04326c79dfdd32d625aee71d232d685c3
+    declared_license: CC-BY-SA-3.0 and GFDL in Hub metadata; card text also references CC-BY-SA-4.0
+    evidence_url: https://huggingface.co/datasets/Salesforce/wikitext/tree/b08601e04326c79dfdd32d625aee71d232d685c3
+    training_use_review: PASS
+    redistribution_review: PASS
+    pii_review: PASS
+    opt_out_review: PASS
+    reviewer: user-decision-20261019-g2

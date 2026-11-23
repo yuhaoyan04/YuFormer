@@ -1,0 +1,46 @@
+--- a/experiments/e4_curriculum/scripts/audit_1t_overlap.py
++++ b/experiments/e4_curriculum/scripts/audit_1t_overlap.py
+@@ -279,11 +279,14 @@
+     config = yaml.safe_load(config_path.read_text())
+     limits = [int(value) for value in config["data"]["stage_sample_limits"]]
+     seq_len = int(config["data"]["seq_len"])
++    from overlap_training_windows import resolve_windows, consumption_cache
++    resolved_windows = resolve_windows(root, config, release, sha256(release_path))
+     extracted, raw_paths, consumed_extracted, consumed_paths = {}, [], {}, []
+     evidence_snapshot = {
+         path.resolve().relative_to(root.resolve()).as_posix(): sha256(path)
+         for path in (release_path, plan_path, config_path, frozen_path)
+     }
++    evidence_snapshot.update(resolved_windows["inputs"])
+     artifact_stats: dict[str, dict[str, int]] = {}
+     for stage in STAGES:
+         order_relative = release["stages"][stage]["order"]
+@@ -315,11 +318,16 @@
+         artifact_stats[lengths_path.relative_to(root).as_posix()] = lengths_before
+         length_identity = (f"{row['sha256']}:{lengths_record.get('sha256')}:"
+                            f"{limits[len(consumed_paths)]}:{seq_len}")
+-        consumed_raw = cache / f"{stage}.consumed.records"
++        source_offset = resolved_windows["source_sample_offsets"][len(consumed_paths)]
++        consumed_raw, length_identity = consumption_cache(cache, stage, length_identity, source_offset)
+         consumed_extracted[stage] = extract_consumed(
+             root / order_relative, lengths_path, consumed_raw, identity=length_identity,
+             trained_tokens=limits[len(consumed_paths)] * seq_len,
++            target_start=1+source_offset*seq_len,
+         )
++        if (stage in resolved_windows["windows"] and consumed_extracted[stage]["domain_tokens"]
++                != resolved_windows["windows"][stage]["domain_tokens"]):
++            raise ValueError("final overlap real-ID extraction disagrees with admitted source window: "+stage)
+         consumed_paths.append(consumed_raw)
+     binary = cache / "overlap_merge"
+     source = root / "experiments/e4_curriculum/scripts/overlap_merge.c"
+@@ -383,7 +391,9 @@
+             "consumed_domain_mixture": mixture,
+             "consumed_stages": consumed_extracted, "consumed_metrics": consumed_metrics,
+             "replayed_consumed_tokens": replay, "replayed_consumption_fraction": fraction,
+-            "consumption_interval": "causal_targets_stream_indices_[1,N*seq_len+1)",
++            "consumption_interval": "causal_targets_stream_indices_[1+offset*seq_len,1+(offset+N)*seq_len)",
++            "source_sample_offsets": resolved_windows["source_sample_offsets"],
++            "source_windows": resolved_windows["windows"],
+             "evidence_snapshot": evidence_snapshot,
+             "evidence_snapshot_count": len(evidence_snapshot),
+             "large_artifact_stat_identities": artifact_stats}

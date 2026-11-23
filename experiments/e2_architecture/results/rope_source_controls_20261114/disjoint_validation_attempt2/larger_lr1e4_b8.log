@@ -1,0 +1,226 @@
+W1114 23:24:26.970000 331742 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.131000 331742 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.599000 331739 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.684000 331743 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.695000 331741 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.719000 331736 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.746000 331737 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.754000 331739 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.807000 331740 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.903000 331738 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.951000 331743 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.958000 331741 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:27.995000 331736 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:28.007000 331737 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:28.007000 331740 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:24:28.037000 331738 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 23:24:28,637 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:28,638 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:28,751 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:28,785 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:28,799 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:28,799 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:28,821 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:28,822 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:28,826 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:28,874 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:28,882 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:28,882 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:28,885 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:28,886 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:28,902 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:28,905 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:28,930 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:28,931 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:28,934 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:28,984 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,017 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,017 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,020 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,024 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:29,024 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:29,033 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:29,033 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:29,046 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,069 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:29,070 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:29,094 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:29,094 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:29,094 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:29,094 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:29,236 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:24:29,236 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:24:29,462 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:29,468 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:29,473 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:29,475 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:29,476 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:29,480 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:29,483 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:29,488 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:29,489 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:29,497 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:29,503 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:29,504 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:29,505 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:29,505 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:29,508 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:29,509 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:29,514 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:29,515 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:29,516 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:24:29,518 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:29,519 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:29,520 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:29,520 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:29,521 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:29,523 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:29,523 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:29,527 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:24:29,539 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:24:29,540 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:24:29,543 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:24:29,554 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,556 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,558 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,560 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,565 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,566 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,568 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,572 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,572 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,572 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,573 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,575 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,576 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,579 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,579 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,581 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,583 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,588 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,597 - root - INFO - TensorBoard logging enabled. Logs will be saved at /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/tb/20261114-2324
+[titan] 2026-11-14 23:24:29,597 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,597 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:24:29,597 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,597 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,597 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,598 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,600 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,613 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,614 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,617 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:24:29,622 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,641 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:24:29,694 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,694 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,694 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:29,694 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,695 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,695 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:29,695 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:29,695 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:29,696 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:29,696 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:29,697 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:29,697 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:29,697 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:29,698 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:29,840 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:29,840 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:29,841 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:29,841 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:29,846 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:29,846 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:29,959 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,959 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,959 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,959 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:29,959 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,959 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:29,959 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:29,959 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:29,959 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:29,959 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:29,959 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:29,960 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:29,961 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:29,961 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:29,961 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:29,961 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:29,961 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:29,961 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:29,962 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:29,962 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:29,962 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:30,038 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:30,038 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:30,038 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:30,038 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:30,038 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:30,039 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:30,039 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:30,039 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:30,041 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:30,050 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:30,050 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:24:30,051 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:24:30,051 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:24:30,051 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:24:30,051 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:30,052 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:30,052 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:30,053 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:30,054 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:24:30,054 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:24:30,055 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:24:30,093 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:30,093 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:30,093 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:30,093 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:30,094 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:30,094 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:30,095 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:30,095 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:30,096 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:30,199 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:30,199 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:30,199 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:30,206 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:30,206 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:30,206 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:30,206 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation_attempt2/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:24:30,207 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:24:30,207 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:24:36,121 - root - INFO - [GC] GC collection for checkpoint loading. took 0.00 seconds
+[titan] 2026-11-14 23:24:36,121 - root - INFO - Finished loading the checkpoint in 6.03 seconds.
+[titan] 2026-11-14 23:24:36,127 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,127 - root - INFO - Finished loading the checkpoint in 6.03 seconds.
+[titan] 2026-11-14 23:24:36,128 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,128 - root - INFO - Finished loading the checkpoint in 5.92 seconds.
+[titan] 2026-11-14 23:24:36,130 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,130 - root - INFO - Finished loading the checkpoint in 6.28 seconds.
+[titan] 2026-11-14 23:24:36,145 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,145 - root - INFO - Finished loading the checkpoint in 5.95 seconds.
+[titan] 2026-11-14 23:24:36,146 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,146 - root - INFO - Finished loading the checkpoint in 6.30 seconds.
+[titan] 2026-11-14 23:24:36,148 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,149 - root - INFO - Finished loading the checkpoint in 6.05 seconds.
+[titan] 2026-11-14 23:24:36,148 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:24:36,149 - root - INFO - Finished loading the checkpoint in 5.94 seconds.
+{"case": "larger_lr1e4_b8", "domain": "academic", "primary_reproduced_loss": 5.5656750202178955, "original_primary_loss": 5.565674781799316, "batch_mean_losses": [5.5477359890937805, 5.613080441951752, 5.560400307178497, 5.547617435455322, 5.631922662258148, 5.49308717250824, 5.658912241458893, 5.564940273761749, 5.606903314590454, 5.630225121974945, 5.563785195350647, 5.576156973838806, 5.63794481754303, 5.554210305213928, 5.626994431018829, 5.50806188583374, 5.6058695912361145, 5.613137900829315, 5.661588966846466, 5.564292252063751, 5.6271345019340515, 5.586232841014862, 5.606399476528168, 5.498879432678223, 5.560632169246674, 5.651364982128143, 5.638751327991486, 5.569849371910095, 5.528598368167877, 5.633530139923096, 5.547036170959473, 5.5087162256240845, 5.587539553642273, 5.5190190076828, 5.601797521114349, 5.533046782016754, 5.584114909172058, 5.647616982460022, 5.5797699093818665, 5.665513575077057, 5.580940008163452, 5.643953382968903, 5.570985376834869, 5.574221730232239], "mean_loss": 5.586647977883166, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "books", "primary_reproduced_loss": 5.549429178237915, "original_primary_loss": 5.549428939819336, "batch_mean_losses": [5.612346410751343, 5.521225810050964, 5.44549560546875, 5.646790862083435, 5.561400771141052, 5.7344865798950195, 5.872333824634552, 5.508965075016022, 6.129294753074646, 5.528904676437378, 5.656282603740692, 5.584238350391388, 5.572461903095245, 5.448807597160339, 5.820819318294525, 5.803195893764496, 5.772009909152985, 5.774403393268585, 5.797058343887329, 6.019006371498108, 5.648136496543884, 5.522133529186249, 6.587861061096191, 5.711462676525116, 6.491766333580017, 6.7068986892700195, 5.579205870628357, 5.390062987804413, 5.537597954273224, 5.722711145877838, 5.617436647415161, 5.853973805904388, 5.811778366565704, 5.6004334688186646, 5.789798676967621, 6.058003306388855, 6.114990830421448, 5.6555527448654175, 5.391582250595093, 5.354805529117584, 5.8019227385520935, 5.511058807373047, 5.656723439693451, 5.6690585017204285], "mean_loss": 5.740783725272525, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "chinese", "primary_reproduced_loss": 7.873885929584503, "original_primary_loss": 7.8738861083984375, "batch_mean_losses": [7.855751872062683, 7.941043436527252, 7.859630703926086, 7.884905815124512, 7.910198926925659, 7.862441718578339, 7.864960432052612, 7.860178053379059, 7.807661354541779, 7.878977835178375, 7.897054970264435, 7.857372283935547, 7.905335366725922, 7.864302039146423, 7.823834538459778, 7.828538954257965, 7.831750273704529, 7.80625194311142, 7.878851294517517, 7.856489300727844, 7.886423051357269, 7.869630038738251, 7.82368677854538, 7.829274475574493, 7.853704452514648, 7.85666561126709, 7.864838480949402, 7.875874042510986, 7.958173215389252, 7.912108778953552, 7.817438244819641, 7.864320874214172, 7.898293614387512, 7.889686942100525, 7.9162872433662415, 7.848479449748993, 7.877124309539795, 7.860000491142273, 7.860797882080078, 7.855646789073944, 7.782542943954468, 7.803044557571411, 7.877079010009766, 7.790495753288269], "mean_loss": 7.862435185096481, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "code", "primary_reproduced_loss": 6.104150116443634, "original_primary_loss": 6.104150295257568, "batch_mean_losses": [6.005685806274414, 6.0264076590538025, 5.910563051700592, 5.9098464250564575, 6.16192364692688, 6.012611269950867, 5.884437561035156, 6.037314355373383, 5.994685471057892, 6.0526202917099, 6.026384115219116, 5.927928805351257, 5.885754764080048, 5.980278372764587, 6.205650866031647, 6.167507171630859, 6.009837806224823, 5.967184782028198, 5.910870313644409, 5.911220908164978, 5.981163024902344, 5.9200533628463745, 5.929566860198975, 5.992687463760376, 5.929108619689941, 6.173525035381317, 6.125781714916229, 5.9418299198150635, 5.949942886829376, 5.84134966135025, 6.197633981704712, 5.886480510234833, 5.970715522766113, 5.86808979511261, 6.100301921367645, 6.117191731929779, 5.831393599510193, 5.8212281465530396, 6.994517028331757, 5.893802225589752, 5.9326987862586975, 6.050101161003113, 6.1938082575798035, 5.994264185428619], "mean_loss": 6.014226110144095, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "encyclopedia", "primary_reproduced_loss": 6.393610298633575, "original_primary_loss": 6.39361047744751, "batch_mean_losses": [6.408822238445282, 6.279623925685883, 6.393682539463043, 6.303321599960327, 6.232167363166809, 6.285003960132599, 6.447780072689056, 6.330454468727112, 6.471069395542145, 6.426201403141022, 6.205045461654663, 6.360451757907867, 6.272481620311737, 6.296858131885529, 6.296449065208435, 6.335067451000214, 6.231946527957916, 6.335859775543213, 6.361213386058807, 6.752229809761047, 6.393318355083466, 6.468000292778015, 6.279792785644531, 6.309487521648407, 6.321433007717133, 6.26602029800415, 6.423084259033203, 6.341587960720062, 6.304016053676605, 6.244628846645355, 6.872943997383118, 6.34534752368927, 6.185462117195129, 6.543774962425232, 6.339745998382568, 6.3106449842453, 6.255833566188812, 6.1443705558776855, 6.272842288017273, 6.4768112897872925, 6.480833828449249, 6.388625919818878, 6.20680433511734, 6.178659737110138], "mean_loss": 6.3495409190654755, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "math", "primary_reproduced_loss": 5.6018200516700745, "original_primary_loss": 5.60181999206543, "batch_mean_losses": [5.73599898815155, 5.765331327915192, 5.589261114597321, 5.57213568687439, 5.529260039329529, 5.757571339607239, 5.5197314620018005, 5.4519453048706055, 5.6179481744766235, 5.462805271148682, 5.589857816696167, 5.784683167934418, 5.475223481655121, 5.588387489318848, 5.481063067913055, 5.448448002338409, 5.583223283290863, 6.645241320133209, 6.702988862991333, 5.4852465987205505, 5.5167325139045715, 5.5541945695877075, 5.704156875610352, 5.631498456001282, 5.67608779668808, 5.353481471538544, 5.472384393215179, 5.419029057025909, 5.592828869819641, 5.652920961380005, 5.654967427253723, 5.642939925193787, 5.83309543132782, 5.664437234401703, 5.680002570152283, 5.446572780609131, 5.649140655994415, 5.494686126708984, 5.373113691806793, 5.377785503864288, 5.398894309997559, 5.511452615261078, 5.2831239104270935, 5.592559337615967], "mean_loss": 5.612782688303427, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "multilingual", "primary_reproduced_loss": 8.344759464263916, "original_primary_loss": 8.344758987426758, "batch_mean_losses": [8.557189345359802, 8.532464146614075, 8.37781310081482, 8.396340370178223, 8.419180393218994, 8.34483289718628, 8.454792261123657, 8.50190818309784, 8.389389872550964, 8.412010073661804, 8.423826813697815, 8.262338399887085, 8.481340050697327, 8.406975865364075, 8.396855235099792, 8.482822895050049, 8.448647141456604, 8.331963419914246, 8.390271663665771, 8.4269278049469, 8.492609143257141, 8.443103909492493, 8.463932514190674, 8.435136198997498, 8.422261476516724, 8.49436891078949, 8.399933099746704, 8.41632068157196, 8.46278727054596, 8.357978463172913, 8.385993242263794, 8.425323247909546, 8.47813606262207, 8.576952934265137, 8.472443580627441, 8.42498242855072, 8.534880876541138, 8.378251194953918, 8.499809861183167, 8.290838479995728, 8.513497591018677, 8.367897987365723, 8.297712922096252, 8.288646221160889], "mean_loss": 8.426402005282315, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "qa", "primary_reproduced_loss": 5.81961464881897, "original_primary_loss": 5.819614410400391, "batch_mean_losses": [5.775537014007568, 5.800042152404785, 5.823967933654785, 5.813789069652557, 5.786070644855499, 5.890066027641296, 5.779395043849945, 5.841613352298737, 5.7080307602882385, 5.796250104904175, 5.807582855224609, 5.8939931988716125, 5.741996645927429, 5.834334909915924, 5.80864018201828, 5.79489278793335, 5.84186863899231, 5.833350241184235, 5.755768537521362, 5.7722689509391785, 5.860465168952942, 5.781816184520721, 5.793415367603302, 5.788279056549072, 5.7196444272994995, 5.739680171012878, 5.7571006417274475, 5.924340903759003, 5.839768648147583, 5.76409912109375, 5.728649735450745, 5.788511395454407, 5.744258463382721, 5.83783358335495, 5.760915219783783, 5.8324227929115295, 5.805751025676727, 5.807844519615173, 5.815223693847656, 5.73152619600296, 5.7684356570243835, 5.831498146057129, 5.74530553817749, 5.893719434738159], "mean_loss": 5.799090094187043, "samples": 2816, "target_tokens": 11534336}
+{"case": "larger_lr1e4_b8", "domain": "web", "primary_reproduced_loss": 5.779505670070648, "original_primary_loss": 5.779505729675293, "batch_mean_losses": [5.724986970424652, 5.679493546485901, 5.8233166337013245, 5.719631612300873, 5.7156147956848145, 5.6972686648368835, 5.774521827697754, 5.761624097824097, 5.69930899143219, 5.76902973651886, 5.723235726356506, 5.728799760341644, 5.704557657241821, 5.707745015621185, 5.724005818367004, 5.730008482933044, 5.6233102679252625, 5.717667102813721, 5.706173419952393, 5.827543139457703, 5.722320020198822, 5.7530776262283325, 5.863174855709076, 5.726279199123383, 5.7158069014549255, 5.798514723777771, 5.6964123249053955, 5.727010369300842, 5.7542030811309814, 5.645543277263641, 5.716254949569702, 5.690587103366852, 5.750389337539673, 5.743732392787933, 5.732684850692749, 5.74515426158905, 5.750574707984924, 5.746242702007294, 5.734294354915619, 5.758114874362946, 5.652680337429047, 5.695662975311279, 5.6987234354019165, 5.763264775276184], "mean_loss": 5.730421516028318, "samples": 2816, "target_tokens": 11534336}
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,909 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:26:08,951 - root - INFO - Destroying the purge thread.

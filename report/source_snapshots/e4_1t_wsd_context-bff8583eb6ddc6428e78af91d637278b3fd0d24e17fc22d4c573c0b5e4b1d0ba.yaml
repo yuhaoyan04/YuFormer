@@ -1,0 +1,69 @@
+schema_version: 1
+plan_id: yuformer-1t-wsd-context-v1
+token_accounting: final_tokenizer_including_eod
+tokenizer_gate: data/TOKENIZER_READY.json
+data_gate: data/PRETRAIN_DATA_READY.json
+
+# The mix targets are selection estimates from the S5 tokenizer.  Before P1,
+# every stream is re-tokenized with the gated tokenizer and the trainer budget
+# below is the authoritative consumption boundary.
+pretrain:
+  target_tokens: 1_000_000_000_000
+  context_length: 4096
+  overlap_policy:
+    allowed: true
+    reason: warmup and anneal intentionally replay domain-relative high-quality prefixes
+    minimum_unique_reference_tokens: 800_000_000_000
+    maximum_replayed_consumption_fraction: 0.20
+    require_cross_stage_doc_id_audit: true
+  stages:
+    - name: warmup
+      mix_config: data-process/configs/mix_warmup_50b.yaml
+      target_tokens: 50_000_000_000
+      fraction: 0.05
+      lr_phase: linear_warmup
+      optimizer_transition: initialize
+      context_length: 4096
+    - name: stable
+      mix_config: data-process/configs/mix_stable_800b.yaml
+      target_tokens: 800_000_000_000
+      fraction: 0.80
+      lr_phase: stable
+      optimizer_transition: preserve
+      context_length: 4096
+    - name: anneal
+      mix_config: data-process/configs/mix_anneal.yaml
+      target_tokens: 150_000_000_000
+      fraction: 0.15
+      lr_phase: decay_to_min_lr
+      optimizer_transition: preserve
+      context_length: 4096
+
+# Context length is an orthogonal experimental axis.  The production extension
+# starts from the completed 4K checkpoint and is accounted outside the 1T base
+# budget, so data quality, LR phase, and context length do not change together.
+context_scaling:
+  budget_included_in_pretrain_1t: false
+  ladder_config: midtrain/configs/ladder_4k_16k_64k.yaml
+  total_extension_tokens: 50_000_000_000
+  constant_tokens_per_update: 4_194_304
+  short_replay_fraction: 0.25
+  transition: weights_only_optimizer_reset
+  experiment:
+    comparison: progressive_4k_16k_64k_vs_direct_64k
+    direct_config: midtrain/configs/direct_4k_64k.yaml
+    matched_tokens: true
+    matched_data_mix: true
+    matched_peak_lr: true
+    evaluate_short_context_regression: true
+    evaluate_long_context: true
+
+release_gate:
+  max_domain_weight_absolute_error: 0.002
+  max_domain_weight_relative_error: 0.10
+  max_total_reference_shortfall_tokens: 3_000_000
+  require_final_tokenizer_streams: true
+  require_stage_token_closure: true
+  require_domain_quota_closure: true
+  require_overlap_ledger: true
+  require_context_ladder_closure: true

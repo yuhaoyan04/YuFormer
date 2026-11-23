@@ -1,0 +1,86 @@
+run_name: context16k_real_window_weight_only_24
+backend: torchtitan-v0.3.0
+seed: 20260926
+model:
+  preset: supported-16k
+  configs: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/long16k_final_source_confirm_20261115/context16k_24.model.yaml
+out_dir: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/midtrain_window_transition_20261115/context16k_real_window_weight_only_24
+data:
+  require_release: true
+  require_eod: true
+  release_manifest: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/releases/pretrain-1t-frozen.release.json
+  tokenizer_gate: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/TOKENIZER_READY.json
+  token_stream_audit: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/audits/pretrain_1t_token_streams.json
+  stages: []
+  meta: []
+  val_dir: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k
+  seq_len: 16384
+  epochs: 1
+  val_samples_per_domain: 16
+  val_max_tokens_per_domain: 20000000
+  stage_sample_limits: []
+optim:
+  optimizer: adamw
+  lr: 2.0e-05
+  weight_decay: 0.1
+  warmup_steps: 2
+  lr_schedule: cosine
+  min_lr_ratio: 0.1
+  adam_betas:
+  - 0.9
+  - 0.95
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+  clip_grad: 1.0
+train:
+  budget_tokens: 100663296
+  micro_batch_size: 2
+  grad_accum: 16
+  expected_iters: 24
+  activation_checkpointing: false
+  bf16: true
+  cuda_graphs: false
+  eval_every: 24
+  log_every: 1
+  save_every: 4
+  keep_last_n: 8
+  keep_every: 4
+  deterministic: true
+parallel:
+  sharding: hybrid_shard
+  world_size: 8
+  replicate_degree: 2
+  shard_degree: 4
+  fsdp_reshard_after_forward: never
+compile:
+  enable: true
+  components:
+  - model
+  backend: inductor
+attention:
+  sdpa_backend: flash_flex_swa
+experiment_status: qualification
+loss:
+  num_chunks: 8
+midtrain:
+  scope: QUALIFICATION
+  approved_budget_file: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e4_curriculum/results/effective_total_training_budget.json
+  approved_budget_sha256: 90c0ae67683c43303e5a5a0d79509ce38ca79ea221aee42ab884be901a1b36ee
+  window_release: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/long_context_qualification/window-records-20261115-v1/context-16384.release.json
+  window_release_sha256: 2812f9519043de67850adae2abaec8052fb6ff73eacb083e0bc185aac67cf1a4
+  source_root: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer
+  optimizer_transition: reset
+  initial_load_model_only: true
+  selective_recompute: none
+  evaluation:
+    long_context: true
+    short_regression: true
+  initial_checkpoint:
+    path: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/checkpoint/step-200
+    metadata_sha256: a050cc2e45558d8cf4f9e12cd990cf5841ef16540e18fe6856022e01d0605702
+    step: 200
+    run_identity: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/final_deterministic_production_controls_20261115/larger_lr1e4_b8/run_identity.json
+    run_identity_sha256: e93fad60f74199c1e1fe78a68421bd591e319c6ed0f68d0614adc239e186bc38
+    handoff_file: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/health/midtrain-candidate200-complete-byte-handoff-v2.json
+    handoff_sha256: 9e5fae787b47f0612d0663b2c4cb98a767f377762caac26bc49bb5fa043c3205

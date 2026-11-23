@@ -1,0 +1,1722 @@
+{
+  "active_candidate": "size_5b",
+  "active_started_at": "2026-11-14T03:43:07.829193+00:00",
+  "active_variant": "size_5b_b2",
+  "cases": {
+    "baseline_053b_b8": {
+      "candidate": "baseline_053b",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 25.509578704833984,
+        "median_tps_per_device": 74981.9609375,
+        "p10_tps_per_device": 74767.578125,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 21.500098416700503,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 1.0,
+        "within_30_days": true,
+        "within_33_days": true
+      },
+      "finished_at": "2026-11-14T02:35:01.655463+00:00",
+      "identity_sha256": "52acb38cf0388267dee9862b47ba73edc8116d3af2339434856aa1b62825d23d",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/baseline_053b_b8.log",
+      "parameters": 530107904,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 687.09,
+          "temperature_c": 71.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 683.21,
+          "temperature_c": 60.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40355.0,
+          "power_w": 706.58,
+          "temperature_c": 72.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 691.59,
+          "temperature_c": 61.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 700.11,
+          "temperature_c": 61.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 702.86,
+          "temperature_c": 72.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 690.47,
+          "temperature_c": 60.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 40353.0,
+          "power_w": 694.89,
+          "temperature_c": 70.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "3f7d1988edcc4687a80b2d1ec42b2cc21e80ee0d9d2773941fccd39c3fc74676",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/baseline_053b_b8.yaml",
+        "config_sha256": "b3b5f686897dc81584e2407342d3210aa3c45f2fc2f590dfbd76aa70f6bc5977",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/baseline_053b_b8.env",
+        "env_sha256": "fe80d6f2722fad798b73c9d25e6dc5a911934fe3c4332e8d45cedb0e14937ff0",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "baseline_053b_b8"
+      },
+      "wall_seconds": 228.5
+    },
+    "size_15b_b8": {
+      "candidate": "size_15b",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 34.338388442993164,
+        "median_tps_per_device": 35612.8515625,
+        "p10_tps_per_device": 35592.67578125,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 45.16407527058334,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.47604425171756226,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T02:54:16.528483+00:00",
+      "identity_sha256": "ca95fa26d24077e77d3ca2e65cd5af3ef835204ab55cdf59c33035ae01d74d5f",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_15b_b8.log",
+      "parameters": 1516600064,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 73485.0,
+          "power_w": 717.54,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71181.0,
+          "power_w": 703.3,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71183.0,
+          "power_w": 718.68,
+          "temperature_c": 76.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71181.0,
+          "power_w": 711.48,
+          "temperature_c": 64.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71183.0,
+          "power_w": 718.33,
+          "temperature_c": 64.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71181.0,
+          "power_w": 722.17,
+          "temperature_c": 76.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71181.0,
+          "power_w": 705.49,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71181.0,
+          "power_w": 721.2,
+          "temperature_c": 73.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "fcbb6768e5dcfdec72822fef51ea32156caba691c60bd29d2604b573ff44c3f2",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_15b_b8.yaml",
+        "config_sha256": "f175c66edb93510ebc976256efcd4853f334488e7829e30fd7f6e466a5ee3922",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_15b_b8.env",
+        "env_sha256": "39edc912b7018fef0af374445224bb47698adc6f2c8a06c2a351e753208d1f36",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_15b_b8"
+      },
+      "wall_seconds": 443.7
+    },
+    "size_1b_deep_b8": {
+      "candidate": "size_1b_deep",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 28.89718723297119,
+        "median_tps_per_device": 44520.2109375,
+        "p10_tps_per_device": 44472.4921875,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 36.146170565131285,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.5948098534521041,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T02:46:50.442212+00:00",
+      "identity_sha256": "3a3f7c7197bb625b7983dc726b216c06136f01645db9b077d7a47b75341bb03f",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_1b_deep_b8.log",
+      "parameters": 1002005248,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 66947.0,
+          "power_w": 713.49,
+          "temperature_c": 74.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64641.0,
+          "power_w": 699.41,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64643.0,
+          "power_w": 709.81,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64641.0,
+          "power_w": 697.99,
+          "temperature_c": 64.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64641.0,
+          "power_w": 704.15,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64641.0,
+          "power_w": 706.78,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64643.0,
+          "power_w": 705.68,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 64643.0,
+          "power_w": 707.52,
+          "temperature_c": 73.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "2bc480d2f82e434e0a93197852818af494402ad3b28c308efbbae7a5bfab93e7",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_1b_deep_b8.yaml",
+        "config_sha256": "8dd9e7ccba5214f0f8558f939b8dc42813fe2eac9dedbbc6090c7a549d7cabbc",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_1b_deep_b8.env",
+        "env_sha256": "0fdaf3ec54cd38d09aabd8100f0f834f37ef0589efc3f73971108a301c4ae099",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_1b_deep_b8"
+      },
+      "wall_seconds": 368.2
+    },
+    "size_1b_wide_b8": {
+      "candidate": "size_1b_wide",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 30.894116401672363,
+        "median_tps_per_device": 48367.650390625,
+        "p10_tps_per_device": 48307.8203125,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 33.27639867969552,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.6461065280426321,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T02:40:40.665715+00:00",
+      "identity_sha256": "bd3a91abd5a7fc026c88d99c993e524cc81372bd826e519067bce547e7306d96",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_1b_wide_b8.log",
+      "parameters": 994652416,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 58945.0,
+          "power_w": 715.99,
+          "temperature_c": 74.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57227.0,
+          "power_w": 707.06,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57229.0,
+          "power_w": 714.98,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57229.0,
+          "power_w": 708.63,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57227.0,
+          "power_w": 709.03,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57227.0,
+          "power_w": 707.46,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57227.0,
+          "power_w": 716.79,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 57229.0,
+          "power_w": 707.8,
+          "temperature_c": 73.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "37faec2a8196e77475ca48d2122413c61308fcad4f14df5ebed192077e9f5511",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_1b_wide_b8.yaml",
+        "config_sha256": "080d93ed2d666dff41d0fdc5e427e8000f8fc893b5099956bbab0a813ae0ca41",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_1b_wide_b8.env",
+        "env_sha256": "51b613380f233b9fa59e154679e594df45a639ba26e424dd63d3bd1a47d90bdf",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_1b_wide_b8"
+      },
+      "wall_seconds": 337.0
+    },
+    "size_2b_b4": {
+      "candidate": "size_2b",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 32.711347579956055,
+        "median_tps_per_device": 26133.751953125,
+        "p10_tps_per_device": 26065.544921875,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 61.671846603781226,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.34862096078994803,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T03:04:29.864055+00:00",
+      "identity_sha256": "365c101a0e740919c6ff6ef3f6a434855236f2a0287309c0f827d5f5e20ca8c8",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_2b_b4.log",
+      "parameters": 1966208512,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 56929.0,
+          "power_w": 726.43,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54627.0,
+          "power_w": 712.83,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54625.0,
+          "power_w": 734.36,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54625.0,
+          "power_w": 717.22,
+          "temperature_c": 64.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54625.0,
+          "power_w": 711.04,
+          "temperature_c": 65.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54625.0,
+          "power_w": 721.22,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54625.0,
+          "power_w": 712.33,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 54625.0,
+          "power_w": 721.96,
+          "temperature_c": 73.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "4000b31aa2bea82aab6558c7b96ce340a13711f1c3db7d32f12ed3bef30305af",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_2b_b4.yaml",
+        "config_sha256": "57cc56ad5b8dd9b7354bd59d5d90a170d79b2dae3b7c5143fca7e30a7b127ccd",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_2b_b4.env",
+        "env_sha256": "1a2b43c3cac749281136facfc6028255ea74a967ee79fceeda67f0b6b6280ee2",
+        "grad_accum": 32,
+        "microbatch": 4,
+        "name": "size_2b_b4"
+      },
+      "wall_seconds": 579.1
+    },
+    "size_2b_b8": {
+      "candidate": "size_2b",
+      "error_tail": "oup.post_backward()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py\", line 30, in wrapper\n      return torch._dynamo.disable(\n             ^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1548, in _fn\n      return fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py\", line 712, in post_backward\n      ) = foreach_reduce(\n          ^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py\", line 658, in foreach_reduce\n      dist.all_reduce(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py\", line 83, in wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py\", line 3906, in all_reduce\n      work = group.allreduce([tensor], opts)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3\n  ncclUnhandledCudaError: Call to CUDA function failed.\n  Last error:\n  Cuda failure 2 'out of memory'\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_02:54:43\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 6 (local_rank: 6)\n  exitcode  : 1 (pid: 209585) \n  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/6/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 818, in _forward_backward_body\n      loss, _ = self.loss_fn(\n                ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 762, in __call__\n      chunk_loss.backward()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py\", line 623, in backward\n      torch.autograd.backward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py\", line 395, in backward\n      _engine_run_backward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py\", line 1072, in _engine_run_backward\n      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py\", line 366, in apply\n      return user_fn(self, *args)\n             ^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py\", line 1157, in backward\n      ctx.param_group.post_backward()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py\", line 30, in wrapper\n      return torch._dynamo.disable(\n             ^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1548, in _fn\n      return fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py\", line 712, in post_backward\n      ) = foreach_reduce(\n          ^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py\", line 658, in foreach_reduce\n      dist.all_reduce(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py\", line 83, in wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py\", line 3906, in all_reduce\n      work = group.allreduce([tensor], opts)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3\n  ncclUnhandledCudaError: Call to CUDA function failed.\n  Last error:\n  Cuda failure 2 'out of memory'\n  \n============================================================\n",
+      "evaluation": {
+        "issues": [
+          "launch_failed"
+        ],
+        "status": "OOM"
+      },
+      "finished_at": "2026-11-14T02:54:49.284565+00:00",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_2b_b8.log",
+      "parameters": 1966208512,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 119.28,
+          "temperature_c": 40.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 117.56,
+          "temperature_c": 34.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 120.9,
+          "temperature_c": 39.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 112.61,
+          "temperature_c": 33.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 114.05,
+          "temperature_c": 32.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 116.07,
+          "temperature_c": 39.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 116.08,
+          "temperature_c": 32.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 2877.0,
+          "power_w": 121.0,
+          "temperature_c": 39.0,
+          "utilization_pct": 0.0
+        }
+      ],
+      "production_qualified": false,
+      "returncode": 1,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_2b_b8.yaml",
+        "config_sha256": "92d614a8898f5204793c833c0e0f1af4ba73d643b7df7617fc4b1ccc1cfb086b",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_2b_b8.env",
+        "env_sha256": "0e7e3ea9ea27365747f28c5db03d5ea9eeb4c0ce347cb25aa9280ad226a7b355",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_2b_b8"
+      },
+      "wall_seconds": 31.3
+    },
+    "size_3b_b4": {
+      "candidate": "size_3b",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 35.02970314025879,
+        "median_tps_per_device": 18605.44140625,
+        "p10_tps_per_device": 18603.8515625,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 86.40739164497101,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.24882244455473995,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T03:18:13.920234+00:00",
+      "identity_sha256": "da98f2e297a73045c11027f4e045de4489bdc62f020fdc59408a09308d8e7813",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_3b_b4.log",
+      "parameters": 2985462016,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 72707.0,
+          "power_w": 714.05,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70403.0,
+          "power_w": 725.77,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70405.0,
+          "power_w": 723.2,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70405.0,
+          "power_w": 735.64,
+          "temperature_c": 65.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70403.0,
+          "power_w": 727.44,
+          "temperature_c": 64.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70405.0,
+          "power_w": 746.74,
+          "temperature_c": 76.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70403.0,
+          "power_w": 706.8,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 70403.0,
+          "power_w": 733.24,
+          "temperature_c": 73.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "3f1df81fb0e1245389410796b30a2002ca739a618b53455e99d26089f0b27a63",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_3b_b4.yaml",
+        "config_sha256": "5523f089f9e457927bf41d993dfdc22578a0703ab2b0a6d19d044c2857982591",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_3b_b4.env",
+        "env_sha256": "c89af93a0bc0e92a1b0be171ab18c595368125a51155a583b69ca5139607a144",
+        "grad_accum": 32,
+        "microbatch": 4,
+        "name": "size_3b_b4"
+      },
+      "wall_seconds": 775.3
+    },
+    "size_3b_b8": {
+      "candidate": "size_3b",
+      "error_tail": "ted. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_03:05:02\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 2 (local_rank: 2)\n  exitcode  : 1 (pid: 212132) \n  error_file: /tmp/torchelastic_54twwf6v/none_pwdrgprj/attempt_0/2/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 814, in _forward_backward_body\n      pred = self.model_parts[0](inputs, **extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl\n      return self._call_impl(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/model.py\", line 98, in forward\n      hidden = layer(\n               ^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1781, in _wrapped_call_impl\n      return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1261, in compile_wrapper\n      result = fn(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/model/src/yuformer_model/transformer.py\", line 28, in forward\n      def forward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1548, in _fn\n      return fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py\", line 1289, in forward\n      return compiled_fn(full_args)\n             ^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 1189, in runtime_wrapper\n      result = _codegen_runtime_wrapper(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(runtime_wrapper_orchestration)\", line 11, in _runtime_wrapper\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 118, in g\n      return f(*args)\n             ^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 3521, in forward\n      return CompiledFunction._fwd_fn(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(compiled_function_forward)\", line 2, in _compiled_forward\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_inductor/output_code.py\", line 828, in __call__\n      return self.current_callable(inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/tmp/yuformer-inductor-cudnn-qualified-v3/ff/cff3b6fvja4zoyogacyotqqrsov3crvuaa3ejcoovbp23dkmkeen.py\", line 1164, in call\n      buf28 = empty_strided_cuda((32768, 8192), (8192, 1), torch.bfloat16)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 512.00 MiB. GPU 2 has a total capacity of 79.33 GiB of which 367.44 MiB is free. Process 336933 has 78.96 GiB memory in use. Of the allocated memory 76.69 GiB is allocated by PyTorch, and 247.02 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n============================================================\n",
+      "evaluation": {
+        "issues": [
+          "launch_failed"
+        ],
+        "status": "OOM"
+      },
+      "finished_at": "2026-11-14T03:05:17.636942+00:00",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_3b_b8.log",
+      "parameters": 2985462016,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 80863.0,
+          "power_w": 340.66,
+          "temperature_c": 41.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 80863.0,
+          "power_w": 370.68,
+          "temperature_c": 36.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 80863.0,
+          "power_w": 381.81,
+          "temperature_c": 41.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 80863.0,
+          "power_w": 340.33,
+          "temperature_c": 36.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81169.0,
+          "power_w": 226.53,
+          "temperature_c": 35.0,
+          "utilization_pct": 97.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81169.0,
+          "power_w": 210.01,
+          "temperature_c": 42.0,
+          "utilization_pct": 95.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 25057.0,
+          "power_w": 192.83,
+          "temperature_c": 33.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81169.0,
+          "power_w": 206.47,
+          "temperature_c": 41.0,
+          "utilization_pct": 97.0
+        }
+      ],
+      "production_qualified": false,
+      "returncode": 1,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_3b_b8.yaml",
+        "config_sha256": "ffdfe5d58131ea9050c84a725394d5dbea017cbd07f1500e1195f51f2cdfcd05",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_3b_b8.env",
+        "env_sha256": "3f29b126a37854d21a601c2097d39155f2dbf1607fd9042654c556c2db8cc901",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_3b_b8"
+      },
+      "wall_seconds": 46.2
+    },
+    "size_4b_b4": {
+      "candidate": "size_4b",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 25.612167358398438,
+        "median_tps_per_device": 10130.91943359375,
+        "p10_tps_per_device": 9388.0361328125,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 171.22966564299537,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.1255629293905593,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T03:41:16.389949+00:00",
+      "identity_sha256": "d9beef0d8ccbc5c4631239144f8019a4216cc71b469ff8f732a265d91f2b06a3",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_4b_b4.log",
+      "parameters": 4009568256,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81229.0,
+          "power_w": 720.36,
+          "temperature_c": 69.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 722.53,
+          "temperature_c": 61.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 699.07,
+          "temperature_c": 70.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 707.07,
+          "temperature_c": 61.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 730.89,
+          "temperature_c": 61.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 698.36,
+          "temperature_c": 69.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 720.97,
+          "temperature_c": 59.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81215.0,
+          "power_w": 724.02,
+          "temperature_c": 69.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "d1b443f3566ef01d410f23e129bf0ca148ace958156e31bbbebf57e987417276",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_4b_b4.yaml",
+        "config_sha256": "0986bf55dcf7441d0dfbeeba77fd96c6680c0296066bc8f3e286475f6a663e49",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_4b_b4.env",
+        "env_sha256": "201504601585ddf6ed88d8d18a8a5075e097d75708ee7daf06a36dc6ba0552fd",
+        "grad_accum": 32,
+        "microbatch": 4,
+        "name": "size_4b_b4"
+      },
+      "wall_seconds": 1333.6
+    },
+    "size_4b_b8": {
+      "candidate": "size_4b",
+      "error_tail": "ted. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_03:18:45\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 0 (local_rank: 0)\n  exitcode  : 1 (pid: 215308) \n  error_file: /tmp/torchelastic_2v0a7oxv/none_08xme_ca/attempt_0/0/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 814, in _forward_backward_body\n      pred = self.model_parts[0](inputs, **extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl\n      return self._call_impl(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/model.py\", line 98, in forward\n      hidden = layer(\n               ^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1781, in _wrapped_call_impl\n      return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1261, in compile_wrapper\n      result = fn(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/model/src/yuformer_model/transformer.py\", line 28, in forward\n      def forward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1548, in _fn\n      return fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py\", line 1289, in forward\n      return compiled_fn(full_args)\n             ^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 1189, in runtime_wrapper\n      result = _codegen_runtime_wrapper(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(runtime_wrapper_orchestration)\", line 11, in _runtime_wrapper\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 118, in g\n      return f(*args)\n             ^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 3521, in forward\n      return CompiledFunction._fwd_fn(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(compiled_function_forward)\", line 2, in _compiled_forward\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_inductor/output_code.py\", line 828, in __call__\n      return self.current_callable(inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/tmp/yuformer-inductor-cudnn-qualified-v3/x6/cx63mllzd3ykgl2mewmf6q5oxmcgzhrbwxdd7sb63kdokaepl3bg.py\", line 1164, in call\n      buf28 = empty_strided_cuda((32768, 8960), (8960, 1), torch.bfloat16)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 560.00 MiB. GPU 0 has a total capacity of 79.33 GiB of which 203.44 MiB is free. Process 366419 has 79.12 GiB memory in use. Of the allocated memory 76.69 GiB is allocated by PyTorch, and 415.87 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n============================================================\n",
+      "evaluation": {
+        "issues": [
+          "launch_failed"
+        ],
+        "status": "OOM"
+      },
+      "finished_at": "2026-11-14T03:19:01.764823+00:00",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_4b_b8.log",
+      "parameters": 4009568256,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 122.96,
+          "temperature_c": 40.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 119.04,
+          "temperature_c": 35.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 122.47,
+          "temperature_c": 40.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 114.59,
+          "temperature_c": 35.0,
+          "utilization_pct": 1.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 114.91,
+          "temperature_c": 34.0,
+          "utilization_pct": 1.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 155.82,
+          "temperature_c": 40.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 117.4,
+          "temperature_c": 33.0,
+          "utilization_pct": 1.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 81027.0,
+          "power_w": 138.66,
+          "temperature_c": 40.0,
+          "utilization_pct": 1.0
+        }
+      ],
+      "production_qualified": false,
+      "returncode": 1,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_4b_b8.yaml",
+        "config_sha256": "588f9274bd97d48a6cfb755a0041dd6fd7bda3e34a5ac8c098a5b75bdf7a769d",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_4b_b8.env",
+        "env_sha256": "25210fc644a9321393e763036db1fbe317479c0c393e606d4025dc06350a2599",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_4b_b8"
+      },
+      "wall_seconds": 46.4
+    },
+    "size_5b_b2": {
+      "candidate": "size_5b",
+      "collect_returncode": 0,
+      "evaluation": {
+        "issues": [],
+        "median_mfu_pct": 35.097116470336914,
+        "median_tps_per_device": 11281.17431640625,
+        "p10_tps_per_device": 11261.8603515625,
+        "production_qualified": false,
+        "projected_1t_days_duty_09": 142.73931995994013,
+        "status": "PASS_SCREENING",
+        "steady_points": 16,
+        "throughput_ratio_vs_concurrent_baseline": 0.15062491836681383,
+        "within_30_days": false,
+        "within_33_days": false
+      },
+      "finished_at": "2026-11-14T04:03:55.220783+00:00",
+      "identity_sha256": "a34151a6fc8e713234aee1d024d9559483b66f1d7879ca98d5dc7771b28384cf",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_5b_b2.log",
+      "parameters": 4956593664,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 73615.0,
+          "power_w": 720.9,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71309.0,
+          "power_w": 718.1,
+          "temperature_c": 62.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71309.0,
+          "power_w": 715.66,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71309.0,
+          "power_w": 727.71,
+          "temperature_c": 64.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71309.0,
+          "power_w": 725.59,
+          "temperature_c": 63.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71309.0,
+          "power_w": 725.84,
+          "temperature_c": 75.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71309.0,
+          "power_w": 725.63,
+          "temperature_c": 61.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 71311.0,
+          "power_w": 714.99,
+          "temperature_c": 73.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "result_sha256": "360fdefe8145a2211bca662567c0bd5ab41f9a96edd54a8f99b6fbf847563bc5",
+      "returncode": 0,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b2.yaml",
+        "config_sha256": "169c3830a98c2cd9013d71e79383f3f0ebd9d992a729534bbb396ea47948dad7",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b2.env",
+        "env_sha256": "eaca2bc7c0ac66d97ad92d4114e00373519d41d7a89fee6c6f82041cde8d3748",
+        "grad_accum": 64,
+        "microbatch": 2,
+        "name": "size_5b_b2"
+      },
+      "wall_seconds": 1247.4
+    },
+    "size_5b_b4": {
+      "candidate": "size_5b",
+      "error_tail": "h but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n[7]:\n  time      : 2026-11-14_03:42:46\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 7 (local_rank: 7)\n  exitcode  : 1 (pid: 219674) \n  error_file: /tmp/torchelastic_v0uqvs1n/none_o55eieju/attempt_0/7/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 818, in _forward_backward_body\n      loss, _ = self.loss_fn(\n                ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 754, in __call__\n      chunk_loss, chunk_metrics = self.loss_fn(\n                                  ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 359, in __call__\n      loss = self.fn(pred, labels, global_vocab_size=self.global_vocab_size)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 60, in cross_entropy_loss\n      return torch.nn.functional.cross_entropy(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/functional.py\", line 3561, in cross_entropy\n      return torch._C._nn.cross_entropy_loss(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 512.00 MiB. GPU 7 has a total capacity of 79.33 GiB of which 307.44 MiB is free. Process 416614 has 79.02 GiB memory in use. Of the allocated memory 75.69 GiB is allocated by PyTorch, and 813.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_03:42:46\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 4 (local_rank: 4)\n  exitcode  : 1 (pid: 219671) \n  error_file: /tmp/torchelastic_v0uqvs1n/none_o55eieju/attempt_0/4/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 818, in _forward_backward_body\n      loss, _ = self.loss_fn(\n                ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 754, in __call__\n      chunk_loss, chunk_metrics = self.loss_fn(\n                                  ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 359, in __call__\n      loss = self.fn(pred, labels, global_vocab_size=self.global_vocab_size)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 60, in cross_entropy_loss\n      return torch.nn.functional.cross_entropy(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/functional.py\", line 3561, in cross_entropy\n      return torch._C._nn.cross_entropy_loss(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 512.00 MiB. GPU 4 has a total capacity of 79.33 GiB of which 307.44 MiB is free. Process 416611 has 79.02 GiB memory in use. Of the allocated memory 75.69 GiB is allocated by PyTorch, and 813.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n============================================================\n",
+      "evaluation": {
+        "issues": [
+          "launch_failed"
+        ],
+        "status": "OOM"
+      },
+      "finished_at": "2026-11-14T03:43:06.739960+00:00",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_5b_b4.log",
+      "parameters": 4956593664,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 79359.0,
+          "power_w": 375.83,
+          "temperature_c": 43.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 79359.0,
+          "power_w": 382.7,
+          "temperature_c": 37.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 79359.0,
+          "power_w": 376.96,
+          "temperature_c": 42.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 79359.0,
+          "power_w": 325.16,
+          "temperature_c": 36.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 74589.0,
+          "power_w": 320.74,
+          "temperature_c": 47.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 74589.0,
+          "power_w": 349.4,
+          "temperature_c": 53.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 74813.0,
+          "power_w": 325.43,
+          "temperature_c": 45.0,
+          "utilization_pct": 100.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 74813.0,
+          "power_w": 356.92,
+          "temperature_c": 52.0,
+          "utilization_pct": 100.0
+        }
+      ],
+      "production_qualified": false,
+      "returncode": 1,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b4.yaml",
+        "config_sha256": "3acdfee8798b52eb4b8f96622fff20943a3284ccc10baeb58d60c6902273d4ac",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b4.env",
+        "env_sha256": "bb4eacacc43d3dbc9791ed3e9281b77f5b5d3ae25db7bb0d7eca8e3c069ce68d",
+        "grad_accum": 32,
+        "microbatch": 4,
+        "name": "size_5b_b4"
+      },
+      "wall_seconds": 61.9
+    },
+    "size_5b_b8": {
+      "candidate": "size_5b",
+      "error_tail": "llocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_03:41:49\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 4 (local_rank: 4)\n  exitcode  : 1 (pid: 218718) \n  error_file: /tmp/torchelastic_b8jfbrhv/none_0fr_4_sb/attempt_0/4/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 814, in _forward_backward_body\n      pred = self.model_parts[0](inputs, **extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1783, in _wrapped_call_impl\n      return self._call_impl(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/model.py\", line 98, in forward\n      hidden = layer(\n               ^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1781, in _wrapped_call_impl\n      return self._compiled_call_impl(*args, **kwargs)  # type: ignore[misc]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1261, in compile_wrapper\n      result = fn(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1889, in _call_impl\n      return inner()\n             ^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/nn/modules/module.py\", line 1837, in inner\n      result = forward_call(*args, **kwargs)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/model/src/yuformer_model/transformer.py\", line 28, in forward\n      def forward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py\", line 1548, in _fn\n      return fn(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py\", line 1289, in forward\n      return compiled_fn(full_args)\n             ^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 1189, in runtime_wrapper\n      result = _codegen_runtime_wrapper(\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(runtime_wrapper_orchestration)\", line 11, in _runtime_wrapper\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 118, in g\n      return f(*args)\n             ^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 3521, in forward\n      return CompiledFunction._fwd_fn(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/codegen.py:codegen(compiled_function_forward)\", line 2, in _compiled_forward\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_inductor/output_code.py\", line 828, in __call__\n      return self.current_callable(inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/tmp/yuformer-inductor-cudnn-qualified-v3/3v/c3vy4jwi2coipmcmgsnpvr5lwuis2aitlee3dl7foylvxhho3mtw.py\", line 1099, in call\n      buf29 = empty_strided_cuda((8, 4096, 9728), (39845888, 9728, 1), torch.bfloat16)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 608.00 MiB. GPU 4 has a total capacity of 79.33 GiB of which 303.44 MiB is free. Process 413958 has 79.02 GiB memory in use. Of the allocated memory 76.62 GiB is allocated by PyTorch, and 381.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n============================================================\n",
+      "evaluation": {
+        "issues": [
+          "launch_failed"
+        ],
+        "status": "OOM"
+      },
+      "finished_at": "2026-11-14T03:42:03.743140+00:00",
+      "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_5b_b8.log",
+      "parameters": 4956593664,
+      "peak_gpu": [
+        {
+          "index": 0.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30261.0,
+          "power_w": 143.39,
+          "temperature_c": 44.0,
+          "utilization_pct": 44.0
+        },
+        {
+          "index": 1.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30597.0,
+          "power_w": 196.68,
+          "temperature_c": 36.0,
+          "utilization_pct": 10.0
+        },
+        {
+          "index": 2.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30037.0,
+          "power_w": 125.69,
+          "temperature_c": 42.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 3.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30597.0,
+          "power_w": 208.37,
+          "temperature_c": 36.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 4.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30597.0,
+          "power_w": 180.3,
+          "temperature_c": 35.0,
+          "utilization_pct": 95.0
+        },
+        {
+          "index": 5.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30597.0,
+          "power_w": 200.17,
+          "temperature_c": 41.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 6.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30597.0,
+          "power_w": 209.54,
+          "temperature_c": 34.0,
+          "utilization_pct": 0.0
+        },
+        {
+          "index": 7.0,
+          "memory_total_mib": 81559.0,
+          "memory_used_mib": 30597.0,
+          "power_w": 207.49,
+          "temperature_c": 41.0,
+          "utilization_pct": 93.0
+        }
+      ],
+      "production_qualified": false,
+      "returncode": 1,
+      "variant": {
+        "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b8.yaml",
+        "config_sha256": "b14edbf0bab22ad414fed86e7d1c659dfa2c108dabcbe8972884138c7b48424c",
+        "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b8.env",
+        "env_sha256": "af326b8237892a29c016a4952789182b4a2c091c071c7b4ed7fe0305b0183d46",
+        "grad_accum": 16,
+        "microbatch": 8,
+        "name": "size_5b_b8"
+      },
+      "wall_seconds": 45.8
+    }
+  },
+  "child_pid": 220751,
+  "current_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 0.0,
+      "power_w": 121.77,
+      "temperature_c": 41.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 0.0,
+      "power_w": 72.75,
+      "temperature_c": 33.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3.0,
+      "power_w": 73.29,
+      "temperature_c": 39.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3.0,
+      "power_w": 69.36,
+      "temperature_c": 32.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3.0,
+      "power_w": 74.68,
+      "temperature_c": 32.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3.0,
+      "power_w": 70.5,
+      "temperature_c": 39.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3.0,
+      "power_w": 71.05,
+      "temperature_c": 32.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3.0,
+      "power_w": 74.82,
+      "temperature_c": 39.0,
+      "utilization_pct": 0.0
+    }
+  ],
+  "current_log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_5b_b2.log",
+  "data_preprocessing_must_continue": true,
+  "elapsed_seconds": 1232.4,
+  "largest_within_30_days": "baseline_053b",
+  "no_more_than_10pct_slowdown": [
+    "baseline_053b"
+  ],
+  "note": "Throughput screening does not establish model quality or qualify a production architecture.",
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73615.0,
+      "power_w": 720.9,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 718.1,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 715.66,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 727.71,
+      "temperature_c": 64.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 725.59,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 725.84,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 725.63,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71311.0,
+      "power_w": 714.99,
+      "temperature_c": 73.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "pid": 203151,
+  "plan_sha256": "e36cbac638cb0f6252725b61b59471f53556d3e615e60260f9d34e1058f24260",
+  "production_qualified": false,
+  "purpose": "RESEARCH_THROUGHPUT_SCREENING_ONLY",
+  "source_qualification_identity": {
+    "files": [
+      {
+        "bytes": 2580,
+        "path": "data/TOKENIZER_READY.json",
+        "sha256": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866"
+      },
+      {
+        "bytes": 16116,
+        "path": "data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json",
+        "sha256": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d"
+      },
+      {
+        "bytes": 33592,
+        "path": "data/processed/releases/mix_m3_e1_100b-20261019.release.json",
+        "sha256": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c"
+      },
+      {
+        "bytes": 1658,
+        "path": "data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json",
+        "sha256": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c"
+      },
+      {
+        "bytes": 11198,
+        "path": "model/configs/model_configs.yaml",
+        "sha256": "743d3d6040e2416b7a1f6fdafdc9db69c282d93ac1905b312f731cfc86c4009b"
+      },
+      {
+        "bytes": 218,
+        "path": "model/src/yuformer_model/__init__.py",
+        "sha256": "9229a98a77f311c981ae49cfc8438c7411883eb4e2e17451695d88fb072e5db6"
+      },
+      {
+        "bytes": 12136,
+        "path": "model/src/yuformer_model/attention.py",
+        "sha256": "95ffd71976444cfd84a1738bb2dfbeb30aee03a9d79ca7ebc64fec019bb7e7b4"
+      },
+      {
+        "bytes": 5831,
+        "path": "model/src/yuformer_model/config.py",
+        "sha256": "abf813702258d614b2bbabc5625d87fc18b66dd105717e0f01a9b9b45a3a7219"
+      },
+      {
+        "bytes": 1368,
+        "path": "model/src/yuformer_model/layers.py",
+        "sha256": "e30b21c2dc85f1b6d86f0617e375020a548b3f1ae09dbc10d10ae2186f70cb3f"
+      },
+      {
+        "bytes": 8108,
+        "path": "model/src/yuformer_model/model.py",
+        "sha256": "12c77312850221d6262ad3e48fbe7945d87d9abbc58526efcbadf736010c9220"
+      },
+      {
+        "bytes": 2135,
+        "path": "model/src/yuformer_model/transformer.py",
+        "sha256": "4d8e13f988dddfabf9903a029fd2e60686e5f072040334dd64c1883a62f38b10"
+      },
+      {
+        "bytes": 5976,
+        "path": "pretrain/backends/torchtitan/attention_parity.py",
+        "sha256": "f072c4fd13c1e9cefc6f2a9f4649e17e50861608ee217252fdf3ff5f790ffb3d"
+      },
+      {
+        "bytes": 980,
+        "path": "pretrain/backends/torchtitan/backend.lock.json",
+        "sha256": "6717a63df42a24f0e01e2e3758afb35621571c6714addd4e017ee6a6dd38b7bd"
+      },
+      {
+        "bytes": 878,
+        "path": "pretrain/backends/torchtitan/bootstrap_env.sh",
+        "sha256": "b8dba4635d60361f5d0a3c5f978e4efec17ccd50d60bfb5861101b9ba6ef154a"
+      },
+      {
+        "bytes": 6876,
+        "path": "pretrain/backends/torchtitan/distributed_parity.py",
+        "sha256": "15406126865274b8685c2c0f0f33f140e787b23b2823b78775979386fbd484ab"
+      },
+      {
+        "bytes": 6649,
+        "path": "pretrain/backends/torchtitan/launch.sh",
+        "sha256": "6f5b5c2452b39a089bbdef9a02d85f5e7fbdff689392acbe8e9fd75231087f58"
+      },
+      {
+        "bytes": 4533,
+        "path": "pretrain/backends/torchtitan/lr_schedule_contract.py",
+        "sha256": "f3b0f3b738368208b5397fb3de0e3e1c2797cf1c5e81794a6b732dce4ab89ced"
+      },
+      {
+        "bytes": 6273,
+        "path": "pretrain/backends/torchtitan/numerical_parity.py",
+        "sha256": "72740dab92f0fc4b27d2562cd089afa7367bf11539ea459a792e44dde21fcbf4"
+      },
+      {
+        "bytes": 6893,
+        "path": "pretrain/backends/torchtitan/preflight.py",
+        "sha256": "d3532b377db25aa61454b93bfa364e014a4aad69a357c3f26d69cb3f6cead5d0"
+      },
+      {
+        "bytes": 6250,
+        "path": "pretrain/backends/torchtitan/prepare_env.sh",
+        "sha256": "f0e86f39a568b10bbd341d9f857e3dfd6dbedd14be97219367745b11a00a0042"
+      },
+      {
+        "bytes": 27834,
+        "path": "pretrain/backends/torchtitan/validate_contract.py",
+        "sha256": "7dadfcc649f38ef8040f81186c949d42945d52c139a10a4a859312db717f49c0"
+      },
+      {
+        "bytes": 7003,
+        "path": "pretrain/backends/torchtitan/validate_userspace.py",
+        "sha256": "6a69047f65fb471ce9ba2e08ad453be80445c941f5f593d1a7b92de3b6fadca7"
+      },
+      {
+        "bytes": 691,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/__init__.py",
+        "sha256": "3aec1c582c2472f6f28a25f2653e8c114d905ca653c9ce189c7469fcce9ae8e1"
+      },
+      {
+        "bytes": 1178,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/checkpoint.py",
+        "sha256": "0e7679a9a94fe67e4d17b6a2f406391a24bfd0369cc7f591df69d37d41679d52"
+      },
+      {
+        "bytes": 9432,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/config_registry.py",
+        "sha256": "dc406a6240232eb152c64273ce52ccd7f8d074596141185d904aaf9a8f515722"
+      },
+      {
+        "bytes": 10532,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/data.py",
+        "sha256": "579a3fa223c9b4658a4c64c8c3144c59df2c2f71452902a4662a4c6f805f4ecf"
+      },
+      {
+        "bytes": 1574,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/metrics.py",
+        "sha256": "fec8133f078cfc6b823db5423d7208ae8e8738bb8e1151ecfc38e52cb8fbd3df"
+      },
+      {
+        "bytes": 4687,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/model.py",
+        "sha256": "f3a99fca6af1dbf7ea5e415d1c1c5d869b580cce4131c826f0e6105de88a495c"
+      },
+      {
+        "bytes": 1806,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/optim.py",
+        "sha256": "8ce0fb51f3238683ac5a4f57c70c67c6d0b194abf9084d3efdcb9027c10f98d0"
+      },
+      {
+        "bytes": 3111,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/parallelize.py",
+        "sha256": "00f29ab04bb880db76d8b2e340bf0189176d9226be07718335f3eacd23727d1d"
+      },
+      {
+        "bytes": 6375,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/runtime.py",
+        "sha256": "40b3ff8d6c5d7914fa261694955f684e17ec4fc636e309a5fbf236f5d1ef8073"
+      },
+      {
+        "bytes": 3573,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/stream_math.py",
+        "sha256": "920b23d7d6b9788e084c90a0058d89369dc9e3737cc574c3dfeb04c444842cf5"
+      },
+      {
+        "bytes": 4203,
+        "path": "pretrain/backends/torchtitan/yuformer_ext/validation.py",
+        "sha256": "837b3134dc34e11407ec103b077289717f2fdfa2f90b66d13de22d8d638ab495"
+      },
+      {
+        "bytes": 1566,
+        "path": "pretrain/configs/pretrain_base.yaml",
+        "sha256": "cdf60f653774b6aeddc5a225defa324c7a54b9404b491e4d26a96a1e0ff3641d"
+      },
+      {
+        "bytes": 1029,
+        "path": "pretrain/configs/qualification/q1_single_gpu.env",
+        "sha256": "f2f5463106a8cf12c27195fb48f1c46d39b7e547232069caa98e32d6329d5d58"
+      },
+      {
+        "bytes": 1115,
+        "path": "pretrain/configs/qualification/q1_single_gpu.yaml",
+        "sha256": "e4c038c4e58398d471dd174d1f46598bd3ac4b432d75ac6fd759698d36ef0a4a"
+      },
+      {
+        "bytes": 1027,
+        "path": "pretrain/configs/qualification/q2_fsdp4_dcp.env",
+        "sha256": "8f257a52625a35abf273594b2270648e1f1cb7a45e4be7ee28b9b8fb5dfeb7b9"
+      },
+      {
+        "bytes": 1115,
+        "path": "pretrain/configs/qualification/q2_fsdp4_dcp.yaml",
+        "sha256": "736a626042594c753cb708d356effd7acd01be53a9aa486a975799bc11983e25"
+      },
+      {
+        "bytes": 1037,
+        "path": "pretrain/configs/qualification/q3_load_interrupt.env",
+        "sha256": "77ff90801bed3aba08f0e020f18531e4ed98273a3b183b3c442ed514cbf94774"
+      },
+      {
+        "bytes": 1120,
+        "path": "pretrain/configs/qualification/q3_load_interrupt.yaml",
+        "sha256": "0dc1863ef98e387f24080d5ac4ed0bfa1ee09f60525a65b7567f03ea1de18d87"
+      },
+      {
+        "bytes": 1045,
+        "path": "pretrain/configs/qualification/q3_recovery_reference.env",
+        "sha256": "46043282bfa2cbbfd1097294b9579cde97d8328cbb96ac6318e28ecd4bbd5cf1"
+      },
+      {
+        "bytes": 1124,
+        "path": "pretrain/configs/qualification/q3_recovery_reference.yaml",
+        "sha256": "2384c9adc7e452a615fb9b6cf9920401441c048bac5c0ddc5a5982587f341b52"
+      },
+      {
+        "bytes": 1037,
+        "path": "pretrain/configs/qualification/q3_save_interrupt.env",
+        "sha256": "c6857831be8eb0a63af830208f74f989ec2a6823d5fad2891c66f9bd813086f7"
+      },
+      {
+        "bytes": 1120,
+        "path": "pretrain/configs/qualification/q3_save_interrupt.yaml",
+        "sha256": "6ed01ead37c683f956fb015c684abe295ec3390ae6abf6dfa23741ffa46e80c2"
+      },
+      {
+        "bytes": 1039,
+        "path": "pretrain/configs/qualification/q3_train_interrupt.env",
+        "sha256": "03f8f69588bfbb8d8d07d0009a24ebb42033029c73ede1ff5e6cc7f96e83d53b"
+      },
+      {
+        "bytes": 1121,
+        "path": "pretrain/configs/qualification/q3_train_interrupt.yaml",
+        "sha256": "a76ccac86a6a29f5798927ea7ce78ce7da627b61f75a346fc25c2b88922de625"
+      },
+      {
+        "bytes": 1033,
+        "path": "pretrain/configs/qualification/q4_reshard_4to2.env",
+        "sha256": "0873d6e157b70d25f908ca5d0f3add5e078492de8e11d630838c24287e0688bd"
+      },
+      {
+        "bytes": 1118,
+        "path": "pretrain/configs/qualification/q4_reshard_4to2.yaml",
+        "sha256": "989c36f22dacb704fe13cec31d9a41d4ed9b6059741852118219401f4f3c758e"
+      },
+      {
+        "bytes": 1033,
+        "path": "pretrain/configs/qualification/q5_reshard_4to8.env",
+        "sha256": "9f3a62775bf1c07abb08dd9bf907045b91f9c372a161241131f1338fa1122c90"
+      },
+      {
+        "bytes": 1118,
+        "path": "pretrain/configs/qualification/q5_reshard_4to8.yaml",
+        "sha256": "d71a06b97be2effd9512d3e41ed19ab6d71921d43150f42e5e695d2271daed16"
+      },
+      {
+        "bytes": 1045,
+        "path": "pretrain/configs/qualification/q6_large_accumulation.env",
+        "sha256": "b64cd9e8bfcac3771ee340f898bc2e99d1df8fcb0a81e36893195f29bf9b7fa9"
+      },
+      {
+        "bytes": 1124,
+        "path": "pretrain/configs/qualification/q6_large_accumulation.yaml",
+        "sha256": "532c64d948113d8eb25e389e574ae7b5759e0b08eaa4d9e6d2baea15bdcc665c"
+      },
+      {
+        "bytes": 717,
+        "path": "pretrain/scripts/artifact_archive.py",
+        "sha256": "ce0201cd11f7765a9e3343221835c99b7f25378041dd7cc6af06d88644e49185"
+      },
+      {
+        "bytes": 1522,
+        "path": "pretrain/scripts/assert_run_lease.py",
+        "sha256": "e7875844ed16967fdf59ec7bd28811d8f65b72d7e4bb984443b186e2670c9faa"
+      },
+      {
+        "bytes": 12717,
+        "path": "pretrain/scripts/collect_torchtitan_result.py",
+        "sha256": "e608591de8f1abfb37839a5c37bcd3e910eba818ade032b8c0c5f9c5c6d5b532"
+      },
+      {
+        "bytes": 1817,
+        "path": "pretrain/scripts/process_control.py",
+        "sha256": "a499c0b48d5537d154caceb3c0bc2c2083edd0b57af17e81c0e749d4926dfaca"
+      },
+      {
+        "bytes": 4972,
+        "path": "pretrain/scripts/qualification_identity.py",
+        "sha256": "e2b870861fb7548cdebff03ad1350846681c6ecb16f75bd358a5910ec2af77f6"
+      },
+      {
+        "bytes": 24516,
+        "path": "pretrain/scripts/run_torchtitan_qualification.py",
+        "sha256": "5c65bcfec08dca887f634569b04f552b9670ecacf84035dcef4ddf677dee237b"
+      },
+      {
+        "bytes": 3390,
+        "path": "pretrain/scripts/run_with_lease.py",
+        "sha256": "074399ef0def80ee17e565a2421f84f4ffc65bffa70b5c33c70c60970e0abe6e"
+      },
+      {
+        "bytes": 7016,
+        "path": "pretrain/src/yuformer_pretrain/lease.py",
+        "sha256": "b14178e8a9428e519f039c33569ba03703dbd4178e9a4954ce56421fd5cff8e2"
+      },
+      {
+        "bytes": 4746730,
+        "path": "tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json",
+        "sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e"
+      }
+    ],
+    "schema_version": 1,
+    "sha256": "a1f67ae7274cb56c332f8502f13c57c0043c01dea73d19e91bdd74d140844132"
+  },
+  "started_at": "2026-11-14T02:31:12.723593+00:00",
+  "status": "COMPLETE_SCREENING",
+  "sustained_canary_required": true,
+  "updated_at": "2026-11-14T04:03:56.277508+00:00"
+}

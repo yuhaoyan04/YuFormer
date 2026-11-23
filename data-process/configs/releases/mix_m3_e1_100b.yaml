@@ -1,0 +1,260 @@
+schema_version: 1
+release_name: mix_m3_e1_100b-20261019
+snapshot_root: data/processed
+audit_scope:
+  included_sources:
+    - automathtext
+    - cci3-hq
+    - dclm-baseline
+    - dolma-books
+    - fineweb
+    - fineweb-2
+    - fineweb-edu
+    - github-code
+    - pes2o
+    - proof-pile-2
+    - stack-exchange
+    - starcoderdata
+    - wikipedia-en
+    - wikipedia-zh
+    - wikitext
+  excluded_sources:
+    arxiv-latex-corpus: local train.jsonl is 56,105,768,891 bytes versus 78,855,074,113 bytes at immutable revision 02b5b67c83a6f2736cb8db4f2b56faa601d4e4af; excluded from this release pending a complete redownload and upstream-stage rebuild
+    c4: disabled in data_sources.yaml; redundant Common Crawl source was never admitted downstream
+    pg19: disabled after incompatible raw-text ingestion; dolma-books supplies the books domain
+    skypile-150b: immutable revision has 437 data files but the local/S0 roster has 436 and is missing data/2022-05_zh_head_0006.jsonl; excluded pending download and upstream-stage rebuild
+
+artifacts:
+  - mix_members/mix_m3_e1_100b.parquet
+  - mix_order/mix_m3_e1_100b_stage2.parquet
+  - mix_order/mix_m3_e1_100b.manifest.json
+  - stage_s6_global_summary.json
+  - goldrule_research/mix_m3_e1_100b.parquet
+  - val_sets/_val_global_summary.json
+  - val_sets/academic.ids.bin
+  - val_sets/academic.parquet
+  - val_sets/academic.summary.json
+  - val_sets/books.ids.bin
+  - val_sets/books.parquet
+  - val_sets/books.summary.json
+  - val_sets/chinese.ids.bin
+  - val_sets/chinese.parquet
+  - val_sets/chinese.summary.json
+  - val_sets/code.ids.bin
+  - val_sets/code.parquet
+  - val_sets/code.summary.json
+  - val_sets/encyclopedia.ids.bin
+  - val_sets/encyclopedia.parquet
+  - val_sets/encyclopedia.summary.json
+  - val_sets/math.ids.bin
+  - val_sets/math.parquet
+  - val_sets/math.summary.json
+  - val_sets/multilingual.ids.bin
+  - val_sets/multilingual.parquet
+  - val_sets/multilingual.summary.json
+  - val_sets/qa.ids.bin
+  - val_sets/qa.parquet
+  - val_sets/qa.summary.json
+  - val_sets/web.ids.bin
+  - val_sets/web.parquet
+  - val_sets/web.summary.json
+
+gates:
+  A1:
+    status: PASS
+    verification: machine
+    detail: All 15 included sources close exactly across s1, s2, s3 and full-document decontam; all successful parquet footers were verified.
+    evidence: [data/processed/audit_consistency_20261019.json]
+    assertions:
+      - {path: data/processed/audit_consistency_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_consistency_20261019.json, json_pointer: /output_footers_verified, equals: true}
+  A2:
+    status: PASS
+    verification: machine
+    detail: All 15 included sources have complete s0 to s1 conservation and no artifact errors.
+    evidence: [data/processed/audit_consistency_20261019.json]
+    assertions:
+      - {path: data/processed/audit_consistency_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_consistency_20261019.json, json_pointer: /totals/s0/n_artifact_errors, equals: 0}
+  A3:
+    status: PASS
+    verification: machine
+    detail: Every included stage summary and published S5/S6 generation reports zero errors.
+    evidence: [data/processed/stage_s5_global_summary.json, data/processed/stage_s6_global_summary.json]
+    assertions:
+      - {path: data/processed/stage_s5_global_summary.json, json_pointer: /shard_errors, equals: 0}
+      - {path: data/processed/stage_s6_global_summary.json, json_pointer: /collect_errors, equals: 0}
+  A4:
+    status: PASS
+    verification: machine
+    detail: Repaired stack-exchange and dolma-books lineages are present and aligned through decontam.
+    evidence: [data/processed/audit_consistency_20261019.json]
+    assertions:
+      - {path: data/processed/audit_consistency_20261019.json, json_pointer: /status, equals: PASS}
+
+  B1:
+    status: PASS
+    verification: machine
+    detail: web/code ndv2 direct-edge decisions and lookup publication completed without errors.
+    evidence: [data/processed/stage_ndv2_global_summary.json]
+    assertions:
+      - {path: data/processed/stage_ndv2_global_summary.json, json_pointer: /shard_errors, equals: 0}
+      - {path: data/processed/stage_ndv2_global_summary.json, json_pointer: /task_errors, equals: 0}
+  B2:
+    status: PASS
+    verification: machine
+    detail: Exact, near-duplicate, decontamination and keep ledgers close against decision artifacts.
+    evidence: [data/processed/audit_s6_metadata_20261019.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/B2/status, equals: PASS}
+  B3:
+    status: PASS
+    verification: machine
+    detail: All 12,829 shards were rescanned over full documents; no document remains prefix-truncated.
+    evidence: [data/processed/audits/decontam_fullscan_transition_20261019.json, data/processed/stage_decontam_global_summary.json]
+    assertions:
+      - {path: data/processed/audits/decontam_fullscan_transition_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/stage_decontam_global_summary.json, json_pointer: /totals/truncated_docs, equals: 0}
+      - {path: data/processed/stage_decontam_global_summary.json, json_pointer: /coverage/complete, equals: 12829}
+
+  C1:
+    status: PASS
+    verification: manual
+    reviewer: user-decision-20261010
+    detail: Production score field is hybrid_v2; its independent holdout AUC was 0.899.
+    evidence: [data-process/docs/DECISION_RECORD_20261010.md]
+  C2:
+    status: PASS
+    verification: machine
+    detail: Full S4 score-distribution audit covers every shard and passes language-bias checks.
+    evidence: [data/processed/audit_score_distributions_20261018.json]
+    assertions:
+      - {path: data/processed/audit_score_distributions_20261018.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_score_distributions_20261018.json, json_pointer: /files_scanned, equals: 12829}
+  C3:
+    status: PASS
+    verification: machine
+    detail: hybrid_v2 quantile tables cover every domain and match S5 input row counts.
+    evidence: [data/processed/audit_s6_metadata_20261019.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/C3/status, equals: PASS}
+  C4:
+    status: PASS
+    verification: machine
+    detail: The 16,406,403-row research snapshot meets its row floor, schema, SHA-256 and required finite-track contracts.
+    evidence: [data/processed/audit_s6_metadata_20261019.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/C4/status, equals: PASS}
+
+  D1:
+    status: PASS
+    verification: machine
+    detail: Deep-fill selection reaches 99,999,708,923 tokens; the 291,077-token indivisible-document tail is below the declared 1M limit.
+    evidence: [data/processed/audit_s6_metadata_20261019.json, data/processed/stage_s6_global_summary.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/D1/status, equals: PASS}
+      - {path: data/processed/stage_s6_global_summary.json, json_pointer: /quota_fill_policy, equals: deepen_to_quota}
+  D2:
+    status: PASS
+    verification: machine
+    detail: Production baseline declares one deterministic globally shuffled order table.
+    evidence: [data/processed/audit_s6_metadata_20261019.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/D2/status, equals: PASS}
+  D3:
+    status: PASS
+    verification: machine
+    detail: 95,220,247 train IDs and 324,092 unique validation IDs have zero exact intersection; every validation quota is met.
+    evidence: [data/processed/audit_train_val_ids_20261019.json]
+    assertions:
+      - {path: data/processed/audit_train_val_ids_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_train_val_ids_20261019.json, json_pointer: /train_val_intersection_rows, equals: 0}
+  D4:
+    status: PASS
+    verification: machine
+    detail: members and order contain the same 95,220,247 unique IDs with no duplicates or mismatched buckets.
+    evidence: [data/processed/audit_mix_identity_20261019.json]
+    assertions:
+      - {path: data/processed/audit_mix_identity_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audit_mix_identity_20261019.json, json_pointer: /duplicate_member_ids, equals: 0}
+      - {path: data/processed/audit_mix_identity_20261019.json, json_pointer: /duplicate_order_ids, equals: 0}
+
+  E1:
+    status: PASS
+    verification: machine
+    detail: Deterministic 3,200-document released-mix audit passes identity, score, decontamination, text hygiene and language gates.
+    evidence: [data/audit_data_quality_20261019/report.json]
+    assertions:
+      - {path: data/audit_data_quality_20261019/report.json, json_pointer: /status, equals: PASS}
+  E2:
+    status: PASS
+    verification: manual
+    reviewer: user-decision-20261019
+    detail: The project owner reviewed the nine-domain p25/p50/p75 sample set, examined the notebook and Gutenberg edge cases, and accepted the released-mix data quality.
+    evidence: [data/processed/audits/human_review_mix_m3_e1_100b_20261019.json]
+    assertions:
+      - {path: data/processed/audits/human_review_mix_m3_e1_100b_20261019.json, json_pointer: /human_review_status, equals: PASS}
+      - {path: data/processed/audits/human_review_mix_m3_e1_100b_20261019.json, json_pointer: /human_review/reviewer, equals: user-decision-20261019}
+  E3:
+    status: PASS
+    verification: machine
+    detail: Document/token length buckets close; B4K contains 97.8130% of documents and the long-context reserve contains 633.96B tokens.
+    evidence: [data/processed/audit_s6_metadata_20261019.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/E3/status, equals: PASS}
+  E4:
+    status: PASS
+    verification: machine
+    detail: The real pretrain materializer matches independent tokenization for all 27 samples and 442,795 token IDs including EOD boundaries.
+    evidence: [data/processed/audits/e4_tokenizer_crosscheck_mix_m3_e1_100b_20261019.json]
+    assertions:
+      - {path: data/processed/audits/e4_tokenizer_crosscheck_mix_m3_e1_100b_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audits/e4_tokenizer_crosscheck_mix_m3_e1_100b_20261019.json, json_pointer: /checks/materialized_stream_exact_token_ids, equals: true}
+
+  F1:
+    status: PASS
+    verification: machine
+    detail: A second S6 invocation skipped the content-addressed generation and left every published artifact byte-identical.
+    evidence: [data/processed/audits/s6_idempotency_mix_m3_e1_100b_20261019.json]
+    assertions:
+      - {path: data/processed/audits/s6_idempotency_mix_m3_e1_100b_20261019.json, json_pointer: /status, equals: PASS}
+  F2:
+    status: PASS
+    verification: machine
+    detail: Manifest binds normalized config, complete upstream snapshot and C4 SHA-256.
+    evidence: [data/processed/audit_s6_metadata_20261019.json]
+    assertions:
+      - {path: data/processed/audit_s6_metadata_20261019.json, json_pointer: /gates/F2/status, equals: PASS}
+  F3:
+    status: PASS
+    verification: manual
+    reviewer: codex-audit-20261019
+    detail: Failure ledger, acceptance checklist and machine evidence are archived with the project.
+    evidence: [data-process/docs/FAILURE_LEDGER.md]
+
+  G1:
+    status: PASS
+    verification: machine
+    detail: Every included source is bound to an immutable revision and exact S0 file inventory; the upstream completeness audit passes all included sources and records the two incomplete corpora as excluded.
+    evidence: [data/processed/audits/source_governance_20261019.json, data/processed/source_provenance/recovered_source_provenance_20261019.json, data/processed/audits/raw_source_completeness_20261019.json, data/processed/mix_order/mix_m3_e1_100b.manifest.json, data/processed/stage_s6_global_summary.json]
+    assertions:
+      - {path: data/processed/audits/source_governance_20261019.json, json_pointer: /gates/G1/status, equals: PASS}
+      - {path: data/processed/source_provenance/recovered_source_provenance_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audits/raw_source_completeness_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audits/raw_source_completeness_20261019.json, json_pointer: /included_failures, equals: []}
+      - path: data/processed/mix_order/mix_m3_e1_100b.manifest.json
+        json_pointer: /included_sources
+        equals: [automathtext, cci3-hq, dclm-baseline, dolma-books, fineweb, fineweb-2, fineweb-edu, github-code, pes2o, proof-pile-2, stack-exchange, starcoderdata, wikipedia-en, wikipedia-zh, wikitext]
+      - path: data/processed/stage_s6_global_summary.json
+        json_pointer: /included_sources
+        equals: [automathtext, cci3-hq, dclm-baseline, dolma-books, fineweb, fineweb-2, fineweb-edu, github-code, pes2o, proof-pile-2, stack-exchange, starcoderdata, wikipedia-en, wikipedia-zh, wikitext]
+  G2:
+    status: PASS
+    verification: manual
+    reviewer: user-decision-20261019-g2
+    detail: The project owner accepted internal non-production research use under the five documented redistribution, residual-PII, deletion and source-rights controls.
+    evidence: [data/processed/audits/source_governance_20261019.json, data/processed/audits/g2_signoff_mix_m3_e1_100b_20261019.json, data-process/docs/HUMAN_GATE_REVIEW_20261019.md]
+    assertions:
+      - {path: data/processed/audits/source_governance_20261019.json, json_pointer: /gates/G2/status, equals: PASS}
+      - {path: data/processed/audits/g2_signoff_mix_m3_e1_100b_20261019.json, json_pointer: /status, equals: PASS}
+      - {path: data/processed/audits/g2_signoff_mix_m3_e1_100b_20261019.json, json_pointer: /accepted_statement, equals: PASS for internal non-production research under the five controls above}

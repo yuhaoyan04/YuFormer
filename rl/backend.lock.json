@@ -1,0 +1,25 @@
+{
+  "python": "3.12",
+  "schema_version": 1,
+  "environment": {
+    "cuda": "13.0",
+    "isolation": "separate-from-pretrain",
+    "torch": "2.13.0"
+  },
+  "sglang": {
+    "commit": "94602c9c2b7cbdb8efd5c52802dac6a1c180089e",
+    "repository": "https://github.com/sgl-project/sglang.git",
+    "tag": "v0.5.20"
+  },
+  "verl": {
+    "commit": "1876b06d0a3e4e71e06230be10af14492ca8a75b",
+    "repository": "https://github.com/verl-project/verl.git",
+    "tag": "v0.9.1"
+  },
+  "verl_recipe": {
+    "commit": "ba2464188fb3e5afc36f9ec4b0da8046881a075f",
+    "required_verl_commit": "bcb638649a50e58494a8ddd92085ad1174f674b8",
+    "dapo_reproduction_verl_commit": "4f80e465ea7d549f24473c74bd0a15aa9a467da4",
+    "repository": "https://github.com/verl-project/verl-recipe.git"
+  }
+}

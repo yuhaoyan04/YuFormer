@@ -1,0 +1,37 @@
+{
+  "completed_cases": [
+    "matched_baseline_b8",
+    "larger_lr1e4_b8",
+    "larger_lr2e4_b8"
+  ],
+  "domain_loss_reduction_percent": {
+    "larger_lr1e4_b8": [
+      2.9619413577774427,
+      2.9423870674435157,
+      3.006960176161601,
+      0.918552860196804,
+      3.4844578357277425,
+      3.2223636697584563,
+      2.39108563807784,
+      2.2964930408159763,
+      0.4830659025527194
+    ],
+    "larger_lr2e4_b8": [
+      -5.902247779993394,
+      -6.816030516537735,
+      -6.852121955207206,
+      -0.6662643962427782,
+      -6.804012203618911,
+      -7.40102811024526,
+      -4.899594145125765,
+      -6.79618376691284,
+      -3.0895831683790065
+    ]
+  },
+  "production_qualified": false,
+  "source_sha256": {
+    "data/experiments/flex_sustained_20261114/larger_lr1e4_b8/result.json": "32f51f08375fbc7b77f19faa72c50d5432374aa1fe7941a01d03df9378b5328d",
+    "data/experiments/flex_sustained_20261114/larger_lr2e4_b8/result.json": "2acb68bd9d331b4349a3f32e950e5b2fb1506f3859b13bd8c7e6e12e9cdf471f",
+    "data/experiments/flex_sustained_20261114/matched_baseline_b8/result.json": "afafd756ebe61eaa3dfef9a1d89aa8798d4cb01740adc33cee47188f70068457"
+  }
+}

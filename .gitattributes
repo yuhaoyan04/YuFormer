@@ -1,0 +1,9 @@
+# Preserve exact source/evidence bytes; whitespace checks must not rewrite
+# qualification-bound files or significant patch/TSV context. Extra EOF blank
+# lines in legacy source are retained while source end-of-line errors are checked.
+* whitespace=-blank-at-eof
+*.csv whitespace=-blank-at-eof,cr-at-eol
+*.tsv -whitespace
+*.svg -whitespace
+*.patch -whitespace
+*.log -whitespace

@@ -1,0 +1,143 @@
+{
+  "allowed_pending_source_delta": {
+    "pretrain/backends/torchtitan/yuformer_ext/checkpoint.py": {
+      "after_sha256": "6f36db7f28fc7d5eb6d72ff27f8d67d5b47d3c84081b97552e7273923211ea2e",
+      "before_sha256": "0e7679a9a94fe67e4d17b6a2f406391a24bfd0369cc7f591df69d37d41679d52"
+    }
+  },
+  "candidate": "larger_lr1e4_b8",
+  "cases": [
+    {
+      "case": "matched_baseline_b8",
+      "parameters": 530107904,
+      "peak_lr": 0.0002
+    },
+    {
+      "case": "larger_lr1e4_b8",
+      "parameters": 1516600064,
+      "peak_lr": 0.0001
+    }
+  ],
+  "checkpoint_cpu_qualification_must_pass": true,
+  "declared_at": "2026-11-15T01:00:32.338083+00:00",
+  "expanded_window": {
+    "domains": [
+      "academic",
+      "books",
+      "chinese",
+      "code",
+      "encyclopedia",
+      "math",
+      "multilingual",
+      "qa",
+      "web"
+    ],
+    "global_batch_size": 64,
+    "global_batches_per_domain": 44,
+    "local_batch_size": 8,
+    "samples_per_domain": 2816,
+    "seq_len": 4096,
+    "source_sample_offset": 64,
+    "target_interval": [
+      262145,
+      11796481
+    ],
+    "uncertainty": {
+      "confidence": 0.95,
+      "intervals_reported_without_claiming_significance_when_zero_is_inside": true,
+      "method": "paired bootstrap over the same 44 global batches per domain",
+      "resamples": 10000,
+      "seed": 20261114
+    },
+    "validation_metadata_sha256": {
+      "data/token_streams/m3_20261020_yf64k/val_academic.meta.json": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3",
+      "data/token_streams/m3_20261020_yf64k/val_books.meta.json": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64",
+      "data/token_streams/m3_20261020_yf64k/val_chinese.meta.json": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767",
+      "data/token_streams/m3_20261020_yf64k/val_code.meta.json": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4",
+      "data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea",
+      "data/token_streams/m3_20261020_yf64k/val_math.meta.json": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec",
+      "data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2",
+      "data/token_streams/m3_20261020_yf64k/val_qa.meta.json": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54",
+      "data/token_streams/m3_20261020_yf64k/val_web.meta.json": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899"
+    },
+    "world_size": 8
+  },
+  "expected_training_source_files": {
+    "model/src/yuformer_model/__init__.py": "9229a98a77f311c981ae49cfc8438c7411883eb4e2e17451695d88fb072e5db6",
+    "model/src/yuformer_model/attention.py": "3182f029c6477b7d44170374ed3239be1747ae88cdac893b15aab8142d40b4f1",
+    "model/src/yuformer_model/config.py": "abf813702258d614b2bbabc5625d87fc18b66dd105717e0f01a9b9b45a3a7219",
+    "model/src/yuformer_model/layers.py": "e30b21c2dc85f1b6d86f0617e375020a548b3f1ae09dbc10d10ae2186f70cb3f",
+    "model/src/yuformer_model/model.py": "12c77312850221d6262ad3e48fbe7945d87d9abbc58526efcbadf736010c9220",
+    "model/src/yuformer_model/transformer.py": "4d8e13f988dddfabf9903a029fd2e60686e5f072040334dd64c1883a62f38b10",
+    "pretrain/backends/torchtitan/README.md": "ae8b05c2cfc5f8f740dbace06084cdfe88c6237dc4994c53a77539003d4c7f8a",
+    "pretrain/backends/torchtitan/attention_parity.py": "f072c4fd13c1e9cefc6f2a9f4649e17e50861608ee217252fdf3ff5f790ffb3d",
+    "pretrain/backends/torchtitan/backend.lock.json": "6717a63df42a24f0e01e2e3758afb35621571c6714addd4e017ee6a6dd38b7bd",
+    "pretrain/backends/torchtitan/bootstrap_env.sh": "b8dba4635d60361f5d0a3c5f978e4efec17ccd50d60bfb5861101b9ba6ef154a",
+    "pretrain/backends/torchtitan/distributed_parity.py": "15406126865274b8685c2c0f0f33f140e787b23b2823b78775979386fbd484ab",
+    "pretrain/backends/torchtitan/flex_module_parity.py": "88577b5853eb8465aa3bf41f332f455e479bf0f9c73e2e3cbc484119115f05da",
+    "pretrain/backends/torchtitan/launch.sh": "6f5b5c2452b39a089bbdef9a02d85f5e7fbdff689392acbe8e9fd75231087f58",
+    "pretrain/backends/torchtitan/lr_schedule_contract.py": "f3b0f3b738368208b5397fb3de0e3e1c2797cf1c5e81794a6b732dce4ab89ced",
+    "pretrain/backends/torchtitan/numerical_parity.py": "72740dab92f0fc4b27d2562cd089afa7367bf11539ea459a792e44dde21fcbf4",
+    "pretrain/backends/torchtitan/preflight.py": "d3532b377db25aa61454b93bfa364e014a4aad69a357c3f26d69cb3f6cead5d0",
+    "pretrain/backends/torchtitan/prepare_env.sh": "f0e86f39a568b10bbd341d9f857e3dfd6dbedd14be97219367745b11a00a0042",
+    "pretrain/backends/torchtitan/validate_contract.py": "3ea439223da3eed90a40ee05807058b2c4cac7f83e17f92eb7ca0e77ac468cf7",
+    "pretrain/backends/torchtitan/validate_userspace.py": "6a69047f65fb471ce9ba2e08ad453be80445c941f5f593d1a7b92de3b6fadca7",
+    "pretrain/backends/torchtitan/yuformer_ext/__init__.py": "3aec1c582c2472f6f28a25f2653e8c114d905ca653c9ce189c7469fcce9ae8e1",
+    "pretrain/backends/torchtitan/yuformer_ext/block_permutation.py": "e7dc1b5a52d886bea0d45f89bcb60f0a6d25a84b9ad7770d8c4880ee38a27389",
+    "pretrain/backends/torchtitan/yuformer_ext/checkpoint.py": "6f36db7f28fc7d5eb6d72ff27f8d67d5b47d3c84081b97552e7273923211ea2e",
+    "pretrain/backends/torchtitan/yuformer_ext/config_registry.py": "639dff5b3b155216831ceb96e5333b855f290df36dee2f5baaeff4f917abd014",
+    "pretrain/backends/torchtitan/yuformer_ext/data.py": "10c0b052b7010eab808c8a351e9e09a24589fc8456ee39cc891e79b6eb92cfb0",
+    "pretrain/backends/torchtitan/yuformer_ext/metrics.py": "fec8133f078cfc6b823db5423d7208ae8e8738bb8e1151ecfc38e52cb8fbd3df",
+    "pretrain/backends/torchtitan/yuformer_ext/model.py": "e8fd716c475e86f01f9b0d1cd07322f73c9b0fd65b5d14bfd341b33a056da332",
+    "pretrain/backends/torchtitan/yuformer_ext/optim.py": "8ce0fb51f3238683ac5a4f57c70c67c6d0b194abf9084d3efdcb9027c10f98d0",
+    "pretrain/backends/torchtitan/yuformer_ext/parallelize.py": "00f29ab04bb880db76d8b2e340bf0189176d9226be07718335f3eacd23727d1d",
+    "pretrain/backends/torchtitan/yuformer_ext/runtime.py": "40b3ff8d6c5d7914fa261694955f684e17ec4fc636e309a5fbf236f5d1ef8073",
+    "pretrain/backends/torchtitan/yuformer_ext/stream_math.py": "920b23d7d6b9788e084c90a0058d89369dc9e3737cc574c3dfeb04c444842cf5",
+    "pretrain/backends/torchtitan/yuformer_ext/validation.py": "837b3134dc34e11407ec103b077289717f2fdfa2f90b66d13de22d8d638ab495",
+    "pretrain/scripts/assert_run_lease.py": "e7875844ed16967fdf59ec7bd28811d8f65b72d7e4bb984443b186e2670c9faa",
+    "pretrain/scripts/run_with_lease.py": "074399ef0def80ee17e565a2421f84f4ffc65bffa70b5c33c70c60970e0abe6e",
+    "pretrain/src/yuformer_pretrain/lease.py": "b14178e8a9428e519f039c33569ba03703dbd4178e9a4954ce56421fd5cff8e2"
+  },
+  "formal_pretrain_started": false,
+  "gate": {
+    "aggregate_mean_strictly_lower": true,
+    "allocator_retries": 0,
+    "expanded_all_nine_mean_strictly_lower": true,
+    "finite_all_updates": true,
+    "forecast_ceiling_days_duty_09": 33,
+    "noninferiority_margin": 0,
+    "original_primary_all_nine_mean_strictly_lower": true
+  },
+  "grad_accum": 16,
+  "lr_schedule": "cosine",
+  "micro_batch_size": 8,
+  "min_lr_ratio": 0.1,
+  "old_research_failures_preserved": true,
+  "prior_research_exposure_report": "data/health/research-vs-production-prefix-exposure.json",
+  "prior_research_exposure_report_sha256": "b476e638c38ded362986449e359b0b6c04c0ca3ef5b8a980dbc469a5c8f9b244",
+  "production_order_manifest": "data/processed/training_permutations/pretrain-1t-dd284efd7c715544-b8/manifest.json",
+  "production_order_manifest_sha256": "5cc0dc89126cb7e19ad3517313f276651f4ce77f75d85506b347a5fa252dfff1",
+  "production_qualified": false,
+  "purpose": "FINAL_MATCHED_ACTUAL_PRODUCTION_WARMUP_CONFIRMATION_NOT_UNSEEN_TEST",
+  "rationale": "The actual old research prefix is 92.53% web/1.58% Chinese; the actual production warmup prefix is 60.04% web/7.94% Chinese. Confirm the provisionally prepared LR1e-4 architecture on the actual production distribution and after checkpoint durability hardening. Keep all prior failed research endpoints; this protocol does not reinterpret them as passing. These are bounded development controls, not final1T capability guarantees.",
+  "reference_cases": [
+    "matched_baseline_b8"
+  ],
+  "run_order_fixed": true,
+  "schema_version": 1,
+  "seed": 20260926,
+  "seq_len": 4096,
+  "source_before_checkpoint_hardening": "f1273103b7da176d0c2c0d1f0c7cba30dbab09946cd71d50d1f0647441684f45",
+  "source_window_offsets": [
+    0,
+    2015232,
+    285160
+  ],
+  "status": "PREDECLARED_BEFORE_CURRENT_BACKEND_PRODUCTION_DATA_COMPARISON",
+  "target_tokens": 838860800,
+  "training_data": "Actual warmup first 204800 logical samples under exact released production block8 permutation; both models consume identical samples",
+  "training_source_sha256": "a1383a95f1e3a323fab652fc1c1be69487521e13486de2d118b789fba53acd37",
+  "updates": 200,
+  "warmup_steps": 10,
+  "world_size": 8
+}

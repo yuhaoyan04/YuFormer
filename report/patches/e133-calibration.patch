@@ -1,0 +1,148 @@
+--- experiments/e4_curriculum/scripts/calibrate_training_tokens.py
++++ experiments/e4_curriculum/scripts/calibrate_training_tokens.py
+@@ -18,7 +18,7 @@
+ import yaml
+ 
+ ROOT = Path(__file__).resolve().parents[3]
+-sys.path[:0] = [str(ROOT / 'pretrain/scripts'), str(ROOT / 'pretrain/src')]
++sys.path[:0] = [str(Path(__file__).resolve().parent), str(ROOT / 'pretrain/scripts'), str(ROOT / 'pretrain/src')]
+ import materialize_tokens as materializer
+ from source_document_binding import verified_source_document_binding
+ from yuformer_pretrain.lease import RunLease
+@@ -46,46 +46,24 @@
+                                   if key != 'weight'} for domain in DOMAINS}}
+ 
+ 
+-def sample_order(parent, target, destination):
+-    """Uniform hashed doc-id prefixes within every domain; never sample validation."""
+-    counts = {domain: 0 for domain in DOMAINS}
+-    pieces = []
+-    with parent.open('rb') as handle:
+-        identity = materializer._stat_identity(os.fstat(handle.fileno()))
+-        parent_sha = materializer._hash_open_file(handle)
+-        for batch in pq.ParquetFile(handle).iter_batches(
+-                batch_size=262144, columns=['doc_id', 'domain', 'n_tokens']):
+-            domains = np.asarray(batch.column(1).to_pylist())
+-            refs = batch.column(2).to_numpy(zero_copy_only=False)
+-            selected = np.zeros(batch.num_rows, dtype=bool)
+-            for domain in DOMAINS:
+-                if counts[domain] >= target:
+-                    continue
+-                indices = np.flatnonzero(domains == domain)
+-                cumulative = np.cumsum(refs[indices], dtype=np.int64)
+-                keep = min(len(indices), int(np.searchsorted(cumulative, target - counts[domain])) + 1)
+-                indices = indices[:keep]
+-                selected[indices] = True
+-                counts[domain] += int(refs[indices].sum(dtype=np.int64))
+-            if selected.any():
+-                pieces.append(pa.Table.from_batches([batch]).filter(pa.array(selected)))
+-            if all(value >= target for value in counts.values()):
+-                break
+-        if (materializer._stat_identity(os.fstat(handle.fileno())) != identity
+-                or materializer.source_file_identity(parent) != identity):
+-            raise ValueError('training order changed during calibration selection')
+-    if not all(value >= target for value in counts.values()):
+-        raise ValueError(f'insufficient training calibration capacity: {counts}')
+-    table = pa.concat_tables(pieces)
+-    ids = table['doc_id'].to_pylist()
+-    if any(left >= right for left, right in zip(ids, ids[1:])):
+-        raise ValueError('calibration parent doc IDs must be strictly hash sorted')
+-    table = table.append_column('position', pa.array(np.arange(table.num_rows), type=pa.int64()))
+-    temporary = destination.with_name(f'.{destination.name}.{os.getpid()}')
+-    pq.write_table(table, temporary, compression='zstd')
+-    os.replace(temporary, destination)
+-    return {'parent_order_sha256': parent_sha, 'parent_order_stat': identity,
+-            'reference_tokens_by_domain': counts, 'docs': table.num_rows}
++def sample_order(parent, target, destination, *, population, expected_parent_sha256, seed, phase):
++    from uniform_selected_sample import sample_order as independent_sample
++    return independent_sample(parent, target, destination, population=population,
++        expected_parent_sha256=expected_parent_sha256, seed=seed, phase=phase)
++
++
++def selected_population(root, release, row):
++    manifest_path = root/row['manifest']
++    record = next(item for item in release['artifacts'] if item['path'] == row['manifest'])
++    with manifest_path.open('rb') as handle:
++        before = materializer._stat_identity(os.fstat(handle.fileno()))
++        if materializer._hash_open_file(handle) != record['sha256']:
++            raise ValueError('selected calibration population manifest differs from release')
++        population = json.load(handle)['selected']
++        if (materializer._stat_identity(os.fstat(handle.fileno())) != before or
++                materializer.source_file_identity(manifest_path) != before):
++            raise ValueError('calibration population manifest changed while reading')
++    return population
+ 
+ 
+ def measure(order, lengths_path, *, expected_order_sha256=None, expected_lengths_sha256=None):
+@@ -123,7 +101,8 @@
+     return values
+ 
+ 
+-def build(root, work, tokenizer, workers, target, parent_release=None):
++def build(root, work, tokenizer, workers, target, parent_release=None, *,
++          seed='yuformer-e133-independent-calibration-20261114-v1'):
+     release_path = parent_release or root / 'data/processed/releases/pretrain-1t-frozen.release.json'
+     release = json.loads(release_path.read_text())
+     if release.get('status') != 'PASS':
+@@ -134,8 +113,13 @@
+         raise ValueError('calibration work directory belongs to another training release')
+     if not archived_release.exists():
+         archived_release.write_bytes(release_path.read_bytes())
+-    report = {'schema_version': 1, 'status': 'RUNNING', 'purpose': 'TRAINING_TOKENIZER_CALIBRATION',
+-              'includes_appended_eod': True, 'sampling': 'per-domain-hash-prefix',
++    from uniform_selected_sample import SAMPLING
++    sampler_path = root/'experiments/e4_curriculum/scripts/uniform_selected_sample.py'
++    if not isinstance(seed, str) or not seed:
++        raise ValueError('independent calibration requires an explicit seed')
++    report = {'schema_version': 2, 'status': 'RUNNING', 'purpose': 'TRAINING_TOKENIZER_CALIBRATION',
++              'includes_appended_eod': True, 'sampling': SAMPLING, 'seed': seed,
++              'sampler_tool_sha256': digest(sampler_path),
+               'minimum_reference_tokens_per_domain': target,
+               'tool_sha256': digest(Path(__file__)), 'tokenizer_sha256': digest(tokenizer),
+               'parent_release': str(archived_release.relative_to(root)),
+@@ -162,9 +146,11 @@
+             raise ValueError('training quality policy changed during calibration')
+         order = directory / 'sample.parquet'
+         selection_path = directory / 'selection.json'
++        population = selected_population(root, release, row)
++        original = next(item for item in release['artifacts'] if item['path'] == row['order'])
+         if not selection_path.exists():
+-            selection = sample_order(parent, target, order)
+-            original = next(item for item in release['artifacts'] if item['path'] == row['order'])
++            selection = sample_order(parent, target, order, population=population,
++                expected_parent_sha256=original['sha256'], seed=seed, phase=stage)
+             if selection['parent_order_sha256'] != original['sha256']:
+                 raise ValueError('selected parent order differs from frozen release')
+             selection['sample_sha256'] = digest(order)
+@@ -172,7 +158,13 @@
+             selection['minimum_reference_tokens_per_domain'] = target
+             atomic_json(selection_path, selection)
+         selection = json.loads(selection_path.read_text())
+-        if (selection['minimum_reference_tokens_per_domain'] != target
++        if (selection.get('sampling') != SAMPLING or selection.get('seed') != seed
++                or selection.get('phase') != stage
++                or selection.get('sampler_tool_sha256') != report['sampler_tool_sha256']
++                or selection.get('parent_order_sha256') != original['sha256']
++                or selection.get('population_docs_by_domain') != {d: population[d]['selected_docs'] for d in DOMAINS}
++                or selection.get('population_reference_tokens_by_domain') != {d: population[d]['selected_tokens'] for d in DOMAINS}
++                or selection['minimum_reference_tokens_per_domain'] != target
+                 or digest(order) != selection['sample_sha256']
+                 or materializer.source_file_identity(order) != selection['sample_stat']):
+             raise ValueError('calibration sample identity changed')
+@@ -228,6 +220,7 @@
+     parser.add_argument('--tokenizer', type=Path, required=True)
+     parser.add_argument('--parent-release', type=Path,
+                         help='Selected training order release; archived immutable parents are accepted')
++    parser.add_argument('--seed', default='yuformer-e133-independent-calibration-20261114-v1')
+     parser.add_argument('--workers', type=int, default=128)
+     parser.add_argument('--reference-tokens-per-domain', type=int, default=MIN_REFERENCE_TOKENS)
+     args = parser.parse_args()
+@@ -236,7 +229,7 @@
+     with RunLease(args.work_dir, 'training-tokenizer-calibration'):
+         result = build(args.root.resolve(), args.work_dir.resolve(), args.tokenizer.resolve(),
+                        args.workers, args.reference_tokens_per_domain,
+-                       args.parent_release.resolve() if args.parent_release else None)
++                       args.parent_release.resolve() if args.parent_release else None, seed=args.seed)
+     print(json.dumps({'status': result['status'], 'report': REPORT}), flush=True)
+ 
+ 

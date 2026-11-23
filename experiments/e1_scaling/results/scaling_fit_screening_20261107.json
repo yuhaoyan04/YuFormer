@@ -1,0 +1,1028 @@
+{
+  "analysis_tool_sha256": "235b9c039696570fa5b4390bfa6490911ab3fbe504d38321cfd21e1f5d292fa3",
+  "bootstrap_requested": 1000,
+  "bootstrap_successful": 1000,
+  "controlled_axis_fits": {
+    "L_D_fixed_300M": {
+      "parameters": {
+        "exponent": 0.5461954889682514,
+        "floor": 2.667946849824703,
+        "log_coefficient": 11.419371927921981
+      },
+      "points": 5,
+      "rmse": 0.11161867922902498
+    },
+    "L_N_fixed_D": {
+      "configured_budget_tokens": 1000000000,
+      "parameters": {
+        "exponent": 0.4810274477597542,
+        "floor": 3.433942193156844,
+        "log_coefficient": 7.40330915745837
+      },
+      "points": 5,
+      "rmse": 0.004170602672093424
+    }
+  },
+  "expected_results": 24,
+  "failure_reason": "scaling_fit_quality_gate",
+  "fit_diagnostics": {
+    "leave_one_out": [
+      {
+        "observed": 3.9751029014587402,
+        "prediction": 4.0346696097031,
+        "relative_error": 0.014984947489661272,
+        "run_name": "e1_iso_c0_100m"
+      },
+      {
+        "observed": 4.503137111663818,
+        "prediction": 4.549956096629027,
+        "relative_error": 0.010396970779313069,
+        "run_name": "e1_iso_c0_200m"
+      },
+      {
+        "observed": 6.075799942016602,
+        "prediction": 5.792236675051129,
+        "relative_error": 0.046670935460616264,
+        "run_name": "e1_iso_c0_400m"
+      },
+      {
+        "observed": 3.7660903930664062,
+        "prediction": 3.867855573407125,
+        "relative_error": 0.02702143860595443,
+        "run_name": "e1_iso_c0_50m"
+      },
+      {
+        "observed": 7.155919075012207,
+        "prediction": 7.195954107179128,
+        "relative_error": 0.005594673688627883,
+        "run_name": "e1_iso_c0_800m"
+      },
+      {
+        "observed": 3.4854562282562256,
+        "prediction": 3.4358247671710616,
+        "relative_error": 0.014239588115554863,
+        "run_name": "e1_iso_c1_100m"
+      },
+      {
+        "observed": 3.6124942302703857,
+        "prediction": 3.6792560609900575,
+        "relative_error": 0.018480813106980336,
+        "run_name": "e1_iso_c1_200m"
+      },
+      {
+        "observed": 4.321425437927246,
+        "prediction": 4.31890260444275,
+        "relative_error": 0.0005837966015460194,
+        "run_name": "e1_iso_c1_400m"
+      },
+      {
+        "observed": 3.5445401668548584,
+        "prediction": 3.368452091521484,
+        "relative_error": 0.04967867961547766,
+        "run_name": "e1_iso_c1_50m"
+      },
+      {
+        "observed": 5.437784194946289,
+        "prediction": 4.901711287424273,
+        "relative_error": 0.09858296841206488,
+        "run_name": "e1_iso_c1_800m"
+      },
+      {
+        "observed": 3.3207530975341797,
+        "prediction": 3.043077252705334,
+        "relative_error": 0.08361833495993233,
+        "run_name": "e1_iso_c2_100m"
+      },
+      {
+        "observed": 3.2323873043060303,
+        "prediction": 3.178532557989314,
+        "relative_error": 0.016660981883258104,
+        "run_name": "e1_iso_c2_200m"
+      },
+      {
+        "observed": 3.3760318756103516,
+        "prediction": 3.4787368961973244,
+        "relative_error": 0.0304218160168896,
+        "run_name": "e1_iso_c2_400m"
+      },
+      {
+        "observed": 3.641667127609253,
+        "prediction": 3.79673360663193,
+        "relative_error": 0.042581178781290224,
+        "run_name": "e1_iso_c2_800m"
+      },
+      {
+        "observed": 6.517631530761719,
+        "prediction": 6.972044636408598,
+        "relative_error": 0.06972058845335982,
+        "run_name": "e1_ld_300m_100m"
+      },
+      {
+        "observed": 3.612565755844116,
+        "prediction": 3.71028785146621,
+        "relative_error": 0.027050606750619554,
+        "run_name": "e1_ld_300m_1b"
+      },
+      {
+        "observed": 4.961094856262207,
+        "prediction": 4.756007029032689,
+        "relative_error": 0.04133922716084407,
+        "run_name": "e1_ld_300m_300m"
+      },
+      {
+        "observed": 3.2317593097686768,
+        "prediction": 3.2275635101624767,
+        "relative_error": 0.001298302009533135,
+        "run_name": "e1_ld_300m_3b"
+      },
+      {
+        "observed": 3.0720055103302,
+        "prediction": 2.9378697494995345,
+        "relative_error": 0.04366390632425912,
+        "run_name": "e1_ld_300m_9p85b"
+      },
+      {
+        "observed": 3.7266087532043457,
+        "prediction": 3.801057422938915,
+        "relative_error": 0.019977592139382574,
+        "run_name": "e1_ln_100m"
+      },
+      {
+        "observed": 3.6361162662506104,
+        "prediction": 3.728199237868119,
+        "relative_error": 0.02532453994174951,
+        "run_name": "e1_ln_200m"
+      },
+      {
+        "observed": 3.553492307662964,
+        "prediction": 3.706537164188809,
+        "relative_error": 0.04306885825974921,
+        "run_name": "e1_ln_400m"
+      },
+      {
+        "observed": 3.885560989379883,
+        "prediction": 3.995738019679446,
+        "relative_error": 0.02835550145801386,
+        "run_name": "e1_ln_50m"
+      },
+      {
+        "observed": 3.5189526081085205,
+        "prediction": 3.70857564183487,
+        "relative_error": 0.0538862141221828,
+        "run_name": "e1_ln_800m"
+      }
+    ],
+    "leave_one_out_median_relative_error": 0.027703054104316706,
+    "leave_one_out_p95_relative_error": 0.08153367298394643,
+    "normalized_rmse": 0.036378266849852056,
+    "r_squared": 0.980659443518803,
+    "residuals": [
+      {
+        "observed": 3.9751029014587402,
+        "predicted": 4.0241824869551905,
+        "residual": 0.049079585496450306,
+        "run_name": "e1_iso_c0_100m"
+      },
+      {
+        "observed": 4.503137111663818,
+        "predicted": 4.543571858260586,
+        "residual": 0.04043474659676782,
+        "run_name": "e1_iso_c0_200m"
+      },
+      {
+        "observed": 6.075799942016602,
+        "predicted": 5.837115984190149,
+        "residual": -0.2386839578264528,
+        "run_name": "e1_iso_c0_400m"
+      },
+      {
+        "observed": 3.7660903930664062,
+        "predicted": 3.834972252220153,
+        "residual": 0.06888185915374656,
+        "run_name": "e1_iso_c0_50m"
+      },
+      {
+        "observed": 7.155919075012207,
+        "predicted": 7.1750557358811555,
+        "residual": 0.019136660868948496,
+        "run_name": "e1_iso_c0_800m"
+      },
+      {
+        "observed": 3.4854562282562256,
+        "predicted": 3.4429619843648935,
+        "residual": -0.04249424389133205,
+        "run_name": "e1_iso_c1_100m"
+      },
+      {
+        "observed": 3.6124942302703857,
+        "predicted": 3.6743454719802235,
+        "residual": 0.0618512417098378,
+        "run_name": "e1_iso_c1_200m"
+      },
+      {
+        "observed": 4.321425437927246,
+        "predicted": 4.319191316082562,
+        "residual": -0.0022341218446841893,
+        "run_name": "e1_iso_c1_400m"
+      },
+      {
+        "observed": 3.5445401668548584,
+        "predicted": 3.428941786253647,
+        "residual": -0.1155983806012113,
+        "run_name": "e1_iso_c1_50m"
+      },
+      {
+        "observed": 5.437784194946289,
+        "predicted": 4.999032851508752,
+        "residual": -0.43875134343753697,
+        "run_name": "e1_iso_c1_800m"
+      },
+      {
+        "observed": 3.3207530975341797,
+        "predicted": 3.116393917719139,
+        "residual": -0.20435917981504081,
+        "run_name": "e1_iso_c2_100m"
+      },
+      {
+        "observed": 3.2323873043060303,
+        "predicted": 3.1859388725693107,
+        "residual": -0.04644843173671953,
+        "run_name": "e1_iso_c2_200m"
+      },
+      {
+        "observed": 3.3760318756103516,
+        "predicted": 3.4674025613058252,
+        "residual": 0.09137068569547369,
+        "run_name": "e1_iso_c2_400m"
+      },
+      {
+        "observed": 3.641667127609253,
+        "predicted": 3.777015916389015,
+        "residual": 0.13534878877976197,
+        "run_name": "e1_iso_c2_800m"
+      },
+      {
+        "observed": 6.517631530761719,
+        "predicted": 6.802376888096047,
+        "residual": 0.2847453573343284,
+        "run_name": "e1_ld_300m_100m"
+      },
+      {
+        "observed": 3.612565755844116,
+        "predicted": 3.703327954560499,
+        "residual": 0.09076219871638269,
+        "run_name": "e1_ld_300m_1b"
+      },
+      {
+        "observed": 4.961094856262207,
+        "predicted": 4.781153443832709,
+        "residual": -0.17994141242949802,
+        "run_name": "e1_ld_300m_300m"
+      },
+      {
+        "observed": 3.2317593097686768,
+        "predicted": 3.228105368113335,
+        "residual": -0.003653941655341608,
+        "run_name": "e1_ld_300m_3b"
+      },
+      {
+        "observed": 3.0720055103302,
+        "predicted": 2.9766870818435605,
+        "residual": -0.09531842848663974,
+        "run_name": "e1_ld_300m_9p85b"
+      },
+      {
+        "observed": 3.7266087532043457,
+        "predicted": 3.79013584382969,
+        "residual": 0.06352709062534423,
+        "run_name": "e1_ln_100m"
+      },
+      {
+        "observed": 3.6361162662506104,
+        "predicted": 3.7212517123388538,
+        "residual": 0.08513544608824342,
+        "run_name": "e1_ln_200m"
+      },
+      {
+        "observed": 3.553492307662964,
+        "predicted": 3.6917079015596492,
+        "residual": 0.13821559389668536,
+        "run_name": "e1_ln_400m"
+      },
+      {
+        "observed": 3.885560989379883,
+        "predicted": 3.958830508100878,
+        "residual": 0.0732695187209953,
+        "run_name": "e1_ln_50m"
+      },
+      {
+        "observed": 3.5189526081085205,
+        "predicted": 3.6846772842318987,
+        "residual": 0.16572467612337816,
+        "run_name": "e1_ln_800m"
+      }
+    ]
+  },
+  "fit_quality_gate": {
+    "checks": {
+      "leave_one_out_median": true,
+      "leave_one_out_p95": true,
+      "loss_r_squared": true,
+      "normalized_rmse": false,
+      "throughput_log_r_squared": true
+    },
+    "status": "FAIL",
+    "thresholds": {
+      "maximum_leave_one_out_median_relative_error": 0.05,
+      "maximum_leave_one_out_p95_relative_error": 0.1,
+      "maximum_normalized_rmse": 0.03,
+      "minimum_loss_r_squared": 0.9,
+      "minimum_throughput_log_r_squared": 0.75
+    }
+  },
+  "independent_performance": {
+    "issues": [],
+    "runs": [
+      {
+        "identity_sha256": "5b29d3da4e9da939e16c6e1b0ce97bd8dcdb525fc35e853e684590c2808a1bdd",
+        "median_tps_per_device": 170150.59375,
+        "n_params": 25437696,
+        "run_name": "e1_perf_50m",
+        "steady_points": 23
+      },
+      {
+        "identity_sha256": "b44a43a2e9d41fb15a92eae8db3f1ee47f18d8eedf392dba6d963ec66e754e27",
+        "median_tps_per_device": 109686.484375,
+        "n_params": 59409536,
+        "run_name": "e1_perf_100m",
+        "steady_points": 23
+      },
+      {
+        "identity_sha256": "b21778391eab8b37c9782f9674c5f8671cea1b12a9a7aaafefa1e07634b72c1a",
+        "median_tps_per_device": 60369.51171875,
+        "n_params": 142771456,
+        "run_name": "e1_perf_200m",
+        "steady_points": 23
+      },
+      {
+        "identity_sha256": "3364371f3f1bb6d56607d6554cea03fd1b865bcc014b77a0cbb62287dcb2f35f",
+        "median_tps_per_device": 29732.44921875,
+        "n_params": 405869568,
+        "run_name": "e1_perf_400m",
+        "steady_points": 23
+      },
+      {
+        "identity_sha256": "6b1b2bea6b7412c9f3d08ee423a14f862041da73c8e7855ac56f40897402afa7",
+        "median_tps_per_device": 13571.6318359375,
+        "n_params": 767309184,
+        "run_name": "e1_perf_800m",
+        "steady_points": 23
+      }
+    ],
+    "snapshot": {
+      "data/experiments/e1_performance/e1_perf_100m/current_attempt.json": "5a4bc3bedf67d6865e8b69246f23bcb64e164f8450042bdcc8f960595cf8ad91",
+      "data/experiments/e1_performance/e1_perf_100m/execution_context.json": "3663415f2cb12a36b4d70ed3df56d9d0997ed8441774d315c1bafce5e116ae52",
+      "data/experiments/e1_performance/e1_perf_100m/resolved_config.yaml": "1c6cb2eaf98e1cf5cd175510d1ff59fcbf158503f06610855f4af428680755fd",
+      "data/experiments/e1_performance/e1_perf_100m/result.json": "044684f94fe74b418dcc83a470ca16d0f7ee10e3eb26a09001cfef55217e2069",
+      "data/experiments/e1_performance/e1_perf_100m/run_identity.json": "0887929bbe5032cf606543bf778021d0d7a2520296d2de3ab9789f2007dd9c99",
+      "data/experiments/e1_performance/e1_perf_100m/training_complete.json": "91b9e685689e1cea8eda5a49b2c9ee5f64de510e7c76382092c6317bfb96630f",
+      "data/experiments/e1_performance/e1_perf_200m/current_attempt.json": "3c91e5847e648e46635f3c5a6df0897fd1ac1f0c78782f4039bf599d4f5a5ecb",
+      "data/experiments/e1_performance/e1_perf_200m/execution_context.json": "01c2dffbb0d8869a630aeafe79ee0dedb87166df665c8a9bf099a473c09e8188",
+      "data/experiments/e1_performance/e1_perf_200m/resolved_config.yaml": "4fa4ed9970e84252819fa4b46f7645307bdd67e28fccc828409c58500420626d",
+      "data/experiments/e1_performance/e1_perf_200m/result.json": "83c4759c40bb881e80cb62fba0eed07b979524f7f7496b4991fb09b8ce1864c6",
+      "data/experiments/e1_performance/e1_perf_200m/run_identity.json": "27cec2f3f282164843271adc8224652a6f55efb1933fbc45e05a8c84dc8f88dd",
+      "data/experiments/e1_performance/e1_perf_200m/training_complete.json": "1b45824fe182c4ddc2e968e794054638bd290d3ac2e192d5dc04aba225c54026",
+      "data/experiments/e1_performance/e1_perf_400m/current_attempt.json": "efd47f9b4b9e20c58049efa0ad45bfe63b6ae30af0d9ca0380deda34f0673ac6",
+      "data/experiments/e1_performance/e1_perf_400m/execution_context.json": "3171b599bfa2220fcf1a6414e20ff162952f2889bb31ea614ec0eb06900736b0",
+      "data/experiments/e1_performance/e1_perf_400m/resolved_config.yaml": "cf41d5a704a03670c6f090a1c55e4af5015dbe30434c313fc26e5da48ee86a96",
+      "data/experiments/e1_performance/e1_perf_400m/result.json": "1a9843454e1d6cd97d48253ec9e1463c4062cd1bc214760fe5d512b05c17b55a",
+      "data/experiments/e1_performance/e1_perf_400m/run_identity.json": "df82698c72cb4880e14f93ed5b24840e35b7f569eb70d2527cfbb7c82e0077d2",
+      "data/experiments/e1_performance/e1_perf_400m/training_complete.json": "65aaba0d97a3652f6942c1d401090df0deeb72290291417f402b863a8c22bea3",
+      "data/experiments/e1_performance/e1_perf_50m/current_attempt.json": "a1197d2495c13f652c7f519c7a0fff040febefc66655ae070122c402074fbc55",
+      "data/experiments/e1_performance/e1_perf_50m/execution_context.json": "b7cb037db98eae71244d43da23587e56153a73868dea25d3030283858b53455b",
+      "data/experiments/e1_performance/e1_perf_50m/resolved_config.yaml": "e61f0cd3a4884b9a4828ccb00db606f55c38cfcdf3b8a97d09a65e8ff3a6ec20",
+      "data/experiments/e1_performance/e1_perf_50m/result.json": "dd58e8cd7d3b9c6bd014e1214768320e5b36be47eaeaada46076763cbdcf5bbb",
+      "data/experiments/e1_performance/e1_perf_50m/run_identity.json": "0312df92b70b1d5296cac1f2cdcd70a57e7f7211fa49c6fb6537bac84265eb3d",
+      "data/experiments/e1_performance/e1_perf_50m/training_complete.json": "894567fd48d8e0a3973688d1b34bce3db7f3bb4db946852d5b0695e03d250485",
+      "data/experiments/e1_performance/e1_perf_800m/current_attempt.json": "f29d926a202ee69c963feb4e2eee0d75d8116d29bcba4ee8815a9296a88dccf8",
+      "data/experiments/e1_performance/e1_perf_800m/execution_context.json": "82d13d83e87cc76b37e30e8f35fb5176e2c337571aeb88a146d04bb31029717c",
+      "data/experiments/e1_performance/e1_perf_800m/resolved_config.yaml": "33c940a25a9f178562b8d4e89981170eaf7c798e10889bbad92a672d57237230",
+      "data/experiments/e1_performance/e1_perf_800m/result.json": "958bb19efb3a4c6fd3e4f6987cbbb9a8418d53e233eb0a8792f5e06002ee0821",
+      "data/experiments/e1_performance/e1_perf_800m/run_identity.json": "bec9b511321a66626f7adcf290a1b3e33a201150b470dd58bb2b56c03258d705",
+      "data/experiments/e1_performance/e1_perf_800m/training_complete.json": "bbfd4b01cbc3404d94e797f0210b25abc9d1fe53796b18dc376205437db78701",
+      "data/health/torchtitan-qualification.json": "63cff4cdc186fb10b0de37657cafbded9f10e7e11559a7070c16e3f3eaa96bbf",
+      "model/configs/model_configs.yaml": "743d3d6040e2416b7a1f6fdafdc9db69c282d93ac1905b312f731cfc86c4009b",
+      "pretrain/configs/e1_performance/e1_perf_100m.env": "c7972b905b31f0b36a77beb5bfc464b7c1127200997c1915d261d0ed0245b630",
+      "pretrain/configs/e1_performance/e1_perf_100m.yaml": "8c592ec7a803a9f12bf5db5111898924ef33fa212252e892e93d3eab6657b440",
+      "pretrain/configs/e1_performance/e1_perf_200m.env": "f8154e8d2e5cbd2af8f31e0f4b46585e9c4f8a9fbe216dc53918ddc4ba5f0f2c",
+      "pretrain/configs/e1_performance/e1_perf_200m.yaml": "602a72f8713d5bfa9f9a1ed1e77308d908fff031480a22cbc47f92244c6a46ea",
+      "pretrain/configs/e1_performance/e1_perf_400m.env": "d8d85f20d0877436b62c324018122264a9e636e6ec28b0717d6001423d582039",
+      "pretrain/configs/e1_performance/e1_perf_400m.yaml": "45c2a16f7b8029fb7e07a250b1fb969532bbf1dd79a7ee79ba509bd29190dbf8",
+      "pretrain/configs/e1_performance/e1_perf_50m.env": "fecfcfc9048756c7685d48be73132dab230a66bab45668db14439fbf345d1453",
+      "pretrain/configs/e1_performance/e1_perf_50m.yaml": "145d67764e45f91b7535bc01cd28bc1b1b0557dc52c667eeba26fb184be9e72a",
+      "pretrain/configs/e1_performance/e1_perf_800m.env": "2b8f3411dfc569fd377e91ae2033497b78934261ad6c7f711024c93792d1bc9b",
+      "pretrain/configs/e1_performance/e1_perf_800m.yaml": "29ca4d6c214e00037e0cefd771840a1ba6644d69859458ca138058fd7fc2f3a3",
+      "pretrain/scripts/performance_evidence.py": "ab2c643f0346d1f407d867f467c49f365bd860e7f9725431133afa622438c3aa",
+      "pretrain/scripts/prepare_performance_canaries.py": "78b460b048bfd4eaf16f03e093f0dad7974619091feace0af986adb535c83d31"
+    },
+    "status": "PASS"
+  },
+  "model": "loss=E+A/N^alpha+B/D^beta",
+  "observed_at": "2026-11-04T06:34:49.390998+00:00",
+  "observed_results": 24,
+  "parameters": {
+    "alpha": {
+      "ci95": [
+        0.03112955654180856,
+        1.9999999999999998
+      ],
+      "estimate": 1.079584529098871
+    },
+    "beta": {
+      "ci95": [
+        0.5071935528498841,
+        1.1295267478566042
+      ],
+      "estimate": 0.6282390352450042
+    },
+    "floor": {
+      "ci95": [
+        8.480188730548922e-19,
+        3.0169847512138124
+      ],
+      "estimate": 2.7244052058462565
+    },
+    "log_a": {
+      "ci95": [
+        1.593185415259014,
+        33.15602312751206
+      ],
+      "estimate": 17.14033369156114
+    },
+    "log_b": {
+      "ci95": [
+        10.839243436477135,
+        22.70340391627604
+      ],
+      "estimate": 12.971079270187508
+    }
+  },
+  "performance_evidence_status": "MEASURED",
+  "production_candidates": [
+    {
+      "feasibility_probability": 1.0,
+      "feasible_within_45_days": true,
+      "n_params": 25437696,
+      "predicted_days_4gpu": 21.604131130908875,
+      "predicted_days_4gpu_ci95": [
+        14.646183631435104,
+        24.076334044455333
+      ],
+      "predicted_loss_at_1t": 3.0180964871456366,
+      "predicted_loss_at_1t_ci95": [
+        2.6395151756397097,
+        3.445011731396121
+      ],
+      "predicted_tps_per_device": 191333.67866315044,
+      "source_run": "e1_ln_50m"
+    },
+    {
+      "feasibility_probability": 1.0,
+      "feasible_within_45_days": true,
+      "n_params": 59409536,
+      "predicted_days_4gpu": 39.925969320064375,
+      "predicted_days_4gpu_ci95": [
+        30.76580328951193,
+        43.571888850088754
+      ],
+      "predicted_loss_at_1t": 2.8494018228744484,
+      "predicted_loss_at_1t_ci95": [
+        2.4193072463508276,
+        3.235567697664946
+      ],
+      "predicted_tps_per_device": 103531.5598842728,
+      "source_run": "e1_ln_100m"
+    },
+    {
+      "feasibility_probability": 0.0,
+      "feasible_within_45_days": false,
+      "n_params": 142771456,
+      "predicted_days_4gpu": 75.32811734604712,
+      "predicted_days_4gpu_ci95": [
+        65.56967911177811,
+        83.24688027675057
+      ],
+      "predicted_loss_at_1t": 2.7805176913836123,
+      "predicted_loss_at_1t_ci95": [
+        2.3429063388912974,
+        3.1345969137136387
+      ],
+      "predicted_tps_per_device": 54874.567813884125,
+      "source_run": "e1_ln_200m"
+    },
+    {
+      "feasibility_probability": 0.0,
+      "feasible_within_45_days": false,
+      "n_params": 405869568,
+      "predicted_days_4gpu": 160.50339511024515,
+      "predicted_days_4gpu_ci95": [
+        126.16704780055389,
+        182.76411298570181
+      ],
+      "predicted_loss_at_1t": 2.7509738806044077,
+      "predicted_loss_at_1t_ci95": [
+        2.2985529905015865,
+        3.0710811092783588
+      ],
+      "predicted_tps_per_device": 25753.959165528147,
+      "source_run": "e1_ln_400m"
+    },
+    {
+      "feasibility_probability": 0.0,
+      "feasible_within_45_days": false,
+      "n_params": 767309184,
+      "predicted_days_4gpu": 254.53090173007587,
+      "predicted_days_4gpu_ci95": [
+        184.90710135395364,
+        299.7433926223339
+      ],
+      "predicted_loss_at_1t": 2.743943263276657,
+      "predicted_loss_at_1t_ci95": [
+        2.294577149271152,
+        3.052226992246886
+      ],
+      "predicted_tps_per_device": 16240.063015929865,
+      "source_run": "e1_ln_800m"
+    }
+  ],
+  "production_policy": {
+    "final_requirement": "replace provisional efficiency with sustained four-GPU canary evidence before launch",
+    "gpu_count": 4,
+    "maximum_days": 45,
+    "provisional_distributed_efficiency": 0.7,
+    "selection": "lowest predicted loss among conservatively throughput-feasible scales",
+    "target_tokens": 1000000000000
+  },
+  "production_recommendation": {
+    "feasibility_probability": 1.0,
+    "feasible_within_45_days": true,
+    "n_params": 59409536,
+    "predicted_days_4gpu": 39.925969320064375,
+    "predicted_days_4gpu_ci95": [
+      30.76580328951193,
+      43.571888850088754
+    ],
+    "predicted_loss_at_1t": 2.8494018228744484,
+    "predicted_loss_at_1t_ci95": [
+      2.4193072463508276,
+      3.235567697664946
+    ],
+    "predicted_tps_per_device": 103531.5598842728,
+    "source_run": "e1_ln_100m"
+  },
+  "rejected": [],
+  "rmse": 0.15030950698180612,
+  "runs": [
+    {
+      "configured_budget_tokens": 704990316,
+      "identity_sha256": "8ebf6e1f20a33c41bc0ff9590ddf1c9001d358cc6afd5051cf6eee925b2eef44",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 107208.7265625,
+      "n_params": 59409536,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_100m/result.json",
+      "run_name": "e1_iso_c0_100m",
+      "status": "PASS",
+      "tokens": 704905216,
+      "validation_loss": 3.9751029014587402
+    },
+    {
+      "configured_budget_tokens": 371540364,
+      "identity_sha256": "00d3bf6b153805758f1bab5253e24f7c2b3ae7ae90ae6a38fdda86699991881b",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 59406.7109375,
+      "n_params": 142771456,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_200m/result.json",
+      "run_name": "e1_iso_c0_200m",
+      "status": "PASS",
+      "tokens": 371458048,
+      "validation_loss": 4.503137111663818
+    },
+    {
+      "configured_budget_tokens": 153256892,
+      "identity_sha256": "18687cdb0ed499b25113d059d58ebe3369644fc21409c1b53de96e01390642a4",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 30018.828125,
+      "n_params": 405869568,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_400m/result.json",
+      "run_name": "e1_iso_c0_400m",
+      "status": "PASS",
+      "tokens": 153092096,
+      "validation_loss": 6.075799942016602
+    },
+    {
+      "configured_budget_tokens": 1247973291,
+      "identity_sha256": "d92899ad72969961235f5ffefc87626cb70dc4774860d4d2444d4b08ee5cc2ae",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 169971.7109375,
+      "n_params": 25437696,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_50m/result.json",
+      "run_name": "e1_iso_c0_50m",
+      "status": "PASS",
+      "tokens": 1247805440,
+      "validation_loss": 3.7660903930664062
+    },
+    {
+      "configured_budget_tokens": 86301042,
+      "identity_sha256": "bec0275f39c00e54c5360a1470987664f56e84f5668a94ef25fd277671cd6e57",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 13953.2021484375,
+      "n_params": 767309184,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c0_800m/result.json",
+      "run_name": "e1_iso_c0_800m",
+      "status": "PASS",
+      "tokens": 86245376,
+      "validation_loss": 7.155919075012207
+    },
+    {
+      "configured_budget_tokens": 2056221755,
+      "identity_sha256": "58649a0bcd8133e1e595812e9cdd35b9c32ef8daf172079f86956e571f382124",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 109592.1015625,
+      "n_params": 59409536,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_100m/result.json",
+      "run_name": "e1_iso_c1_100m",
+      "status": "PASS",
+      "tokens": 2055995392,
+      "validation_loss": 3.4854562282562256
+    },
+    {
+      "configured_budget_tokens": 1083659397,
+      "identity_sha256": "c17bcaa296c2f95cd9f15a0c62750e778eb25774f6587550174dabd1947eb81d",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 58986.359375,
+      "n_params": 142771456,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_200m/result.json",
+      "run_name": "e1_iso_c1_200m",
+      "status": "PASS",
+      "tokens": 1083441152,
+      "validation_loss": 3.6124942302703857
+    },
+    {
+      "configured_budget_tokens": 446999270,
+      "identity_sha256": "ddcd804ba0ff79a118980dd9a6ad035ca66f5216c77662e7ab5e3026650a614e",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 30024.412109375,
+      "n_params": 405869568,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_400m/result.json",
+      "run_name": "e1_iso_c1_400m",
+      "status": "PASS",
+      "tokens": 446955520,
+      "validation_loss": 4.321425437927246
+    },
+    {
+      "configured_budget_tokens": 3639922099,
+      "identity_sha256": "71bba8af17aea417307c4f1ebf6b8378babf3ceb6b2f5cad742566d44fbe46d4",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 169472.953125,
+      "n_params": 25437696,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_50m/result.json",
+      "run_name": "e1_iso_c1_50m",
+      "status": "PASS",
+      "tokens": 3639869440,
+      "validation_loss": 3.5445401668548584
+    },
+    {
+      "configured_budget_tokens": 251711372,
+      "identity_sha256": "1a26b083aba24d3b3a744c21591651c366d016bcf2511b088d3ef90324a502ae",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 13923.9921875,
+      "n_params": 767309184,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c1_800m/result.json",
+      "run_name": "e1_iso_c1_800m",
+      "status": "PASS",
+      "tokens": 251658240,
+      "validation_loss": 5.437784194946289
+    },
+    {
+      "configured_budget_tokens": 7049903162,
+      "identity_sha256": "701d5eb530554cea939c83f6034a30eca1c15d65b22794bf79969b713a5bc37e",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 106856.45703125,
+      "n_params": 59409536,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_100m/result.json",
+      "run_name": "e1_iso_c2_100m",
+      "status": "PASS",
+      "tokens": 7049838592,
+      "validation_loss": 3.3207530975341797
+    },
+    {
+      "configured_budget_tokens": 3715403647,
+      "identity_sha256": "a9e2e10f5def1fb2855ff4a3fe518644d5981219580afb29d67d01f8f8576039",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 59066.03125,
+      "n_params": 142771456,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_200m/result.json",
+      "run_name": "e1_iso_c2_200m",
+      "status": "PASS",
+      "tokens": 3715366912,
+      "validation_loss": 3.2323873043060303
+    },
+    {
+      "configured_budget_tokens": 1532568928,
+      "identity_sha256": "171396f77f231fbe7fc9cea1c93a8f5e6bb5b3a92df0eb1d110e8d5fee94b824",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 29543.12109375,
+      "n_params": 405869568,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_400m/result.json",
+      "run_name": "e1_iso_c2_400m",
+      "status": "PASS",
+      "tokens": 1532493824,
+      "validation_loss": 3.3760318756103516
+    },
+    {
+      "configured_budget_tokens": 863010420,
+      "identity_sha256": "166da4664897764567fa330b4f1eb5f2acfaf7ddab6cf8e65a8b7db54c1bb88d",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 13995.419921875,
+      "n_params": 767309184,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_iso_c2_800m/result.json",
+      "run_name": "e1_iso_c2_800m",
+      "status": "PASS",
+      "tokens": 862978048,
+      "validation_loss": 3.641667127609253
+    },
+    {
+      "configured_budget_tokens": 100000000,
+      "identity_sha256": "3fa447d5b539f862b695f46cc27b3b3da7d87d7ac64295f8fb3033c21fc7bd3b",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 42920.146484375,
+      "n_params": 232863616,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_100m/result.json",
+      "run_name": "e1_ld_300m_100m",
+      "status": "PASS",
+      "tokens": 99876864,
+      "validation_loss": 6.517631530761719
+    },
+    {
+      "configured_budget_tokens": 1000000000,
+      "identity_sha256": "ac8884e5ee134d1aec47be60c4d9e201e26051214464567447e975b9170571a4",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 43595.78515625,
+      "n_params": 232863616,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_1b/result.json",
+      "run_name": "e1_ld_300m_1b",
+      "status": "PASS",
+      "tokens": 999817216,
+      "validation_loss": 3.612565755844116
+    },
+    {
+      "configured_budget_tokens": 300000000,
+      "identity_sha256": "963ff2874f8a6d260fb4a3d0ba12feb30be4c7b6cc1ef851fceac75b898c0f38",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 43705.83203125,
+      "n_params": 232863616,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_300m/result.json",
+      "run_name": "e1_ld_300m_300m",
+      "status": "PASS",
+      "tokens": 299892736,
+      "validation_loss": 4.961094856262207
+    },
+    {
+      "configured_budget_tokens": 3000000000,
+      "identity_sha256": "ba9314ab1523f61488d81ad588d06c0b25449dea3cd814e45d737b77f352448a",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 42835.41015625,
+      "n_params": 232863616,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_3b/result.json",
+      "run_name": "e1_ld_300m_3b",
+      "status": "PASS",
+      "tokens": 2999975936,
+      "validation_loss": 3.2317593097686768
+    },
+    {
+      "configured_budget_tokens": 9846128640,
+      "identity_sha256": "5fa319b2eaf082f3c200fd9983bc910adecb64daff2d8caf070419a46fcaa387",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 42913.220703125,
+      "n_params": 232863616,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ld_300m_9p85b/result.json",
+      "run_name": "e1_ld_300m_9p85b",
+      "status": "PASS",
+      "tokens": 9846128640,
+      "validation_loss": 3.0720055103302
+    },
+    {
+      "configured_budget_tokens": 1000000000,
+      "identity_sha256": "05bb9cddac0e538dd06c8063ee490915fccb364fa66de190dbf91dd63e17411f",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 109609.5546875,
+      "n_params": 59409536,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_100m/result.json",
+      "run_name": "e1_ln_100m",
+      "status": "PASS",
+      "tokens": 999817216,
+      "validation_loss": 3.7266087532043457
+    },
+    {
+      "configured_budget_tokens": 1000000000,
+      "identity_sha256": "73444118856ab26017ab3e621716e351c65b945a4b362e0f73d0023eda8727c2",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 59203.91015625,
+      "n_params": 142771456,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_200m/result.json",
+      "run_name": "e1_ln_200m",
+      "status": "PASS",
+      "tokens": 999817216,
+      "validation_loss": 3.6361162662506104
+    },
+    {
+      "configured_budget_tokens": 1000000000,
+      "identity_sha256": "6325bba3aba27603eead73909cf7880286bd2513fe8f76de269063fc5c7cdf36",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 29975.685546875,
+      "n_params": 405869568,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_400m/result.json",
+      "run_name": "e1_ln_400m",
+      "status": "PASS",
+      "tokens": 999817216,
+      "validation_loss": 3.553492307662964
+    },
+    {
+      "configured_budget_tokens": 1000000000,
+      "identity_sha256": "68abdb2c94456957a97700c0b076057766da7224f55ca35535df7d42a4f8fba1",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 169909.84375,
+      "n_params": 25437696,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_50m/result.json",
+      "run_name": "e1_ln_50m",
+      "status": "PASS",
+      "tokens": 999817216,
+      "validation_loss": 3.885560989379883
+    },
+    {
+      "configured_budget_tokens": 1000000000,
+      "identity_sha256": "8e4a614897f44d166886807c5f5c859514e1b61d20ecb4f48a168e5e5f68f1bf",
+      "issues": [],
+      "loss_only": true,
+      "median_tps_per_device": 13996.7109375,
+      "n_params": 767309184,
+      "performance_metrics_excluded": [
+        "throughput(tps)",
+        "mfu(%)",
+        "wall_time"
+      ],
+      "result": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1/e1_ln_800m/result.json",
+      "run_name": "e1_ln_800m",
+      "status": "PASS",
+      "tokens": 999817216,
+      "validation_loss": 3.5189526081085205
+    }
+  ],
+  "schema_version": 1,
+  "status": "FAIL",
+  "throughput_fit": {
+    "bootstrap_successful": 916,
+    "formula": "tps_per_device=exp(intercept)*N^slope",
+    "intercept": 24.507824320309098,
+    "log_r_squared": 0.980692458846033,
+    "slope": -0.7240345064424089
+  }
+}

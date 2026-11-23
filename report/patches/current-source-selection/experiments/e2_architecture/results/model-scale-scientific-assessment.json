@@ -1,0 +1,91 @@
+{
+  "control_health_sha256": "fa36288bee8902354c853827edbb34f431e5bc79dc2c1f02e8e615df771db86b",
+  "duty_factor": 0.9,
+  "formal_token_budget": 1000000000000,
+  "measurements": {
+    "larger_lr1e4_b8": {
+      "domains_step_200": {
+        "academic": 5.549519062042236,
+        "books": 5.526935577392578,
+        "chinese": 7.866040229797363,
+        "code": 6.073163032531738,
+        "encyclopedia": 6.3698649406433105,
+        "math": 5.57922887802124,
+        "multilingual": 8.329923629760742,
+        "qa": 5.799653053283691,
+        "web": 5.7641401290893555
+      },
+      "memory_review": {
+        "allocation_retry_warnings_steady": 0,
+        "allocation_retry_warnings_total": 0,
+        "requires_smaller_batch_comparison": false,
+        "skip_steps": 50,
+        "status": "PASS_SUSTAINED_MEMORY_REVIEW",
+        "steps": 200
+      },
+      "p10_tps_per_device": 49385.34375,
+      "parameters": 1516600064,
+      "projected_1t_days_duty_09": 32.550351298624776,
+      "validation_loss_step_200": 6.317607879638672
+    },
+    "larger_lr2e4_b8": {
+      "domains_step_200": {
+        "academic": 6.110956192016602,
+        "books": 6.100437641143799,
+        "chinese": 7.98667573928833,
+        "code": 6.667307376861572,
+        "encyclopedia": 6.83238410949707,
+        "math": 6.128610134124756,
+        "multilingual": 8.593762397766113,
+        "qa": 6.30873441696167,
+        "web": 6.275822639465332
+      },
+      "memory_review": {
+        "allocation_retry_warnings_steady": 0,
+        "allocation_retry_warnings_total": 0,
+        "requires_smaller_batch_comparison": false,
+        "skip_steps": 50,
+        "status": "PASS_SUSTAINED_MEMORY_REVIEW",
+        "steps": 200
+      },
+      "p10_tps_per_device": 49471.05859375,
+      "parameters": 1516600064,
+      "projected_1t_days_duty_09": 32.493953712745714,
+      "validation_loss_step_200": 6.778298854827881
+    },
+    "matched_baseline_b8": {
+      "domains_step_200": {
+        "academic": 5.731909275054932,
+        "books": 5.6891069412231445,
+        "chinese": 7.88153600692749,
+        "code": 6.2452392578125,
+        "encyclopedia": 6.505624294281006,
+        "math": 5.733753681182861,
+        "multilingual": 8.357780456542969,
+        "qa": 5.918694019317627,
+        "web": 5.932611465454102
+      },
+      "memory_review": {
+        "allocation_retry_warnings_steady": 0,
+        "allocation_retry_warnings_total": 0,
+        "requires_smaller_batch_comparison": false,
+        "skip_steps": 50,
+        "status": "PASS_SUSTAINED_MEMORY_REVIEW",
+        "steps": 200
+      },
+      "p10_tps_per_device": 112221.9296875,
+      "parameters": 530107904,
+      "projected_1t_days_duty_09": 14.324386441600268,
+      "validation_loss_step_200": 6.444028377532959
+    }
+  },
+  "production_qualified": false,
+  "rationale": "Actual fresh current-source 200-update matched controls retain the prepared 1516600064-parameter LR1e-4 model: aggregate and all nine domain losses improve against both the 0.53B control and the same larger model at LR2e-4. Actual conservative sustained p10=49385.34375 tokens/s/device projects 32.550351298624776 days for 1T at duty .9, within 33 days. These are bounded early-training observations. Original 1B\u20135B frontier measurements remain historical; this refresh does not claim a global architecture optimum or final 1T quality. Production-window data, numerical, recovery and sustained canary gates remain required.",
+  "reviewer": "repository engineering research review",
+  "runtime_ceiling_days": 33,
+  "schema_version": 1,
+  "selected_variant": "larger_lr1e4_b8",
+  "status": "REVIEWED_FOR_QUALIFICATION",
+  "training_source_sha256": "6a53b6054b8892ddbe69518bcc12155fbd1b2729a25a59c17209d36389a41157",
+  "user_preference": "\u5141\u8bb8\u63a5\u8fd1 30 \u5929\uff0c\u4f18\u5148\u9009\u62e9\u66f4\u5927\u6a21\u578b"
+}

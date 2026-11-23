@@ -1,0 +1,68 @@
+# S6 配比画像 M3 质量极化档（严格 top-10% 容量内的领域配比）。
+# "更少 token 更高质量"验证档（用户明确保留的选项），E3 质量档消融臂（A5）。
+# 当前 100B release 的 287.104B candidate 账本包含四个 full-pool fallback 域，
+# 不能整体称作严格 top-10%。本配方使用保守 token 容量并调低小域权重，目标 200B。
+
+mix_name: mix_m3
+total_tokens: 200_000_000_000
+score_field: hybrid_v2  # 2026-10-10 用户裁定：full 版同 fast 轨用 hybrid_v2
+                       # （goldrule 0.5 + upstream 0.3 + rule 0.2；fasttext CV 未达标退役为 backlog）
+seed: yuformer
+
+included_sources:
+  - automathtext
+  - cci3-hq
+  - dclm-baseline
+  - dolma-books
+  - fineweb
+  - fineweb-2
+  - fineweb-edu
+  - github-code
+  - pes2o
+  - proof-pile-2
+  - stack-exchange
+  - starcoderdata
+  - wikipedia-en
+  - wikipedia-zh
+  - wikitext
+
+quota_fill_policy: strict_top_k
+max_total_shortfall_tokens: 1_000_000
+
+domains:
+  web:
+    weight: 0.89
+    top_k: 0.10
+  code:
+    weight: 0.055
+    top_k: 0.10
+  math:
+    weight: 0.018
+    top_k: 0.10
+  chinese:
+    weight: 0.015
+    top_k: 0.10
+  academic:
+    weight: 0.012
+    top_k: 0.10
+  books:
+    weight: 0.002
+    top_k: 0.10
+  encyclopedia:
+    weight: 0.002
+    top_k: 0.10
+  qa:
+    weight: 0.0005
+    top_k: 0.10
+  multilingual:
+    weight: 0.0055
+    top_k: 0.10
+
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+
+val:
+  tokens_per_domain: 50_000_000
+  max_fraction: 0.01

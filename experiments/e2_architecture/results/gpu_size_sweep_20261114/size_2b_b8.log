@@ -1,0 +1,1365 @@
+{
+  "actual": {
+    "cuda_available": true,
+    "dcp": true,
+    "executable": "/opt/yuformer-torchtitan/bin/python",
+    "fsdp2": true,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "nvidia_driver": "535.161.08",
+    "python": "3.12.16",
+    "torch": "2.14.0+cu126",
+    "torch_checkpointing": "0.1.0",
+    "torch_cuda": "12.6",
+    "torchao": "0.18.0+cu126",
+    "torchtitan": "0.3.0",
+    "torchtitan_commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+    "torchtitan_source_dirty": false,
+    "torchtitan_source_root": "/opt/torchtitan-v0.3.0",
+    "torchvision": "0.29.0+cu126",
+    "triton": "3.8.0"
+  },
+  "checks": {
+    "clean_pinned_source": true,
+    "cuda_available": true,
+    "cuda_build_matches_lock": true,
+    "distributed_checkpoint": true,
+    "fsdp2": true,
+    "hopper_or_newer": true,
+    "nvidia_driver": true,
+    "pinned_source_commit": true,
+    "python_3_12": true,
+    "pytorch_2_14_0": true,
+    "torch_checkpointing_0_1_0": true,
+    "torchao_0_18_0": true,
+    "torchtitan_0_3": true,
+    "torchvision_0_29_0": true,
+    "triton_3_8_0": true
+  },
+  "expected": {
+    "cuda": {
+      "compatibility_mode": "cuda_12_minor_version_compatibility",
+      "minimum_driver_linux": "525.60.13",
+      "pytorch_index_url": "https://download.pytorch.org/whl/cu126",
+      "toolkit": "12.6",
+      "validated_host_driver": "535.161.08"
+    },
+    "hardware": {
+      "bf16_dense_peak_flops_per_device": 989000000000000,
+      "form_factor": "SXM",
+      "gpu_name": "H800",
+      "observed_max_power_watts": 700,
+      "specification": "NVIDIA H800 Tensor Core GPU datasheet; BF16 sparsity peak 1979 TFLOPS, dense approximately half",
+      "specification_url": "https://chaoqing-i.com/upload/20231128/NVIDIA%20H800%20GPU%20Datasheet.pdf"
+    },
+    "python": "3.12",
+    "pytorch": "2.14.0",
+    "schema_version": 1,
+    "torch_checkpointing": "0.1.0",
+    "torchao": "0.18.0",
+    "torchtitan": {
+      "commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+      "repository": "https://github.com/pytorch/torchtitan.git",
+      "tag": "v0.3.0"
+    },
+    "torchvision": "0.29.0",
+    "triton": "3.8.0"
+  },
+  "failed_checks": [],
+  "schema_version": 1,
+  "status": "ready"
+}
+{"identity": {"backend": "torchtitan-v0.3.0", "dataset_id": "yuformer-data-86f5860c47e6162e6ba0", "identity_sha256": "3806d6bed2b803b031818c1ea1d123c04dbf55d070c63fd54447cb1d8eebc8b6", "model_configs": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_2b.model.yaml", "model_configs_sha256": "4475e54ac2a04da71b724a74ef41ba3537fb6318d99c33e117a145e4f7061c30", "release_manifest": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/releases/mix_m3_e1_100b-20261019.release.json", "release_manifest_sha256": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c", "resolved_config_sha256": "24dee78aef667658dcb562a7976520aca8c37da25bc2d8cb1199dce74306112f", "run_name": "size_2b_b8", "runtime_state_schema_version": 2, "schema_version": 1, "snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5", "source_sha256": "b9b68ddc8c963da83c77f45672a71a79039cbe91c13aebe97b56b8a22b1bf1d1", "streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.tokens.bin", "capacity_samples": 24044324, "edge_sha256": "fb75ddaf3ea4c4fdc96cbdf2a8bf7f0d3622574603db3aabc4dd05358e3a50e4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json", "meta_sha256": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c", "sample_limit": 24044324}], "token_stream_audit": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json", "token_stream_audit_sha256": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d", "tokenizer_artifact_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "tokenizer_gate": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/TOKENIZER_READY.json", "tokenizer_gate_sha256": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866", "tokenizer_id": "yuformer-tokenizer-20df5ca9ba356e303082", "tokenizer_path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json", "tokenizer_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "validation_streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.tokens.bin", "capacity_samples": 4719, "edge_sha256": "94fea8f60c2ce47060dbb8241a9471ff0ad9607ad9aaee18ea8d2e1e5e1a4402", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.meta.json", "meta_sha256": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3", "sample_limit": 4719}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.tokens.bin", "capacity_samples": 4866, "edge_sha256": "55983f0436fb247f50ee6eef959db67a73789110ee46a1dc72fae179393abda9", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.meta.json", "meta_sha256": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64", "sample_limit": 4866}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.tokens.bin", "capacity_samples": 5150, "edge_sha256": "6c48dcc609500522940bc5a79a874d2ff5f970d71ed2f7f8b769344255629726", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.meta.json", "meta_sha256": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767", "sample_limit": 5150}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.tokens.bin", "capacity_samples": 4845, "edge_sha256": "f2ecf69e459f4804a551c54f5da0ab911a96d785615c11f16370cfcf3b7d12b4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.meta.json", "meta_sha256": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4", "sample_limit": 4845}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.tokens.bin", "capacity_samples": 5003, "edge_sha256": "8594a651b8cc4c2222c3bbfc4693d5595bd800307b8d48f1998db3eef2252f4e", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json", "meta_sha256": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea", "sample_limit": 5003}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.tokens.bin", "capacity_samples": 4777, "edge_sha256": "c2bb8daf539ff9cc9012698f5410c7b10bff59447959b49c24dc0ad718591401", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.meta.json", "meta_sha256": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec", "sample_limit": 4777}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.tokens.bin", "capacity_samples": 4163, "edge_sha256": "31c6b95625e4001fdab1068c2de94f6154bf45f7fbfdcb8b488712fb7a24dec7", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json", "meta_sha256": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2", "sample_limit": 4163}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.tokens.bin", "capacity_samples": 2894, "edge_sha256": "2ce3553c8672f09fad91822184d967f4c6e45722709a0e4fa1258bef7a1ee55d", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.meta.json", "meta_sha256": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54", "sample_limit": 2894}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.tokens.bin", "capacity_samples": 4946, "edge_sha256": "c6f3522532c177de5cb1c988533874b263802de116e8455d57213ab0d3705e8f", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.meta.json", "meta_sha256": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899", "sample_limit": 4946}]}, "out_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8", "status": "PASS"}
+W1114 02:54:28.602000 209581 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:28.729000 209586 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:28.761000 209581 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:28.885000 209586 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:29.335000 209579 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:29.335000 209582 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:29.475000 209585 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:29.505000 209582 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:29.505000 209579 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,520 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+W1114 02:54:29.580000 209583 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,595 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+W1114 02:54:29.611000 209585 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 02:54:29.630000 209580 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,643 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:29,678 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:29,684 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:29,695 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_2.20261114-025429-K8M2XP.jsonl
+W1114 02:54:29.708000 209584 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,773 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:29,786 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_7.20261114-025429-D5OQON.jsonl
+W1114 02:54:29.915000 209583 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,921 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+W1114 02:54:29.930000 209580 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,936 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:29,937 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:29,950 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+W1114 02:54:29.953000 209584 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 02:54:29,960 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:29,961 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:29,963 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:29,968 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:29,969 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:29,972 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:30,007 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:30,032 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:30,039 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:30,039 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:30,043 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:30,059 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:30,063 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:30,063 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:30,066 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:30,085 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:30,234 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:30,234 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:30,274 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,274 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,304 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:30,304 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:30,304 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:30,304 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:30,306 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:30,306 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:30,307 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:30,341 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:30,351 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,351 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,363 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_3.20261114-025430-G3CVM5.jsonl
+[titan] 2026-11-14 02:54:30,370 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_0.20261114-025430-WQHMZI.jsonl
+[titan] 2026-11-14 02:54:30,381 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,395 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:30,396 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:30,396 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:30,396 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:30,398 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:30,399 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:30,400 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:30,440 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,461 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,473 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_6.20261114-025430-64Z5Y6.jsonl
+[titan] 2026-11-14 02:54:30,553 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,580 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:30,588 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:30,594 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:30,601 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:30,620 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:30,620 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:30,622 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:30,632 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:30,632 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:30,634 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:30,665 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:30,681 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:30,681 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:30,684 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:30,700 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:30,716 - root - INFO - TensorBoard logging enabled. Logs will be saved at /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/tb/20261114-0254
+[titan] 2026-11-14 02:54:30,716 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:30,744 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:30,751 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:30,751 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:30,754 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:30,771 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:30,787 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,800 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:30,843 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,865 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,876 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_1.20261114-025430-TS6FCZ.jsonl
+[titan] 2026-11-14 02:54:30,912 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 02:54:30,940 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:30,949 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_4.20261114-025430-5K1WRE.jsonl
+[titan] 2026-11-14 02:54:30,953 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:31,033 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:31,056 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/structured_logs/training.global_rank_5.20261114-025431-Y763CW.jsonl
+[titan] 2026-11-14 02:54:31,298 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:31,311 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:31,347 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:31,349 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:31,352 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:31,424 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:31,441 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,441 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,444 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:31,463 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:31,478 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:31,480 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:31,490 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 02:54:31,490 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:31,495 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:31,504 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 02:54:31,526 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:31,530 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:31,535 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:31,535 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:31,537 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:31,537 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 02:54:31,537 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:31,538 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 02:54:31,540 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 02:54:31,562 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,562 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,562 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:31,562 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,562 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,562 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:31,563 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:31,563 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:31,565 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:31,565 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:31,566 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:31,566 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:31,566 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:31,568 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:31,591 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:31,592 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:31,603 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 02:54:31,613 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,613 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,617 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:31,639 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,640 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,640 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,640 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,643 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:31,643 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:31,644 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,966,208,512 total parameters[39m
+[titan] 2026-11-14 02:54:31,668 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:31,674 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 02:54:31,695 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:31,701 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:31,741 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,741 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,741 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:31,741 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:31,743 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:31,743 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:31,744 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:31,870 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:31,937 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,937 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,937 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:31,937 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:31,939 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:31,940 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:31,941 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:31,953 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:31,953 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:31,953 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:31,953 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:31,955 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:31,955 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:31,957 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:32,009 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 02:54:32,009 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 02:54:32,009 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 02:54:32,010 - root - INFO - CUDA memory usage for model: 2.11GiB(2.66%)
+[titan] 2026-11-14 02:54:32,012 - root - INFO - Optimizer AdamW (model_part=0): 97 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 02:54:32,012 - root - INFO - Optimizer AdamW (model_part=0): 121 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 02:54:32,014 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 02:54:32,068 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:32,086 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:32,169 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,187 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,188 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,188 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,188 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,189 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,189 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,189 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,190 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,190 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,190 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,190 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 02:54:32,191 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_size_sweep_20261114/size_2b_b8/checkpoint
+[titan] 2026-11-14 02:54:32,193 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 02:54:32,194 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 02:54:32,194 - root - INFO - Training starts at step 1
+[rank4]:[W1114 02:54:42.084606798 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 4 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank5]:[W1114 02:54:42.085640495 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 5 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank7]:[W1114 02:54:42.112874496 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 7 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank6]:[W1114 02:54:42.113483120 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 6 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank0]:[W1114 02:54:42.581269953 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 0 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank1]:[W1114 02:54:42.584232588 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 1 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank2]:[W1114 02:54:42.585521307 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 2 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[rank3]:[W1114 02:54:42.630774073 CUDACachingAllocator.cpp:3934] memory allocation failed with OOM on device 3 while trying to allocate 1073741824 bytes (free: 529989632, total: 85176483840).
+[titan] 2026-11-14 02:54:43,326 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 02:54:43,332 - root - INFO - Destroying the purge thread.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank0]:   File "<frozen runpy>", line 88, in _run_code
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank0]:     main()
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank0]:     super().train()
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank0]:     return f(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank0]:     self.train_step(data_iterator)
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank0]:     loss = self.forward_backward_step(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank0]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank0]:     loss, _ = self.loss_fn(
+[rank0]:               ^^^^^^^^^^^^^
+[rank0]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank0]:     chunk_loss.backward()
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank0]:     return user_fn(self, *args)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank0]:     ctx.param_group.post_backward()
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank0]:     return torch._dynamo.disable(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank0]:     ) = foreach_reduce(
+[rank0]:         ^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank0]:     dist.all_reduce(
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank0]:     work = group.allreduce([tensor], opts)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank0]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank0]: Last error:
+[rank0]: Cuda failure 2 'out of memory'
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank4]:   File "<frozen runpy>", line 88, in _run_code
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank4]:     main()
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank4]:     trainer.train()
+[rank4]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank4]:     super().train()
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank4]:     return f(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank4]:     self.train_step(data_iterator)
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank4]:     loss = self.forward_backward_step(
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank4]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank4]:     loss, _ = self.loss_fn(
+[rank4]:               ^^^^^^^^^^^^^
+[rank4]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank4]:     chunk_loss.backward()
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank4]:     torch.autograd.backward(
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank4]:     _engine_run_backward(
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank4]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank4]:     return user_fn(self, *args)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank4]:     ctx.param_group.post_backward()
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank4]:     return torch._dynamo.disable(
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank4]:     return fn(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank4]:     ) = foreach_reduce(
+[rank4]:         ^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank4]:     dist.all_reduce(
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank4]:     return func(*args, **kwargs)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank4]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank4]:     work = group.allreduce([tensor], opts)
+[rank4]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank4]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank4]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank4]: Last error:
+[rank4]: Cuda failure 2 'out of memory'
+[titan] 2026-11-14 02:54:43,394 - root - INFO - Destroying the purge thread.
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank2]:   File "<frozen runpy>", line 88, in _run_code
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank2]:     main()
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank2]:     trainer.train()
+[rank2]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank2]:     super().train()
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank2]:     return f(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank2]:     self.train_step(data_iterator)
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank2]:     loss = self.forward_backward_step(
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank2]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank2]:     loss, _ = self.loss_fn(
+[rank2]:               ^^^^^^^^^^^^^
+[rank2]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank2]:     chunk_loss.backward()
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank2]:     torch.autograd.backward(
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank2]:     _engine_run_backward(
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank2]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank2]:     return user_fn(self, *args)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank2]:     ctx.param_group.post_backward()
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank2]:     return torch._dynamo.disable(
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank2]:     ) = foreach_reduce(
+[rank2]:         ^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank2]:     dist.all_reduce(
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank2]:     return func(*args, **kwargs)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank2]:     work = group.allreduce([tensor], opts)
+[rank2]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank2]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank2]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank2]: Last error:
+[rank2]: Cuda failure 2 'out of memory'
+[titan] 2026-11-14 02:54:43,400 - root - INFO - Destroying the purge thread.
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank6]:   File "<frozen runpy>", line 88, in _run_code
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank6]:     main()
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank6]:     trainer.train()
+[rank6]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank6]:     super().train()
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank6]:     return f(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank6]:     self.train_step(data_iterator)
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank6]:     loss = self.forward_backward_step(
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank6]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank6]:     loss, _ = self.loss_fn(
+[rank6]:               ^^^^^^^^^^^^^
+[rank6]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank6]:     chunk_loss.backward()
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank6]:     torch.autograd.backward(
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank6]:     _engine_run_backward(
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank6]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank6]:     return user_fn(self, *args)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank6]:     ctx.param_group.post_backward()
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank6]:     return torch._dynamo.disable(
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank6]:     return fn(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank6]:     ) = foreach_reduce(
+[rank6]:         ^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank6]:     dist.all_reduce(
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank6]:     return func(*args, **kwargs)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank6]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank6]:     work = group.allreduce([tensor], opts)
+[rank6]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank6]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank6]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank6]: Last error:
+[rank6]: Cuda failure 2 'out of memory'
+[titan] 2026-11-14 02:54:43,423 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 02:54:43,426 - root - INFO - Destroying the purge thread.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank1]:   File "<frozen runpy>", line 88, in _run_code
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank1]:     main()
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank1]:     trainer.train()
+[rank1]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank1]:     super().train()
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank1]:     return f(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank1]:     self.train_step(data_iterator)
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank1]:     loss = self.forward_backward_step(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank1]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank1]:     loss, _ = self.loss_fn(
+[rank1]:               ^^^^^^^^^^^^^
+[rank1]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank1]:     chunk_loss.backward()
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank1]:     torch.autograd.backward(
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank1]:     _engine_run_backward(
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank1]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank1]:     return user_fn(self, *args)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank1]:     ctx.param_group.post_backward()
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank1]:     return torch._dynamo.disable(
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank1]:     ) = foreach_reduce(
+[rank1]:         ^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank1]:     dist.all_reduce(
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank1]:     return func(*args, **kwargs)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank1]:     work = group.allreduce([tensor], opts)
+[rank1]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank1]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank1]: Last error:
+[rank1]: Cuda failure 2 'out of memory'
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank5]:   File "<frozen runpy>", line 88, in _run_code
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank5]:     main()
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank5]:     trainer.train()
+[rank5]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank5]:     super().train()
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank5]:     return f(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank5]:     self.train_step(data_iterator)
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank5]:     loss = self.forward_backward_step(
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank5]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank5]:     loss, _ = self.loss_fn(
+[rank5]:               ^^^^^^^^^^^^^
+[rank5]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank5]:     chunk_loss.backward()
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank5]:     torch.autograd.backward(
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank5]:     _engine_run_backward(
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank5]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank5]:     return user_fn(self, *args)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank5]:     ctx.param_group.post_backward()
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank5]:     return torch._dynamo.disable(
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank5]:     return fn(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank5]:     ) = foreach_reduce(
+[rank5]:         ^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank5]:     dist.all_reduce(
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank5]:     return func(*args, **kwargs)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank5]:     work = group.allreduce([tensor], opts)
+[rank5]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank5]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank5]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank5]: Last error:
+[rank5]: Cuda failure 2 'out of memory'
+[titan] 2026-11-14 02:54:43,461 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 02:54:43,462 - root - INFO - Destroying the purge thread.
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank7]:   File "<frozen runpy>", line 88, in _run_code
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank7]:     main()
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank7]:     trainer.train()
+[rank7]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank7]:     super().train()
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank7]:     return f(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank7]:     self.train_step(data_iterator)
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank7]:     loss = self.forward_backward_step(
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank7]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank7]:     loss, _ = self.loss_fn(
+[rank7]:               ^^^^^^^^^^^^^
+[rank7]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank7]:     chunk_loss.backward()
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank7]:     torch.autograd.backward(
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank7]:     _engine_run_backward(
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank7]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank7]:     return user_fn(self, *args)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank7]:     ctx.param_group.post_backward()
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank7]:     return torch._dynamo.disable(
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank7]:     return fn(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank7]:     ) = foreach_reduce(
+[rank7]:         ^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank7]:     dist.all_reduce(
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank7]:     return func(*args, **kwargs)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank7]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank7]:     work = group.allreduce([tensor], opts)
+[rank7]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank7]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank7]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank7]: Last error:
+[rank7]: Cuda failure 2 'out of memory'
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "<frozen runpy>", line 198, in _run_module_as_main
+[rank3]:   File "<frozen runpy>", line 88, in _run_code
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 79, in <module>
+[rank3]:     main()
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/train.py", line 65, in main
+[rank3]:     trainer.train()
+[rank3]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/runtime.py", line 70, in train
+[rank3]:     super().train()
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+[rank3]:     return f(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+[rank3]:     self.train_step(data_iterator)
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+[rank3]:     loss = self.forward_backward_step(
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+[rank3]:     return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+[rank3]:     loss, _ = self.loss_fn(
+[rank3]:               ^^^^^^^^^^^^^
+[rank3]:   File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+[rank3]:     chunk_loss.backward()
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+[rank3]:     torch.autograd.backward(
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+[rank3]:     _engine_run_backward(
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+[rank3]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+[rank3]:     return user_fn(self, *args)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+[rank3]:     ctx.param_group.post_backward()
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+[rank3]:     return torch._dynamo.disable(
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+[rank3]:     ) = foreach_reduce(
+[rank3]:         ^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+[rank3]:     dist.all_reduce(
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+[rank3]:     return func(*args, **kwargs)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank3]:   File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+[rank3]:     work = group.allreduce([tensor], opts)
+[rank3]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank3]: torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+[rank3]: ncclUnhandledCudaError: Call to CUDA function failed.
+[rank3]: Last error:
+[rank3]: Cuda failure 2 'out of memory'
+W1114 02:54:45.647000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209579 closing signal SIGTERM
+W1114 02:54:45.649000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209580 closing signal SIGTERM
+W1114 02:54:45.649000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209581 closing signal SIGTERM
+W1114 02:54:45.649000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209582 closing signal SIGTERM
+W1114 02:54:45.649000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209583 closing signal SIGTERM
+W1114 02:54:45.650000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209584 closing signal SIGTERM
+W1114 02:54:45.650000 209574 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 209586 closing signal SIGTERM
+E1114 02:54:47.311000 209574 torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 6 (pid: 209585) of binary: /opt/yuformer-torchtitan/bin/python
+E1114 02:54:47.316000 209574 torch/distributed/elastic/multiprocessing/errors/error_handler.py:157] no error file defined for parent, to copy child error file (/tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/6/error.json)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+torchtitan.train FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 209579) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/0/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+[2]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 209580) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/1/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+[3]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 209581) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/2/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+[4]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 209582)  (SIGTERM)
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/3/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+[5]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 209583) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/4/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+[6]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 209584) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/5/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+[7]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 209586) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/7/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-14_02:54:43
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 209585) 
+  error_file: /tmp/torchelastic_s_6ys4c7/none_a54wjz_7/attempt_0/6/error.json
+  traceback : Traceback (most recent call last):
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+      return f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 1039, in train
+      self.train_step(data_iterator)
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 925, in train_step
+      loss = self.forward_backward_step(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py", line 429, in sync_wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 804, in forward_backward_step
+      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/trainer.py", line 818, in _forward_backward_body
+      loss, _ = self.loss_fn(
+                ^^^^^^^^^^^^^
+    File "/opt/torchtitan-v0.3.0/torchtitan/components/loss.py", line 762, in __call__
+      chunk_loss.backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py", line 623, in backward
+      torch.autograd.backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py", line 395, in backward
+      _engine_run_backward(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py", line 1072, in _engine_run_backward
+      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/function.py", line 366, in apply
+      return user_fn(self, *args)
+             ^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 1157, in backward
+      ctx.param_group.post_backward()
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_common.py", line 30, in wrapper
+      return torch._dynamo.disable(
+             ^^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1548, in _fn
+      return fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py", line 712, in post_backward
+      ) = foreach_reduce(
+          ^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py", line 658, in foreach_reduce
+      dist.all_reduce(
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+      return func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+    File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/distributed_c10d.py", line 3906, in all_reduce
+      work = group.allreduce([tensor], opts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  torch.distributed.DistBackendError: NCCL error in: /__w/pytorch/pytorch/torch/csrc/distributed/c10d/ProcessGroupNCCL.cpp:3888, unhandled cuda error (run with NCCL_DEBUG=INFO for details), NCCL version 2.29.3
+  ncclUnhandledCudaError: Call to CUDA function failed.
+  Last error:
+  Cuda failure 2 'out of memory'
+  
+============================================================

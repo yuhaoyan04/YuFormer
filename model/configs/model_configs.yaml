@@ -1,130 +1,452 @@
-# YuFormer 模型配置矩阵
-#
-# 每个预设定义一组模型超参。用 ModelConfig.from_preset("name") 加载。
-# attention_every / rope_every 控制混合策略：
-#   attention_every=1  → 全部 Full Attention
-#   attention_every=6  → 每 6 层一个 Full，其余 SWA（ZGCM-1 规格）
-#   rope_every=1       → 全部 RoPE
-#   rope_every=3       → 每 3 层一个 RoPE，其余 NoPE
-
 presets:
-
-  tiny:
-    num_layers: 4
-    hidden_size: 256
-    intermediate_size: 512
-    num_heads: 4
-    num_kv_heads: 2
-    vocab_size: 8000
-    max_seq_len: 1024
-    window_size: 64
-    attention_every: 1        # 全 Full Attention（tiny 不做混合）
-    rope_every: 1
-    rope_base: 500000.0
-    rope_percent: 0.334
-    norm_eps: 0.000001
-    tie_word_embeddings: true
-    notes: "管线验证用，~5M 参数"
-
-  small:
-    num_layers: 8
-    hidden_size: 512
-    intermediate_size: 1024
-    num_heads: 8
-    num_kv_heads: 4
-    vocab_size: 32000
-    max_seq_len: 4096
-    window_size: 128
-    attention_every: 4         # 8 层中 2 Full + 6 SWA
-    rope_every: 2              # 每 2 层一个 RoPE
-    rope_base: 500000.0
-    rope_percent: 0.334
-    norm_eps: 0.000001
-    tie_word_embeddings: true
-    notes: "数据配比实验用，~30M 参数"
-
   base:
-    num_layers: 12
+    attention_every: 4
+    attention_output_gate: true
     hidden_size: 768
     intermediate_size: 2048
+    max_seq_len: 8192
+    norm_eps: 1.0e-06
+    notes: 缩放律初步，~282.2M 参数
     num_heads: 12
     num_kv_heads: 4
-    vocab_size: 65536
-    max_seq_len: 8192
-    window_size: 128
-    attention_every: 4         # 12 层中 3 Full + 9 SWA
+    num_layers: 12
+    qk_norm: true
+    rope_base: 5000000.0
     rope_every: 3
-    rope_base: 500000.0
     rope_percent: 0.334
-    norm_eps: 0.000001
     tie_word_embeddings: false
-    notes: "缩放律初步，~100M 参数"
-
-  medium:
+    vocab_size: 131072
+    window_size: 128
+  e1-100m:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 640
+    intermediate_size: 1760
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~59M non-emb）
+    num_heads: 10
+    num_kv_heads: 5
+    num_layers: 12
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e1-200m:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 768
+    intermediate_size: 2112
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~143M non-emb）
+    num_heads: 12
+    num_kv_heads: 6
+    num_layers: 20
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e1-300m:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 896
+    intermediate_size: 2464
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~233M non-emb）
+    num_heads: 14
+    num_kv_heads: 7
     num_layers: 24
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e1-50m:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 512
+    intermediate_size: 1408
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~25M non-emb）
+    num_heads: 8
+    num_kv_heads: 4
+    num_layers: 8
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e1-800m:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1408
+    intermediate_size: 3872
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~767M non-emb）
+    num_heads: 22
+    num_kv_heads: 11
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-ffn2x:
+    attention_every: 6
+    attention_output_gate: true
     hidden_size: 1024
-    intermediate_size: 2816
+    intermediate_size: 2048
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~403M non-emb）
     num_heads: 16
     num_kv_heads: 8
-    vocab_size: 65536
-    max_seq_len: 16384
-    window_size: 128
-    attention_every: 6         # ZGCM-1 规格
-    rope_every: 3
-    rope_base: 500000.0
+    num_layers: 39
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
     rope_percent: 0.334
-    norm_eps: 0.000001
-    tie_word_embeddings: false
-    notes: "扩展验证，~350M 参数"
-
-  large:
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-ffn4x:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 4096
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~398M non-emb）
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 24
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-fullrope:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~406M non-emb）
+    num_heads: 16
+    num_kv_heads: 8
     num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 1.0
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-l16-h1440:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1440
+    intermediate_size: 3960
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~402M non-emb）
+    num_heads: 20
+    num_kv_heads: 10
+    num_layers: 16
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-l48-h800:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 800
+    intermediate_size: 2200
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~402M non-emb）
+    num_heads: 10
+    num_kv_heads: 10
+    num_layers: 48
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-nogate:
+    attention_every: 6
+    attention_output_gate: false
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~378M non-emb）
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-noqkn:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E1/E2 实验臂（~406M non-emb）
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: false
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  e2-swaoff:
+    attention_every: 1
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E2 SWA on/off 对照臂（2026-10-11 用户裁定补）：attention_every=1 全注意力， 其余与 pretrain-0.5b
+      同形——给"pretrain 全注意力"路线提供架构消融数据
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  large:
+    attention_every: 6
+    attention_output_gate: true
     hidden_size: 4096
     intermediate_size: 11008
+    max_seq_len: 262144
+    norm_eps: 1.0e-06
+    notes: ZGCM-1 规格（7.39B 官方为 154880 词表，此处 131072 对齐 tokenizer 消融档），~7.20B 参数
     num_heads: 32
     num_kv_heads: 8
-    vocab_size: 65536
-    max_seq_len: 262144
-    window_size: 127           # ZGCM-1 规格（128 token 窗口）
-    attention_every: 6         # 27 SWA + 5 Full
-    rope_every: 3
-    rope_base: 5000000.0       # ZGCM-1 pretrain 用 5M
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
     rope_percent: 0.334
-    norm_eps: 0.000001
     tie_word_embeddings: false
-    notes: "ZGCM-1 规格，~7B 参数"
-
-  # ============ 消融实验配置 ============
-  small-full-attn:
-    num_layers: 8
+    vocab_size: 131072
+    window_size: 128
+  medium:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 16384
+    norm_eps: 1.0e-06
+    notes: 扩展验证，~572.6M 参数
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 24
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 3
+    rope_percent: 0.334
+    tie_word_embeddings: false
+    vocab_size: 131072
+    window_size: 128
+  pretrain-0.5b:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 0.5B 预训练主配置（32L 对齐 ZGCM 层数与层分布，64K 词表，tied embedding），~473M 参数
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  pretrain-0.5b-untied:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: tied-vs-untied 消融臂（E3-A1）；若要 iso-param 需同步缩 ffn，实验时按此配平
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: false
+    vocab_size: 65536
+    window_size: 128
+  pretrain-0.5b-vocab128k:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 0.5B 预训练主配置（32L 对齐 ZGCM 层数与层分布，64K 词表，tied embedding），~473M 参数
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 131072
+    window_size: 128
+  pretrain-0.5b-vocab32k:
+    attention_every: 6
+    attention_output_gate: true
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 0.5B 预训练主配置（32L 对齐 ZGCM 层数与层分布，64K 词表，tied embedding），~473M 参数
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 32768
+    window_size: 128
+  probe_full:
+    attention_every: 1
+    attention_output_gate: false
+    hidden_size: 1024
+    intermediate_size: 2816
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: E-47 MFU 诊断臂（全注意力+is_causal，对照 SWA mask 路径）
+    num_heads: 16
+    num_kv_heads: 8
+    num_layers: 32
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  small:
+    attention_every: 4
+    attention_output_gate: true
     hidden_size: 512
     intermediate_size: 1024
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 数据配比实验用，~54.0M 参数
     num_heads: 8
     num_kv_heads: 4
-    vocab_size: 32000
-    max_seq_len: 4096
-    window_size: 128
-    attention_every: 1         # 全 Full（消融基线）
-    rope_every: 1              # 全 RoPE
-    rope_base: 500000.0
+    num_layers: 8
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 2
     rope_percent: 0.334
-    norm_eps: 0.000001
     tie_word_embeddings: true
-    notes: "消融实验 — 全 Full Attention + 全 RoPE（对比 small 的混合版）"
-
+    vocab_size: 65536
+    window_size: 128
   small-all-rope:
-    num_layers: 8
+    attention_every: 4
+    attention_output_gate: true
     hidden_size: 512
     intermediate_size: 1024
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 消融实验 — 混合注意力但全 RoPE
     num_heads: 8
     num_kv_heads: 4
-    vocab_size: 32000
-    max_seq_len: 4096
-    window_size: 128
-    attention_every: 4         # 混合注意力
-    rope_every: 1              # 全 RoPE（对比 small 的 RoPE/NoPE 交替）
-    rope_base: 500000.0
+    num_layers: 8
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
     rope_percent: 0.334
-    norm_eps: 0.000001
     tie_word_embeddings: true
-    notes: "消融实验 — 混合注意力但全 RoPE"
+    vocab_size: 65536
+    window_size: 128
+  small-full-attn:
+    attention_every: 1
+    attention_output_gate: true
+    hidden_size: 512
+    intermediate_size: 1024
+    max_seq_len: 4096
+    norm_eps: 1.0e-06
+    notes: 消融实验 — 全 Full Attention + 全 RoPE（对比 small 的混合版）
+    num_heads: 8
+    num_kv_heads: 4
+    num_layers: 8
+    qk_norm: true
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 65536
+    window_size: 128
+  tiny:
+    attention_every: 1
+    attention_output_gate: false
+    hidden_size: 256
+    intermediate_size: 512
+    max_seq_len: 1024
+    norm_eps: 1.0e-06
+    notes: 管线验证用，~10.8M 参数
+    num_heads: 4
+    num_kv_heads: 2
+    num_layers: 4
+    qk_norm: false
+    rope_base: 5000000.0
+    rope_every: 1
+    rope_percent: 0.334
+    tie_word_embeddings: true
+    vocab_size: 32768
+    window_size: 64

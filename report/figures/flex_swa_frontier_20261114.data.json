@@ -1,0 +1,37 @@
+{
+  "pairs": [
+    {
+      "new_days": 14.018626263296811,
+      "new_tps": 114669.6015625,
+      "new_variant": "baseline_053b_b8",
+      "old_days": 21.500098416700503,
+      "old_tps": 74767.578125,
+      "old_variant": "baseline_053b_b8",
+      "parameters": 530107904
+    },
+    {
+      "new_days": 22.482970905459144,
+      "new_tps": 71499.015625,
+      "new_variant": "flex_18l_h2048_g6_b8",
+      "old_days": 33.27639867969552,
+      "old_tps": 48307.8203125,
+      "old_variant": "size_1b_wide_b8",
+      "parameters": 994652416
+    },
+    {
+      "new_days": 31.78601010074151,
+      "new_tps": 50572.88671875,
+      "new_variant": "flex_18l_h2560_g6_b8",
+      "old_days": 45.16407527058334,
+      "old_tps": 35592.67578125,
+      "old_variant": "size_15b_b8",
+      "parameters": 1516600064
+    }
+  ],
+  "production_qualified": false,
+  "purpose": "COMPLETED_WHOLE_MODEL_RESEARCH_SCREENING_NOT_PRODUCTION_QUALIFICATION",
+  "sources_sha256": {
+    "data/health/model-flex-frontier.json": "18c4e754b78a7b176f6210ab92ef58469e33a199b29900cebd341f39feb23399",
+    "data/health/model-size-sweep.json": "e2b44370574b823dafa7cad7c7909d589ef3b130c3f099094f0c24ca0afaec87"
+  }
+}

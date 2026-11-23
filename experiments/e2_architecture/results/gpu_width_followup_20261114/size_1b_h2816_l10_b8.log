@@ -1,0 +1,572 @@
+{
+  "actual": {
+    "cuda_available": true,
+    "dcp": true,
+    "executable": "/opt/yuformer-torchtitan/bin/python",
+    "fsdp2": true,
+    "gpu_capability": [
+      9,
+      0
+    ],
+    "nvidia_driver": "535.161.08",
+    "python": "3.12.16",
+    "torch": "2.14.0+cu126",
+    "torch_checkpointing": "0.1.0",
+    "torch_cuda": "12.6",
+    "torchao": "0.18.0+cu126",
+    "torchtitan": "0.3.0",
+    "torchtitan_commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+    "torchtitan_source_dirty": false,
+    "torchtitan_source_root": "/opt/torchtitan-v0.3.0",
+    "torchvision": "0.29.0+cu126",
+    "triton": "3.8.0"
+  },
+  "checks": {
+    "clean_pinned_source": true,
+    "cuda_available": true,
+    "cuda_build_matches_lock": true,
+    "distributed_checkpoint": true,
+    "fsdp2": true,
+    "hopper_or_newer": true,
+    "nvidia_driver": true,
+    "pinned_source_commit": true,
+    "python_3_12": true,
+    "pytorch_2_14_0": true,
+    "torch_checkpointing_0_1_0": true,
+    "torchao_0_18_0": true,
+    "torchtitan_0_3": true,
+    "torchvision_0_29_0": true,
+    "triton_3_8_0": true
+  },
+  "expected": {
+    "cuda": {
+      "compatibility_mode": "cuda_12_minor_version_compatibility",
+      "minimum_driver_linux": "525.60.13",
+      "pytorch_index_url": "https://download.pytorch.org/whl/cu126",
+      "toolkit": "12.6",
+      "validated_host_driver": "535.161.08"
+    },
+    "hardware": {
+      "bf16_dense_peak_flops_per_device": 989000000000000,
+      "form_factor": "SXM",
+      "gpu_name": "H800",
+      "observed_max_power_watts": 700,
+      "specification": "NVIDIA H800 Tensor Core GPU datasheet; BF16 sparsity peak 1979 TFLOPS, dense approximately half",
+      "specification_url": "https://chaoqing-i.com/upload/20231128/NVIDIA%20H800%20GPU%20Datasheet.pdf"
+    },
+    "python": "3.12",
+    "pytorch": "2.14.0",
+    "schema_version": 1,
+    "torch_checkpointing": "0.1.0",
+    "torchao": "0.18.0",
+    "torchtitan": {
+      "commit": "086bf6c166ec85c1298eb5596fa9bf95f6a2d840",
+      "repository": "https://github.com/pytorch/torchtitan.git",
+      "tag": "v0.3.0"
+    },
+    "torchvision": "0.29.0",
+    "triton": "3.8.0"
+  },
+  "failed_checks": [],
+  "schema_version": 1,
+  "status": "ready"
+}
+{"identity": {"backend": "torchtitan-v0.3.0", "dataset_id": "yuformer-data-86f5860c47e6162e6ba0", "identity_sha256": "06315de9a14126861b782544fcb5fbc026f116a94157a32edc7393312aacfb69", "model_configs": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_width_followup_20261114/size_1b_h2816_l10.model.yaml", "model_configs_sha256": "a3bb42843dc9a65477a7045c951c6ecfd3cb00394e04e62c7b45f9a1a0c6069a", "release_manifest": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/releases/mix_m3_e1_100b-20261019.release.json", "release_manifest_sha256": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c", "resolved_config_sha256": "d748f197953b0cf054a2093a75032697e9cbfb1152956cd31ae09ed55d225135", "run_name": "size_1b_h2816_l10_b8", "runtime_state_schema_version": 2, "schema_version": 1, "snapshot_id": "yuformer-snapshot-b27bb2dc051c09a9c9f5", "source_sha256": "b9b68ddc8c963da83c77f45672a71a79039cbe91c13aebe97b56b8a22b1bf1d1", "streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.tokens.bin", "capacity_samples": 24044324, "edge_sha256": "fb75ddaf3ea4c4fdc96cbdf2a8bf7f0d3622574603db3aabc4dd05358e3a50e4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json", "meta_sha256": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c", "sample_limit": 24044324}], "token_stream_audit": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json", "token_stream_audit_sha256": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d", "tokenizer_artifact_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "tokenizer_gate": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/TOKENIZER_READY.json", "tokenizer_gate_sha256": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866", "tokenizer_id": "yuformer-tokenizer-20df5ca9ba356e303082", "tokenizer_path": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json", "tokenizer_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e", "validation_streams": [{"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.tokens.bin", "capacity_samples": 4719, "edge_sha256": "94fea8f60c2ce47060dbb8241a9471ff0ad9607ad9aaee18ea8d2e1e5e1a4402", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_academic.meta.json", "meta_sha256": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3", "sample_limit": 4719}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.tokens.bin", "capacity_samples": 4866, "edge_sha256": "55983f0436fb247f50ee6eef959db67a73789110ee46a1dc72fae179393abda9", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_books.meta.json", "meta_sha256": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64", "sample_limit": 4866}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.tokens.bin", "capacity_samples": 5150, "edge_sha256": "6c48dcc609500522940bc5a79a874d2ff5f970d71ed2f7f8b769344255629726", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_chinese.meta.json", "meta_sha256": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767", "sample_limit": 5150}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.tokens.bin", "capacity_samples": 4845, "edge_sha256": "f2ecf69e459f4804a551c54f5da0ab911a96d785615c11f16370cfcf3b7d12b4", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_code.meta.json", "meta_sha256": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4", "sample_limit": 4845}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.tokens.bin", "capacity_samples": 5003, "edge_sha256": "8594a651b8cc4c2222c3bbfc4693d5595bd800307b8d48f1998db3eef2252f4e", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json", "meta_sha256": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea", "sample_limit": 5003}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.tokens.bin", "capacity_samples": 4777, "edge_sha256": "c2bb8daf539ff9cc9012698f5410c7b10bff59447959b49c24dc0ad718591401", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_math.meta.json", "meta_sha256": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec", "sample_limit": 4777}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.tokens.bin", "capacity_samples": 4163, "edge_sha256": "31c6b95625e4001fdab1068c2de94f6154bf45f7fbfdcb8b488712fb7a24dec7", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json", "meta_sha256": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2", "sample_limit": 4163}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.tokens.bin", "capacity_samples": 2894, "edge_sha256": "2ce3553c8672f09fad91822184d967f4c6e45722709a0e4fa1258bef7a1ee55d", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_qa.meta.json", "meta_sha256": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54", "sample_limit": 2894}, {"binary": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.tokens.bin", "capacity_samples": 4946, "edge_sha256": "c6f3522532c177de5cb1c988533874b263802de116e8455d57213ab0d3705e8f", "meta": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k/val_web.meta.json", "meta_sha256": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899", "sample_limit": 4946}]}, "out_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8", "status": "PASS"}
+W1114 04:19:08.440000 226842 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:08.459000 226836 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:08.660000 226836 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:08.664000 226842 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:08.963000 226839 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.068000 226837 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.173000 226839 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.225000 226841 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.302000 226837 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.318000 226838 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.370000 226843 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.525000 226840 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.535000 226841 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.582000 226838 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 04:19:09.600000 226843 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 04:19:09,668 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:09,684 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+W1114 04:19:09.733000 226840 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 04:19:09,814 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:09,814 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:09,913 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:09,926 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_0.20261114-041909-ED3QT8.jsonl
+[titan] 2026-11-14 04:19:09,962 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:09,975 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_6.20261114-041909-OTVO21.jsonl
+[titan] 2026-11-14 04:19:10,160 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:10,161 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:10,165 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:10,183 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:10,187 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:10,207 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,217 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:10,218 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:10,221 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:10,227 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:10,228 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:10,230 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:10,251 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:10,268 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,268 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,271 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:10,287 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:10,287 - root - INFO - TensorBoard logging enabled. Logs will be saved at /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/tb/20261114-0419
+[titan] 2026-11-14 04:19:10,288 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:10,300 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,310 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,310 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,311 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_3.20261114-041910-JBAJRW.jsonl
+[titan] 2026-11-14 04:19:10,313 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:10,335 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:10,419 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:10,435 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:10,506 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:10,510 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:10,513 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:10,524 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,524 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,524 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:10,525 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:10,527 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:10,527 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:10,528 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:10,530 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:10,541 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:10,558 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,558 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,561 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:10,576 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,576 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,576 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:10,577 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:10,577 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:10,579 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:10,579 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:10,580 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:10,581 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,671 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,681 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_1.20261114-041910-CMRPYA.jsonl
+[titan] 2026-11-14 04:19:10,702 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:10,764 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,789 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,828 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:10,834 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,840 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:10,878 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:10,879 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:10,882 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:10,908 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:10,913 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,914 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,914 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:10,914 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:10,914 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:10,916 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:10,916 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:10,918 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:10,924 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_5.20261114-041910-G2S6UA.jsonl
+[titan] 2026-11-14 04:19:10,931 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:10,931 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:10,934 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:10,949 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:11,007 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:11,022 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:11,053 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,079 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,079 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:11,095 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:11,126 - root - INFO - torchtitan version: 0.3.0 (0.0.0 means __version__ is not defined correctly).
+[titan] 2026-11-14 04:19:11,144 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:11,146 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:11,151 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:11,166 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,180 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,186 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:11,189 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,192 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:11,192 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:11,192 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:11,194 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_2.20261114-041911-DLZK3M.jsonl
+[titan] 2026-11-14 04:19:11,203 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:11,205 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:11,205 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:11,205 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:11,227 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,232 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:11,232 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:11,235 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:11,245 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_7.20261114-041911-CPM3DJ.jsonl
+[titan] 2026-11-14 04:19:11,253 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:11,341 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,351 - torchtitan.observability.structured_logger.jsonl_handler - INFO - Structured logging -> JSONL: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/structured_logs/training.global_rank_4.20261114-041911-X9JHXZ.jsonl
+[titan] 2026-11-14 04:19:11,403 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:11,527 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:11,529 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:11,541 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:11,542 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:11,555 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 04:19:11,568 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 04:19:11,582 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:11,583 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:11,583 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:11,584 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:11,585 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 04:19:11,586 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:11,586 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 04:19:11,587 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:11,589 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 04:19:11,605 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:11,606 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:11,606 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:11,606 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:11,609 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:11,609 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:11,611 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:11,618 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:11,634 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:11,634 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 04:19:11,635 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:11,635 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:11,639 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:11,653 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:11,653 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:11,654 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:11,654 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:11,658 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:11,658 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,092,217,856 total parameters[39m
+[titan] 2026-11-14 04:19:11,672 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:11,686 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:11,686 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 04:19:11,857 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:12,035 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:12,035 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:12,035 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:12,035 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:12,036 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:12,036 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:12,036 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:12,036 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:12,038 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:12,038 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:12,038 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:12,038 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:12,039 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:12,039 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:12,048 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 04:19:12,048 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 04:19:12,048 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 04:19:12,048 - root - INFO - CUDA memory usage for model: 1.28GiB(1.62%)
+[titan] 2026-11-14 04:19:12,050 - root - INFO - Optimizer AdamW (model_part=0): 41 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 04:19:12,051 - root - INFO - Optimizer AdamW (model_part=0): 51 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0002, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 04:19:12,052 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 04:19:12,290 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:12,306 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:12,306 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 04:19:12,332 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,332 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,333 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,333 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,333 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,333 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,333 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,333 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,334 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,334 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,334 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,334 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/gpu_width_followup_20261114/size_1b_h2816_l10_b8/checkpoint
+[titan] 2026-11-14 04:19:12,334 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,335 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,335 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,335 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,335 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 24 (warmup 4)
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,335 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,335 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,336 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,336 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,336 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,336 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:19:12,382 - root - INFO - No checkpoint was provided, this is a fresh start.
+[titan] 2026-11-14 04:19:12,382 - root - INFO - Training starts at step 1
+[titan] 2026-11-14 04:20:00,039 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,836  [36mtflops: 72.93  [35mmfu: 7.37%[39m
+[titan] 2026-11-14 04:20:00,039 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,596  [36mtflops: 71.32  [35mmfu: 7.21%[39m
+[titan] 2026-11-14 04:20:00,039 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,831  [36mtflops: 72.90  [35mmfu: 7.37%[39m
+[titan] 2026-11-14 04:20:00,039 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,676  [36mtflops: 71.86  [35mmfu: 7.27%[39m
+[titan] 2026-11-14 04:20:00,039 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,836  [36mtflops: 72.93  [35mmfu: 7.37%[39m
+[titan] 2026-11-14 04:20:00,040 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,534  [36mtflops: 70.90  [35mmfu: 7.17%[39m
+[titan] 2026-11-14 04:20:00,040 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,742  [36mtflops: 72.30  [35mmfu: 7.31%[39m
+[titan] 2026-11-14 04:20:00,042 - root - INFO - [31mstep:  1  [32mloss: 11.65691  [38;2;180;60;0mgrad_norm:  4.2938  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 10,543  [36mtflops: 70.96  [35mmfu: 7.17%[39m
+[titan] 2026-11-14 04:20:12,933 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,874[39m
+[titan] 2026-11-14 04:20:12,933 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,874[39m
+[titan] 2026-11-14 04:20:12,933 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,875[39m
+[titan] 2026-11-14 04:20:12,933 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,874[39m
+[titan] 2026-11-14 04:20:12,934 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,876[39m
+[titan] 2026-11-14 04:20:12,934 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,874[39m
+[titan] 2026-11-14 04:20:12,934 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,873[39m
+[titan] 2026-11-14 04:20:12,935 - root - INFO - [33mvalidate step:  1  [32mloss: 10.9037  [38;2;54;234;195mmemory: 42.73GiB(53.87%)  [34mtps: 22,879[39m
+[titan] 2026-11-14 04:20:12,935 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,935 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,936 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,937 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,937 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,937 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,938 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:12,938 - root - INFO - Synchronizing and adjusting timeout for all ProcessGroups to 0:01:40
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,131  [36mtflops: 337.42  [35mmfu: 34.12%[39m
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,126  [36mtflops: 337.38  [35mmfu: 34.11%[39m
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,125  [36mtflops: 337.37  [35mmfu: 34.11%[39m
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,127  [36mtflops: 337.39  [35mmfu: 34.11%[39m
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,125  [36mtflops: 337.38  [35mmfu: 34.11%[39m
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,124  [36mtflops: 337.37  [35mmfu: 34.11%[39m
+[titan] 2026-11-14 04:20:23,394 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,128  [36mtflops: 337.39  [35mmfu: 34.11%[39m
+[titan] 2026-11-14 04:20:23,396 - root - INFO - [31mstep:  2  [32mloss: 10.41586  [38;2;180;60;0mgrad_norm: 10.8025  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,131  [36mtflops: 337.41  [35mmfu: 34.12%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,347  [36mtflops: 338.87  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,347  [36mtflops: 338.87  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,347  [36mtflops: 338.87  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,347  [36mtflops: 338.87  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,345  [36mtflops: 338.86  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,347  [36mtflops: 338.87  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,808 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,347  [36mtflops: 338.87  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:20:33,810 - root - INFO - [31mstep:  3  [32mloss: 19.08942  [38;2;180;60;0mgrad_norm: 78.8814  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,357  [36mtflops: 338.93  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,367  [36mtflops: 339.00  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,367  [36mtflops: 339.00  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,368  [36mtflops: 339.01  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,367  [36mtflops: 339.00  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,367  [36mtflops: 339.00  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,367  [36mtflops: 339.00  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,218 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,366  [36mtflops: 339.00  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:44,219 - root - INFO - [31mstep:  4  [32mloss: 16.22291  [38;2;180;60;0mgrad_norm: 71.5602  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,378  [36mtflops: 339.07  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,626 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,374  [36mtflops: 339.05  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,626 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,375  [36mtflops: 339.06  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,627 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,373  [36mtflops: 339.05  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,627 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,374  [36mtflops: 339.05  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,627 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,374  [36mtflops: 339.05  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,627 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,375  [36mtflops: 339.06  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,627 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,374  [36mtflops: 339.05  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:20:54,628 - root - INFO - [31mstep:  5  [32mloss: 12.80419  [38;2;180;60;0mgrad_norm: 32.8881  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,379  [36mtflops: 339.09  [35mmfu: 34.29%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,308  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,308  [36mtflops: 338.61  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,307  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,307  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,049 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:05,050 - root - INFO - [31mstep:  6  [32mloss: 11.46572  [38;2;180;60;0mgrad_norm:  8.1925  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,315  [36mtflops: 338.66  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,328  [36mtflops: 338.74  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,327  [36mtflops: 338.74  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,328  [36mtflops: 338.74  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,326  [36mtflops: 338.73  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,327  [36mtflops: 338.74  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,328  [36mtflops: 338.74  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,467 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,326  [36mtflops: 338.73  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:15,469 - root - INFO - [31mstep:  7  [32mloss: 10.62090  [38;2;180;60;0mgrad_norm:  8.7283  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,335  [36mtflops: 338.79  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:21:25,879 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,355  [36mtflops: 338.92  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,879 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,356  [36mtflops: 338.93  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,879 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,354  [36mtflops: 338.92  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,879 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,354  [36mtflops: 338.92  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,879 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,354  [36mtflops: 338.92  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,879 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,355  [36mtflops: 338.92  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,880 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,354  [36mtflops: 338.91  [35mmfu: 34.27%[39m
+[titan] 2026-11-14 04:21:25,881 - root - INFO - [31mstep:  8  [32mloss: 10.49979  [38;2;180;60;0mgrad_norm: 23.3556  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,365  [36mtflops: 338.99  [35mmfu: 34.28%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,327  [36mtflops: 338.73  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,325  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,325  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,325  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,325  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,298 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:36,299 - root - INFO - [31mstep:  9  [32mloss:  9.80726  [38;2;180;60;0mgrad_norm:  4.6952  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,334  [36mtflops: 338.78  [35mmfu: 34.26%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,304  [36mtflops: 338.58  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,304  [36mtflops: 338.58  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,305  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,304  [36mtflops: 338.58  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,304  [36mtflops: 338.58  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:21:46,721 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,303  [36mtflops: 338.57  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:21:46,722 - root - INFO - [31mstep: 10  [32mloss:  9.33760  [38;2;180;60;0mgrad_norm:  4.5596  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,311  [36mtflops: 338.63  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,320  [36mtflops: 338.69  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,322  [36mtflops: 338.70  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,320  [36mtflops: 338.69  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,320  [36mtflops: 338.69  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,320  [36mtflops: 338.69  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,320  [36mtflops: 338.69  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:21:57,140 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,319  [36mtflops: 338.68  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:21:57,142 - root - INFO - [31mstep: 11  [32mloss:  8.82699  [38;2;180;60;0mgrad_norm:  3.6205  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,329  [36mtflops: 338.75  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,325  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.71  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,325  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.71  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,323  [36mtflops: 338.71  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,559 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.71  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:07,561 - root - INFO - [31mstep: 12  [32mloss:  8.56250  [38;2;180;60;0mgrad_norm:  8.3917  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,332  [36mtflops: 338.77  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:22:17,981 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,307  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,981 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,305  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,981 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,307  [36mtflops: 338.60  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,981 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,305  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,981 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,981 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,982 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,306  [36mtflops: 338.59  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:17,983 - root - INFO - [31mstep: 13  [32mloss:  8.63568  [38;2;180;60;0mgrad_norm: 13.7182  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,316  [36mtflops: 338.66  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:28,409 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,279  [36mtflops: 338.41  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,409 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,279  [36mtflops: 338.41  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,410 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,278  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,410 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,278  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,410 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,278  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,410 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,277  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,410 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,277  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:28,411 - root - INFO - [31mstep: 14  [32mloss:  8.45002  [38;2;180;60;0mgrad_norm: 11.7431  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,287  [36mtflops: 338.47  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,294  [36mtflops: 338.51  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,293  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,293  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,293  [36mtflops: 338.51  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,294  [36mtflops: 338.51  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,293  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,835 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,294  [36mtflops: 338.51  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:38,837 - root - INFO - [31mstep: 15  [32mloss:  8.20788  [38;2;180;60;0mgrad_norm:  5.1008  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,300  [36mtflops: 338.55  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,260 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:49,262 - root - INFO - [31mstep: 16  [32mloss:  8.13795  [38;2;180;60;0mgrad_norm:  2.2164  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,303  [36mtflops: 338.57  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:22:59,680 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,316  [36mtflops: 338.66  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,680 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,316  [36mtflops: 338.66  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,680 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,316  [36mtflops: 338.66  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,680 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,317  [36mtflops: 338.67  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,680 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,317  [36mtflops: 338.67  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,680 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,317  [36mtflops: 338.67  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,681 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,316  [36mtflops: 338.66  [35mmfu: 34.24%[39m
+[titan] 2026-11-14 04:22:59,682 - root - INFO - [31mstep: 17  [32mloss:  8.08011  [38;2;180;60;0mgrad_norm:  3.6326  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,324  [36mtflops: 338.72  [35mmfu: 34.25%[39m
+[titan] 2026-11-14 04:23:10,113 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,260  [36mtflops: 338.28  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,112 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,259  [36mtflops: 338.27  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,113 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,259  [36mtflops: 338.28  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,113 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,259  [36mtflops: 338.28  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,113 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,259  [36mtflops: 338.28  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,113 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,258  [36mtflops: 338.27  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,113 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,257  [36mtflops: 338.26  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:23:10,114 - root - INFO - [31mstep: 18  [32mloss:  8.05901  [38;2;180;60;0mgrad_norm:  3.1000  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,269  [36mtflops: 338.34  [35mmfu: 34.21%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,276  [36mtflops: 338.39  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,277  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,276  [36mtflops: 338.39  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,276  [36mtflops: 338.39  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,277  [36mtflops: 338.40  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,276  [36mtflops: 338.39  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:20,541 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,275  [36mtflops: 338.39  [35mmfu: 34.21%[39m
+[titan] 2026-11-14 04:23:20,543 - root - INFO - [31mstep: 19  [32mloss:  8.04152  [38;2;180;60;0mgrad_norm:  2.2772  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,285  [36mtflops: 338.45  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,233  [36mtflops: 338.10  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,233  [36mtflops: 338.10  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,232  [36mtflops: 338.10  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,232  [36mtflops: 338.09  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,232  [36mtflops: 338.09  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,232  [36mtflops: 338.09  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,979 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,231  [36mtflops: 338.09  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:30,981 - root - INFO - [31mstep: 20  [32mloss:  7.98048  [38;2;180;60;0mgrad_norm:  2.0919  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,240  [36mtflops: 338.15  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:23:41,420 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,215  [36mtflops: 337.98  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,420 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,214  [36mtflops: 337.97  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,420 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,216  [36mtflops: 337.98  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,421 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,214  [36mtflops: 337.97  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,421 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,214  [36mtflops: 337.98  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,421 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,215  [36mtflops: 337.98  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,421 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,214  [36mtflops: 337.97  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:41,422 - root - INFO - [31mstep: 21  [32mloss:  8.01936  [38;2;180;60;0mgrad_norm:  1.7476  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,225  [36mtflops: 338.05  [35mmfu: 34.18%[39m
+[titan] 2026-11-14 04:23:51,862 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,213  [36mtflops: 337.97  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,862 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,213  [36mtflops: 337.97  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,862 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,212  [36mtflops: 337.96  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,862 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,212  [36mtflops: 337.96  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,862 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,213  [36mtflops: 337.97  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,862 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,212  [36mtflops: 337.96  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,863 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,212  [36mtflops: 337.96  [35mmfu: 34.17%[39m
+[titan] 2026-11-14 04:23:51,864 - root - INFO - [31mstep: 22  [32mloss:  7.93576  [38;2;180;60;0mgrad_norm:  1.3089  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,222  [36mtflops: 338.02  [35mmfu: 34.18%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,247  [36mtflops: 338.20  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,248  [36mtflops: 338.20  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,248  [36mtflops: 338.20  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,247  [36mtflops: 338.20  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,248  [36mtflops: 338.20  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,249  [36mtflops: 338.21  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:02,297 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,246  [36mtflops: 338.19  [35mmfu: 34.19%[39m
+[titan] 2026-11-14 04:24:02,298 - root - INFO - [31mstep: 23  [32mloss:  7.93682  [38;2;180;60;0mgrad_norm:  1.3777  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,255  [36mtflops: 338.25  [35mmfu: 34.20%[39m
+[titan] 2026-11-14 04:24:12,722 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,291  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,722 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,722 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,292  [36mtflops: 338.50  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,722 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,291  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,722 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,291  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,723 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,290  [36mtflops: 338.49  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,290  [36mtflops: 338.48  [35mmfu: 34.22%[39m
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,723 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:12,724 - root - INFO - [31mstep: 24  [32mloss:  7.91499  [38;2;180;60;0mgrad_norm:  1.6680  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 50,298  [36mtflops: 338.54  [35mmfu: 34.23%[39m
+[titan] 2026-11-14 04:24:12,725 - root - INFO - Staging the checkpoint.
+[titan] 2026-11-14 04:24:12,725 - root - INFO - Saving a full checkpoint at last step, step 24.
+[titan] 2026-11-14 04:24:25,481 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.04 seconds
+[titan] 2026-11-14 04:24:25,483 - root - INFO - Last step checkpoint completed in 12.76s
+[titan] 2026-11-14 04:24:25,497 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.06 seconds
+[titan] 2026-11-14 04:24:25,498 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.06 seconds
+[titan] 2026-11-14 04:24:25,500 - root - INFO - Last step checkpoint completed in 12.78s
+[titan] 2026-11-14 04:24:25,501 - root - INFO - Last step checkpoint completed in 12.78s
+[titan] 2026-11-14 04:24:25,509 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.07 seconds
+[titan] 2026-11-14 04:24:25,511 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.07 seconds
+[titan] 2026-11-14 04:24:25,512 - root - INFO - Last step checkpoint completed in 12.79s
+[titan] 2026-11-14 04:24:25,513 - root - INFO - Last step checkpoint completed in 12.79s
+[titan] 2026-11-14 04:24:25,515 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.07 seconds
+[titan] 2026-11-14 04:24:25,517 - root - INFO - Last step checkpoint completed in 12.79s
+[titan] 2026-11-14 04:24:25,518 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.07 seconds
+[titan] 2026-11-14 04:24:25,518 - root - INFO - [GC] GC collection invoked by checkpointer. took 0.07 seconds
+[titan] 2026-11-14 04:24:25,520 - root - INFO - Last step checkpoint completed in 12.80s
+[titan] 2026-11-14 04:24:25,521 - root - INFO - Last step checkpoint completed in 12.80s
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 151,387[39m
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 151,370[39m
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 152,056[39m
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 151,762[39m
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 152,003[39m
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 149,118[39m
+[titan] 2026-11-14 04:24:27,462 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 150,463[39m
+[titan] 2026-11-14 04:24:27,463 - root - INFO - [33mvalidate step: 24  [32mloss:  8.9625  [38;2;54;234;195mmemory: 45.73GiB(57.65%)  [34mtps: 150,432[39m
+[titan] 2026-11-14 04:24:27,463 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Sleeping 2 seconds for other ranks to complete
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:27,464 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:29,464 - root - INFO - Training completed
+[titan] 2026-11-14 04:24:29,488 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 04:24:30,772 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,183 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,327 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,488 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,489 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,499 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,502 - root - INFO - Process group destroyed
+[titan] 2026-11-14 04:24:31,618 - root - INFO - Process group destroyed

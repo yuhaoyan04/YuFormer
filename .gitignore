@@ -6,6 +6,8 @@ __pycache__/
 build/
 dist/
 .venv/
+.venv-data/
+.data-env/
 venv/
 env/
 .python-version
@@ -48,3 +50,16 @@ tokenizer/*.model
 # Env files with secrets
 .env
 *.local.env
+
+# Generated notebook copies, native checkpoint shards and runtime archives.
+.ipynb_checkpoints/
+*.distcp
+events.out.tfevents.*
+report/history/
+report/logs/
+# Keep the selected production tokenizer; other candidates are external assets.
+tokenizer/baselines/
+tokenizer/tokenizers/*
+!tokenizer/tokenizers/m3_20261020/
+tokenizer/tokenizers/m3_20261020/*
+!tokenizer/tokenizers/m3_20261020/yf-64k-bpe/

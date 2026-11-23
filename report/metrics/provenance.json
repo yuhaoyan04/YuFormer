@@ -1,0 +1,199 @@
+{
+  "exports": {
+    "latest_pretrain_status.json": {
+      "bytes": 3753,
+      "sha256": "cdcad92add549d64bf8ba51e090e516d98a965343237212994cc38db5b8edec0"
+    },
+    "model_size_initial_screen.csv": {
+      "bytes": 1716,
+      "sha256": "650eafd8b9b313e101c2a2c3e7e95d433d37939c3a7634ed750eb94b4caf964e"
+    },
+    "pretrain_validation.csv": {
+      "bytes": 8450,
+      "sha256": "fb48a60c36d1e40b03b0c10ec8ab53f2ec67fee53798d7eb5d76aa966c3db6bf"
+    },
+    "qualified_stage_throughput.json": {
+      "bytes": 1186,
+      "sha256": "288c8e28543a4f6cc72b5b536edc3e80d496db4d595c5d5221d7a21e18624958"
+    }
+  },
+  "external_assets": "Paths under data/ refer to local external assets; not bundled or publicly downloadable by this export.",
+  "receipt_verification": "Domain roster, finite values, step and macro checked here. Original observer independently verified immutable TensorBoard prefixes; full native/finite proof remains external.",
+  "reviewed_at": "2026-11-23T00:46:28.253923+00:00",
+  "schema_version": 1,
+  "scope": "LIGHTWEIGHT_EXPORT_OF_LOCAL_MACHINE_RECEIPTS_NOT_RAW_TRAINING_DATA",
+  "sources": {
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-1.json": {
+      "bytes": 4475,
+      "sha256": "e5237d9b1260fe78f225c6e7f9a1c19acfb2dc3e6561056e79fc7e0e247f2ce8"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-10000.json": {
+      "bytes": 4523,
+      "sha256": "7e3a4f96730bfb584e61e30487aea22921dd92d61ceebb268b2c381e7754e735"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-12000.json": {
+      "bytes": 4519,
+      "sha256": "0fab5da8f8dbfde853900376903039475c722d89ac39d2ad826baec20c5c71a1"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-14000.json": {
+      "bytes": 4518,
+      "sha256": "ddef06dfae56982e74407983ae44c588c98208af117504db3e82b301354acfe5"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-16000.json": {
+      "bytes": 4522,
+      "sha256": "712e326621d112da58421e7da45c5f76c74d93d0a18b2df089256273fad64a47"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-18000.json": {
+      "bytes": 4518,
+      "sha256": "2362b83497136c407646153af2458106d24adc67a4a6bea00cbab2b80c5717b3"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-2000.json": {
+      "bytes": 4499,
+      "sha256": "b4161c3355933b68d5b7e5ebf4cb9dcc4e6b784bc9dad7331f017fb2de9c8f53"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-20000.json": {
+      "bytes": 4524,
+      "sha256": "464754271bf41d63daec13c33eb8d3697a3682e5f2723c9988e3feeeb9dc7bbb"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-22000.json": {
+      "bytes": 4522,
+      "sha256": "fbb792161abb0a28bed8f72542245bee80d91910688f988b4ba7ae913be40e8b"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-24000.json": {
+      "bytes": 4525,
+      "sha256": "e5d9d193353d29e5f2161dc7bead2452556defc7913f573b5f1f9dace7270751"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-26000.json": {
+      "bytes": 4522,
+      "sha256": "106d00942effd300da25dddcce1dd0bd630dfa867395cd841bc221f33ed922d6"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-28000.json": {
+      "bytes": 4524,
+      "sha256": "14687a22a66c454d2d845c5f87d3d34e5402ec276f7a7f86079da828aafcd672"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-30000.json": {
+      "bytes": 4526,
+      "sha256": "ee8fe30528b3e3244fef083c956faa13fe034f2d1384bff850e71a66de6ef777"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-32000.json": {
+      "bytes": 4519,
+      "sha256": "e4e38b1cb905f573fb0747ff0d5150181f375697abdee51a50f62ff55d9aeafd"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-34000.json": {
+      "bytes": 4519,
+      "sha256": "879060afad3a0394a870f53e17c88154c2f045abd8d974e23ab4e84f0fa934d4"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-36000.json": {
+      "bytes": 4522,
+      "sha256": "f02cf56afd0693eb2d6263e04d10f11f912f4039ba56d69f6553b5c349107d8b"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-38000.json": {
+      "bytes": 4518,
+      "sha256": "a008c5cdcb45c55254b8a738b15701f1ba41452e8f06d8d58b07df7262d375c5"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-4000.json": {
+      "bytes": 4510,
+      "sha256": "31023009869f5c53ccc42cb638f3d9933504411b55037e2ef1f790b1c02a26f4"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-40000.json": {
+      "bytes": 4518,
+      "sha256": "d54bfb74d79d93f8cc649354f31e974756ae4f2c24622cd1d069e78e27e3055b"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-42000.json": {
+      "bytes": 4522,
+      "sha256": "ab0ca0221440a92fe0df2340e67de9d2630383e9c393e66c58c2b9abce524480"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-44000.json": {
+      "bytes": 4523,
+      "sha256": "3c9eda148c69ee937db5d6b7f902adcf022bf703c90e620fe1bef20ce88eda97"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-46000.json": {
+      "bytes": 4526,
+      "sha256": "a3af2b250c4bb5f162b32fd6503a90c0e70c19586fded66d2caf46448dd1ec11"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-48000.json": {
+      "bytes": 4523,
+      "sha256": "196050f79a79ae74b8a465bd3d76f2014a00b4b21fcc8b38c7eeec2fc114c1d4"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-50000.json": {
+      "bytes": 4523,
+      "sha256": "e24a5a4de9333670fb76db19ba6d10808a80bdd56807b0d084cba8fba2f9f478"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-52000.json": {
+      "bytes": 4524,
+      "sha256": "05e50b8e5f79b18cb44ac053992925085b83548cdce4fce8c12e0be517cd5c4a"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-54000.json": {
+      "bytes": 4524,
+      "sha256": "29465b333929ac16633432871df8c85ee18ad40719574cdb1b8af10f1fe6743d"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-56000.json": {
+      "bytes": 4520,
+      "sha256": "dd78714cbe9529a66a22907c4d402dc5b3a4af1e7505db0dea5208a77561adac"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-58000.json": {
+      "bytes": 4522,
+      "sha256": "47138e4baeb1e650c8d92e1aff38211e94fe6b1f320d3b594e04dd73ed511104"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-6000.json": {
+      "bytes": 4509,
+      "sha256": "98f589b36a2fa1c6a8756c79cf02a7f43d027d63dd220958db42ff02d21de570"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-60000.json": {
+      "bytes": 4527,
+      "sha256": "992e8d9592d15828efca40d8d461b4d8792c880e44feb8c2220340477462cc8b"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-8000.json": {
+      "bytes": 4508,
+      "sha256": "3246cb691f2dca0c60ec87dabb49187bb361ad9eecba90de64b42d64293a790a"
+    },
+    "data/health/assistant-half-day-pretrain-review-20261123T0046.json": {
+      "bytes": 94998,
+      "sha256": "984d8e3f83dcb7fd1d46616a240a024e0915baaf57ebab4d909e5a0167eb8d3f"
+    },
+    "data/health/final-all-cpu-suites.json": {
+      "bytes": 6300,
+      "sha256": "bf12924ff13e5bdbbc65a0f874a2ae17278f9ae0a8c4a7567121bdadd3b0eb29"
+    },
+    "data/health/final-changed-cpu-suites-20261115.json": {
+      "bytes": 18032,
+      "sha256": "e409e4302325c9a72906d764e8b8946c2ac251c58908ea83c5714a219d0525d7"
+    },
+    "data/health/live-pretrain-supervisor-recovery-admission-20261118.json": {
+      "bytes": 24546,
+      "sha256": "a8b55620d7a30b5cc3b5936e1e2b3b771f4dbb0730db96d4e0f2d025e5869fa4"
+    },
+    "data/health/long-production-window-release-v2.json": {
+      "bytes": 1778,
+      "sha256": "c3bf3784e8cad3c469940bc7c85751f839693291287e95cd064152755dbfb996"
+    },
+    "data/health/midtrain-actual-eight-gpu-stage-qualification.json": {
+      "bytes": 47520,
+      "sha256": "3020b9fc945246b49d151fb83ad91de703448602e8131d9f8d565ebe2500d1cd"
+    },
+    "data/health/model-size-sweep.json": {
+      "bytes": 88899,
+      "sha256": "e2b44370574b823dafa7cad7c7909d589ef3b130c3f099094f0c24ca0afaec87"
+    },
+    "data/health/production-recovery-qualification.json": {
+      "bytes": 18608,
+      "sha256": "83d16e1b3206c39f62fe5a7be1c2d0340cd4350923df8317b59a705e91c59221"
+    },
+    "data/health/production-throughput-canary.json": {
+      "bytes": 31817,
+      "sha256": "d385322728fbf8e1fd061306d16ff74a22ed7462a33bd450903fa25614e6c4f6"
+    },
+    "data/runs/pretrain-final-1t-8gpu/current_attempt.json": {
+      "bytes": 494,
+      "sha256": "ac3e07a68d46898a70be92fd23d811b9ca1ca6d37f0c8ab44fe81608a75bb0f6"
+    },
+    "data/runs/pretrain-final-1t-8gpu/run_identity.json": {
+      "bytes": 9933,
+      "sha256": "8eeae4ac539490c01ed9987b027434fafc82d8f24df473efb3350a19cff05b5d"
+    },
+    "experiments/e4_curriculum/results/effective_total_training_budget.json": {
+      "bytes": 2546,
+      "sha256": "90c0ae67683c43303e5a5a0d79509ce38ca79ea221aee42ab884be901a1b36ee"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+schema_version: 1
+profile: screen_1b_20261022
+screen_budget_tokens: 1000000000
+e1_budget_divisor: 10
+iso_flops_targets: [480000000000000000, 1400000000000000000, 4800000000000000000]
+screen_tokens_per_update_cap: 262144
+minimum_screen_updates: 128
+confirmation:
+  required: true
+  budget_tokens: 3000000000
+  seeds: [20261001, 20261002, 20261003]
+  maximum_domain_relative_regression: 0.02
+  practical_equivalence_absolute_loss: 0.01
+e1_seed_replication:
+  required: true
+  scope: all_24_e1_design_points
+  additional_seeds: [20261002, 20261003]
+  total_seeds_including_screen: [20261001, 20261002, 20261003]
+  token_budget: inherit_exact_per_arm_e1_screen_budget
+  maximum_additional_tokens: 84899181190
+  primary_estimator: arithmetic_mean_final_heldout_loss_across_three_paired_seeds
+  fit_gate: inherit_e1_scaling_fit_quality_thresholds
+  seed_bootstrap_samples: 2000
+  seed_bootstrap: resample_seed_indices_with_replacement_jointly_across_all_fixed_design_points

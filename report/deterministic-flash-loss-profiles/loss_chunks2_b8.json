@@ -1,0 +1,91 @@
+{
+  "candidate": "loss_chunks2_b8",
+  "error_tail": "al capacity of 79.33 GiB of which 3.34 GiB is free. Process 3467009 has 75.98 GiB memory in use. Of the allocated memory 67.80 GiB is allocated by PyTorch, and 5.68 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n[7]:\n  time      : 2026-11-15_04:48:39\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 7 (local_rank: 7)\n  exitcode  : 1 (pid: 383622) \n  error_file: /tmp/torchelastic_ewyajl63/none_neyp70ba/attempt_0/7/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 818, in _forward_backward_body\n      loss, _ = self.loss_fn(\n                ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 762, in __call__\n      chunk_loss.backward()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py\", line 623, in backward\n      torch.autograd.backward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py\", line 395, in backward\n      _engine_run_backward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py\", line 1072, in _engine_run_backward\n      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.00 GiB. GPU 7 has a total capacity of 79.33 GiB of which 3.34 GiB is free. Process 3467010 has 75.98 GiB memory in use. Of the allocated memory 67.80 GiB is allocated by PyTorch, and 5.68 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-15_04:48:39\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 5 (local_rank: 5)\n  exitcode  : 1 (pid: 383620) \n  error_file: /tmp/torchelastic_ewyajl63/none_neyp70ba/attempt_0/5/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 925, in train_step\n      loss = self.forward_backward_step(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/observability/structured_logger/structured_logging.py\", line 429, in sync_wrapper\n      return func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 804, in forward_backward_step\n      return self.fwd_bwd_fn(inputs, labels, global_valid_tokens, extra_kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 818, in _forward_backward_body\n      loss, _ = self.loss_fn(\n                ^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/components/loss.py\", line 762, in __call__\n      chunk_loss.backward()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/_tensor.py\", line 623, in backward\n      torch.autograd.backward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/__init__.py\", line 395, in backward\n      _engine_run_backward(\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/autograd/graph.py\", line 1072, in _engine_run_backward\n      return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.00 GiB. GPU 5 has a total capacity of 79.33 GiB of which 3.34 GiB is free. Process 3467008 has 75.98 GiB memory in use. Of the allocated memory 67.80 GiB is allocated by PyTorch, and 5.68 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)\n  \n============================================================\n",
+  "evaluation": {
+    "issues": [
+      "launch_failed"
+    ],
+    "status": "OOM"
+  },
+  "finished_at": "2026-11-15T04:48:44.906512+00:00",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/deterministic-flash-loss-profiles/loss_chunks2_b8.log",
+  "parameters": 1516600064,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3755.0,
+      "power_w": 119.42,
+      "temperature_c": 39.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3759.0,
+      "power_w": 117.95,
+      "temperature_c": 33.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3723.0,
+      "power_w": 120.9,
+      "temperature_c": 38.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3771.0,
+      "power_w": 112.41,
+      "temperature_c": 33.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3817.0,
+      "power_w": 114.17,
+      "temperature_c": 32.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3817.0,
+      "power_w": 116.56,
+      "temperature_c": 38.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3815.0,
+      "power_w": 115.78,
+      "temperature_c": 32.0,
+      "utilization_pct": 0.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 3815.0,
+      "power_w": 120.78,
+      "temperature_c": 38.0,
+      "utilization_pct": 0.0
+    }
+  ],
+  "production_qualified": false,
+  "returncode": 1,
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/deterministic-flash-loss-profiles/loss_chunks2_b8.yaml",
+    "config_sha256": "6deddc60b5912c27e8af35760cc12677fa968dcbe42605e80f3b1462a044eae5",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/deterministic-flash-loss-profiles/loss_chunks2_b8.env",
+    "env_sha256": "aa95cc7a2686caaa26ed1926e28ef43122ebb50a9e3302f2c2633688c7941e50",
+    "grad_accum": 16,
+    "microbatch": 8,
+    "name": "loss_chunks2_b8"
+  },
+  "wall_seconds": 30.7
+}

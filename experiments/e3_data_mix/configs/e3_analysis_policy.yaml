@@ -1,0 +1,3 @@
+schema_version: 1
+practical_equivalence_absolute_loss: 0.002
+maximum_domain_relative_regression_vs_m2: 0.02

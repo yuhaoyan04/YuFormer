@@ -1,0 +1,68 @@
+{
+  "samples": 200000,
+  "total_bytes": 2700439553,
+  "total_chars": 2041892119,
+  "total_tokens": 684033090,
+  "bytes_per_token": 3.95,
+  "chars_per_token": 2.99,
+  "tokens_per_sample": 3420.2,
+  "vocab_size": 131072,
+  "vocab_utilization": 0.9518,
+  "used_tokens": 124750,
+  "unk_tokens": 0,
+  "unk_rate": 0.0,
+  "roundtrip_rate": 1.0,
+  "empty_samples": 2,
+  "top_10_tokens": [
+    {
+      "id": 17,
+      "token": ",",
+      "count": 25847548
+    },
+    {
+      "id": 270,
+      "token": " the",
+      "count": 14095395
+    },
+    {
+      "id": 19,
+      "token": ".",
+      "count": 11797860
+    },
+    {
+      "id": 689,
+      "token": " \\",
+      "count": 11091663
+    },
+    {
+      "id": 96,
+      "token": "{",
+      "count": 10906331
+    },
+    {
+      "id": 204,
+      "token": "\n",
+      "count": 9662811
+    },
+    {
+      "id": 98,
+      "token": "}",
+      "count": 7367308
+    },
+    {
+      "id": 65,
+      "token": "\\",
+      "count": 6998420
+    },
+    {
+      "id": 293,
+      "token": " of",
+      "count": 6960529
+    },
+    {
+      "id": 354,
+      "token": "。",
+      "count": 6700241
+    }
+  ]
+}

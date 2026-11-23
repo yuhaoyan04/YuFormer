@@ -1,0 +1,70 @@
+# S6 配比画像 M2：1T macro-curriculum 的 800B stable 配方。
+#
+# 领域权重对齐 OLMo-2 / DCLM / SmolLM2 公开配比区间："web 主导、code 双位数、
+# math 中个位数"。配额 = 权重 × total_tokens（最大余数法，token 粒度）。
+# top_k = 域内质量分（composite_v2）取样深度上限（与文档中"池内取样深度"列对应）；
+# 实际深度由 token 前缀截断自然达到，top_k 只作安全顶（候选不足时记录缺口）。
+# 配额和 top-k 已按 2026-10-20 正式 2.447T 池重新求解。
+
+mix_name: mix_m2
+total_tokens: 800_000_000_000
+score_field: hybrid_v2  # 2026-10-10 用户裁定：full 版同 fast 轨（fasttext 退役，见 DECISION_RECORD_20261010）
+seed: yuformer
+
+included_sources:
+  - automathtext
+  - cci3-hq
+  - dclm-baseline
+  - dolma-books
+  - fineweb
+  - fineweb-2
+  - fineweb-edu
+  - github-code
+  - pes2o
+  - proof-pile-2
+  - stack-exchange
+  - starcoderdata
+  - wikipedia-en
+  - wikipedia-zh
+  - wikitext
+
+quota_fill_policy: deepen_to_quota
+max_total_shortfall_tokens: 1_000_000
+
+domains:
+  web:
+    weight: 0.740
+    top_k: 0.40
+  code:
+    weight: 0.120
+    top_k: 0.45
+  math:
+    weight: 0.040
+    top_k: 0.50
+  chinese:
+    weight: 0.035
+    top_k: 0.90
+  academic:
+    weight: 0.035
+    top_k: 0.45
+  books:
+    weight: 0.004
+    top_k: 0.85
+  encyclopedia:
+    weight: 0.005
+    top_k: 0.85
+  qa:
+    weight: 0.001
+    top_k: 0.80
+  multilingual:
+    weight: 0.020
+    top_k: 0.45
+
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+
+val:
+  tokens_per_domain: 50_000_000   # held-out val，永不进训练（配比方案.md 第四节）
+  max_fraction: 0.01              # 微域安全阀：val 不超域池 1%

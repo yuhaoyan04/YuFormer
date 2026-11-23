@@ -3,10 +3,21 @@ name = "yuformer-data-pipeline"
 version = "0.1.0"
 description = "YuFormer AI-native data governance pipeline"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+  "numpy==1.26.4",
+  "scipy==1.15.3",
+  "scikit-learn==1.7.2",
+  "pyarrow==18.1.0",
+  "pandas==2.2.3",
+  "joblib==1.4.2",
+  "zstandard==0.25.0",
+  "PyYAML==6.0.1",
+  "fasttext==0.9.3",
+]
 
 [project.optional-dependencies]
 zst = ["zstandard"]
+lid = ["fasttext"]
 dev = ["pytest"]
 
 [project.scripts]

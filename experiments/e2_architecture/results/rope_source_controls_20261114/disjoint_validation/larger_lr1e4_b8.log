@@ -1,0 +1,354 @@
+W1114 23:06:32.944000 329070 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.102000 329070 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.313000 329072 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.469000 329072 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.476000 329074 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.636000 329074 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.667000 329068 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.715000 329069 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.782000 329067 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.794000 329073 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.852000 329068 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.856000 329071 torch/utils/_pytree.py:630] <enum 'KernelPreference'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.959000 329069 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.990000 329073 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:33.991000 329067 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+W1114 23:06:34.001000 329071 torch/utils/_pytree.py:630] <enum 'ScaleCalculationMode'> is an Enum subclass and is now natively supported by torch.compile as an opaque value type. Calling register_constant() on Enum subclasses is deprecated and will be an error in a future release.
+[titan] 2026-11-14 23:06:34,403 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:34,403 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:34,493 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:34,521 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:34,552 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:34,553 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:34,556 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:34,559 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:34,559 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:34,604 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:34,617 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:34,617 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:34,619 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:34,639 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:34,704 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:34,714 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:34,747 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:34,748 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:34,750 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:34,772 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:34,772 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:34,784 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:34,796 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:34,796 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:34,798 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:34,813 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:34,925 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:34,940 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:34,955 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:34,955 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:34,968 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:34,969 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:34,971 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:35,008 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:35,016 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,016 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,018 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:35,027 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:35,027 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:35,037 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:35,088 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:35,088 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:35,131 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:35,131 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:35,131 - root - WARNING - initial_load_model_only=True has no effect without an initial_load_path.
+[titan] 2026-11-14 23:06:35,132 - torchtitan.observability.structured_logger.structured_logging - INFO - Structured logging disabled via DebugConfig.enable_structured_logging=False
+[titan] 2026-11-14 23:06:35,200 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,200 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,201 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:35,201 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:35,203 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:35,203 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:35,204 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:35,274 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:35,283 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:35,315 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:35,316 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:35,318 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:35,352 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:35,359 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,359 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,361 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:35,364 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:35,364 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:35,373 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:35,376 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:35,535 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:35,538 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:35,544 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:35,550 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:35,550 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:35,554 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,554 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,554 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:35,554 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:35,556 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:35,556 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:35,558 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:35,562 - root - WARNING - ENV[TORCH_NCCL_ASYNC_ERROR_HANDLING] = 1 will be overridden to 3 based on job config
+[titan] 2026-11-14 23:06:35,562 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:35,576 - root - INFO - Building device mesh with parallelism: pp=1, dp_replicate=2, dp_shard=4, cp=1, tp=1, ep=1
+[titan] 2026-11-14 23:06:35,583 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:35,584 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:35,586 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:35,590 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:35,591 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:35,594 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:35,595 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:35,596 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:35,596 - root - INFO - Successfully created meshes with active dimensions: ['batch', 'loss', 'dp_replicate', 'fsdp']
+[titan] 2026-11-14 23:06:35,598 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:35,598 - root - INFO - [GC] Initial GC collection took 0.00 seconds
+[titan] 2026-11-14 23:06:35,601 - root - INFO - Building yuformer size-sweep
+[titan] 2026-11-14 23:06:35,632 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:35,643 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:35,652 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:35,679 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,680 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,682 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:35,692 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:35,703 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:35,703 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,704 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,705 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:35,705 - root - INFO - TensorBoard logging enabled. Logs will be saved at /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/tb/20261114-2306
+[titan] 2026-11-14 23:06:35,706 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:35,713 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,713 - root - INFO - CUDA capacity: NVIDIA H800 with 79.33GiB memory
+[titan] 2026-11-14 23:06:35,713 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,716 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:35,718 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:35,732 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:35,763 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:35,781 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,781 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,785 - root - INFO - [34mModel yuformer size-sweep [31msize: 1,516,600,064 total parameters[39m
+[titan] 2026-11-14 23:06:35,800 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,800 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,800 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:35,801 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:35,803 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:35,810 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:35,810 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:35,810 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:35,810 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:35,810 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:35,810 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:35,812 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:35,812 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:35,813 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:35,829 - root - INFO - Compiling each TransformerBlock with torch.compile
+[titan] 2026-11-14 23:06:35,944 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:35,944 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:35,945 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:35,956 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:35,956 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:35,956 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:36,096 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:36,096 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:36,096 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:36,096 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:36,098 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:36,098 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:36,099 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:36,152 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:36,152 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:36,152 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:36,152 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:36,152 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:36,152 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:36,152 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:36,152 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:36,154 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:36,154 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:36,154 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:36,154 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:36,155 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:36,155 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:36,232 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:36,232 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:36,232 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:36,252 - root - WARNING - Error running lspci: [Errno 2] No such file or directory: 'lspci', fallback to use device_name
+[titan] 2026-11-14 23:06:36,253 - root - WARNING - Peak flops undefined for: NVIDIA H800, fallback to A100
+[titan] 2026-11-14 23:06:36,253 - root - INFO - Peak FLOPS used for computing MFU: 3.120e+14
+[titan] 2026-11-14 23:06:36,253 - root - INFO - CUDA memory usage for model: 1.65GiB(2.09%)
+[titan] 2026-11-14 23:06:36,255 - root - INFO - Optimizer AdamW (model_part=0): 73 params [norm.*\.weight$] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.0}
+[titan] 2026-11-14 23:06:36,255 - root - INFO - Optimizer AdamW (model_part=0): 91 params [.*] {'fused': True, 'foreach': False, 'lr': 0.0001, 'betas': (0.9, 0.95), 'eps': 1e-08, 'weight_decay': 0.1}
+[titan] 2026-11-14 23:06:36,256 - root - INFO - Loading tokenizer from tokenizer.json
+[titan] 2026-11-14 23:06:36,288 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:36,289 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:36,289 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:36,308 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:36,308 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:36,308 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:36,403 - root - INFO - Checkpointing active. Checkpoints will be loaded from and saved to /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/disjoint_validation/larger_lr1e4_b8/unused-readonly-evaluation-checkpoint
+[titan] 2026-11-14 23:06:36,403 - root - INFO - Trainer is initialized with local batch size 8, global batch size 1024, gradient accumulation steps 16, sequence length 4096, total steps 200 (warmup 10)
+[titan] 2026-11-14 23:06:36,403 - root - INFO - Loading the checkpoint from /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/rope_source_controls_20261114/larger_lr1e4_b8/checkpoint/step-200.
+[titan] 2026-11-14 23:06:51,671 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:06:51,671 - root - INFO - Finished loading the checkpoint in 15.44 seconds.
+[titan] 2026-11-14 23:06:51,705 - root - INFO - [GC] GC collection for checkpoint loading. took 0.02 seconds
+[titan] 2026-11-14 23:06:51,706 - root - INFO - Finished loading the checkpoint in 15.75 seconds.
+[titan] 2026-11-14 23:06:51,710 - root - INFO - [GC] GC collection for checkpoint loading. took 0.02 seconds
+[titan] 2026-11-14 23:06:51,710 - root - INFO - Finished loading the checkpoint in 16.34 seconds.
+[titan] 2026-11-14 23:06:51,713 - root - INFO - [GC] GC collection for checkpoint loading. took 0.01 seconds
+[titan] 2026-11-14 23:06:51,713 - root - INFO - Finished loading the checkpoint in 15.40 seconds.
+[titan] 2026-11-14 23:06:51,713 - root - INFO - [GC] GC collection for checkpoint loading. took 0.02 seconds
+[titan] 2026-11-14 23:06:51,714 - root - INFO - Finished loading the checkpoint in 15.31 seconds.
+[titan] 2026-11-14 23:06:51,717 - root - INFO - [GC] GC collection for checkpoint loading. took 0.02 seconds
+[titan] 2026-11-14 23:06:51,718 - root - INFO - Finished loading the checkpoint in 15.77 seconds.
+[titan] 2026-11-14 23:06:51,724 - root - INFO - [GC] GC collection for checkpoint loading. took 0.02 seconds
+[titan] 2026-11-14 23:06:51,725 - root - INFO - Finished loading the checkpoint in 16.01 seconds.
+[titan] 2026-11-14 23:06:51,747 - root - INFO - [GC] GC collection for checkpoint loading. took 0.02 seconds
+[titan] 2026-11-14 23:06:51,747 - root - INFO - Finished loading the checkpoint in 15.46 seconds.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[titan] 2026-11-14 23:07:04,079 - root - INFO - Destroying the purge thread.
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank1]:     evaluate_case(args.case, plan)
+[rank1]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank1]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank1]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank2]:     evaluate_case(args.case, plan)
+[rank2]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank2]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank2]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank3]:     evaluate_case(args.case, plan)
+[rank3]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank3]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank3]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank4]:     evaluate_case(args.case, plan)
+[rank4]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank4]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank4]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank5]:     evaluate_case(args.case, plan)
+[rank5]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank5]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank5]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank6]:     evaluate_case(args.case, plan)
+[rank6]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank6]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank6]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank7]:     evaluate_case(args.case, plan)
+[rank7]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank7]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank7]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 161, in <module>
+[rank0]:     evaluate_case(args.case, plan)
+[rank0]:   File "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py", line 114, in evaluate_case
+[rank0]:     raise ValueError(f'original 64-sample metric did not reproduce: {domain}: {original} vs {expected}')
+[rank0]: ValueError: original 64-sample metric did not reproduce: academic: 5.5656591057777405 vs 5.565674781799316
+W1114 23:07:07.291000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329067 closing signal SIGTERM
+W1114 23:07:07.294000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329068 closing signal SIGTERM
+W1114 23:07:07.294000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329069 closing signal SIGTERM
+W1114 23:07:07.294000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329070 closing signal SIGTERM
+W1114 23:07:07.295000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329072 closing signal SIGTERM
+W1114 23:07:07.295000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329073 closing signal SIGTERM
+W1114 23:07:07.295000 329060 torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 329074 closing signal SIGTERM
+E1114 23:07:08.413000 329060 torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 4 (pid: 329071) of binary: /opt/yuformer-torchtitan/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 380, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/scripts/evaluate_disjoint_validation.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 329067) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 329068) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 329069) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 329070) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[5]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 329072) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[6]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 329073) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[7]:
+  time      : 2026-11-14_23:07:08
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 329074)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 329074
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-14_23:07:07
+  host      : pod-qun001-604ef0d5-948c-4
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 329071) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

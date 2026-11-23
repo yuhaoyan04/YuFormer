@@ -1,0 +1,106 @@
+{
+  "audit_tool_sha256": "6cbfbaa607ea7e572d91fe43a657636056a3f56f866d896c6d068edfeb4a250a",
+  "evidence_snapshot": {
+    "data/TOKENIZER_READY.json": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866",
+    "data/experiments/e1_performance/e1_perf_100m/current_attempt.json": "5a4bc3bedf67d6865e8b69246f23bcb64e164f8450042bdcc8f960595cf8ad91",
+    "data/experiments/e1_performance/e1_perf_100m/result.json": "044684f94fe74b418dcc83a470ca16d0f7ee10e3eb26a09001cfef55217e2069",
+    "data/experiments/e1_performance/e1_perf_100m/run_identity.json": "0887929bbe5032cf606543bf778021d0d7a2520296d2de3ab9789f2007dd9c99",
+    "data/experiments/e1_performance/e1_perf_100m/training_complete.json": "91b9e685689e1cea8eda5a49b2c9ee5f64de510e7c76382092c6317bfb96630f",
+    "data/experiments/e1_performance/e1_perf_200m/current_attempt.json": "3c91e5847e648e46635f3c5a6df0897fd1ac1f0c78782f4039bf599d4f5a5ecb",
+    "data/experiments/e1_performance/e1_perf_200m/result.json": "83c4759c40bb881e80cb62fba0eed07b979524f7f7496b4991fb09b8ce1864c6",
+    "data/experiments/e1_performance/e1_perf_200m/run_identity.json": "27cec2f3f282164843271adc8224652a6f55efb1933fbc45e05a8c84dc8f88dd",
+    "data/experiments/e1_performance/e1_perf_200m/training_complete.json": "1b45824fe182c4ddc2e968e794054638bd290d3ac2e192d5dc04aba225c54026",
+    "data/experiments/e1_performance/e1_perf_400m/current_attempt.json": "efd47f9b4b9e20c58049efa0ad45bfe63b6ae30af0d9ca0380deda34f0673ac6",
+    "data/experiments/e1_performance/e1_perf_400m/result.json": "1a9843454e1d6cd97d48253ec9e1463c4062cd1bc214760fe5d512b05c17b55a",
+    "data/experiments/e1_performance/e1_perf_400m/run_identity.json": "df82698c72cb4880e14f93ed5b24840e35b7f569eb70d2527cfbb7c82e0077d2",
+    "data/experiments/e1_performance/e1_perf_400m/training_complete.json": "65aaba0d97a3652f6942c1d401090df0deeb72290291417f402b863a8c22bea3",
+    "data/experiments/e1_performance/e1_perf_50m/current_attempt.json": "a1197d2495c13f652c7f519c7a0fff040febefc66655ae070122c402074fbc55",
+    "data/experiments/e1_performance/e1_perf_50m/result.json": "dd58e8cd7d3b9c6bd014e1214768320e5b36be47eaeaada46076763cbdcf5bbb",
+    "data/experiments/e1_performance/e1_perf_50m/run_identity.json": "0312df92b70b1d5296cac1f2cdcd70a57e7f7211fa49c6fb6537bac84265eb3d",
+    "data/experiments/e1_performance/e1_perf_50m/training_complete.json": "894567fd48d8e0a3973688d1b34bce3db7f3bb4db946852d5b0695e03d250485",
+    "data/experiments/e1_performance/e1_perf_800m/current_attempt.json": "f29d926a202ee69c963feb4e2eee0d75d8116d29bcba4ee8815a9296a88dccf8",
+    "data/experiments/e1_performance/e1_perf_800m/result.json": "958bb19efb3a4c6fd3e4f6987cbbb9a8418d53e233eb0a8792f5e06002ee0821",
+    "data/experiments/e1_performance/e1_perf_800m/run_identity.json": "bec9b511321a66626f7adcf290a1b3e33a201150b470dd58bb2b56c03258d705",
+    "data/experiments/e1_performance/e1_perf_800m/training_complete.json": "bbfd4b01cbc3404d94e797f0210b25abc9d1fe53796b18dc376205437db78701",
+    "data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d",
+    "data/processed/releases/mix_m3_e1_100b-20261019.release.json": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c",
+    "model/configs/model_configs.yaml": "743d3d6040e2416b7a1f6fdafdc9db69c282d93ac1905b312f731cfc86c4009b",
+    "pretrain/configs/e1_performance/e1_perf_100m.env": "c7972b905b31f0b36a77beb5bfc464b7c1127200997c1915d261d0ed0245b630",
+    "pretrain/configs/e1_performance/e1_perf_100m.yaml": "8c592ec7a803a9f12bf5db5111898924ef33fa212252e892e93d3eab6657b440",
+    "pretrain/configs/e1_performance/e1_perf_200m.env": "f8154e8d2e5cbd2af8f31e0f4b46585e9c4f8a9fbe216dc53918ddc4ba5f0f2c",
+    "pretrain/configs/e1_performance/e1_perf_200m.yaml": "602a72f8713d5bfa9f9a1ed1e77308d908fff031480a22cbc47f92244c6a46ea",
+    "pretrain/configs/e1_performance/e1_perf_400m.env": "d8d85f20d0877436b62c324018122264a9e636e6ec28b0717d6001423d582039",
+    "pretrain/configs/e1_performance/e1_perf_400m.yaml": "45c2a16f7b8029fb7e07a250b1fb969532bbf1dd79a7ee79ba509bd29190dbf8",
+    "pretrain/configs/e1_performance/e1_perf_50m.env": "fecfcfc9048756c7685d48be73132dab230a66bab45668db14439fbf345d1453",
+    "pretrain/configs/e1_performance/e1_perf_50m.yaml": "145d67764e45f91b7535bc01cd28bc1b1b0557dc52c667eeba26fb184be9e72a",
+    "pretrain/configs/e1_performance/e1_perf_800m.env": "2b8f3411dfc569fd377e91ae2033497b78934261ad6c7f711024c93792d1bc9b",
+    "pretrain/configs/e1_performance/e1_perf_800m.yaml": "29ca4d6c214e00037e0cefd771840a1ba6644d69859458ca138058fd7fc2f3a3"
+  },
+  "evidence_snapshot_count": 34,
+  "expected_by_group": {
+    "e1_performance": 5
+  },
+  "missing_by_group": {
+    "e1_performance": []
+  },
+  "observed_at": "2026-10-25T08:49:50.046886+00:00",
+  "observed_by_group": {
+    "e1_performance": 5
+  },
+  "passed": 5,
+  "roster_exact": true,
+  "rows": [
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1_performance/e1_perf_100m.yaml",
+      "env": "pretrain/configs/e1_performance/e1_perf_100m.env",
+      "errors": [],
+      "group": "e1_performance",
+      "name": "e1_perf_100m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1_performance/e1_perf_100m",
+      "status": "PASS"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1_performance/e1_perf_200m.yaml",
+      "env": "pretrain/configs/e1_performance/e1_perf_200m.env",
+      "errors": [],
+      "group": "e1_performance",
+      "name": "e1_perf_200m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1_performance/e1_perf_200m",
+      "status": "PASS"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1_performance/e1_perf_400m.yaml",
+      "env": "pretrain/configs/e1_performance/e1_perf_400m.env",
+      "errors": [],
+      "group": "e1_performance",
+      "name": "e1_perf_400m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1_performance/e1_perf_400m",
+      "status": "PASS"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1_performance/e1_perf_50m.yaml",
+      "env": "pretrain/configs/e1_performance/e1_perf_50m.env",
+      "errors": [],
+      "group": "e1_performance",
+      "name": "e1_perf_50m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1_performance/e1_perf_50m",
+      "status": "PASS"
+    },
+    {
+      "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/configs/e1_performance/e1_perf_800m.yaml",
+      "env": "pretrain/configs/e1_performance/e1_perf_800m.env",
+      "errors": [],
+      "group": "e1_performance",
+      "name": "e1_perf_800m",
+      "run_dir": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/e1_performance/e1_perf_800m",
+      "status": "PASS"
+    }
+  ],
+  "schema_version": 1,
+  "source_sha256": "49c889e445806382698c53f1a0a424428cad3d27bc3a28b8998a7f7bb15beb7e",
+  "status": "PASS",
+  "total": 5,
+  "unexpected_by_group": {
+    "e1_performance": []
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "candidate": "hybrid_8l_h3072_g4",
+  "collect_returncode": 0,
+  "evaluation": {
+    "issues": [],
+    "median_mfu_pct": 37.710853576660156,
+    "median_tps_per_device": 56213.935546875,
+    "p10_tps_per_device": 56092.04296875,
+    "production_qualified": false,
+    "projected_1t_days_duty_09": 28.658437150549496,
+    "status": "PASS_SCREENING",
+    "steady_points": 16,
+    "within_30_days": true,
+    "within_33_days": true
+  },
+  "finished_at": "2026-11-14T05:06:41.100575+00:00",
+  "identity_sha256": "4bc6220d1e2e9d9d4ce081e670e13816448c994a5ea7b93a9568d73971c15927",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/attention_layouts_20261114/hybrid_8l_h3072_g4_b8.log",
+  "parameters": 1050726400,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 47741.0,
+      "power_w": 751.11,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45437.0,
+      "power_w": 705.25,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45437.0,
+      "power_w": 725.81,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45439.0,
+      "power_w": 721.6,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45437.0,
+      "power_w": 717.84,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45437.0,
+      "power_w": 701.24,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45437.0,
+      "power_w": 751.11,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 45439.0,
+      "power_w": 707.59,
+      "temperature_c": 72.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "production_qualified": false,
+  "result_sha256": "d0f930f6c54d577d78d09b4d028529baa4d8c7c3f9fbcb4b2f1d6568dcbd8bd3",
+  "returncode": 0,
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/attention_layouts_20261114/hybrid_8l_h3072_g4_b8.yaml",
+    "config_sha256": "a7b92613ebca3a234e529cbf10c532f5a2edcd607fbf88e68bfc6ac3fafa5ffe",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/attention_layouts_20261114/hybrid_8l_h3072_g4_b8.env",
+    "env_sha256": "0e95ef72bff6787d15c5d7338b25c0abae9a42a97923012c0e958b6d3d02ef3c",
+    "grad_accum": 16,
+    "microbatch": 8,
+    "name": "hybrid_8l_h3072_g4_b8"
+  },
+  "wall_seconds": 305.4
+}

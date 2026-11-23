@@ -1,0 +1,72 @@
+schema_version: 1
+plan_id: yuformer-total-approx1t-wsd-4k-16k-64k-runtime-v2
+token_accounting: final_tokenizer_including_eod
+tokenizer_gate: data/TOKENIZER_READY.json
+data_gate: data/PRETRAIN_DATA_READY.json
+pretrain:
+  target_tokens: 916258291712
+  context_length: 4096
+  overlap_policy:
+    allowed: true
+    reason: warmup and anneal intentionally replay domain-relative high-quality prefixes
+    minimum_unique_reference_tokens: 800000000000
+    maximum_replayed_consumption_fraction: 0.2
+    require_cross_stage_doc_id_audit: true
+    scope: 4k_wsd_consumption
+  stages:
+  - name: warmup
+    mix_config: data-process/configs/mix_warmup_50b.yaml
+    target_tokens: 50000297984
+    fraction: 0.05457009059156889
+    lr_phase: linear_warmup
+    optimizer_transition: initialize
+    context_length: 4096
+    selected_pool_target_final_tokens: 50000000000
+  - name: stable
+    mix_config: data-process/configs/mix_stable_800b.yaml
+    target_tokens: 716261294080
+    fraction: 0.7817242152774281
+    lr_phase: stable
+    optimizer_transition: preserve
+    context_length: 4096
+    selected_pool_target_final_tokens: 800000000000
+  - name: anneal
+    mix_config: data-process/configs/mix_anneal.yaml
+    target_tokens: 149996699648
+    fraction: 0.163705694131003
+    lr_phase: decay_to_min_lr
+    optimizer_transition: preserve
+    context_length: 4096
+    selected_pool_target_final_tokens: 150000000000
+context_scaling:
+  budget_included_in_pretrain_1t: true
+  ladder_config: midtrain/configs/ladder_4k_16k_64k.yaml
+  total_extension_tokens: 49996103680
+  constant_tokens_per_update: 4194304
+  short_replay_fraction: 0.25
+  transition: weights_only_optimizer_reset
+  experiment:
+    comparison: progressive_4k_16k_64k_vs_direct_64k
+    direct_config: midtrain/configs/direct_4k_64k.yaml
+    matched_tokens: true
+    matched_data_mix: true
+    matched_peak_lr: true
+    evaluate_short_context_regression: true
+    evaluate_long_context: true
+    required_for_production: false
+release_gate:
+  max_domain_weight_absolute_error: 0.002
+  max_domain_weight_relative_error: 0.1
+  max_total_reference_shortfall_tokens: 3000000
+  require_final_tokenizer_streams: true
+  require_stage_token_closure: true
+  require_domain_quota_closure: true
+  require_overlap_ledger: true
+  require_context_ladder_closure: true
+global_training_budget:
+  nominal_file: data/health/user-total-pretrain-and-length-budget.json
+  nominal_sha256: d488b1c64942118d1f9d9af8517c7dc4302d68db2d9a8cc6d32a5ef81af9bae4
+  effective_file: experiments/e4_curriculum/results/effective_total_training_budget.json
+  effective_sha256: 90c0ae67683c43303e5a5a0d79509ce38ca79ea221aee42ab884be901a1b36ee
+  execution_plan_file: experiments/e4_curriculum/results/final-measured-total-runtime-execution-plan.json
+  execution_plan_sha256: 255f4678303e39f7866fed703fc362a3f6aefbe30a7cf61dc1e8e3f868353202

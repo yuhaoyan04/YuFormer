@@ -1,0 +1,21 @@
+{
+  "analysis_tool_sha256": "75d16603c5d34ca3804110b9b142117c98968cae6e5d4a8fc30f94e7185b3fd6",
+  "duplicates": [],
+  "expected_results": 8,
+  "missing": [
+    "e3_academic_2x",
+    "e3_chinese_2x",
+    "e3_code_2x",
+    "e3_encyclopedia_2x",
+    "e3_m1_native",
+    "e3_m2_base",
+    "e3_m3_quality",
+    "e3_math_2x"
+  ],
+  "observed_at": "2026-10-22T10:24:26.107142+00:00",
+  "observed_results": 0,
+  "runs": [],
+  "schema_version": 1,
+  "status": "BLOCKED",
+  "unexpected": []
+}

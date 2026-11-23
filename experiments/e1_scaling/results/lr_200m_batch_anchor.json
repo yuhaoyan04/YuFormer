@@ -1,0 +1,158 @@
+{
+  "anchor_contract_sha256": "1e8c8a554f5de84ee8796c83a24323f094b30ba2e76e55bcef3359bf03aa6d10",
+  "anchor_tool_sha256": "01699d853d90ebe7c8c9932f95526d669ba7f39a73e83bc9794ca78e7edb86f0",
+  "boundary_selections": [],
+  "curves": {
+    "200m": [
+      {
+        "learning_rate": 7.5e-05,
+        "level": "vlow",
+        "run_name": "e1_lr_200m_vlow",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.6378021240234375
+      },
+      {
+        "learning_rate": 0.00015,
+        "level": "low",
+        "run_name": "e1_lr_200m_low",
+        "trained_tokens": 499908608,
+        "validation_loss": 5.079349517822266
+      },
+      {
+        "learning_rate": 0.0003,
+        "level": "mid",
+        "run_name": "e1_lr_200m_mid",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.63198184967041
+      },
+      {
+        "learning_rate": 0.0006,
+        "level": "high",
+        "run_name": "e1_lr_200m_high",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.120088577270508
+      },
+      {
+        "learning_rate": 0.0012,
+        "level": "vhigh",
+        "run_name": "e1_lr_200m_vhigh",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.116907119750977
+      },
+      {
+        "learning_rate": 0.0018,
+        "level": "ext1800",
+        "run_name": "e1_lr_200m_ext1800",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.126101016998291
+      },
+      {
+        "learning_rate": 0.0024,
+        "level": "ext2400",
+        "run_name": "e1_lr_200m_ext2400",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.154641151428223
+      },
+      {
+        "learning_rate": 0.0048,
+        "level": "ext4800",
+        "run_name": "e1_lr_200m_ext4800",
+        "trained_tokens": 499908608,
+        "validation_loss": 4.202056884765625
+      }
+    ]
+  },
+  "evidence_snapshot": {
+    "data/TOKENIZER_READY.json": "e765e08d884653780bbba639c14774da502b6a61d56714760e9782903ccfe866",
+    "data/experiments/e1_pilot/e1_lr_200m_high/current_attempt.json": "ff0a0e390f0104a011eb56cfa8f8060a544711b6e52b09589250c0a9b44716f6",
+    "data/experiments/e1_pilot/e1_lr_200m_high/result.json": "fe7c829286b955fb877dd6625a20d789b0ed83538cd87a50c083ed50a611ec82",
+    "data/experiments/e1_pilot/e1_lr_200m_high/run_identity.json": "c12698db76850a89af6205b0eea15130aa946c607facd496d92fa7593993e9f7",
+    "data/experiments/e1_pilot/e1_lr_200m_high/training_complete.json": "f45ef497ec0793b5d0b1a0b368ebe156d5a0ca096eff5ba84742e4b395f56799",
+    "data/experiments/e1_pilot/e1_lr_200m_low/current_attempt.json": "44a15ab7a9a48dce9fa38be7d5d8099280c9ad8c748adbfbb34734cfa003a11d",
+    "data/experiments/e1_pilot/e1_lr_200m_low/result.json": "3a917ac4fa6a5f59cf738434620290d000881df0bd8a10b23f56c4b5afe6b36f",
+    "data/experiments/e1_pilot/e1_lr_200m_low/run_identity.json": "7ef808e97786d44b93d4118d3d711c2713069e4d426a16f41bca8982dea9a709",
+    "data/experiments/e1_pilot/e1_lr_200m_low/training_complete.json": "65790f37d86bc50e1043bbc42e07e4c593f82fe39608ec0e17413d5065711399",
+    "data/experiments/e1_pilot/e1_lr_200m_mid/current_attempt.json": "6f5d111913f6cd65a708939f75a47f5ae65723d138cbea60c72fc6245ce19a37",
+    "data/experiments/e1_pilot/e1_lr_200m_mid/result.json": "97a663822e7a9c9d8ca06f64b77036fea61c1349e00ed51b0e3549c98b71b063",
+    "data/experiments/e1_pilot/e1_lr_200m_mid/run_identity.json": "12da91ab6d7e8fe6a3e23781b77ced9c3ed8c2191bb8f88355b5a6b4ac32c0ab",
+    "data/experiments/e1_pilot/e1_lr_200m_mid/training_complete.json": "64a79c6a4df3f259ebe79382e8a9c41bb40aecdfa3a9f44dd3f7d59641190932",
+    "data/experiments/e1_pilot/e1_lr_200m_vhigh/current_attempt.json": "6393d7c9446277668d745628f6add2e90129ecba14383430260a4c13710a0166",
+    "data/experiments/e1_pilot/e1_lr_200m_vhigh/result.json": "efb9d3874d229b2d7e321264c705d6054633eba3b6fb0ea65d35b35b59f4b865",
+    "data/experiments/e1_pilot/e1_lr_200m_vhigh/run_identity.json": "6b28df0fe6acab2cce6b75f565f04e09e4155bd9285918421b4decef4b00d24a",
+    "data/experiments/e1_pilot/e1_lr_200m_vhigh/training_complete.json": "e2ca57a1093a5a45949eb391dff8d70d07665fa227c236872895118c70f75366",
+    "data/experiments/e1_pilot/e1_lr_200m_vlow/current_attempt.json": "d254c125e58a4b5687c7ff4301afc780daae11b24bd783245498047c1e71652d",
+    "data/experiments/e1_pilot/e1_lr_200m_vlow/result.json": "dd6ff595aaf1d93ee8bc6758e3b5afb22fbf96e5d218588b5b7d1c957bde2077",
+    "data/experiments/e1_pilot/e1_lr_200m_vlow/run_identity.json": "1fd2eaa0d4c94104365c5e240cb81936a6b4cc8b34a95755212425197911b422",
+    "data/experiments/e1_pilot/e1_lr_200m_vlow/training_complete.json": "46ad640589b2642e958aaf94b79569e7ee793a753a2660fbe8a342c425680c3c",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext1800/current_attempt.json": "f2fa442255709f47a402d590cf94f8ef9fdb342c22d199c19333f53d522d5c7b",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext1800/result.json": "06875f69de230ae3433a5116bd516642cbd7d94b4f7541823aeab01c01884164",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext1800/run_identity.json": "426a95cc671c28953844cea8359131b05b4f593442a51a7da3e0b8897436f6fb",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext1800/training_complete.json": "d73286da1e17f7f2d8398f4ba6978d71263f4ecaf8a907571f930fe6cf4c724a",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext2400/current_attempt.json": "7281452080d36e91fd99263f2deaf9c8c39bcad6f4a11a95abb06b264fca03f7",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext2400/result.json": "bd6117d5ed478cb95f029af87d57b134ad38795e62780d0bbaacbc92b404d62d",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext2400/run_identity.json": "cc324bbc4744e2d0ff144e12f6723e7ccad4666e2e5120b7160f49b0b881e95a",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext2400/training_complete.json": "163e31aa30842cf08a79875c988b0e35f0465bf9a5851fd18e59b1d57fa5c59f",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext4800/current_attempt.json": "0a8c4d0636e23c98e13df83717ac70d24ecb20a39b8d5833573f42c60e9692b1",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext4800/result.json": "7d432dc6d5aca17008531c3f2a720447bf0c55095f9f9269f6e090302d55cbdd",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext4800/run_identity.json": "7dbbb459ca46cca0fc72f71f7b47db89118f0b012c9bc3a86ebd08769418fc87",
+    "data/experiments/e1_pilot_extension/e1_lr_200m_ext4800/training_complete.json": "c6ca8c7f458c84fb8a100482eaad8115d72e0d98deb5fc8b0832d79f3cb8140c",
+    "data/processed/audits/formal_token_stream_release_mix_m3_e1_100b_m3_20261020.json": "0503eba2cfeb3f2af6c4100c9f8747c7506ccd2e42e595873375f971e24cfa4d",
+    "data/processed/releases/mix_m3_e1_100b-20261019.release.json": "b71d6fa3b3d289213fded7d7ab8c6df6fd30d4b8948366466641e3041103d17c",
+    "data/token_streams/m3_20261020_yf64k/mix_m3_e1_100b_stage2.meta.json": "4dbef147ec62f7e6dde9dd50f9917e3241f9adfd0f3abd3327dcff5f52ab9c9c",
+    "data/token_streams/m3_20261020_yf64k/val_academic.meta.json": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3",
+    "data/token_streams/m3_20261020_yf64k/val_books.meta.json": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64",
+    "data/token_streams/m3_20261020_yf64k/val_chinese.meta.json": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767",
+    "data/token_streams/m3_20261020_yf64k/val_code.meta.json": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4",
+    "data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea",
+    "data/token_streams/m3_20261020_yf64k/val_math.meta.json": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec",
+    "data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2",
+    "data/token_streams/m3_20261020_yf64k/val_qa.meta.json": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54",
+    "data/token_streams/m3_20261020_yf64k/val_web.meta.json": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899",
+    "model/configs/model_configs.yaml": "743d3d6040e2416b7a1f6fdafdc9db69c282d93ac1905b312f731cfc86c4009b",
+    "pretrain/configs/e1_pilot/e1_lr_200m_high.env": "070f890f95a33fb0baa2ce1ed5f3c9f8e3a225b10ef66687a06c811913d0ab35",
+    "pretrain/configs/e1_pilot/e1_lr_200m_high.yaml": "8c63c96e55af456b78072495cc14ca74f30bdb15a20702119f21abdc1b516322",
+    "pretrain/configs/e1_pilot/e1_lr_200m_low.env": "59b8605e92ed252dbb062622135f9ae6097f83f9a243c64294562da2e38e291a",
+    "pretrain/configs/e1_pilot/e1_lr_200m_low.yaml": "4e69026f6d5db87a82b74b1445449eeff9146f4f367f4856fd87065b342d26b2",
+    "pretrain/configs/e1_pilot/e1_lr_200m_mid.env": "8162e1b7eaf6efe52413f0637e228064018a80481ec02aa3c8f0065025f654d7",
+    "pretrain/configs/e1_pilot/e1_lr_200m_mid.yaml": "64533177e08900d2fd44c734b5af12e619f9f8202c198755d402bfb69a8653ef",
+    "pretrain/configs/e1_pilot/e1_lr_200m_vhigh.env": "4e0b7ff535c7e3d8b91bac9e9dc2417cfe7ae93f340c6f18f875d9c5ff176e54",
+    "pretrain/configs/e1_pilot/e1_lr_200m_vhigh.yaml": "2b94767d7859369731158baedb21b8608686737c65768a4792634e6cdb338461",
+    "pretrain/configs/e1_pilot/e1_lr_200m_vlow.env": "53d01c9107ad35120799d3d61a374e7254bfb186039c43f838dd70c87daee6db",
+    "pretrain/configs/e1_pilot/e1_lr_200m_vlow.yaml": "ce8b4037e74bde2f7d24f4edea24f82fb62239085368f3fe434fe8d17384770c",
+    "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext1800.env": "da338f2130d2ca06c81c772c976e5b0c2d6f32dc8aaffa2c41d4fd8e1527e247",
+    "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext1800.yaml": "40e0b65388abfa1eb2f10bdf90d92977b9c45ee4f7dd572a7265c02e8f59af25",
+    "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext2400.env": "d7f1ee745d7b67a7f3f67df8bcd5e2163baadf1d29c339b52f4a54ead394e2d4",
+    "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext2400.yaml": "7a87199c578358f89ccf1510b94d2690db5f1e468a4b94af766f950bbf70ac4d",
+    "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext4800.env": "1a53c09b591be1d869e3a21f012ef47a5af049932b17e3a10b88c147dc650625",
+    "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext4800.yaml": "b7933b8a0d686678b99a6609d344d5f148fe65fa3c8ce71352c67af2f0d29c80",
+    "tokenizer/tokenizers/m3_20261020/yf-64k-bpe/tokenizer.json": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e"
+  },
+  "expected_results": 8,
+  "expected_run_names": [
+    "e1_lr_200m_ext1800",
+    "e1_lr_200m_ext2400",
+    "e1_lr_200m_ext4800",
+    "e1_lr_200m_high",
+    "e1_lr_200m_low",
+    "e1_lr_200m_mid",
+    "e1_lr_200m_vhigh",
+    "e1_lr_200m_vlow"
+  ],
+  "observed_at": "2026-10-22T17:22:35.142640+00:00",
+  "observed_results": 8,
+  "schema_version": 1,
+  "scope": "200m_anchor_for_batch_only",
+  "scope_note": "Allows batch/LR calibration only; global LR resolution and E1/E2 require all anchors.",
+  "selections": {
+    "200m": {
+      "identity_sha256": "8d93c82b753da9e34053266973ee3cc8c76e61dcb10626c2be87917155796ab2",
+      "learning_rate": 0.0012,
+      "level": "vhigh",
+      "run_name": "e1_lr_200m_vhigh",
+      "trained_tokens": 499908608,
+      "validation_loss": 4.116907119750977
+    }
+  },
+  "status": "PASS",
+  "training_source_sha256": "49c889e445806382698c53f1a0a424428cad3d27bc3a28b8998a7f7bb15beb7e"
+}

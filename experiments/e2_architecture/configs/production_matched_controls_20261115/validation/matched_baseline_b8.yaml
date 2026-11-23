@@ -1,0 +1,66 @@
+run_name: matched_baseline_b8_production_development_validation
+backend: torchtitan-v0.3.0
+seed: 20260926
+model:
+  preset: production-control
+  configs: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/production_matched_controls_20261115/matched_baseline_b8.model.yaml
+out_dir: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/experiments/production_matched_controls_20261115/validation/matched_baseline_b8
+data:
+  require_release: true
+  require_eod: true
+  release_manifest: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/releases/pretrain-1t-frozen.release.json
+  tokenizer_gate: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/TOKENIZER_READY.json
+  token_stream_audit: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/audits/pretrain_1t_token_streams.json
+  stages:
+  - /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/pretrain-1t/warmup.tokens.bin
+  meta:
+  - /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/pretrain-1t/warmup.meta.json
+  stage_sample_limits:
+  - 204800
+  val_dir: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/m3_20261020_yf64k
+  seq_len: 4096
+  epochs: 1
+  val_samples_per_domain: 64
+  val_max_tokens_per_domain: 20000000
+  sampling_policy: block_permutation
+  block_permutation_manifest: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/training_permutations/pretrain-1t-dd284efd7c715544-b8/probe-canary-200-5cc0dc89126cb7e1-6e331b14bb0c.json
+optim:
+  optimizer: adamw
+  lr: 0.0002
+  weight_decay: 0.1
+  warmup_steps: 10
+  lr_schedule: cosine
+  min_lr_ratio: 0.1
+  adam_betas:
+  - 0.9
+  - 0.95
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+  clip_grad: 1.0
+train:
+  budget_tokens: 838860800
+  micro_batch_size: 8
+  grad_accum: 16
+  expected_iters: 200
+  activation_checkpointing: false
+  bf16: true
+  cuda_graphs: false
+  eval_every: 100
+  log_every: 1
+  save_every: 100
+  keep_last_n: 2
+  keep_every: 10000
+parallel:
+  sharding: hybrid_shard
+  world_size: 8
+  replicate_degree: 2
+  shard_degree: 4
+compile:
+  enable: true
+  components:
+  - model
+  backend: inductor
+attention:
+  sdpa_backend: cudnn_flex_swa
+experiment_status: qualification

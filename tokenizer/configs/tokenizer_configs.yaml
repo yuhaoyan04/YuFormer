@@ -4,23 +4,30 @@
 
 defaults:
   model: bpe
-  byte_fallback: true          # 未知字符回退到 UTF-8 字节
+  # BPE 使用 ByteLevel 预分词（BBPE），词表自带全部 256 字节，未知字符按
+  # UTF-8 字节分解，天然无 OOV —— 此语义对 bpe 恒成立。
+  # 注意：unigram 走 Metaspace 预分词，tokenizers 库的 Unigram 不支持字节
+  # 回退，未覆盖字符会被静默丢弃（编码结果丢字）。训练语料需覆盖目标字符集，
+  # 评估时以 unk_rate / decode 往返校验把关。
+  byte_fallback: true          # 仅对 bpe 生效；unigram 见上
   unk_token: "<|unk|>"
   pad_token: "<|endoftext|>"
   eos_token: "<|endoftext|>"
+  iterator_batch_size: 1024    # Python→Rust 批传递，降低百万级文档 FFI 开销
 
-# 预训练 tokenizer 特殊 token（thinking + chat template + tool call）
+# 预训练 tokenizer 特殊 token（thinking + chat template 边界）
+# 注意：角色名（system/user/assistant/tool）刻意不在此列 —— special token
+# 会在普通输入文本中被匹配，语料里的 "user" 等词会污染控制 token 语义。
+# 角色以纯文本形式跟在 <|im_start|> 之后（见 special_tokens.build_chat_template）。
 special_tokens: &special_tokens
   - "<|endoftext|>"             # EOS / PAD
   - "<|unk|>"
   - "<|im_start|>"              # message block start
   - "<|im_end|>"                # message block end
-  - "system"
-  - "user"
-  - "assistant"
-  - "tool"
   - "<|think_start|>"           # thinking block start (replaces raw text)
   - "<|think_end|>"             # thinking block end
+  - "<|tool_call_start|>"       # canonical JSON tool-call boundary
+  - "<|tool_call_end|>"
 
 tokenizers:
 
@@ -29,13 +36,13 @@ tokenizers:
     model: bpe
     vocab_size: 32768
     special_tokens: *special_tokens
-    notes: "词表大小消融实验 — 32k"
+    notes: "词表大小消融 — 32k（Llama2/Mistral 档；0.5B tied 占 13% 参数）"
 
   - name: yf-64k-bpe
     model: bpe
     vocab_size: 65536
     special_tokens: *special_tokens
-    notes: "词表大小消融实验 — 64k（基线）"
+    notes: "词表大小消融 — 64k（预期主选：Qwen2/DeepSeek 档，0.5B tied 占 27%；词表须随模型规模缩放，128k/154880 是 7B+ untied 的配置）"
 
   - name: yf-128k-bpe
     model: bpe
@@ -48,13 +55,7 @@ tokenizers:
     model: unigram
     vocab_size: 65536
     special_tokens: *special_tokens
-    notes: "模型类型消融 — Unigram vs BPE"
-
-  - name: yf-64k-wordpiece
-    model: wordpiece
-    vocab_size: 65536
-    special_tokens: *special_tokens
-    notes: "模型类型消融 — WordPiece"
+    notes: "模型类型消融 — Unigram vs BPE（唯一的算法对照组：工业界 decoder LLM 已全部收敛到 BBPE，WordPiece 为 BERT 时代方案已剔除）"
 
   # ============ 特殊 token 消融 ============
   - name: yf-64k-bpe-nothink

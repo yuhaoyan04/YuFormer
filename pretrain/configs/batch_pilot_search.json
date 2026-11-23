@@ -1,0 +1,53 @@
+{
+  "extensions": [
+    {
+      "batch": "1m",
+      "group": "batch_pilot_extension",
+      "learning_rate": 0.0096,
+      "level": "ext9600000",
+      "origin": "automatic_night_search",
+      "run_name": "batch_1m_ext9600000"
+    },
+    {
+      "batch": "1m",
+      "group": "batch_pilot_extension",
+      "learning_rate": 0.0192,
+      "level": "ext19200000",
+      "origin": "automatic_night_search",
+      "run_name": "batch_1m_ext19200000"
+    },
+    {
+      "batch": "2m",
+      "group": "batch_pilot_extension",
+      "learning_rate": 0.013576450198,
+      "level": "ext13576450",
+      "origin": "automatic_night_search",
+      "run_name": "batch_2m_ext13576450"
+    },
+    {
+      "batch": "2m",
+      "group": "batch_pilot_extension",
+      "learning_rate": 0.027152900396,
+      "level": "ext27152900",
+      "origin": "automatic_night_search",
+      "run_name": "batch_2m_ext27152900"
+    },
+    {
+      "batch": "4m",
+      "group": "batch_pilot_extension",
+      "learning_rate": 0.0012,
+      "level": "ext1200000",
+      "origin": "automatic_night_search",
+      "run_name": "batch_4m_ext1200000"
+    },
+    {
+      "batch": "4m",
+      "group": "batch_pilot_extension",
+      "learning_rate": 0.0006,
+      "level": "ext600000",
+      "origin": "automatic_night_search",
+      "run_name": "batch_4m_ext600000"
+    }
+  ],
+  "schema_version": 1
+}

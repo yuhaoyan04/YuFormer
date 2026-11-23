@@ -1,0 +1,50 @@
+{
+  "artifacts": {
+    "special_tokens_map.json": {
+      "bytes": 93,
+      "sha256": "7913aa6135573598fa980d149163c99d4d3f70914fc191780d4f153972362ee5"
+    },
+    "tokenizer.json": {
+      "bytes": 4746730,
+      "sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1059,
+      "sha256": "c16546922ed9f9b67dbb685429ba5e14ff5c8b340d94f908cd473ef5af517ba6"
+    }
+  },
+  "audit": "tokenizer_artifact",
+  "candidate_identity": "yuformer-tokenizer-candidate-20df5ca9ba356e303082",
+  "checks": {
+    "chat_template_exact": true,
+    "chat_template_sha256_exact": true,
+    "complete_corpus": true,
+    "config_vocab_size_exact": true,
+    "corpus_manifests_exact": true,
+    "observed_corpus_exact": true,
+    "run_identity_exact": true,
+    "special_token_roster_exact": true,
+    "special_tokens_atomic": true,
+    "training_artifact_hashes_exact": true,
+    "training_special_tokens_exact": true,
+    "unicode_roundtrip": true,
+    "vocab_size_exact": true
+  },
+  "identity": {
+    "corpus_manifest_sha256": [
+      "85fff415e24aef1e20c9998ca435ce950e27742bcd16c9ffe24ea271bdf4faa8"
+    ],
+    "tokenizer_config_sha256": "c16546922ed9f9b67dbb685429ba5e14ff5c8b340d94f908cd473ef5af517ba6",
+    "tokenizer_sha256": "5dd6bb3f9f587c301e2bb6bb8c987b725fa04d5c49230849038c7d7ec8c5cf9e",
+    "training_config_sha256": "86c4873ad8d671172f4de43061ac0e5b6c671de75ccb717073262190f8be9e89",
+    "training_run_identity_sha256": "9845f37e49d53d1c47174992f2064c574e5fc5a1b0534a804be10730838d3823"
+  },
+  "schema_version": 1,
+  "status": "PASS",
+  "tokenizer_id": "yuformer-tokenizer-20df5ca9ba356e303082",
+  "training_status": "PASS",
+  "upstream_statuses": [
+    "PASS"
+  ],
+  "vocab_size": 65536
+}

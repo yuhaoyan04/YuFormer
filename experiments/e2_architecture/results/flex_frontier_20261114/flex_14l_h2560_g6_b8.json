@@ -1,0 +1,99 @@
+{
+  "candidate": "flex_14l_h2560_g6",
+  "collect_returncode": 0,
+  "evaluation": {
+    "issues": [],
+    "median_mfu_pct": 48.15517616271973,
+    "median_tps_per_device": 62557.115234375,
+    "p10_tps_per_device": 62480.40234375,
+    "production_qualified": false,
+    "projected_1t_days_duty_09": 25.72823201780558,
+    "status": "PASS_SCREENING",
+    "steady_points": 16,
+    "within_30_days": true,
+    "within_33_days": true
+  },
+  "finished_at": "2026-11-14T08:26:13.324710+00:00",
+  "identity_sha256": "0deb7f90b79df9d9e6101dcbfd626ac34836321819965d1553f05910abe98ea4",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/flex_frontier_20261114/flex_14l_h2560_g6_b8.log",
+  "parameters": 1219045632,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 60151.0,
+      "power_w": 707.12,
+      "temperature_c": 73.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 711.58,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 716.85,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 710.93,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 717.3,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 714.55,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 719.09,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 57845.0,
+      "power_w": 707.29,
+      "temperature_c": 72.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "production_qualified": false,
+  "result_sha256": "e938f2b238b383e7e64b1a7e1037dc006cadadf753b83a33ed23fd4a1449028e",
+  "returncode": 0,
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/flex_frontier_20261114/flex_14l_h2560_g6_b8.yaml",
+    "config_sha256": "372ec970f8e5d6c6a064967bec8e6fc555ea93e5228a9d91a1ffd825df3b55bd",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/flex_frontier_20261114/flex_14l_h2560_g6_b8.env",
+    "env_sha256": "76c77c91b2fc4c82930d27b13687d4cf224bec606c97a6c031d446a900ef1c97",
+    "grad_accum": 16,
+    "microbatch": 8,
+    "name": "flex_14l_h2560_g6_b8"
+  },
+  "wall_seconds": 289.2
+}

@@ -1,0 +1,66 @@
+# S6 配比画像 M1：池原生比例的质量宽度对照。
+# 当前正式池为 2.447T；旧 1.44T 目标会超过部分域的 top-30% 容量，已撤销。
+# 200B release 用于生成可复用研究母集；E3 从各画像截取相同 token 预算。
+
+mix_name: mix_m1
+total_tokens: 200_000_000_000
+score_field: hybrid_v2
+seed: yuformer
+
+included_sources:
+  - automathtext
+  - cci3-hq
+  - dclm-baseline
+  - dolma-books
+  - fineweb
+  - fineweb-2
+  - fineweb-edu
+  - github-code
+  - pes2o
+  - proof-pile-2
+  - stack-exchange
+  - starcoderdata
+  - wikipedia-en
+  - wikipedia-zh
+  - wikitext
+
+quota_fill_policy: deepen_to_quota
+max_total_shortfall_tokens: 1_000_000
+
+domains:
+  web:
+    weight: 0.86
+    top_k: 0.30
+  code:
+    weight: 0.055
+    top_k: 0.30
+  math:
+    weight: 0.018
+    top_k: 0.30
+  chinese:
+    weight: 0.035
+    top_k: 0.30
+  academic:
+    weight: 0.012
+    top_k: 0.30
+  books:
+    weight: 0.005
+    top_k: 0.30
+  encyclopedia:
+    weight: 0.008
+    top_k: 0.30
+  qa:
+    weight: 0.004
+    top_k: 0.30
+  multilingual:
+    weight: 0.003
+    top_k: 0.30
+
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+
+val:
+  tokens_per_domain: 50_000_000
+  max_fraction: 0.01

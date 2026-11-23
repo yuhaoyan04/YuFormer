@@ -1,0 +1,265 @@
+{
+  "anchors": [
+    {
+      "learning_rate": 0.0012,
+      "non_embedding_params": 25437696
+    },
+    {
+      "learning_rate": 0.0012,
+      "non_embedding_params": 142771456
+    },
+    {
+      "learning_rate": 0.0009,
+      "non_embedding_params": 767309184
+    }
+  ],
+  "batch_lr_factor": 8.815848732518923,
+  "batch_selection": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e1_scaling/results/batch_selection.json",
+  "batch_selection_claim": "fixed batch baseline with bracketed learning rate; no globally optimal batch-size claim",
+  "batch_selection_policy": {
+    "batch": "1m",
+    "claim_limit": "Fixed 1M-token baseline; 2M and 4M LR optima remain unresolved at search boundaries. No globally optimal batch-size or statistically significant superiority claim.",
+    "declared_after_pilots": true,
+    "declared_at": "2026-10-25T06:43:49.674394+00:00",
+    "mode": "fixed_baseline",
+    "reason": "Prioritize the user-requested E1 scaling study after all bounded pilot trials completed; use a fixed batch with an internally bracketed LR instead of continuing batch-size optimization",
+    "tokens_per_step": 1048576
+  },
+  "batch_selection_sha256": "9721252f7d7db81730d768bc8cb34b75311ca3ba75c5c6d0f8eadee90e6b2be7",
+  "budget_policy_sha256": "5e78d997126278620dbe43496b953e5444e41df666cd6fd579a7ab607c6d84b2",
+  "configs": [
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_100m.yaml",
+      "config_sha256": "4f25de14af7790e441d3c899f2414e12d31d4971848e15e2d3cb460298174c6e",
+      "group": "e1",
+      "learning_rate": 0.005167247093,
+      "non_embedding_params": 59409536,
+      "preset": "e1-100m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_200m.yaml",
+      "config_sha256": "4734084f9153a5bb3edeaef496037dedb42207520dcd019023cb18f7504c4023",
+      "group": "e1",
+      "learning_rate": 0.0048,
+      "non_embedding_params": 142771456,
+      "preset": "e1-200m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_400m.yaml",
+      "config_sha256": "a51973c6fab945f099658c77e0fea231b6220746dc4fe0a06beb2611bf0a5cc1",
+      "group": "e1",
+      "learning_rate": 0.004396311717,
+      "non_embedding_params": 405869568,
+      "preset": "pretrain-0.5b",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_50m.yaml",
+      "config_sha256": "10335a14fa35b1163cf930c2be8ca15dbdb88dfe57f92c786ea66cb084aac238",
+      "group": "e1",
+      "learning_rate": 0.00554924633,
+      "non_embedding_params": 25437696,
+      "preset": "e1-50m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_800m.yaml",
+      "config_sha256": "150c288f2d90d75be71431d0584ac8522893b81828cee65cf8be629b550fb533",
+      "group": "e1",
+      "learning_rate": 0.004167083114,
+      "non_embedding_params": 767309184,
+      "preset": "e1-800m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_100m.yaml",
+      "config_sha256": "bfecd2ac1a73a90eae4dbad11dba00f07e827b811cad3a7a607e4b2955416961",
+      "group": "e1",
+      "learning_rate": 0.005167247093,
+      "non_embedding_params": 59409536,
+      "preset": "e1-100m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_200m.yaml",
+      "config_sha256": "215fdad7047ab8f96b1193017b45d4551633ad60172bd3409a0cea21c24047bd",
+      "group": "e1",
+      "learning_rate": 0.0048,
+      "non_embedding_params": 142771456,
+      "preset": "e1-200m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_400m.yaml",
+      "config_sha256": "4fdabe3c44356d8791a580d73a9b1b9e02d1737bf996bc9a5801d5feb222dd65",
+      "group": "e1",
+      "learning_rate": 0.004396311717,
+      "non_embedding_params": 405869568,
+      "preset": "pretrain-0.5b",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_50m.yaml",
+      "config_sha256": "7173f1993907f60ac6ee49f2f53b26e33f6da72f7ca3a06498cca8f09f302908",
+      "group": "e1",
+      "learning_rate": 0.00554924633,
+      "non_embedding_params": 25437696,
+      "preset": "e1-50m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_800m.yaml",
+      "config_sha256": "20d37e8feabcc91f840512003257cc43bdbebcd934ad2ed3755e3a1eff22f9af",
+      "group": "e1",
+      "learning_rate": 0.004167083114,
+      "non_embedding_params": 767309184,
+      "preset": "e1-800m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_100m.yaml",
+      "config_sha256": "eb680490ceca70eda6fa4087712fbba6d2681a6ec487a46ff7bb99f38523636a",
+      "group": "e1",
+      "learning_rate": 0.005167247093,
+      "non_embedding_params": 59409536,
+      "preset": "e1-100m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_200m.yaml",
+      "config_sha256": "c7e4109edc077c54f8a7d70361506dd28e65862859afd91e5897c3862d1105aa",
+      "group": "e1",
+      "learning_rate": 0.0048,
+      "non_embedding_params": 142771456,
+      "preset": "e1-200m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_400m.yaml",
+      "config_sha256": "7708254d47397009664b4002503d6f157bd99446671542c12dbc05be7f1f6c1f",
+      "group": "e1",
+      "learning_rate": 0.004396311717,
+      "non_embedding_params": 405869568,
+      "preset": "pretrain-0.5b",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_800m.yaml",
+      "config_sha256": "053d40107dd906acff01b2c5cb5de6305eb00ce464c5366ad2aa3bd51280a85d",
+      "group": "e1",
+      "learning_rate": 0.004167083114,
+      "non_embedding_params": 767309184,
+      "preset": "e1-800m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_100m.yaml",
+      "config_sha256": "93f2cd2b85371f68dbdbfcd6f071d9b6cd30ad7ea26daf3688667f16d81c5c0b",
+      "group": "e1",
+      "learning_rate": 0.004606559696,
+      "non_embedding_params": 232863616,
+      "preset": "e1-300m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_1b.yaml",
+      "config_sha256": "9589a97641fe516a854d697dcecf7579661ee2b975ca23596c5845cb01e48a23",
+      "group": "e1",
+      "learning_rate": 0.004606559696,
+      "non_embedding_params": 232863616,
+      "preset": "e1-300m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_300m.yaml",
+      "config_sha256": "5dbfbdaf1fe507a0d65f9a570fc5b2aad47471d9ad57bf8b8fe46dd33163ce11",
+      "group": "e1",
+      "learning_rate": 0.004606559696,
+      "non_embedding_params": 232863616,
+      "preset": "e1-300m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_3b.yaml",
+      "config_sha256": "4ec927e763ae98cf937882318b6203c85f634c21f30c8ccf16c7d57b0808be9a",
+      "group": "e1",
+      "learning_rate": 0.004606559696,
+      "non_embedding_params": 232863616,
+      "preset": "e1-300m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_9p85b.yaml",
+      "config_sha256": "622b8f90876bb39985256bc1ffee55af9b1fe9f1bda55d68dfe758da9950783f",
+      "group": "e1",
+      "learning_rate": 0.004606559696,
+      "non_embedding_params": 232863616,
+      "preset": "e1-300m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_100m.yaml",
+      "config_sha256": "e07d539362c5a2a6d6bca0581269ce014bf4f8b685cac922fa44feb906a5903c",
+      "group": "e1",
+      "learning_rate": 0.005167247093,
+      "non_embedding_params": 59409536,
+      "preset": "e1-100m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_200m.yaml",
+      "config_sha256": "2d2d57e3ad70ff158e14c81c154e477bd0c93de287ee0fd9205b254ab7e980af",
+      "group": "e1",
+      "learning_rate": 0.0048,
+      "non_embedding_params": 142771456,
+      "preset": "e1-200m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_400m.yaml",
+      "config_sha256": "1fa3648366500ca4e34113df41c8cfa9108dab6029d87e586ef9455822868469",
+      "group": "e1",
+      "learning_rate": 0.004396311717,
+      "non_embedding_params": 405869568,
+      "preset": "pretrain-0.5b",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_50m.yaml",
+      "config_sha256": "c79ee7341b1577debf82223eb4c75d0e2fa4775d3149204fe141a6c86922974b",
+      "group": "e1",
+      "learning_rate": 0.00554924633,
+      "non_embedding_params": 25437696,
+      "preset": "e1-50m",
+      "tokens_per_step": 262144
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_800m.yaml",
+      "config_sha256": "2a3d503f801f6350c0a5fecae51c565bc2dfcc7bce4a0c6af1db563be85c56c1",
+      "group": "e1",
+      "learning_rate": 0.004167083114,
+      "non_embedding_params": 767309184,
+      "preset": "e1-800m",
+      "tokens_per_step": 262144
+    }
+  ],
+  "configs_updated": 24,
+  "evidence_mode": "loss_only",
+  "fit": {
+    "exponent": -0.08408412369969542,
+    "formula": "lr = exp(log_intercept) * non_embedding_params ** exponent",
+    "log_intercept": -5.243716225529866
+  },
+  "observed_at": "2026-10-26T04:07:40.655892+00:00",
+  "research_scope_sha256": "2b3045a598ae7b06e2aac2217e828b6cd8a88b16e73718258f5a50d0f9a182cf",
+  "resolver_tool_sha256": "c052f004d8e594853ac443ecbb43c912093b5ac67568aa0bdd176882e00e9c88",
+  "schema_version": 1,
+  "screen_tokens_per_step": 262144,
+  "selected_batch_learning_rate": 0.0096,
+  "selected_tokens_per_step": 1048576,
+  "selection": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e1_scaling/results/lr_selection.json",
+  "selection_sha256": "d839e0c4773d9f5df6583dfb566ef82fa7ced0ceb0b05b634ea399290e184518",
+  "status": "PASS"
+}

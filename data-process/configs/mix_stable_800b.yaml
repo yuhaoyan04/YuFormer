@@ -1,0 +1,70 @@
+mix_name: mix_stable_800b
+total_tokens: 820447760213
+score_field: hybrid_v2
+seed: yuformer-stable-v1
+included_sources:
+- automathtext
+- cci3-hq
+- dclm-baseline
+- dolma-books
+- fineweb
+- fineweb-2
+- fineweb-edu
+- github-code
+- pes2o
+- proof-pile-2
+- stack-exchange
+- starcoderdata
+- wikipedia-en
+- wikipedia-zh
+- wikitext
+quota_fill_policy: deepen_to_quota
+max_total_shortfall_tokens: 1000000
+domains:
+  web:
+    weight: 0.73555111919541
+    top_k: 0.4
+  code:
+    weight: 0.120240399001
+    top_k: 0.45
+  math:
+    weight: 0.0408009189431
+    top_k: 0.5
+  chinese:
+    weight: 0.0331813866812
+    top_k: 0.9
+  academic:
+    weight: 0.036193608936
+    top_k: 0.45
+  books:
+    weight: 0.003964556654
+    top_k: 0.85
+  encyclopedia:
+    weight: 0.00493330057756
+    top_k: 0.85
+  qa:
+    weight: 0.00101422069183
+    top_k: 0.8
+  multilingual:
+    weight: 0.0241204893199
+    top_k: 0.45
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+val:
+  tokens_per_domain: 50000000
+  max_fraction: 0.01
+target_final_tokens: 800000000000
+target_final_domain_weights:
+  web: 0.74
+  code: 0.12
+  math: 0.04
+  chinese: 0.035
+  academic: 0.035
+  books: 0.004
+  encyclopedia: 0.005
+  qa: 0.001
+  multilingual: 0.02
+tokenizer_capacity_headroom: 0.02
+tokenizer_calibration_source: data/processed/audits/training_tokenizer_calibration.json

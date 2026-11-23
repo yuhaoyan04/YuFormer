@@ -1,0 +1,59 @@
+backend: torchtitan-v0.3.0
+compile:
+  backend: inductor
+  components:
+  - model
+  enable: true
+data:
+  epochs: 1
+  meta:
+  - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.meta.json
+  release_manifest: ${YUFORMER_DATA_RELEASE}
+  require_eod: true
+  require_release: true
+  seq_len: 4096
+  stages:
+  - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.tokens.bin
+  token_stream_audit: ${YUFORMER_TOKEN_STREAM_AUDIT}
+  tokenizer_gate: ${YUFORMER_TOKENIZER_GATE}
+  val_dir: ${YUFORMER_TOKEN_STREAMS}
+  val_max_tokens_per_domain: 20000000
+  val_samples_per_domain: 64
+model:
+  configs: ${YUFORMER_MODEL_CONFIGS}
+  preset: pretrain-final
+optim:
+  adam_betas:
+  - 0.9
+  - 0.95
+  clip_grad: 1.0
+  lr: 0.0002
+  lr_schedule: cosine
+  min_lr_ratio: 0.1
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+  optimizer: adamw
+  warmup_steps: 10
+  weight_decay: 0.1
+out_dir: ${YUFORMER_PRETRAIN_OUT}
+parallel:
+  sharding: full_shard
+  world_size: 8
+  replicate_degree: 1
+  shard_degree: 8
+run_name: eight_gpu_fsdp8
+seed: 20260926
+train:
+  activation_checkpointing: false
+  bf16: true
+  budget_tokens: 838860800
+  cuda_graphs: false
+  eval_every: 100
+  expected_iters: 200
+  grad_accum: 16
+  keep_every: 1000
+  keep_last_n: 2
+  log_every: 10
+  micro_batch_size: 8
+  save_every: 100

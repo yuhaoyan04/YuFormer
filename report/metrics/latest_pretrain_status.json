@@ -1,0 +1,89 @@
+{
+  "actual_lr_observations": 6080,
+  "attempt_id": "c5bc01ad619700958f8fdac0967605f2",
+  "checkpoint_receipt_count": 243,
+  "data_cursor_phase": {
+    "consumed_samples": 62208000,
+    "frozen_sample_limits": [
+      12207104,
+      174868480,
+      36620288
+    ],
+    "latest_native_step": 60750,
+    "phase_index": 1,
+    "stream": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/pretrain-1t/stable.tokens.bin"
+  },
+  "final_capability_completed": false,
+  "labels_at_last_logged_step": 254929797120,
+  "latest_validation_losses": {
+    "academic": 2.3250370025634766,
+    "aggregate": 2.308151960372925,
+    "books": 2.6210265159606934,
+    "chinese": 2.9179296493530273,
+    "code": 1.108367681503296,
+    "encyclopedia": 2.3649234771728516,
+    "math": 1.8694182634353638,
+    "multilingual": 2.5567715167999268,
+    "qa": 2.3179707527160645,
+    "web": 2.6919217109680176
+  },
+  "latest_validation_step": 60000,
+  "next_review_at": "2026-11-23T12:46:12.619001+00:00",
+  "original_review": "data/health/assistant-half-day-pretrain-review-20261123T0046.json",
+  "original_review_sha256": "984d8e3f83dcb7fd1d46616a240a024e0915baaf57ebab4d909e5a0167eb8d3f",
+  "phase": "stable",
+  "projected_completion_utc": "2026-12-17T10:38:16.954814+00:00",
+  "projected_total_days": 32.00969020022445,
+  "qualifications": {
+    "final-all-cpu-suites.json": {
+      "source": "data/health/final-all-cpu-suites.json",
+      "source_sha256": "bf12924ff13e5bdbbc65a0f874a2ae17278f9ae0a8c4a7567121bdadd3b0eb29",
+      "status": "PASS"
+    },
+    "final-changed-cpu-suites-20261115.json": {
+      "source": "data/health/final-changed-cpu-suites-20261115.json",
+      "source_sha256": "e409e4302325c9a72906d764e8b8946c2ac251c58908ea83c5714a219d0525d7",
+      "status": "PASS"
+    },
+    "live-pretrain-supervisor-recovery-admission-20261118.json": {
+      "source": "data/health/live-pretrain-supervisor-recovery-admission-20261118.json",
+      "source_sha256": "a8b55620d7a30b5cc3b5936e1e2b3b771f4dbb0730db96d4e0f2d025e5869fa4",
+      "status": "PASS_LIVE_TRAINING_UNINTERRUPTED_OUTER_SUPERVISORS_RECOVERED"
+    },
+    "long-production-window-release-v2.json": {
+      "source": "data/health/long-production-window-release-v2.json",
+      "source_sha256": "c3bf3784e8cad3c469940bc7c85751f839693291287e95cd064152755dbfb996",
+      "status": "PASS_FULL_PRODUCTION_16K_64K_WINDOW_RELEASES_NOT_CAPABILITY_QUALIFICATION"
+    },
+    "midtrain-actual-eight-gpu-stage-qualification.json": {
+      "source": "data/health/midtrain-actual-eight-gpu-stage-qualification.json",
+      "source_sha256": "3020b9fc945246b49d151fb83ad91de703448602e8131d9f8d565ebe2500d1cd",
+      "status": "PASS_ACTUAL_8GPU_4K_TO_16K_TO_64K_WEIGHT_ONLY_AND_BOTH_FULL_STATE_SIGKILL_RESUMES"
+    },
+    "production-recovery-qualification.json": {
+      "source": "data/health/production-recovery-qualification.json",
+      "source_sha256": "83d16e1b3206c39f62fe5a7be1c2d0340cd4350923df8317b59a705e91c59221",
+      "status": "PASS"
+    }
+  },
+  "regressed_domains": {
+    "validation_metrics/domain/books/loss": 0.12079104060711554
+  },
+  "reviewed_at": "2026-11-23T00:46:28.253923+00:00",
+  "schema_version": 1,
+  "scope": "ACTUAL_CONTROL_AND_FIXED_HELDOUT_PROGRESS_NOT_FINAL_CAPABILITY_NOT_REPEATED_FULL_TENSOR_FINITE_SCAN",
+  "sft_rl_training_completed": false,
+  "status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
+  "total_training_labels": 966254395392,
+  "training_metrics": {
+    "grad_norm": 0.213,
+    "log_timestamp_utc": "2026-11-23 00:45:37",
+    "loss": 2.3253,
+    "loss_is_finite": true,
+    "memory_gib": 67.46,
+    "mfu_pct": 46.04,
+    "step": 60780,
+    "tps_per_device": 47746
+  },
+  "whole_chain_remaining_days": 24.411179643586756
+}

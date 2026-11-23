@@ -1,0 +1,83 @@
+{
+  "control_health_sha256": "4a3dc4dec237208d2fed03791256af2b58e426ae363223e3dd0a23f94ba59d74",
+  "duty_factor": 0.9,
+  "formal_pretrain_tokens": 916258291712,
+  "formal_token_budget": 966254395392,
+  "global_runtime_forecast": {
+    "ceiling_days": 33,
+    "duty_factor": 0.9,
+    "production_qualified": false,
+    "requires_bound_actual_measurements": true,
+    "stages": [
+      {
+        "days": 30.331425824588433,
+        "name": "4k-pretrain",
+        "p10_tps_per_device": 48560.01953125,
+        "tokens": 916258291712,
+        "updates": 218453
+      },
+      {
+        "days": 1.1791606875170386,
+        "name": "16k-midtrain",
+        "p10_tps_per_device": 40894.80859375,
+        "tokens": 29997662208,
+        "updates": 7152
+      },
+      {
+        "days": 1.2893237170268725,
+        "name": "64k-midtrain",
+        "p10_tps_per_device": 24933.76953125,
+        "tokens": 19998441472,
+        "updates": 4768
+      }
+    ],
+    "status": "WITHIN_APPROVED_TOTAL_RUNTIME",
+    "total_days": 32.799910229132344,
+    "total_target_labels": 966254395392
+  },
+  "measurements": {
+    "larger_lr1e4_b8": {
+      "actual_runtime_review": "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/larger_lr1e4_b8-runtime-review.json",
+      "memory_review": {
+        "allocation_retry_warnings_steady": 0,
+        "allocation_retry_warnings_total": 0,
+        "requires_smaller_batch_comparison": false,
+        "skip_steps": 50,
+        "status": "PASS_SUSTAINED_MEMORY_REVIEW",
+        "steps": 200
+      },
+      "original_primary_macro_loss": 6.002137660980225,
+      "p10_tps_per_device": 48560.01953125,
+      "parameters": 1516600064,
+      "peak_lr": 0.0001,
+      "projected_1t_days_duty_09": 33.103575813666154
+    },
+    "matched_baseline_b8": {
+      "actual_runtime_review": "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/matched_baseline_b8-runtime-review.json",
+      "memory_review": {
+        "allocation_retry_warnings_steady": 0,
+        "allocation_retry_warnings_total": 0,
+        "requires_smaller_batch_comparison": false,
+        "skip_steps": 50,
+        "status": "PASS_SUSTAINED_MEMORY_REVIEW",
+        "steps": 200
+      },
+      "original_primary_macro_loss": 6.077617645263672,
+      "p10_tps_per_device": 113288.0625,
+      "parameters": 530107904,
+      "peak_lr": 0.0002,
+      "projected_1t_days_duty_09": 14.189582314251721
+    }
+  },
+  "prior_research_failures_preserved": true,
+  "production_qualified": false,
+  "quality_review": "experiments/e2_architecture/results/final_deterministic_production_controls_20261115/validation/review.json",
+  "rationale": "The predeclared current-backend pair consumed identical actual production warmup samples and passed strict all-nine original and expanded development endpoints. The old research prefix was 92.53% web/1.58% Chinese; actual production warmup is 60.04% web/7.94% Chinese. Old failed research endpoints remain failed and archived. This confirms the unchanged 1.5166B LR1e-4 candidate on the actual training distribution after checkpoint durability hardening. It is bounded early-training development evidence, not an unseen test, a global architecture optimum or a final1T capability claim. Full current-source GPU/recovery qualification, frozen production canary and all data/identity/launch gates remain mandatory.",
+  "reviewer": "source-bound actual-production distribution review",
+  "runtime_ceiling_days": 33,
+  "schema_version": 1,
+  "selected_variant": "larger_lr1e4_b8",
+  "status": "REVIEWED_FOR_QUALIFICATION",
+  "training_source_sha256": "af54b5e072aafbdae6033e04dc7434a4167ea1654d19b3882f08b8a2711dfc3a",
+  "user_preference": "\u5141\u8bb8\u63a5\u8fd1 30 \u5929\uff0c\u4f18\u5148\u9009\u62e9\u66f4\u5927\u6a21\u578b"
+}

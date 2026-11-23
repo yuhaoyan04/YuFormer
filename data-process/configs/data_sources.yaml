@@ -1,18 +1,39 @@
 # YuFormer 预训练数据源配置
+schema_version: 2
+revision_snapshot_date: "2026-10-18"
 #
 # 每个数据源的字段:
 #   name:           简短名称（用于本地目录名）
 #   domain:         领域分类
 #   repo_id:        HuggingFace 仓库 ID
 #   repo_type:      固定 dataset
+#   enabled:        是否进入默认 --all 下载；禁用源只能显式 override
+#   revision:       必填的 40-64 位不可变 commit；不得将 main/tag 用于 release 数据
 #   max_size_gb:    下载上限（累计文件大小达到即停，跳到下一个源）。0 = 无限制
 #   include_patterns: 文件路径 glob 过滤（fnmatch 语法），空 = 全部
 #   exclude_patterns: 排除路径 glob
 #   status:         待脚本测试后填充
 #   notes:          下载注意事项
 #
-# 调整 max_size_gb 即可控制每个源的下载量。例如 FineWeb 15T 太大，
-# 设 max_size_gb: 500 则下载到 500GB 就停止该源、继续下一个。
+# 历史下载未记录 resolved revision，因此现有原始数据是未签名快照。
+# 正式重下载前须先把每源 revision 固定为 commit；下载器默认 fail-closed。
+#
+# 体量规划（2026-09-16 锁定，依据 4xH800/176C/2T 内存、329TB 共享存储）：
+#   目标：清洗+去重后 ~4.3T tokens（对齐 ZGCM-1 的 4-5T）
+#   原始下载 ~5.0T tokens / ~17TB——主源自带上游去重
+#   （fineweb/dclm/pes2o），管线内去重损耗按 ~15% 估算。
+#   上限触发的源（max_size_gb > 0）按 blake2b 路径哈希均匀抽文件
+#   （见 download_pretrain_data.py），避免按字典序只取早期快照的偏差。
+#
+# GATED 源（本机 token 未授权，已从清单移除；如需启用：在 huggingface.co
+# 页面同意条款后设 HF_TOKEN 环境变量，把下列源加回再重跑，断点续传）：
+#   - bigcode/the-stack-v2-dedup (185GB, 代码) → 已用 codeparrot/github-code 补偿
+#   - GAIR/MathPile (7.4GB, 数学)              → 体量小，proof-pile-2+automathtext 已覆盖
+#   - BAAI/CCI3-Data (1TB, 中文)               → 已用 cci3-hq 提额补偿
+#
+# 算力现实校验：4xH800 端到端训 4.19T tokens 不现实（0.5-1B 模型约需
+# 1-2 年）；本机合理预算 150-300B tokens（4-8 周）。全量数据池作为
+# 课程式配比/配额选择的"水库"，实际训练从中确定性选取。
 
 sources:
 
@@ -20,189 +41,189 @@ sources:
   - name: fineweb-edu
     domain: web
     repo_id: HuggingFaceFW/fineweb-edu
-    max_size_gb: 200
+    revision: 87f09149ef4734204d70ed1d046ddc9ca3f2b8f9
+    max_size_gb: 2400
     include_patterns:
       - "data/CC-MAIN-*/*.parquet"
-    notes: "1.3T tokens (score>=2)，教育质量分数可用于课程式排序"
+    notes: "≈600B tokens；edu 分数用于课程式排序"
 
   - name: fineweb
     domain: web
     repo_id: HuggingFaceFW/fineweb
-    max_size_gb: 500
+    revision: 9bb295ddab0e05d785b879661af7260fed5140fc
+    max_size_gb: 10000
     include_patterns:
       - "data/CC-MAIN-*/*.parquet"
-    notes: "15T tokens 通用网页，按 CC-MAIN 快照分文件"
+    notes: "≈2.5T tokens（全量 ~53TB 的均匀抽样，非前缀截断；2026-09-16 用户裁定收到 10TB 即止）"
 
   - name: dclm-baseline
     domain: web
     repo_id: mlfoundations/dclm-baseline-1.0
-    max_size_gb: 200
+    revision: a3b142c183aebe5af344955ae20836eb34dcf69b
+    max_size_gb: 600
     include_patterns:
       - "global-shard_*/*.jsonl.zst"
-    notes: "4T tokens，OLMo-2 使用"
+    notes: "zst 压缩率高，≈850B tokens"
 
   - name: c4
     domain: web
     repo_id: allenai/c4
-    max_size_gb: 100
-    include_patterns:
-      - "en.noblocklist/*.json.gz"
-    notes: "经典 C4 清洗版"
+    enabled: false
+    max_size_gb: 0          # 2026-09-22 弃用：S1 历史故障期产物丢失，回补会使 web 域 S2/S3
+    include_patterns: []    # 全部进度作废；CC 覆盖已由 fineweb(10TB)+dclm(560GB) 提供，
+    notes: "DISABLED — c4 价值密度最低且回补成本（作废 web 去重全链）远超收益"
 
   # ============ 代码 ============
-  - name: the-stack-v2-dedup
-    domain: code
-    repo_id: bigcode/the-stack-v2-dedup
-    max_size_gb: 100
-    include_patterns:
-      - "data/Python/*.parquet"
-      - "data/Java/*.parquet"
-      - "data/JavaScript/*.parquet"
-      - "data/C/*.parquet"
-      - "data/C++/*.parquet"
-      - "data/Rust/*.parquet"
-      - "data/Go/*.parquet"
-      - "data/TypeScript/*.parquet"
-      - "data/Shell/*.parquet"
-      - "data/C-Sharp/*.parquet"
-      - "data/HTML/*.parquet"
-      - "data/SQL/*.parquet"
-    notes: "语言目录首字母大写（GitHub Linguist 命名）；The Stack v2 需 GitHub 授权，dedup 版可直接下载"
-
+  # the-stack-v2-dedup 已移除：gated，本机 token 未授权（见文件头说明）
   - name: starcoderdata
     domain: code
     repo_id: bigcode/starcoderdata
-    max_size_gb: 50
+    revision: 9fc30b578cedaec69e47302df72cf00feed7c8c4
+    max_size_gb: 0
     include_patterns:
-      - "python/*.parquet"
-      - "java/*.parquet"
-      - "javascript/*.parquet"
-    notes: "StarCoder 训练集，86 语言代码"
+      - "*/*.parquet"
+    notes: "StarCoder 训练集全量 311GB（含 issues/jupyter；不整类剔除，统一经过代码质量过滤、去重、去污染与 S6 质量选取）"
+
+  - name: github-code
+    domain: code
+    repo_id: codeparrot/github-code
+    revision: b5661e6b17396364b2bcf8e68977b0d28e1ebd19
+    max_size_gb: 300
+    include_patterns:
+      - "data/*.parquet"
+    notes: "公开未去重 GitHub 代码（the-stack-v2 gated 的补偿源），300GB 哈希均匀抽样 ≈110B tokens，近重去重由管线完成"
 
   # ============ 数学 ============
   - name: proof-pile-2
     domain: math
     repo_id: EleutherAI/proof-pile-2
+    revision: 901a9273a770e9d4138c5ddd91802f9c5c6cdc4b
     max_size_gb: 0
     include_patterns:
       - "open-web-math/train/*.jsonl.zst"
       - "algebraic-stack/train/*.jsonl.zst"
-      - "arxiv-math/train/*.jsonl.zst"
-    notes: "55B tokens，合集：OpenWebMath + AlgebraicStack + arXiv-math"
-
-  - name: openwebmath
-    domain: math
-    repo_id: open-web-math/open-web-math
-    max_size_gb: 0
-    include_patterns:
-      - "data/*.parquet"
-    notes: "14.7B tokens 数学网页"
+      - "arxiv/train/*.jsonl.zst"
+    notes: "全量 55B tokens（含 OpenWebMath + AlgebraicStack + arXiv-math）"
 
   - name: automathtext
     domain: math
     repo_id: math-ai/AutoMathText
+    revision: 221818ca115f0c1f63eccd4f600ed963866ae5d9
     max_size_gb: 0
     include_patterns:
       - "*.jsonl"
-    notes: "~14B tokens，LLM 自动筛选数学文本，含中文"
+    notes: "全量 ~14B tokens，LLM 筛选，含中文数学"
 
-  - name: mathpile
-    domain: math
-    repo_id: GAIR/MathPile
-    max_size_gb: 0
-    include_patterns:
-      - "train/*.jsonl.gz"
-    notes: "~9.8B tokens 多源数学文本（arXiv+CommonCrawl+ProofWiki）"
+  # mathpile 已移除：gated，本机 token 未授权；数学体量由 proof-pile-2 + automathtext 覆盖
 
   # ============ 学术/科学 ============
   - name: pes2o
     domain: academic
     repo_id: allenai/peS2o
-    max_size_gb: 50
+    revision: 636a503e44a3ca1b58e01fb61eab0825cd574de0
+    max_size_gb: 0
     include_patterns:
-      - "data/v1/*.json.gz"
-    notes: "~40M 篇学术论文清洗版，JSON.gz 格式"
+      - "data/v3/*.zst"
+    notes: "最新 v3 清洗版全量 120GB（zst 格式），约 40M 篇论文；v1/v2 为旧版不下载避免混版"
 
   - name: arxiv-latex-corpus
     domain: academic
     repo_id: KiteFishAI/arxiv-tex-corpus-full
+    revision: 02b5b67c83a6f2736cb8db4f2b56faa601d4e4af
     max_size_gb: 0
     include_patterns:
       - "*.jsonl"
-    notes: "80GB arXiv LaTeX 源码"
+    notes: "全量 80GB，arXiv LaTeX 源码"
 
   # ============ 文学/书籍 ============
   - name: pg19
     domain: books
     repo_id: deepmind/pg19
+    enabled: false
     max_size_gb: 0
     include_patterns: []
-    notes: "脚本型数据集——用 datasets.load_dataset('deepmind/pg19') 加载，数据托管在 GCS；或从 https://storage.googleapis.com/deepmind-gutenberg 直接下载 tar 文件"
+    notes: "HF 仓库仅含文件清单；正文经 scripts/download_pg19.sh 从 GCS 直接下载（约 12GB/2.8B tokens）"
+
+  - name: dolma-books
+    domain: books
+    repo_id: "direct-urls"          # 非 HF 托管，走 urls 直连
+    max_size_gb: 0
+    include_patterns: []
+    urls:
+      - "https://olmo-data.org/dolma-v1_6/books/books-0000.json.gz"
+      - "https://olmo-data.org/dolma-v1_6/books/books-0001.json.gz"
+      - "https://olmo-data.org/dolma-v1_6/books/books-0002.json.gz"
+    url_sha256:
+      books-0000.json.gz: 257fbae7caa0f4a9dd138c3a479de4a6db08c91f84d0a128e671aa801428e657
+      books-0001.json.gz: abf3b5693d80a0a0447d836c28d0a7e910abd970370517e79e10fd97da330f21
+      books-0002.json.gz: 14b7f2d372d88a70ae9a530a86d4d9a1a4b012bfbe4b4a73429ac363ebefb236
+    notes: "OLMo Dolma v1.6 的 Project Gutenberg 书籍全集 7.8GB（~9B tokens），补 PG19 仅 2.8B 的书籍缺口"
 
   # ============ 百科/常识 ============
   - name: wikipedia-en
     domain: encyclopedia
     repo_id: wikimedia/wikipedia
+    revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa
     max_size_gb: 0
     include_patterns:
       - "20231101.en/*.parquet"
-    notes: "英文维基百科"
+    notes: "全量 ~4B tokens"
 
   - name: wikipedia-zh
     domain: encyclopedia
     repo_id: wikimedia/wikipedia
+    revision: b04c8d1ceb2f5cd4588862100d08de323dccfbaa
     max_size_gb: 0
     include_patterns:
       - "20231101.zh/*.parquet"
-    notes: "中文维基百科"
+    notes: "全量 ~1.7B tokens"
 
   - name: wikitext
     domain: encyclopedia
     repo_id: Salesforce/wikitext
+    revision: b08601e04326c79dfdd32d625aee71d232d685c3
     max_size_gb: 0
     include_patterns:
       - "wikitext-103-raw-v1/*.parquet"
-    notes: "WikiText-103 精选文章"
+    notes: "全量 103M tokens"
 
   # ============ StackExchange/问答 ============
   - name: stack-exchange
     domain: qa
     repo_id: HuggingFaceH4/stack-exchange-preferences
-    max_size_gb: 20
+    revision: c7bda74048748f55749cd663c3d8d1025a841fd9
+    max_size_gb: 100
     include_patterns:
       - "data/*.stackexchange.com/train-*.parquet"
-    notes: "StackExchange 全站问答 dump"
+    notes: "≈25B tokens，全站问答 dump 均匀抽样"
 
   # ============ 中文 ============
   - name: skypile-150b
     domain: chinese
     repo_id: Skywork/SkyPile-150B
-    max_size_gb: 100
+    revision: d6395caa3005bcbf21dd80585c15f60004f77ccb
+    max_size_gb: 0
     include_patterns:
       - "data/*.jsonl"
-    notes: "150B tokens 中文预训练语料"
+    notes: "全量 ~250GB/150B tokens，中文主源"
 
-  - name: cci3-data
-    domain: chinese
-    repo_id: BAAI/CCI3-Data
-    max_size_gb: 50
-    include_patterns:
-      - "*.jsonl"
-    notes: "智源中文互联网语料"
+  # cci3-data 已移除：gated，本机 token 未授权（见文件头说明）
 
   - name: cci3-hq
     domain: chinese
     repo_id: BAAI/CCI3-HQ
-    max_size_gb: 20
+    revision: d6f3aa30cebfef497e822ff968ed68a18bf90b8f
+    max_size_gb: 250
     include_patterns:
       - "*.jsonl"
-    notes: "CCI3 高质量子集"
+    notes: "CCI3 高质量子集，250GB 哈希均匀抽样（gated 的 cci3-data 的补偿提额）"
 
   # ============ 多语言 ============
   - name: fineweb-2
     domain: multilingual
     repo_id: HuggingFaceFW/fineweb-2
+    revision: af9c13333eb981300149d5ca60a8e9d659b276b9
     max_size_gb: 50
     include_patterns:
       - "data/*_Latn/train/*.parquet"
-    notes: "1000+ 语言，按需选语言"
+    notes: "拉丁文字语言抽样，≈12B tokens"

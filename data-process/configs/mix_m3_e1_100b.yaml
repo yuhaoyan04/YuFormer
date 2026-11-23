@@ -1,0 +1,88 @@
+# S6 首次物化目标：M3 档（top-10% 质量）确定性切出的 ~100B tokens 单一分布子集，
+# 供 E1 缩放律 / E2 架构消融全部前置实验共用（保证可比性；D 轴由其子采样实现）。
+# 选取规则与 M3 完全一致（top_k=0.10 全领域统一），仅总量目标缩到 100B——
+# 各领域按比例配额（最大余数法），不足额域自动用深档补足到配额（shortfall 进 summary）。
+#
+# 首次物化命令（硬门全过后）：
+#   PYTHONPATH=src /usr/bin/python3 -m yuformer_data.scale.driver \
+#     --stage s6 --mix-config configs/mix_m3_e1_100b.yaml --workers 64 --out-root ../data/processed
+
+mix_name: mix_m3_e1_100b
+total_tokens: 100_000_000_000
+score_field: hybrid_v2  # 2026-10-10 用户裁定：full 版同 fast 轨用 hybrid_v2
+                       # （goldrule 0.5 + upstream 0.3 + rule 0.2；fasttext CV 未达标退役为 backlog）
+seed: yuformer
+
+# Formal source roster.  arxiv-latex-corpus is excluded because its local
+# train.jsonl is shorter than the immutable upstream object; skypile-150b is
+# excluded because one immutable upstream shard is absent locally.  Keeping
+# this roster in the config makes source scope part of config_echo and forces
+# S6/validation to rebuild if the roster changes.
+included_sources:
+  - automathtext
+  - cci3-hq
+  - dclm-baseline
+  - dolma-books
+  - fineweb
+  - fineweb-2
+  - fineweb-edu
+  - github-code
+  - pes2o
+  - proof-pile-2
+  - stack-exchange
+  - starcoderdata
+  - wikipedia-en
+  - wikipedia-zh
+  - wikitext
+
+# top_k defines the preferred quality band.  If that band contains fewer tokens
+# than a domain's quota, scan deeper in that domain and select the best prefix.
+# The remaining aggregate shortfall may only be the indivisible-document tail.
+quota_fill_policy: deepen_to_quota
+max_total_shortfall_tokens: 1_000_000
+
+domains:
+  web:
+    weight: 0.86
+    top_k: 0.10
+  code:
+    weight: 0.055
+    top_k: 0.10
+  math:
+    weight: 0.018
+    top_k: 0.10
+  chinese:
+    weight: 0.035
+    top_k: 0.10
+  academic:
+    weight: 0.012
+    top_k: 0.10
+  books:
+    weight: 0.005
+    top_k: 0.10
+  encyclopedia:
+    weight: 0.008
+    top_k: 0.10
+  qa:
+    weight: 0.004
+    top_k: 0.10
+  multilingual:
+    weight: 0.003
+    top_k: 0.10
+
+curriculum:
+  enabled: false
+  method: random
+  stage1_fraction: 0.0
+
+val:
+  tokens_per_domain: 50_000_000
+  max_fraction: 0.01
+
+# Research-only full-score snapshot.  At the observed candidate counts a 5M
+# per-domain cap tops out below the 10M acceptance floor; 10M leaves enough web
+# headroom while retaining all smaller domains selected by the 10% hash sample.
+goldrule:
+  per_domain_quota: 10_000_000
+  sample_rate: 0.10
+  min_total_rows: 10_000_000

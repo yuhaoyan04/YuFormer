@@ -1,0 +1,18 @@
+[project]
+name = "yuformer-tokenizer"
+version = "0.1.0"
+description = "YuFormer tokenizer: self-trained BPE/Unigram training, evaluation, and dataset tokenization"
+requires-python = ">=3.10"
+dependencies = ["tokenizers>=0.22", "pyarrow>=12", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+# .zst corpus support
+zstd = ["zstandard"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+where = ["src"]

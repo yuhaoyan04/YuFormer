@@ -1,0 +1,99 @@
+{
+  "candidate": "size_5b",
+  "collect_returncode": 0,
+  "evaluation": {
+    "issues": [],
+    "median_mfu_pct": 35.097116470336914,
+    "median_tps_per_device": 11281.17431640625,
+    "p10_tps_per_device": 11261.8603515625,
+    "production_qualified": false,
+    "projected_1t_days_duty_09": 142.73931995994013,
+    "status": "PASS_SCREENING",
+    "steady_points": 16,
+    "within_30_days": false,
+    "within_33_days": false
+  },
+  "finished_at": "2026-11-14T04:03:55.220783+00:00",
+  "identity_sha256": "a34151a6fc8e713234aee1d024d9559483b66f1d7879ca98d5dc7771b28384cf",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/gpu_size_sweep_20261114/size_5b_b2.log",
+  "parameters": 4956593664,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73615.0,
+      "power_w": 720.9,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 718.1,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 715.66,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 727.71,
+      "temperature_c": 64.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 725.59,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 725.84,
+      "temperature_c": 75.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71309.0,
+      "power_w": 725.63,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 71311.0,
+      "power_w": 714.99,
+      "temperature_c": 73.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "production_qualified": false,
+  "result_sha256": "360fdefe8145a2211bca662567c0bd5ab41f9a96edd54a8f99b6fbf847563bc5",
+  "returncode": 0,
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b2.yaml",
+    "config_sha256": "169c3830a98c2cd9013d71e79383f3f0ebd9d992a729534bbb396ea47948dad7",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_5b_b2.env",
+    "env_sha256": "eaca2bc7c0ac66d97ad92d4114e00373519d41d7a89fee6c6f82041cde8d3748",
+    "grad_accum": 64,
+    "microbatch": 2,
+    "name": "size_5b_b2"
+  },
+  "wall_seconds": 1247.4
+}

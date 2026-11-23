@@ -1,0 +1,6 @@
+{
+  "error": "ValueError: production requires current numerical/recovery/reshard qualification PASS",
+  "schema_version": 1,
+  "status": "FAIL",
+  "validated_at": "2026-11-13T04:01:50.542335+00:00"
+}

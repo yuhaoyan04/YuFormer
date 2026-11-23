@@ -1,0 +1,99 @@
+{
+  "candidate": "context16384_det_flash_24",
+  "collect_returncode": 0,
+  "evaluation": {
+    "issues": [],
+    "median_mfu_pct": 44.14616012573242,
+    "median_tps_per_device": 40924.611328125,
+    "p10_tps_per_device": 40894.80859375,
+    "production_qualified": false,
+    "projected_1t_days_duty_09": 39.308419414182595,
+    "status": "PASS_SCREENING",
+    "steady_points": 16,
+    "within_30_days": false,
+    "within_33_days": false
+  },
+  "finished_at": "2026-11-15T05:18:26.182382+00:00",
+  "identity_sha256": "958b4ce0cee970c4f6d2344d53e1bc8ed3cf13b94cefe1258de6da0dc1706c85",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/deterministic-flash-long-profiles/context16384_det_flash_24.log",
+  "parameters": 1516600064,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 75927.0,
+      "power_w": 722.58,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 731.44,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 728.09,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 718.36,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 729.77,
+      "temperature_c": 64.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 730.2,
+      "temperature_c": 74.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 739.97,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 73623.0,
+      "power_w": 747.49,
+      "temperature_c": 72.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "production_qualified": false,
+  "result_sha256": "a15f8c89d38d71663ffc6ff2d3d3c1cfeb080dae473dc87cc4122d0feb0db01d",
+  "returncode": 0,
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/deterministic-flash-long-profiles/context16384_det_flash_24.yaml",
+    "config_sha256": "6fa52fa07aef25f9bbc3cf1c1ec0277ac635269fee133e65c40dc2a66e7679de",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/report/patches/deterministic-flash-long-profiles/context16384_det_flash_24.env",
+    "env_sha256": "8e9f288d165edda91e01664ac09b52f3304892d5a5c8894f802e8649834e2308",
+    "grad_accum": 16,
+    "microbatch": 2,
+    "name": "context16384_det_flash_24"
+  },
+  "wall_seconds": 365.5
+}

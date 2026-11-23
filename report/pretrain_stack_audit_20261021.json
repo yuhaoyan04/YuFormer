@@ -1,0 +1,1606 @@
+{
+  "blockers": [
+    "final 1T WSD streams are not materialized",
+    "production evidence is absent: frozen_recipe",
+    "production evidence is absent: production_throughput_canary",
+    "production evidence is absent: derived_release",
+    "production evidence is absent: token_stream_audit",
+    "production evidence is absent: overlap_audit",
+    "production evidence is absent: production_contract"
+  ],
+  "checks": {
+    "active_root_config_roster": {
+      "allowed": [
+        "pretrain_base.env",
+        "pretrain_base.yaml",
+        "research_budget.yaml"
+      ],
+      "unexpected": []
+    },
+    "canonical_budget": {
+      "names": [
+        "warmup",
+        "stable",
+        "anneal"
+      ],
+      "stage_tokens": [
+        50000000000,
+        800000000000,
+        150000000000
+      ],
+      "target_tokens": 1000000000000
+    },
+    "configs": [
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000000,
+        "derived_iters": 476837,
+        "expected_iters": 476837,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/pretrain_base.yaml",
+        "tokens_per_step": 2097152
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_high.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_low.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_mid.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_vhigh.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_vlow.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_high.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_low.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_mid.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_vhigh.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_vlow.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_high.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_low.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_mid.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_vhigh.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 500000000,
+        "derived_iters": 1907,
+        "expected_iters": 1907,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_vlow.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 1904,
+        "expected_iters": 1904,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_1m_high.yaml",
+        "tokens_per_step": 1048576
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 1904,
+        "expected_iters": 1904,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_1m_low.yaml",
+        "tokens_per_step": 1048576
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 1904,
+        "expected_iters": 1904,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_1m_mid.yaml",
+        "tokens_per_step": 1048576
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 952,
+        "expected_iters": 952,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_2m_high.yaml",
+        "tokens_per_step": 2097152
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 952,
+        "expected_iters": 952,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_2m_low.yaml",
+        "tokens_per_step": 2097152
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 952,
+        "expected_iters": 952,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_2m_mid.yaml",
+        "tokens_per_step": 2097152
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 476,
+        "expected_iters": 476,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_4m_high.yaml",
+        "tokens_per_step": 4194304
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 476,
+        "expected_iters": 476,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_4m_low.yaml",
+        "tokens_per_step": 4194304
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1996488704,
+        "derived_iters": 476,
+        "expected_iters": 476,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/batch_pilot/batch_4m_mid.yaml",
+        "tokens_per_step": 4194304
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 704990316,
+        "derived_iters": 2689,
+        "expected_iters": 2689,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c0_100m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 371540364,
+        "derived_iters": 1417,
+        "expected_iters": 1417,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c0_200m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 153256892,
+        "derived_iters": 584,
+        "expected_iters": 584,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c0_400m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1247973291,
+        "derived_iters": 4760,
+        "expected_iters": 4760,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c0_50m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 86301042,
+        "derived_iters": 329,
+        "expected_iters": 329,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c0_800m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 2056221755,
+        "derived_iters": 7843,
+        "expected_iters": 7843,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c1_100m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1083659397,
+        "derived_iters": 4133,
+        "expected_iters": 4133,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c1_200m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 446999270,
+        "derived_iters": 1705,
+        "expected_iters": 1705,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c1_400m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 3639922099,
+        "derived_iters": 13885,
+        "expected_iters": 13885,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c1_50m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 251711372,
+        "derived_iters": 960,
+        "expected_iters": 960,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c1_800m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 7049903162,
+        "derived_iters": 26893,
+        "expected_iters": 26893,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c2_100m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 3715403647,
+        "derived_iters": 14173,
+        "expected_iters": 14173,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c2_200m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1532568928,
+        "derived_iters": 5846,
+        "expected_iters": 5846,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c2_400m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 863010420,
+        "derived_iters": 3292,
+        "expected_iters": 3292,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_iso_c2_800m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 100000000,
+        "derived_iters": 381,
+        "expected_iters": 381,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ld_300m_100m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ld_300m_1b.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 300000000,
+        "derived_iters": 1144,
+        "expected_iters": 1144,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ld_300m_300m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 3000000000,
+        "derived_iters": 11444,
+        "expected_iters": 11444,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ld_300m_3b.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 9846128640,
+        "derived_iters": 37560,
+        "expected_iters": 37560,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ld_300m_9p85b.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ln_100m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ln_200m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ln_400m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ln_50m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e1/e1_ln_800m.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_ffn2x.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_ffn2x_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_ffn2x_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_ffn4x.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_ffn4x_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_ffn4x_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_fullrope.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_fullrope_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_fullrope_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l16.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l16_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l16_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l32.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l32_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l32_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l48.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l48_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_l48_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_nogate.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_nogate_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_nogate_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_noqkn.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_noqkn_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_noqkn_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_swaoff.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_swaoff_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_swaoff_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_untied.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_untied_s2.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 1000000000,
+        "derived_iters": 3814,
+        "expected_iters": 3814,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/e2/e2_untied_s3.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 49152,
+        "derived_iters": 12,
+        "expected_iters": 12,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q1_single_gpu.yaml",
+        "tokens_per_step": 4096
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 196608,
+        "derived_iters": 12,
+        "expected_iters": 12,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q2_fsdp4_dcp.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 393216,
+        "derived_iters": 24,
+        "expected_iters": 24,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q3_load_interrupt.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 393216,
+        "derived_iters": 24,
+        "expected_iters": 24,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q3_recovery_reference.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 393216,
+        "derived_iters": 24,
+        "expected_iters": 24,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q3_save_interrupt.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 393216,
+        "derived_iters": 24,
+        "expected_iters": 24,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q3_train_interrupt.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 393216,
+        "derived_iters": 24,
+        "expected_iters": 24,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q4_reshard_4to2.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 393216,
+        "derived_iters": 24,
+        "expected_iters": 24,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q5_reshard_4to8.yaml",
+        "tokens_per_step": 16384
+      },
+      {
+        "backend": "torchtitan-v0.3.0",
+        "budget_tokens": 524288,
+        "derived_iters": 2,
+        "expected_iters": 2,
+        "group": "formal",
+        "has_release_gate": true,
+        "has_token_stream_audit": true,
+        "has_tokenizer_gate": true,
+        "path": "pretrain/configs/qualification/q6_large_accumulation.yaml",
+        "tokens_per_step": 262144
+      },
+      {
+        "backend": "pytorch-fsdp1-compat",
+        "budget_tokens": 157286400,
+        "derived_iters": 200,
+        "expected_iters": 200,
+        "group": "probe",
+        "has_release_gate": false,
+        "has_token_stream_audit": false,
+        "has_tokenizer_gate": false,
+        "path": "experiments/_common/mfu_gate/mfu_gate_p1_probefull.yaml",
+        "tokens_per_step": 786432
+      },
+      {
+        "backend": "pytorch-fsdp1-compat",
+        "budget_tokens": 157286400,
+        "derived_iters": 200,
+        "expected_iters": 200,
+        "group": "probe",
+        "has_release_gate": false,
+        "has_token_stream_audit": false,
+        "has_tokenizer_gate": false,
+        "path": "experiments/_common/mfu_gate/mfu_gate_p2_swaoff.yaml",
+        "tokens_per_step": 786432
+      },
+      {
+        "backend": "pytorch-fsdp1-compat",
+        "budget_tokens": 157286400,
+        "derived_iters": 200,
+        "expected_iters": 200,
+        "group": "probe",
+        "has_release_gate": false,
+        "has_token_stream_audit": false,
+        "has_tokenizer_gate": false,
+        "path": "experiments/_common/mfu_gate/mfu_gate_p3_flash.yaml",
+        "tokens_per_step": 786432
+      },
+      {
+        "backend": "pytorch-fsdp1-compat",
+        "budget_tokens": 157286400,
+        "derived_iters": 200,
+        "expected_iters": 200,
+        "group": "probe",
+        "has_release_gate": false,
+        "has_token_stream_audit": false,
+        "has_tokenizer_gate": false,
+        "path": "experiments/_common/mfu_gate/mfu_gate_ws1.yaml",
+        "tokens_per_step": 786432
+      }
+    ],
+    "environment_preflight": "ready",
+    "formal_envs": [
+      {
+        "missing": [],
+        "path": "pretrain/configs/pretrain_base.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_high.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_low.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_mid.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_vhigh.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_200m_vlow.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_high.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_low.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_mid.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_vhigh.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_50m_vlow.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_high.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_low.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_mid.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_vhigh.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1_pilot/e1_lr_800m_vlow.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_1m_high.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_1m_low.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_1m_mid.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_2m_high.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_2m_low.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_2m_mid.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_4m_high.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_4m_low.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/batch_pilot/batch_4m_mid.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c0_100m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c0_200m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c0_400m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c0_50m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c0_800m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c1_100m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c1_200m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c1_400m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c1_50m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c1_800m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c2_100m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c2_200m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c2_400m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_iso_c2_800m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ld_300m_100m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ld_300m_1b.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ld_300m_300m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ld_300m_3b.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ld_300m_9p85b.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ln_100m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ln_200m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ln_400m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ln_50m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e1/e1_ln_800m.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_ffn2x.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_ffn2x_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_ffn2x_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_ffn4x.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_ffn4x_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_ffn4x_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_fullrope.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_fullrope_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_fullrope_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l16.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l16_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l16_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l32.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l32_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l32_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l48.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l48_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_l48_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_nogate.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_nogate_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_nogate_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_noqkn.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_noqkn_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_noqkn_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_swaoff.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_swaoff_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_swaoff_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_untied.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_untied_s2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/e2/e2_untied_s3.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q1_single_gpu.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q2_fsdp4_dcp.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q3_load_interrupt.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q3_recovery_reference.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q3_save_interrupt.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q3_train_interrupt.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q4_reshard_4to2.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q5_reshard_4to8.env"
+      },
+      {
+        "missing": [],
+        "path": "pretrain/configs/qualification/q6_large_accumulation.env"
+      }
+    ],
+    "production_evidence": {
+      "derived_release": "MISSING",
+      "experiment_identity_audit": "PASS",
+      "frozen_recipe": "MISSING",
+      "overlap_audit": "MISSING",
+      "post_freeze_plan_audit": "PRE_FREEZE_ONLY",
+      "production_contract": "MISSING",
+      "production_throughput_canary": "MISSING",
+      "token_stream_audit": "MISSING"
+    },
+    "production_materialization_tools": {
+      "missing": [],
+      "required": [
+        "pretrain/scripts/assert_run_lease.py",
+        "pretrain/scripts/run_with_lease.py",
+        "pretrain/scripts/materialize_tokens.py",
+        "pretrain/scripts/merge_token_parts.c",
+        "pretrain/scripts/prepare_batch_pilots.py",
+        "pretrain/scripts/select_batch_pilots.py",
+        "pretrain/scripts/run_production_canary.py",
+        "experiments/e3_data_mix/configs/e3_analysis_policy.yaml",
+        "experiments/e3_data_mix/scripts/analyze_results.py",
+        "experiments/e4_curriculum/scripts/freeze_1t_recipe.py",
+        "experiments/e4_curriculum/scripts/audit_1t_plan.py",
+        "experiments/e4_curriculum/scripts/materialize_1t_orders.py",
+        "experiments/e4_curriculum/scripts/build_1t_order_release.py",
+        "experiments/e4_curriculum/scripts/tokenize_1t_orders.py",
+        "experiments/e4_curriculum/scripts/audit_1t_token_streams.py",
+        "experiments/e4_curriculum/scripts/audit_1t_overlap.py",
+        "experiments/e4_curriculum/scripts/overlap_merge.c",
+        "experiments/e4_curriculum/scripts/overlap_consumed_merge.c",
+        "pretrain/scripts/validate_production_contract.py"
+      ]
+    },
+    "production_stage_limits": {
+      "expected": 244140544,
+      "limits": [
+        12207104,
+        195312640,
+        36620800
+      ],
+      "samples_per_step": 512,
+      "sum": 244140544
+    },
+    "production_streams": {
+      "missing": [
+        "warmup.tokens.bin",
+        "warmup.meta.json",
+        "warmup.doc_lengths.u32",
+        "stable.tokens.bin",
+        "stable.meta.json",
+        "stable.doc_lengths.u32",
+        "anneal.tokens.bin",
+        "anneal.meta.json",
+        "anneal.doc_lengths.u32"
+      ],
+      "root": "data/token_streams/pretrain-1t"
+    },
+    "qualification_roster": {
+      "expected": [
+        "q1_single_gpu",
+        "q2_fsdp4_dcp",
+        "q3_load_interrupt",
+        "q3_recovery_reference",
+        "q3_save_interrupt",
+        "q3_train_interrupt",
+        "q4_reshard_4to2",
+        "q5_reshard_4to8",
+        "q6_large_accumulation"
+      ],
+      "observed": [
+        "q1_single_gpu",
+        "q2_fsdp4_dcp",
+        "q3_load_interrupt",
+        "q3_recovery_reference",
+        "q3_save_interrupt",
+        "q3_train_interrupt",
+        "q4_reshard_4to2",
+        "q5_reshard_4to8",
+        "q6_large_accumulation"
+      ]
+    },
+    "torchtitan_adapter": {
+      "missing": [],
+      "required": [
+        "backend.lock.json",
+        "preflight.py",
+        "validate_contract.py",
+        "launch.sh",
+        "yuformer_ext/config_registry.py",
+        "yuformer_ext/model.py",
+        "yuformer_ext/data.py",
+        "yuformer_ext/parallelize.py",
+        "yuformer_ext/validation.py",
+        "numerical_parity.py",
+        "lr_schedule_contract.py"
+      ]
+    },
+    "torchtitan_cross_pod_lease": {
+      "uses_flock": false,
+      "uses_generation_lease": true
+    },
+    "torchtitan_qualification": "PASS",
+    "torchtitan_qualification_identity": {
+      "current_sha256": "bb8c395e2e63e3fc2ff7f1742bdbaccc8b7783253f16210762a112adca2d882c",
+      "matches": true,
+      "recorded_sha256": "bb8c395e2e63e3fc2ff7f1742bdbaccc8b7783253f16210762a112adca2d882c"
+    }
+  },
+  "defects": [],
+  "schema_version": 1,
+  "status": "BLOCKED"
+}

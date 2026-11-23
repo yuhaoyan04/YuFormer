@@ -1,0 +1,54 @@
+{
+  "cases": [
+    "matched_baseline_b8",
+    "larger_lr1e4_b8"
+  ],
+  "domains": [
+    "academic",
+    "books",
+    "chinese",
+    "code",
+    "encyclopedia",
+    "math",
+    "multilingual",
+    "qa",
+    "web"
+  ],
+  "global_batch_size": 64,
+  "global_batches_per_domain": 44,
+  "local_batch_size": 8,
+  "production_qualified": false,
+  "purpose": "PREDECLARED_ACTUAL_PRODUCTION_PAIR_DEVELOPMENT_VALIDATION",
+  "reference_cases": [
+    "matched_baseline_b8"
+  ],
+  "samples_per_domain": 2816,
+  "seq_len": 4096,
+  "source_sample_offset": 64,
+  "target_candidate": "larger_lr1e4_b8",
+  "target_interval": [
+    262145,
+    11796481
+  ],
+  "training_protocol_sha256": "62f7c6879b4d4cd3df342e463044fac443470b0e1822d362b46925cd0049f372",
+  "training_source_sha256": "a1383a95f1e3a323fab652fc1c1be69487521e13486de2d118b789fba53acd37",
+  "uncertainty": {
+    "confidence": 0.95,
+    "intervals_reported_without_claiming_significance_when_zero_is_inside": true,
+    "method": "paired bootstrap over the same 44 global batches per domain",
+    "resamples": 10000,
+    "seed": 20261114
+  },
+  "validation_metadata_sha256": {
+    "data/token_streams/m3_20261020_yf64k/val_academic.meta.json": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3",
+    "data/token_streams/m3_20261020_yf64k/val_books.meta.json": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64",
+    "data/token_streams/m3_20261020_yf64k/val_chinese.meta.json": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767",
+    "data/token_streams/m3_20261020_yf64k/val_code.meta.json": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4",
+    "data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea",
+    "data/token_streams/m3_20261020_yf64k/val_math.meta.json": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec",
+    "data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2",
+    "data/token_streams/m3_20261020_yf64k/val_qa.meta.json": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54",
+    "data/token_streams/m3_20261020_yf64k/val_web.meta.json": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899"
+  },
+  "world_size": 8
+}

@@ -1,0 +1,31 @@
+schema_version: 1
+backend: torchtitan-v0.3.0
+pretrain_context: 4096
+base_checkpoint:
+  manifest_sha256: __LOCK_AFTER_PRETRAIN__
+dataset_id: __PASS_LONG_CONTEXT_DATASET__
+optimizer_transition: reset
+target_tokens_per_update: 4194304
+required_world_size: 8
+stages:
+- name: context-64k-direct
+  seq_len: 65536
+  world_size: 8
+  micro_batch_size: 1
+  grad_accum: 8
+  tokens_per_update: 4194304
+  budget_tokens: 49996103680
+  short_replay_fraction: 0.25
+  attention_kernel: flash_flex_swa
+  compile_model: true
+  activation_checkpointing: false
+  selective_recompute: mlp
+  loss_num_chunks: 32
+  cuda_allocator_conf: expandable_segments:True,garbage_collection_threshold:0.7
+  init: previous_stage_weights_only
+  evaluation:
+    long_context: true
+    short_regression: true
+  deterministic: true
+  fsdp_reshard_after_forward: never
+scope: matched_token_research_control_not_in_global_training_budget

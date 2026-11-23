@@ -1,0 +1,595 @@
+{
+  "expected_by_group": {
+    "batch_pilot": 9,
+    "batch_pilot_extension": 6,
+    "e1": 24,
+    "e1_pilot": 15,
+    "e1_pilot_extension": 6,
+    "e2": 0,
+    "e2_confirm": 0,
+    "e3": 0,
+    "e3_confirm": 0
+  },
+  "missing_by_group": {
+    "batch_pilot": [],
+    "batch_pilot_extension": [],
+    "e1": [],
+    "e1_pilot": [],
+    "e1_pilot_extension": [],
+    "e2": [],
+    "e2_confirm": [],
+    "e3": [],
+    "e3_confirm": []
+  },
+  "observed_at": "2026-10-26T04:07:50.697246+00:00",
+  "observed_by_group": {
+    "batch_pilot": 9,
+    "batch_pilot_extension": 6,
+    "e1": 24,
+    "e1_pilot": 15,
+    "e1_pilot_extension": 6,
+    "e2": 0,
+    "e2_confirm": 0,
+    "e3": 0,
+    "e3_confirm": 0
+  },
+  "passed": 60,
+  "roster_exact": true,
+  "rows": [
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_200m_high.yaml",
+      "config_sha256": "8c63c96e55af456b78072495cc14ca74f30bdb15a20702119f21abdc1b516322",
+      "env": "pretrain/configs/e1_pilot/e1_lr_200m_high.env",
+      "env_sha256": "070f890f95a33fb0baa2ce1ed5f3c9f8e3a225b10ef66687a06c811913d0ab35",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_200m_high",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_200m_low.yaml",
+      "config_sha256": "4e69026f6d5db87a82b74b1445449eeff9146f4f367f4856fd87065b342d26b2",
+      "env": "pretrain/configs/e1_pilot/e1_lr_200m_low.env",
+      "env_sha256": "59b8605e92ed252dbb062622135f9ae6097f83f9a243c64294562da2e38e291a",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_200m_low",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_200m_mid.yaml",
+      "config_sha256": "64533177e08900d2fd44c734b5af12e619f9f8202c198755d402bfb69a8653ef",
+      "env": "pretrain/configs/e1_pilot/e1_lr_200m_mid.env",
+      "env_sha256": "8162e1b7eaf6efe52413f0637e228064018a80481ec02aa3c8f0065025f654d7",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_200m_mid",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_200m_vhigh.yaml",
+      "config_sha256": "2b94767d7859369731158baedb21b8608686737c65768a4792634e6cdb338461",
+      "env": "pretrain/configs/e1_pilot/e1_lr_200m_vhigh.env",
+      "env_sha256": "4e0b7ff535c7e3d8b91bac9e9dc2417cfe7ae93f340c6f18f875d9c5ff176e54",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_200m_vhigh",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_200m_vlow.yaml",
+      "config_sha256": "ce8b4037e74bde2f7d24f4edea24f82fb62239085368f3fe434fe8d17384770c",
+      "env": "pretrain/configs/e1_pilot/e1_lr_200m_vlow.env",
+      "env_sha256": "53d01c9107ad35120799d3d61a374e7254bfb186039c43f838dd70c87daee6db",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_200m_vlow",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_50m_high.yaml",
+      "config_sha256": "ee762dc3eba5a5a4c444cd3634484f34918134056ebcfd0d17047f833ba221b6",
+      "env": "pretrain/configs/e1_pilot/e1_lr_50m_high.env",
+      "env_sha256": "3efc520ab6cca3cf3c24b33dee34d35323241d2ec02abb06cd5e7d43582b8882",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_50m_high",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_50m_low.yaml",
+      "config_sha256": "66ab247c0ba3dff20d9cef15110a9ba29d5a4f553a3cd066656e547182360849",
+      "env": "pretrain/configs/e1_pilot/e1_lr_50m_low.env",
+      "env_sha256": "bbe54bbf1f9ed85dd0093aa7ebd0022f242fa78d0625741cd49fb05ea07d461d",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_50m_low",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_50m_mid.yaml",
+      "config_sha256": "0c2e15a91529e358e7dda2e14383b85b222d9bdbe89cda74dcc0ad5fd3e27962",
+      "env": "pretrain/configs/e1_pilot/e1_lr_50m_mid.env",
+      "env_sha256": "c7662ba3f41a3cfd0e74dbbc6f21ef60114a85db6b48e6b5900582d7391c8a8f",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_50m_mid",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_50m_vhigh.yaml",
+      "config_sha256": "2421e554a32d80b4453b163aa86c7405456eabc3f3c1b1d2a1f4696872c506a2",
+      "env": "pretrain/configs/e1_pilot/e1_lr_50m_vhigh.env",
+      "env_sha256": "8fd7156f3b2fefb72bd11ebb316dec1959d32f530fd4ce83c4bbb6d371ac729d",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_50m_vhigh",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_50m_vlow.yaml",
+      "config_sha256": "7f2a7091219baa5ad318108c9a90d18b095b17c5c4232347f9770f7cabbb34d0",
+      "env": "pretrain/configs/e1_pilot/e1_lr_50m_vlow.env",
+      "env_sha256": "037eb751bba4c2a1bb054a2ef078439ac2f18d37c8967e5db0bbc3434dd4f63e",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_50m_vlow",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_800m_high.yaml",
+      "config_sha256": "c4761b2b7727980e6ad1e40a9a4a223163114b8ea084357c535cedfc23349aca",
+      "env": "pretrain/configs/e1_pilot/e1_lr_800m_high.env",
+      "env_sha256": "ecfffbf40bdbbfe0dbf7dbe6907b6f9ec710b2ac9997f9b9be293c6096595c44",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_800m_high",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_800m_low.yaml",
+      "config_sha256": "d9f1180aa67bd674ae1eb60eb8a510479865ddc6f731621d1812d851caa116ba",
+      "env": "pretrain/configs/e1_pilot/e1_lr_800m_low.env",
+      "env_sha256": "10e431d88dcb21012ead41ae1252b551712bd89bd29db9f9881dbabfe9e22a53",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_800m_low",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_800m_mid.yaml",
+      "config_sha256": "f6319da60326505358634f1622f22b9bbf14b6eede0e1ae5860322c5cde7a617",
+      "env": "pretrain/configs/e1_pilot/e1_lr_800m_mid.env",
+      "env_sha256": "272e0908db0ee73522f9fba8d32836ce15bb09ad7193678f8abc53f1764aaa22",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_800m_mid",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_800m_vhigh.yaml",
+      "config_sha256": "4b55b3c981c74fc0a4cebc40448f42e5ff53b7fe343c82712444110c1e1eeebe",
+      "env": "pretrain/configs/e1_pilot/e1_lr_800m_vhigh.env",
+      "env_sha256": "74115955573b9caa3f1cc089c9263901c7e04994d60401f833c8a6eeb7dd0444",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_800m_vhigh",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot/e1_lr_800m_vlow.yaml",
+      "config_sha256": "8f2cc838e508831fdd10abd69748731382199efc5372d72df0dc71e39c5902e0",
+      "env": "pretrain/configs/e1_pilot/e1_lr_800m_vlow.env",
+      "env_sha256": "625b8c970056adf3415e02ec8e7c619a5b92ba5502c4cf9de5cf5a6ed0a4cb4c",
+      "group": "e1_pilot",
+      "run_name": "e1_lr_800m_vlow",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_1m_high.yaml",
+      "config_sha256": "6904c853de4e997b4ad302fe1eadc0eec0a2c5169592301686347ced8cfe2169",
+      "env": "pretrain/configs/batch_pilot/batch_1m_high.env",
+      "env_sha256": "8b1cf70cc8a805b50adaf85c3766860345e089b891cfe1ce424f7ea4c24033c7",
+      "group": "batch_pilot",
+      "run_name": "batch_1m_high",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_1m_low.yaml",
+      "config_sha256": "b978a77fefd788b387cac2076be1bada19f67631b9d8fbfac7e5daa5716d4b33",
+      "env": "pretrain/configs/batch_pilot/batch_1m_low.env",
+      "env_sha256": "62d92c62707f786b42e3b0b87e4079153407c2d85f7ef8779dfe68f8a3e770d0",
+      "group": "batch_pilot",
+      "run_name": "batch_1m_low",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_1m_mid.yaml",
+      "config_sha256": "ffd887428b520e260fb9fa28e32c9265e90e3027b9912792e45e7941057fe1c3",
+      "env": "pretrain/configs/batch_pilot/batch_1m_mid.env",
+      "env_sha256": "4d1994355a0653cefef026960e9eb033ec49cde6fd227d1e2caa25844a5c540c",
+      "group": "batch_pilot",
+      "run_name": "batch_1m_mid",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_2m_high.yaml",
+      "config_sha256": "ce8f016eb81eb963ffbb00c71820f921dafb23ac29bb4cf93e990a5f3ac12fef",
+      "env": "pretrain/configs/batch_pilot/batch_2m_high.env",
+      "env_sha256": "30aa357dcf83bcd7a274f641423470c9e05040a074493ca0abce84df8998e9bf",
+      "group": "batch_pilot",
+      "run_name": "batch_2m_high",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_2m_low.yaml",
+      "config_sha256": "8aa6706be52553da15cf8845dec4a828eaac0c0a939ec29c868b504ff8b47ec3",
+      "env": "pretrain/configs/batch_pilot/batch_2m_low.env",
+      "env_sha256": "6c6746596101d4e0b1663607d48c98f53a4f22d0d86230e20f82fc8cab40f012",
+      "group": "batch_pilot",
+      "run_name": "batch_2m_low",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_2m_mid.yaml",
+      "config_sha256": "da00140ea6adda2fcaebb285528195c1d31d2248a98a804368585c87aebd0738",
+      "env": "pretrain/configs/batch_pilot/batch_2m_mid.env",
+      "env_sha256": "3cf9197363b4ba6c899e64598ff868639cd85510e8e1efb74242dc84eb46c6b4",
+      "group": "batch_pilot",
+      "run_name": "batch_2m_mid",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_4m_high.yaml",
+      "config_sha256": "06535f373cf7998f03f267cdda39ab83794f9afdb496112e779b22b97326ebba",
+      "env": "pretrain/configs/batch_pilot/batch_4m_high.env",
+      "env_sha256": "49d0ac92a58192a7ce7e514497a6ad9ede4be035442b1aa5d6e076ca45431ad1",
+      "group": "batch_pilot",
+      "run_name": "batch_4m_high",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_4m_low.yaml",
+      "config_sha256": "22a808b39018d80a38101dad8cb840f61876afe9c8270466df6e75ddbf93da28",
+      "env": "pretrain/configs/batch_pilot/batch_4m_low.env",
+      "env_sha256": "5ed43f48a20ba63d8659a5922476569237f5ddb7873c00160c93028acde001c0",
+      "group": "batch_pilot",
+      "run_name": "batch_4m_low",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot/batch_4m_mid.yaml",
+      "config_sha256": "194142ecb83f262046e29a2af5ccdaa7f0120150b145ebe77ba0f698240bab91",
+      "env": "pretrain/configs/batch_pilot/batch_4m_mid.env",
+      "env_sha256": "61ccd6d57ef38a42576b044d21fe2007ca883ab904aa4636f725bbb1e46910f5",
+      "group": "batch_pilot",
+      "run_name": "batch_4m_mid",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_100m.yaml",
+      "config_sha256": "4f25de14af7790e441d3c899f2414e12d31d4971848e15e2d3cb460298174c6e",
+      "env": "pretrain/configs/e1/e1_iso_c0_100m.env",
+      "env_sha256": "bc7acfb616b40803c597b5fa2bb22f80c63b4234939ec5eb4a2e448d9f80dd3d",
+      "group": "e1",
+      "run_name": "e1_iso_c0_100m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_200m.yaml",
+      "config_sha256": "4734084f9153a5bb3edeaef496037dedb42207520dcd019023cb18f7504c4023",
+      "env": "pretrain/configs/e1/e1_iso_c0_200m.env",
+      "env_sha256": "bb081cbdedc3552ab8c14a20ef38df9b96c05b865c8e7afa6c4e89623aa09e4f",
+      "group": "e1",
+      "run_name": "e1_iso_c0_200m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_400m.yaml",
+      "config_sha256": "a51973c6fab945f099658c77e0fea231b6220746dc4fe0a06beb2611bf0a5cc1",
+      "env": "pretrain/configs/e1/e1_iso_c0_400m.env",
+      "env_sha256": "adbdba2e194f1d4ee5262fdd8c9f4c00e3b44d2c690c5e20f372f3639670ec41",
+      "group": "e1",
+      "run_name": "e1_iso_c0_400m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_50m.yaml",
+      "config_sha256": "10335a14fa35b1163cf930c2be8ca15dbdb88dfe57f92c786ea66cb084aac238",
+      "env": "pretrain/configs/e1/e1_iso_c0_50m.env",
+      "env_sha256": "b104c665058facd7da6dc373fca92d9cfd88364389f56de6753cd63d81822f7d",
+      "group": "e1",
+      "run_name": "e1_iso_c0_50m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c0_800m.yaml",
+      "config_sha256": "150c288f2d90d75be71431d0584ac8522893b81828cee65cf8be629b550fb533",
+      "env": "pretrain/configs/e1/e1_iso_c0_800m.env",
+      "env_sha256": "0e9a364323e0bc2c7509fb2dfab151bebd0c29ad76b6c4c8301108b23b6943b0",
+      "group": "e1",
+      "run_name": "e1_iso_c0_800m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_100m.yaml",
+      "config_sha256": "bfecd2ac1a73a90eae4dbad11dba00f07e827b811cad3a7a607e4b2955416961",
+      "env": "pretrain/configs/e1/e1_iso_c1_100m.env",
+      "env_sha256": "a1b71d778a162731af47f026a9e5c0894806b9bf440cf190b5bba0776248c5e7",
+      "group": "e1",
+      "run_name": "e1_iso_c1_100m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_200m.yaml",
+      "config_sha256": "215fdad7047ab8f96b1193017b45d4551633ad60172bd3409a0cea21c24047bd",
+      "env": "pretrain/configs/e1/e1_iso_c1_200m.env",
+      "env_sha256": "0fa45ef3a3e8511129c8eaa8be5a75126ed6d2b6e8db0f8d395968bbc2d9d92f",
+      "group": "e1",
+      "run_name": "e1_iso_c1_200m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_400m.yaml",
+      "config_sha256": "4fdabe3c44356d8791a580d73a9b1b9e02d1737bf996bc9a5801d5feb222dd65",
+      "env": "pretrain/configs/e1/e1_iso_c1_400m.env",
+      "env_sha256": "dae89379e1365a646b142cc42fbcc13c86cf445dc00f61c7da4bc1345390e298",
+      "group": "e1",
+      "run_name": "e1_iso_c1_400m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_50m.yaml",
+      "config_sha256": "7173f1993907f60ac6ee49f2f53b26e33f6da72f7ca3a06498cca8f09f302908",
+      "env": "pretrain/configs/e1/e1_iso_c1_50m.env",
+      "env_sha256": "f138630143b6156801b5bb133faeb61e667400bcfb411f1204515cd749b81010",
+      "group": "e1",
+      "run_name": "e1_iso_c1_50m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c1_800m.yaml",
+      "config_sha256": "20d37e8feabcc91f840512003257cc43bdbebcd934ad2ed3755e3a1eff22f9af",
+      "env": "pretrain/configs/e1/e1_iso_c1_800m.env",
+      "env_sha256": "a67aed3035ebbc16b865e3d7e82890917be52f4e42c8d8d52e3ea1ac0e9e877e",
+      "group": "e1",
+      "run_name": "e1_iso_c1_800m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_100m.yaml",
+      "config_sha256": "eb680490ceca70eda6fa4087712fbba6d2681a6ec487a46ff7bb99f38523636a",
+      "env": "pretrain/configs/e1/e1_iso_c2_100m.env",
+      "env_sha256": "d5be9e77976473482f9a61cd3625bcff80ad0dddba3a6347f3fd4e5b32bdfe32",
+      "group": "e1",
+      "run_name": "e1_iso_c2_100m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_200m.yaml",
+      "config_sha256": "c7e4109edc077c54f8a7d70361506dd28e65862859afd91e5897c3862d1105aa",
+      "env": "pretrain/configs/e1/e1_iso_c2_200m.env",
+      "env_sha256": "be22d102496e11130a6693d2cfa0976349f315d7b43caf6b23b27102b6877274",
+      "group": "e1",
+      "run_name": "e1_iso_c2_200m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_400m.yaml",
+      "config_sha256": "7708254d47397009664b4002503d6f157bd99446671542c12dbc05be7f1f6c1f",
+      "env": "pretrain/configs/e1/e1_iso_c2_400m.env",
+      "env_sha256": "978655ee813ad199cd76114920f7cc0ddf920104e989d9241c9de44fbfeee179",
+      "group": "e1",
+      "run_name": "e1_iso_c2_400m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_iso_c2_800m.yaml",
+      "config_sha256": "053d40107dd906acff01b2c5cb5de6305eb00ce464c5366ad2aa3bd51280a85d",
+      "env": "pretrain/configs/e1/e1_iso_c2_800m.env",
+      "env_sha256": "b7561c9b165057d7f475fb4c6012dd7c2ab4110e9081e5748be5aaf6ca6ce29b",
+      "group": "e1",
+      "run_name": "e1_iso_c2_800m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_100m.yaml",
+      "config_sha256": "93f2cd2b85371f68dbdbfcd6f071d9b6cd30ad7ea26daf3688667f16d81c5c0b",
+      "env": "pretrain/configs/e1/e1_ld_300m_100m.env",
+      "env_sha256": "066a4cfb6661bba4fad7ae0254e61e19f6db1598a721bb516a39f2ca0e2915df",
+      "group": "e1",
+      "run_name": "e1_ld_300m_100m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_1b.yaml",
+      "config_sha256": "9589a97641fe516a854d697dcecf7579661ee2b975ca23596c5845cb01e48a23",
+      "env": "pretrain/configs/e1/e1_ld_300m_1b.env",
+      "env_sha256": "932ee87abf8acba0b05e1b6d0207c246a9822cb7cc3b5eac25ded85da5eee870",
+      "group": "e1",
+      "run_name": "e1_ld_300m_1b",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_300m.yaml",
+      "config_sha256": "5dbfbdaf1fe507a0d65f9a570fc5b2aad47471d9ad57bf8b8fe46dd33163ce11",
+      "env": "pretrain/configs/e1/e1_ld_300m_300m.env",
+      "env_sha256": "b3c3c7161cebab079c128aa5e22b2ba52a9cea19e74b48b6963952cbeca96176",
+      "group": "e1",
+      "run_name": "e1_ld_300m_300m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_3b.yaml",
+      "config_sha256": "4ec927e763ae98cf937882318b6203c85f634c21f30c8ccf16c7d57b0808be9a",
+      "env": "pretrain/configs/e1/e1_ld_300m_3b.env",
+      "env_sha256": "d490ea666f69b694a23836c04d3c216f9ce0783259aa43f5160486a453da9a4e",
+      "group": "e1",
+      "run_name": "e1_ld_300m_3b",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ld_300m_9p85b.yaml",
+      "config_sha256": "622b8f90876bb39985256bc1ffee55af9b1fe9f1bda55d68dfe758da9950783f",
+      "env": "pretrain/configs/e1/e1_ld_300m_9p85b.env",
+      "env_sha256": "42ba123444a2db6d829b4e35b25a64176e049a5f713a3d5928f1634f10e318fc",
+      "group": "e1",
+      "run_name": "e1_ld_300m_9p85b",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_100m.yaml",
+      "config_sha256": "e07d539362c5a2a6d6bca0581269ce014bf4f8b685cac922fa44feb906a5903c",
+      "env": "pretrain/configs/e1/e1_ln_100m.env",
+      "env_sha256": "f31cd996ede56bd82c80c0e6e290ffbe6c321de2da006892c51d796666440d22",
+      "group": "e1",
+      "run_name": "e1_ln_100m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_200m.yaml",
+      "config_sha256": "2d2d57e3ad70ff158e14c81c154e477bd0c93de287ee0fd9205b254ab7e980af",
+      "env": "pretrain/configs/e1/e1_ln_200m.env",
+      "env_sha256": "58c780ac3c00dfe6cef364ee0d1ceb7bca0573e1feccb67edd5f4990e7ecb2a2",
+      "group": "e1",
+      "run_name": "e1_ln_200m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_400m.yaml",
+      "config_sha256": "1fa3648366500ca4e34113df41c8cfa9108dab6029d87e586ef9455822868469",
+      "env": "pretrain/configs/e1/e1_ln_400m.env",
+      "env_sha256": "a637f4368c625aab0d75dfe575a2f218ffd1951cbae3b624ed72a07775a16983",
+      "group": "e1",
+      "run_name": "e1_ln_400m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_50m.yaml",
+      "config_sha256": "c79ee7341b1577debf82223eb4c75d0e2fa4775d3149204fe141a6c86922974b",
+      "env": "pretrain/configs/e1/e1_ln_50m.env",
+      "env_sha256": "b127d1f0e06c63b997f3c63fdf03ec8022da88061c96f86e72b6d90a312d608b",
+      "group": "e1",
+      "run_name": "e1_ln_50m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1/e1_ln_800m.yaml",
+      "config_sha256": "2a3d503f801f6350c0a5fecae51c565bc2dfcc7bce4a0c6af1db563be85c56c1",
+      "env": "pretrain/configs/e1/e1_ln_800m.env",
+      "env_sha256": "d8ef17d8bdc5c0361049e347c3c44cafe3be7f4061ca7003bc9cccf83eefab11",
+      "group": "e1",
+      "run_name": "e1_ln_800m",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext1800.yaml",
+      "config_sha256": "40e0b65388abfa1eb2f10bdf90d92977b9c45ee4f7dd572a7265c02e8f59af25",
+      "env": "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext1800.env",
+      "env_sha256": "da338f2130d2ca06c81c772c976e5b0c2d6f32dc8aaffa2c41d4fd8e1527e247",
+      "group": "e1_pilot_extension",
+      "run_name": "e1_lr_200m_ext1800",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext2400.yaml",
+      "config_sha256": "7a87199c578358f89ccf1510b94d2690db5f1e468a4b94af766f950bbf70ac4d",
+      "env": "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext2400.env",
+      "env_sha256": "d7f1ee745d7b67a7f3f67df8bcd5e2163baadf1d29c339b52f4a54ead394e2d4",
+      "group": "e1_pilot_extension",
+      "run_name": "e1_lr_200m_ext2400",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext4800.yaml",
+      "config_sha256": "b7933b8a0d686678b99a6609d344d5f148fe65fa3c8ce71352c67af2f0d29c80",
+      "env": "pretrain/configs/e1_pilot_extension/e1_lr_200m_ext4800.env",
+      "env_sha256": "1a53c09b591be1d869e3a21f012ef47a5af049932b17e3a10b88c147dc650625",
+      "group": "e1_pilot_extension",
+      "run_name": "e1_lr_200m_ext4800",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot_extension/e1_lr_800m_ext1200000.yaml",
+      "config_sha256": "4bb6f118f1cddffd77ba610e2c143f4201b7cb2ed9ad67cd6db781782669ffdb",
+      "env": "pretrain/configs/e1_pilot_extension/e1_lr_800m_ext1200000.env",
+      "env_sha256": "248f846a02c9aa05ee911a2cdf2d9ee2d490db04c5eee5931f0b8a347086a1c5",
+      "group": "e1_pilot_extension",
+      "run_name": "e1_lr_800m_ext1200000",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot_extension/e1_lr_800m_ext2400000.yaml",
+      "config_sha256": "e2b11291f2542a1afcc79047f7c81924122e3bbac272dd8b8957759515b704c5",
+      "env": "pretrain/configs/e1_pilot_extension/e1_lr_800m_ext2400000.env",
+      "env_sha256": "a01d6a02980f2479dde2f7b92237033ae6322b5ac948bd43179c4ea2f58c8303",
+      "group": "e1_pilot_extension",
+      "run_name": "e1_lr_800m_ext2400000",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/e1_pilot_extension/e1_lr_800m_ext900000.yaml",
+      "config_sha256": "544454e9a86e4ac49393f378edf09500780219987d0ccfe5fd2f1363f9a22ed6",
+      "env": "pretrain/configs/e1_pilot_extension/e1_lr_800m_ext900000.env",
+      "env_sha256": "0c510f3f988f79b8203a4e756b34b4c297a4639822e7b5ca1dc93e0a755aba7a",
+      "group": "e1_pilot_extension",
+      "run_name": "e1_lr_800m_ext900000",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot_extension/batch_1m_ext19200000.yaml",
+      "config_sha256": "2796f2ca4f848acbd937c81d7aa06ebd4cca3360306395a33b7db5afbe21cda7",
+      "env": "pretrain/configs/batch_pilot_extension/batch_1m_ext19200000.env",
+      "env_sha256": "8625ba2026938c9d86efe0d16e788ce51113007a81c592350c83ff4994c2d355",
+      "group": "batch_pilot_extension",
+      "run_name": "batch_1m_ext19200000",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot_extension/batch_1m_ext9600000.yaml",
+      "config_sha256": "fede64e1a754b0dc4e005e9555e76c777c73a3f1499e337eae509014d8edabbd",
+      "env": "pretrain/configs/batch_pilot_extension/batch_1m_ext9600000.env",
+      "env_sha256": "ffb583b25d7ea375b7c1287243b42df8e90999f1b34e133a16b52fc6dbee8859",
+      "group": "batch_pilot_extension",
+      "run_name": "batch_1m_ext9600000",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot_extension/batch_2m_ext13576450.yaml",
+      "config_sha256": "7eb61188a7ec30b3daefe8ffbd86ba4761a35e8a1829d8ff6e5ad5dc3a109c5b",
+      "env": "pretrain/configs/batch_pilot_extension/batch_2m_ext13576450.env",
+      "env_sha256": "d588835bbaddc11fcf996359ec838df947900ed64112bf5020fe1fc074c97c9c",
+      "group": "batch_pilot_extension",
+      "run_name": "batch_2m_ext13576450",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot_extension/batch_2m_ext27152900.yaml",
+      "config_sha256": "58b3ad991ad1b8ed773372b26165c6e1af2fd2a0e45987d8b776b2f099dd9e50",
+      "env": "pretrain/configs/batch_pilot_extension/batch_2m_ext27152900.env",
+      "env_sha256": "216379987d616ed26777537de5076e49400029e54a239eb537cc193c6d66b3c6",
+      "group": "batch_pilot_extension",
+      "run_name": "batch_2m_ext27152900",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot_extension/batch_4m_ext1200000.yaml",
+      "config_sha256": "4a252c957160278905e5e75058f0e12671e743d54bbc06d21ae29cf29593fb6a",
+      "env": "pretrain/configs/batch_pilot_extension/batch_4m_ext1200000.env",
+      "env_sha256": "13266a877721819b30c43ab91ef74b5b2c9d6d800b8f626eea64f7642d6b3670",
+      "group": "batch_pilot_extension",
+      "run_name": "batch_4m_ext1200000",
+      "status": "PASS"
+    },
+    {
+      "config": "pretrain/configs/batch_pilot_extension/batch_4m_ext600000.yaml",
+      "config_sha256": "72dc19a1f6eb0199d16bae5e14f73049d46c743bb3d618ef8b534a5db7c175dc",
+      "env": "pretrain/configs/batch_pilot_extension/batch_4m_ext600000.env",
+      "env_sha256": "fac61ea281656ff232d6fd0c2077ad9c1b7e0a8a562bc6fbb10463564227b07d",
+      "group": "batch_pilot_extension",
+      "run_name": "batch_4m_ext600000",
+      "status": "PASS"
+    }
+  ],
+  "schema_version": 1,
+  "status": "PASS",
+  "total": 60,
+  "unexpected_by_group": {
+    "batch_pilot": [],
+    "batch_pilot_extension": [],
+    "e1": [],
+    "e1_pilot": [],
+    "e1_pilot_extension": [],
+    "e2": [],
+    "e2_confirm": [],
+    "e3": [],
+    "e3_confirm": []
+  },
+  "validation_tool_sha256": "b01720e86b4afa86a29189a86035e939ab20e90abe7d9f087b09b1935295a2a2"
+}

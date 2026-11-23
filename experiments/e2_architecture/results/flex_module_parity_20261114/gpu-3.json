@@ -1,0 +1,135 @@
+{
+  "cases": [
+    {
+      "batch_size": 2,
+      "is_full": false,
+      "layer": 0,
+      "metrics": {
+        "input_gradient": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.006756756920367479,
+          "relative_l2": 0.007206919603049755
+        },
+        "k_norm.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.006759224459528923,
+          "relative_l2": 0.007950600236654282
+        },
+        "o_proj.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.006756756920367479,
+          "relative_l2": 0.005652101244777441
+        },
+        "output": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.0058823530562222,
+          "relative_l2": 0.005611821077764034
+        },
+        "q_norm.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.007740232162177563,
+          "relative_l2": 0.007268969900906086
+        },
+        "qkv_proj.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.007246376946568489,
+          "relative_l2": 0.007199377287179232
+        }
+      },
+      "seq_len": 129,
+      "status": "PASS"
+    },
+    {
+      "batch_size": 2,
+      "is_full": true,
+      "layer": 5,
+      "metrics": {
+        "input_gradient": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.005753138102591038,
+          "relative_l2": 0.006801092531532049
+        },
+        "k_norm.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.006540070753544569,
+          "relative_l2": 0.005983744282275438
+        },
+        "o_proj.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.004807692486792803,
+          "relative_l2": 0.0048773749731481075
+        },
+        "output": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.0034722222480922937,
+          "relative_l2": 0.004799382761120796
+        },
+        "q_norm.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.00644229119643569,
+          "relative_l2": 0.005665791220963001
+        },
+        "qkv_proj.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.008368200622498989,
+          "relative_l2": 0.006788383238017559
+        }
+      },
+      "seq_len": 129,
+      "status": "PASS"
+    },
+    {
+      "batch_size": 8,
+      "is_full": false,
+      "layer": 0,
+      "metrics": {
+        "input_gradient": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.00671140942722559,
+          "relative_l2": 0.007917674258351326
+        },
+        "k_norm.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.007530733942985535,
+          "relative_l2": 0.006463908590376377
+        },
+        "o_proj.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.006289307959377766,
+          "relative_l2": 0.00648551294580102
+        },
+        "output": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.005681818351149559,
+          "relative_l2": 0.006483473349362612
+        },
+        "q_norm.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.0074576763436198235,
+          "relative_l2": 0.006808006204664707
+        },
+        "qkv_proj.weight": {
+          "finite": true,
+          "max_abs_over_reference_max": 0.008012820966541767,
+          "relative_l2": 0.00788402371108532
+        }
+      },
+      "seq_len": 4096,
+      "status": "PASS"
+    }
+  ],
+  "heads": 32,
+  "master_fp32": true,
+  "max_abs_over_reference_max_tolerance": 0.05,
+  "physical_gpu": 3,
+  "purpose": "ACTUAL_COMPILED_ATTENTION_MODULE_PARITY",
+  "relative_l2_tolerance": 0.02,
+  "seed": 6087514202055372446,
+  "sources": {
+    "model/src/yuformer_model/attention.py": "3d147b265692f68b8926cec01eb0e1fa39c4775cd8235abfe6bce066aaf59159",
+    "pretrain/backends/torchtitan/attention_parity.py": "f072c4fd13c1e9cefc6f2a9f4649e17e50861608ee217252fdf3ff5f790ffb3d",
+    "pretrain/backends/torchtitan/flex_module_parity.py": "da72716cd0bf3f872b48c70347d72106494ad15c5bfc4135d42f434612abf5f1"
+  },
+  "status": "PASS",
+  "torch_version": "2.14.0+cu126"
+}

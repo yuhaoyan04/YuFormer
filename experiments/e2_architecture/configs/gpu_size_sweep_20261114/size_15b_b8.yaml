@@ -1,0 +1,61 @@
+run_name: size_15b_b8
+backend: torchtitan-v0.3.0
+seed: 20260926
+model:
+  preset: size-sweep
+  configs: /opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/gpu_size_sweep_20261114/size_15b.model.yaml
+out_dir: ${YUFORMER_PRETRAIN_OUT}
+data:
+  require_release: true
+  require_eod: true
+  release_manifest: ${YUFORMER_DATA_RELEASE}
+  tokenizer_gate: ${YUFORMER_TOKENIZER_GATE}
+  token_stream_audit: ${YUFORMER_TOKEN_STREAM_AUDIT}
+  stages:
+  - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.tokens.bin
+  meta:
+  - ${YUFORMER_TOKEN_STREAMS}/${YUFORMER_ARM_DATA}.meta.json
+  val_dir: ${YUFORMER_TOKEN_STREAMS}
+  seq_len: 4096
+  epochs: 1
+  val_samples_per_domain: 64
+  val_max_tokens_per_domain: 20000000
+optim:
+  optimizer: adamw
+  lr: 0.0002
+  weight_decay: 0.1
+  warmup_steps: 4
+  lr_schedule: cosine
+  min_lr_ratio: 0.1
+  adam_betas:
+  - 0.9
+  - 0.95
+  muon_momentum: 0.95
+  muon_nesterov: true
+  muon_ns_steps: 5
+  clip_grad: 1.0
+train:
+  budget_tokens: 100663296
+  micro_batch_size: 8
+  grad_accum: 16
+  expected_iters: 24
+  activation_checkpointing: false
+  bf16: true
+  cuda_graphs: false
+  eval_every: 24
+  log_every: 1
+  save_every: 24
+  keep_last_n: 2
+  keep_every: 1000
+parallel:
+  sharding: hybrid_shard
+  world_size: 8
+  replicate_degree: 2
+  shard_degree: 4
+compile:
+  enable: true
+  components:
+  - model
+  backend: inductor
+attention:
+  sdpa_backend: cudnn

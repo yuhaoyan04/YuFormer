@@ -1,0 +1,19 @@
+{
+  "model_type": "BPE",
+  "vocab_size": 65536,
+  "eos_token": "<|endoftext|>",
+  "pad_token": "<|endoftext|>",
+  "unk_token": "<|unk|>",
+  "chat_template": "{% for message in messages %}<|im_start|>{{ message.role }}\n{% if message.role == 'tool' and message.tool_call_id %}tool_call_id={{ message.tool_call_id | tojson }}\n{% endif %}{% if message.role == 'assistant' and message.reasoning_content %}<|think_start|>{{ message.reasoning_content }}<|think_end|>\n{% endif %}{{ message.content }}{% if message.role == 'assistant' and message.tool_calls %}{% for tool_call in message.tool_calls %}<|tool_call_start|>{{ tool_call | tojson }}<|tool_call_end|>{% endfor %}{% endif %}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+  "chat_template_sha256": "402791775b90a48a5c0a85a2ea1bd2e79363b576a003701988f1bc925989a7e4",
+  "special_tokens": [
+    "<|endoftext|>",
+    "<|unk|>",
+    "<|im_start|>",
+    "<|im_end|>",
+    "<|think_start|>",
+    "<|think_end|>",
+    "<|tool_call_start|>",
+    "<|tool_call_end|>"
+  ]
+}

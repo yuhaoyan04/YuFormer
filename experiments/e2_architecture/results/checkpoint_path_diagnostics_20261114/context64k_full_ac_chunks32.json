@@ -1,0 +1,91 @@
+{
+  "candidate": "context64k_full_ac_chunks32",
+  "error_tail": "\n  time      : 2026-11-14_20:44:41\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 3 (local_rank: 3)\n  exitcode  : 1 (pid: 298425) \n  error_file: /tmp/torchelastic_d8cutk03/none_gg9p6zxf/attempt_0/3/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 948, in train_step\n      self.optimizers.step()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py\", line 549, in wrapper\n      out = func(*args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py\", line 28, in step\n      raise RuntimeError(\"non-finite gradients; optimizer update refused\")\n  RuntimeError: non-finite gradients; optimizer update refused\n  \n[5]:\n  time      : 2026-11-14_20:44:41\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 4 (local_rank: 4)\n  exitcode  : 1 (pid: 298426) \n  error_file: /tmp/torchelastic_d8cutk03/none_gg9p6zxf/attempt_0/4/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 948, in train_step\n      self.optimizers.step()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py\", line 549, in wrapper\n      out = func(*args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py\", line 28, in step\n      raise RuntimeError(\"non-finite gradients; optimizer update refused\")\n  RuntimeError: non-finite gradients; optimizer update refused\n  \n[6]:\n  time      : 2026-11-14_20:44:41\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 5 (local_rank: 5)\n  exitcode  : 1 (pid: 298427) \n  error_file: /tmp/torchelastic_d8cutk03/none_gg9p6zxf/attempt_0/5/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 948, in train_step\n      self.optimizers.step()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py\", line 549, in wrapper\n      out = func(*args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py\", line 28, in step\n      raise RuntimeError(\"non-finite gradients; optimizer update refused\")\n  RuntimeError: non-finite gradients; optimizer update refused\n  \n[7]:\n  time      : 2026-11-14_20:44:41\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 6 (local_rank: 6)\n  exitcode  : 1 (pid: 298428) \n  error_file: /tmp/torchelastic_d8cutk03/none_gg9p6zxf/attempt_0/6/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 948, in train_step\n      self.optimizers.step()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py\", line 549, in wrapper\n      out = func(*args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py\", line 28, in step\n      raise RuntimeError(\"non-finite gradients; optimizer update refused\")\n  RuntimeError: non-finite gradients; optimizer update refused\n  \n------------------------------------------------------------\nRoot Cause (first observed failure):\n[0]:\n  time      : 2026-11-14_20:44:41\n  host      : pod-qun001-604ef0d5-948c-4\n  rank      : 7 (local_rank: 7)\n  exitcode  : 1 (pid: 298429) \n  error_file: /tmp/torchelastic_d8cutk03/none_gg9p6zxf/attempt_0/7/error.json\n  traceback : Traceback (most recent call last):\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py\", line 380, in wrapper\n      return f(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 1039, in train\n      self.train_step(data_iterator)\n    File \"/opt/torchtitan-v0.3.0/torchtitan/trainer.py\", line 948, in train_step\n      self.optimizers.step()\n    File \"/opt/yuformer-torchtitan/lib/python3.12/site-packages/torch/optim/optimizer.py\", line 549, in wrapper\n      out = func(*args, **kwargs)\n            ^^^^^^^^^^^^^^^^^^^^^\n    File \"/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/pretrain/backends/torchtitan/yuformer_ext/optim.py\", line 28, in step\n      raise RuntimeError(\"non-finite gradients; optimizer update refused\")\n  RuntimeError: non-finite gradients; optimizer update refused\n  \n============================================================\n",
+  "evaluation": {
+    "issues": [
+      "launch_failed"
+    ],
+    "status": "FAIL"
+  },
+  "finished_at": "2026-11-14T20:44:46.376827+00:00",
+  "log": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/results/checkpoint_path_diagnostics_20261114/context64k_full_ac_chunks32.log",
+  "parameters": 1516600064,
+  "peak_gpu": [
+    {
+      "index": 0.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 673.39,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 1.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 662.16,
+      "temperature_c": 56.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 2.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 675.31,
+      "temperature_c": 62.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 3.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 724.76,
+      "temperature_c": 58.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 4.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 674.05,
+      "temperature_c": 57.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 5.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 684.07,
+      "temperature_c": 63.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 6.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 722.91,
+      "temperature_c": 55.0,
+      "utilization_pct": 100.0
+    },
+    {
+      "index": 7.0,
+      "memory_total_mib": 81559.0,
+      "memory_used_mib": 76145.0,
+      "power_w": 700.7,
+      "temperature_c": 61.0,
+      "utilization_pct": 100.0
+    }
+  ],
+  "production_qualified": false,
+  "returncode": 1,
+  "variant": {
+    "config": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/checkpoint_path_diagnostics_20261114/context64k_full_ac_chunks32.yaml",
+    "config_sha256": "1bf2e83dd1bd99a473b6600e004fef0da161a4529d9a83ffb9ce949ae757fe48",
+    "env": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e2_architecture/configs/checkpoint_path_diagnostics_20261114/context64k_full_ac_chunks32.env",
+    "env_sha256": "09e57ac7380abd1834b99ba3ec400f6116c073ded5b03bb530a73686aea5ae37",
+    "grad_accum": 8,
+    "microbatch": 1,
+    "name": "context64k_full_ac_chunks32"
+  },
+  "wall_seconds": 46.5
+}

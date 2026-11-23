@@ -1,0 +1,104 @@
+{
+  "probe": {
+    "model_config_file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/model/configs/pretrain_final_model_configs.yaml",
+    "parent_order_manifest": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/training_permutations/pretrain-1t-dd284efd7c715544-b8/manifest.json",
+    "parent_order_manifest_sha256": "5cc0dc89126cb7e19ad3517313f276651f4ce77f75d85506b347a5fa252dfff1",
+    "parent_stage_indices": [
+      0,
+      1,
+      2
+    ],
+    "probe_optimizer": {
+      "adam_betas": [
+        0.9,
+        0.95
+      ],
+      "clip_grad": 1.0,
+      "decay_steps": 8,
+      "lr": 0.0001,
+      "lr_schedule": "wsd",
+      "min_lr_ratio": 0.1,
+      "muon_momentum": 0.95,
+      "muon_nesterov": true,
+      "muon_ns_steps": 5,
+      "optimizer": "adamw",
+      "warmup_steps": 8,
+      "weight_decay": 0.1
+    },
+    "probe_order_manifest": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/training_permutations/pretrain-1t-dd284efd7c715544-b8/probe-recovery-24-5cc0dc89126cb7e1-6e331b14bb0c.json",
+    "probe_order_manifest_sha256": "ef827f93ec199f27fe0f59a20e08b361db7a538f527d6c0a2a651d68d8d6fbbb",
+    "probe_seed": 20260926,
+    "probe_stage_samples": [
+      8192,
+      8192,
+      8192
+    ],
+    "production_optimizer": {
+      "adam_betas": [
+        0.9,
+        0.95
+      ],
+      "clip_grad": 1.0,
+      "decay_steps": 35762,
+      "lr": 0.0001,
+      "lr_schedule": "wsd",
+      "min_lr_ratio": 0.1,
+      "muon_momentum": 0.95,
+      "muon_nesterov": true,
+      "muon_ns_steps": 5,
+      "optimizer": "adamw",
+      "warmup_steps": 11921,
+      "weight_decay": 0.1
+    },
+    "production_seed": 20260926,
+    "role": "recovery",
+    "steps": 24,
+    "tokens_per_update": 4194304
+  },
+  "production_qualified": false,
+  "rows": [
+    {
+      "case": "q7_reference",
+      "source_model_preset": "pretrain-final",
+      "stage_samples": [
+        8192,
+        8192,
+        8192
+      ],
+      "steps": 24
+    },
+    {
+      "case": "q7_training",
+      "source_model_preset": "pretrain-final",
+      "stage_samples": [
+        8192,
+        8192,
+        8192
+      ],
+      "steps": 24
+    },
+    {
+      "case": "q7_saving",
+      "source_model_preset": "pretrain-final",
+      "stage_samples": [
+        8192,
+        8192,
+        8192
+      ],
+      "steps": 24
+    },
+    {
+      "case": "q7_loading",
+      "source_model_preset": "pretrain-final",
+      "stage_samples": [
+        8192,
+        8192,
+        8192
+      ],
+      "steps": 24
+    }
+  ],
+  "status": "VALIDATED_CONFIGURATION_PREVIEW_NOT_RUNTIME_QUALIFICATION",
+  "tokens_per_update": 4194304,
+  "world_size": 8
+}

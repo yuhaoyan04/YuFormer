@@ -1,0 +1,379 @@
+{
+  "batch_size": 8,
+  "cases": [
+    {
+      "batch_size": 2,
+      "metrics": {
+        "cudnn_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.005579677876085043,
+            "relative_l2": 0.0030953579116612673
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0035518715158104897,
+            "relative_l2": 0.002612445503473282
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0038725233171135187,
+            "relative_l2": 0.0027994338888674974
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0029796184971928596,
+            "relative_l2": 0.0018404102884232998
+          }
+        },
+        "flex_bf16_vs_cudnn_bf16": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.005847953259944916,
+            "relative_l2": 0.002638914156705141
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0022026430815458298,
+            "relative_l2": 0.00011987322068307549
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.00657894741743803,
+            "relative_l2": 0.0026687828358262777
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0012376237427815795,
+            "relative_l2": 1.9350420188857242e-05
+          }
+        },
+        "flex_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.003637779038399458,
+            "relative_l2": 0.0026070589665323496
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0035518715158104897,
+            "relative_l2": 0.002612680895254016
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.003426732262596488,
+            "relative_l2": 0.002257577609270811
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0029796184971928596,
+            "relative_l2": 0.001840406097471714
+          }
+        }
+      },
+      "seq_len": 65,
+      "status": "PASS"
+    },
+    {
+      "batch_size": 2,
+      "metrics": {
+        "cudnn_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0036118326243013144,
+            "relative_l2": 0.00307917851023376
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.00320724886842072,
+            "relative_l2": 0.002620011568069458
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0026463812682777643,
+            "relative_l2": 0.0028597565833479166
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.002444684971123934,
+            "relative_l2": 0.0019242530688643456
+          }
+        },
+        "flex_bf16_vs_cudnn_bf16": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.005291005130857229,
+            "relative_l2": 0.002668320434167981
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0010162601247429848,
+            "relative_l2": 5.266378138912842e-05
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0027322403620928526,
+            "relative_l2": 0.0026887506246566772
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0005165289039723575,
+            "relative_l2": 1.3940429198555648e-05
+          }
+        },
+        "flex_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0036118326243013144,
+            "relative_l2": 0.002578878542408347
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.00320724886842072,
+            "relative_l2": 0.002619887934997678
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0024663028307259083,
+            "relative_l2": 0.002303845016285777
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.002444684971123934,
+            "relative_l2": 0.0019242592388764024
+          }
+        }
+      },
+      "seq_len": 128,
+      "status": "PASS"
+    },
+    {
+      "batch_size": 2,
+      "metrics": {
+        "cudnn_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.004811922088265419,
+            "relative_l2": 0.003056285437196493
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0028880101162940264,
+            "relative_l2": 0.0025761204306036234
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0037137805484235287,
+            "relative_l2": 0.0028575800824910402
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0024210158735513687,
+            "relative_l2": 0.0018999434541910887
+          }
+        },
+        "flex_bf16_vs_cudnn_bf16": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.006493506487458944,
+            "relative_l2": 0.002666809828951955
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0004562043759506196,
+            "relative_l2": 3.539182216627523e-05
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0034246575087308884,
+            "relative_l2": 0.0026536218356341124
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0005274261347949505,
+            "relative_l2": 1.038990194501821e-05
+          }
+        },
+        "flex_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.004151567351073027,
+            "relative_l2": 0.002543326234444976
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0028880101162940264,
+            "relative_l2": 0.0025760671123862267
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.002884389366954565,
+            "relative_l2": 0.002305089496076107
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0024210158735513687,
+            "relative_l2": 0.0018999561434611678
+          }
+        }
+      },
+      "seq_len": 129,
+      "status": "PASS"
+    },
+    {
+      "batch_size": 2,
+      "metrics": {
+        "cudnn_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.004296408034861088,
+            "relative_l2": 0.0030143328476697206
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.003698317799717188,
+            "relative_l2": 0.0025527349207550287
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.002631730865687132,
+            "relative_l2": 0.0028512682765722275
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0022917799651622772,
+            "relative_l2": 0.001974334940314293
+          }
+        },
+        "flex_bf16_vs_cudnn_bf16": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.005291005130857229,
+            "relative_l2": 0.002660350175574422
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0004901961074210703,
+            "relative_l2": 5.44583672308363e-05
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.002475247485563159,
+            "relative_l2": 0.0026740017347037792
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0005274261347949505,
+            "relative_l2": 8.398086720262654e-06
+          }
+        },
+        "flex_bf16_vs_math_fp32": {
+          "dk": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.00337511976249516,
+            "relative_l2": 0.0025173586327582598
+          },
+          "dq": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.003698317799717188,
+            "relative_l2": 0.0025527116376906633
+          },
+          "dv": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.002631730865687132,
+            "relative_l2": 0.0023173277731984854
+          },
+          "output": {
+            "finite": true,
+            "max_abs_over_reference_max": 0.0022917799651622772,
+            "relative_l2": 0.0019743454176932573
+          }
+        }
+      },
+      "seq_len": 257,
+      "status": "PASS"
+    }
+  ],
+  "cuda_version": "12.6",
+  "device": "NVIDIA H800",
+  "dtype": "bfloat16",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "7",
+    "OMP_NUM_THREADS": "1",
+    "TORCHINDUCTOR_CACHE_DIR": "/tmp/yuformer-flex-swa-pilot-v1",
+    "TORCHINDUCTOR_COMPILE_THREADS": "2"
+  },
+  "head_dim": 64,
+  "heads": 52,
+  "kv_heads": 13,
+  "layout": "all_transposed",
+  "max_abs_over_reference_max_tolerance": 0.05,
+  "physical_gpu": 7,
+  "pid": 250619,
+  "production_qualified": false,
+  "purpose": "OPERATOR_RESEARCH_NOT_PRODUCTION_QUALIFICATION",
+  "relative_l2_tolerance": 0.02,
+  "seed": 16637894090307872088,
+  "seq_len": 4096,
+  "source_sha256": "76a6fbaa1ba978373136053f3d24b5b9056474f8ac06e86b63d1a4ea23ab524c",
+  "speedup": 10.379132337260828,
+  "status": "PASS_OPERATOR_ONLY",
+  "timings": {
+    "cudnn_bf16": {
+      "finite": true,
+      "median_ms": 28.448287963867188,
+      "peak_allocated_bytes": 2773536256,
+      "samples_ms": [
+        28.43337631225586,
+        28.42451286315918,
+        28.4418888092041,
+        28.424415588378906,
+        28.45315170288086,
+        28.412031173706055,
+        28.420703887939453,
+        28.551071166992188,
+        28.410911560058594,
+        28.417695999145508,
+        28.446687698364258,
+        28.449888229370117,
+        28.45270347595215,
+        28.46556854248047,
+        28.453887939453125,
+        28.435232162475586,
+        28.470272064208984,
+        28.45404815673828,
+        28.476863861083984,
+        28.45302391052246
+      ]
+    },
+    "flex_bf16": {
+      "finite": true,
+      "median_ms": 2.7409119606018066,
+      "peak_allocated_bytes": 1853933568,
+      "samples_ms": [
+        3.0176000595092773,
+        2.866175889968872,
+        2.7891199588775635,
+        2.837951898574829,
+        2.7968640327453613,
+        2.7733120918273926,
+        2.7310080528259277,
+        2.749408006668091,
+        2.7464959621429443,
+        2.731679916381836,
+        2.6994879245758057,
+        2.7268800735473633,
+        2.7939839363098145,
+        2.735327959060669,
+        2.757375955581665,
+        2.7301440238952637,
+        2.723583936691284,
+        2.7243518829345703,
+        2.691135883331299,
+        2.734783887863159
+      ]
+    }
+  },
+  "torch_version": "2.14.0+cu126",
+  "window": 128
+}

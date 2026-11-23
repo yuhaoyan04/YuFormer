@@ -1,0 +1,85 @@
+{
+  "scope": "Copies of original external observers. Active process paths and source pins remain unchanged. Runtime lease token redacted from recovery snapshot.",
+  "sources": [
+    {
+      "original_file": "/opt/yuformer-build/audit_first_formal_validation_2000_20261115.py",
+      "original_sha256": "7739c2bac4d8b4dab04b3fa3422844be7aa711d80cf178286c21817270cf206d",
+      "repository_file": "ops/active_sources/audit_first_formal_validation_2000_20261115.py",
+      "repository_sha256": "7739c2bac4d8b4dab04b3fa3422844be7aa711d80cf178286c21817270cf206d",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/monitor_authorized_persistent.py",
+      "original_sha256": "d314173b819f24e76d1a20c98825e30e3bc92f4ff8c092de158051ce844d8d0b",
+      "repository_file": "ops/active_sources/monitor_authorized_persistent.py",
+      "repository_sha256": "d314173b819f24e76d1a20c98825e30e3bc92f4ff8c092de158051ce844d8d0b",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/monitor_auxiliary.py",
+      "original_sha256": "a177cd912946cec514fe85f0f2415da1d02da1783c5409078419c04125589ce5",
+      "repository_file": "ops/active_sources/monitor_auxiliary.py",
+      "repository_sha256": "a177cd912946cec514fe85f0f2415da1d02da1783c5409078419c04125589ce5",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/monitor_metrics.py",
+      "original_sha256": "af8811e12de197b24d23ed38565b3c2489fe3ad3acc7d04ae4fbb5ea82d3e92a",
+      "repository_file": "ops/active_sources/monitor_metrics.py",
+      "repository_sha256": "af8811e12de197b24d23ed38565b3c2489fe3ad3acc7d04ae4fbb5ea82d3e92a",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/observe_frozen_long_stage_lr_and_native_counters_20261115.py",
+      "original_sha256": "8bc92845c0536e508b668871c84190a96eb04b3941d4cfd8a0b7667c16da554a",
+      "repository_file": "ops/active_sources/observe_frozen_long_stage_lr_and_native_counters_20261115.py",
+      "repository_sha256": "8bc92845c0536e508b668871c84190a96eb04b3941d4cfd8a0b7667c16da554a",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/observe_total_runtime_and_actual_lr_20261115_v3.py",
+      "original_sha256": "9ad6d868d607a5299eb7bef654d2ef520a0e3fbc0562e8a2d14ec50b6c8a3b46",
+      "repository_file": "ops/active_sources/observe_total_runtime_and_actual_lr_20261115_v3.py",
+      "repository_sha256": "9ad6d868d607a5299eb7bef654d2ef520a0e3fbc0562e8a2d14ec50b6c8a3b46",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/prefetch_frozen_future_blocks_20261115.py",
+      "original_sha256": "cd42d6ac959a5e04bdc081731c3bf56b8105a405e6b8107f84e2efe0ddad8265",
+      "repository_file": "ops/active_sources/prefetch_frozen_future_blocks_20261115.py",
+      "repository_sha256": "cd42d6ac959a5e04bdc081731c3bf56b8105a405e6b8107f84e2efe0ddad8265",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/recover_live_pretrain_supervisors_20261118.py",
+      "original_sha256": "a47fc2841829d1f1465b86f828778f0410f398f6d5d650623fdfc5c3fead02be",
+      "repository_file": "ops/active_sources/recover_live_pretrain_supervisors_20261118.py",
+      "repository_sha256": "187d404de7c466339f9ff6a708c41ce2416bb0bd3176c1e810f738ee74a2654a",
+      "transformations": [
+        "Runtime lease token redacted; this copy is not executable as the active recovery guardian."
+      ]
+    },
+    {
+      "original_file": "/opt/yuformer-build/review_pretrain_every12h_20261118_v3.py",
+      "original_sha256": "ff104f2c5626f9fe0009e9599deda4e27706a54324b6fc6811f34a723ead0eca",
+      "repository_file": "ops/active_sources/review_pretrain_every12h_20261118_v3.py",
+      "repository_sha256": "ff104f2c5626f9fe0009e9599deda4e27706a54324b6fc6811f34a723ead0eca",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/watch_all_production_nine_domain_validation_20261115_v2.py",
+      "original_sha256": "5b42b112a3869c3f956c85953043cc4a1ec21bdcd0122466120d1586d43f8346",
+      "repository_file": "ops/active_sources/watch_all_production_nine_domain_validation_20261115_v2.py",
+      "repository_sha256": "5b42b112a3869c3f956c85953043cc4a1ec21bdcd0122466120d1586d43f8346",
+      "transformations": []
+    },
+    {
+      "original_file": "/opt/yuformer-build/watch_formal_native_checkpoint_states_20261115.py",
+      "original_sha256": "7c3ce2c2200b4bf88dcf84d6770e06851f7d0e2b6a49b50d054ebbddcbeb39d7",
+      "repository_file": "ops/active_sources/watch_formal_native_checkpoint_states_20261115.py",
+      "repository_sha256": "7c3ce2c2200b4bf88dcf84d6770e06851f7d0e2b6a49b50d054ebbddcbeb39d7",
+      "transformations": []
+    }
+  ],
+  "status": "SOURCE_SNAPSHOTS_FOR_AUDIT_NOT_NEW_DEPLOYMENT"
+}

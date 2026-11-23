@@ -1,0 +1,50 @@
+{
+  "approved_budget": {
+    "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/experiments/e4_curriculum/results/effective_total_training_budget.json",
+    "sha256": "90c0ae67683c43303e5a5a0d79509ce38ca79ea221aee42ab884be901a1b36ee"
+  },
+  "cases": {
+    "long_bpb": {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/eval/long-bpb-raw-heldout-books-code-math8-20261115-v2/manifest.json",
+      "sha256": "d91a7a0e09cc984c8cd721e01d3ae8afbb294db861165efaa0901a620119bacc"
+    },
+    "long_qa_code": {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/eval/repoqa-native-six-lang8-controls-scorable-20261115-v3/manifest.json",
+      "sha256": "4163b9fb27acdfab388062845969a7de0809526cd0e79d650a87b8c523eb3722"
+    },
+    "ruler": {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/eval/ruler-v1-yf64k-all13-32cases-20261115-v4/manifest.json",
+      "sha256": "c392e48d0877ede9cd9a9035e45e4d046260966962d9f1a0f71f37d1faf13281"
+    },
+    "short_core": {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/processed/eval/short-core-all9-expanded2816-20261115-v1/manifest.json",
+      "sha256": "8351a767f8fbf0abeedf3e644fffe59bb5257a906f9324dea0d66c0626876fc0"
+    }
+  },
+  "independent_case_admissions": [
+    {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/health/independent-ruler-and-short-core-case-assets-admission-20261115.json",
+      "sha256": "9d8e4721752e2a2abf3dd5e776184dfdf79354574b4ff8da867029766971dd8b"
+    },
+    {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/health/independent-long-bpb-cases-admission-20261115.json",
+      "sha256": "c0f611a42947f2bedeaff4e08f1f4f8b4a2b25c160987cce2f27d3171a87a543"
+    },
+    {
+      "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/health/independent-repoqa-native-scorable-case-assets-admission-20261115-v3.json",
+      "sha256": "5fe4f98aaf0f9c8bcc192422b0ad03600e5f6aabf398edcb55dd7c4693589574"
+    }
+  ],
+  "measurement_state": "NO_ACTUAL_FINAL_BASELINE_OR_CANDIDATE_CAPABILITY_MEASUREMENTS_EXIST_AT_FREEZE",
+  "policy": {
+    "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/eval/configs/context_stage_gate_v1.json",
+    "sha256": "8d27736e4d14bc72bb12e7879beb912988df9dd7f7523e98c598613a152561dd"
+  },
+  "production_stage_plan": {
+    "file": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/midtrain/configs/production_total966b_stage_plan.yaml",
+    "sha256": "653249399c0d54b819b463a28fbdeebcede7244f8976963892bdbfae1ff2ccc4"
+  },
+  "schema_version": 1,
+  "scope_note": "Predeclared limited diagnostic protocol; full benchmark or contamination-free claims prohibited; all nine short-domain zero-regression requirement retained.",
+  "status": "FROZEN_CONTEXT_STAGE_CASES_AND_QUANTITATIVE_POLICY_NOT_CAPABILITY_ADMISSION"
+}

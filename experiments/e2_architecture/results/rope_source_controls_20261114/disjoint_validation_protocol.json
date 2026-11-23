@@ -1,0 +1,73 @@
+{
+  "cases": [
+    "matched_baseline_b8",
+    "larger_lr1e4_b8",
+    "larger_lr2e4_b8"
+  ],
+  "checkpoint_step": 200,
+  "declared_at": "2026-11-14T22:35:59.820142+00:00",
+  "domains": [
+    "academic",
+    "books",
+    "chinese",
+    "code",
+    "encyclopedia",
+    "math",
+    "multilingual",
+    "qa",
+    "web"
+  ],
+  "formal_pretrain_started": false,
+  "gate": {
+    "aggregate_candidate_mean_loss_strictly_lower": true,
+    "all_nine_candidate_mean_losses_strictly_lower_than_baseline": true,
+    "all_nine_candidate_mean_losses_strictly_lower_than_lr2e4": true,
+    "finite_every_loss": true,
+    "no_noninferiority_margin": true,
+    "no_primary_metric_overwrite": true
+  },
+  "global_batch_size": 64,
+  "global_batches_per_domain": 44,
+  "labels_disjoint_from_primary": true,
+  "local_batch_size": 8,
+  "original_primary_review": {
+    "chinese_baseline": 7.8666911125183105,
+    "chinese_candidate": 7.8738861083984375,
+    "chinese_delta": 0.007194995880126953,
+    "original_reports_must_remain_unchanged": true,
+    "samples_per_domain": 64,
+    "status": "FAIL_ALL_NINE_DOMAINS_IMPROVE"
+  },
+  "production_qualified": false,
+  "purpose": "LARGER_DISJOINT_HELDOUT_REVIEW_AFTER_PRIMARY_64_SAMPLE_CHINESE_REGRESSION",
+  "sample_rule": "largest whole global-batch count fitting every validation stream after the original 64 samples, capped at 20M tokens per domain",
+  "samples_per_domain": 2816,
+  "schema_version": 1,
+  "seq_len": 4096,
+  "source_sample_offset": 64,
+  "status": "PREDECLARED_BEFORE_ADDITIONAL_VALIDATION",
+  "target_interval": [
+    262145,
+    11796481
+  ],
+  "training_source_sha256": "f1273103b7da176d0c2c0d1f0c7cba30dbab09946cd71d50d1f0647441684f45",
+  "uncertainty": {
+    "confidence": 0.95,
+    "intervals_reported_without_claiming_significance_when_zero_is_inside": true,
+    "method": "paired bootstrap over the same 44 global batches per domain",
+    "resamples": 10000,
+    "seed": 20261114
+  },
+  "validation_metadata_sha256": {
+    "data/token_streams/m3_20261020_yf64k/val_academic.meta.json": "c0e2f2f5099e236a8d3d12755c9080ab2f71b64af74a316b6e838cf944469da3",
+    "data/token_streams/m3_20261020_yf64k/val_books.meta.json": "60987df0472789fd6cf63b7906aae847bac3f51c95ed6d3f5186d431ce8aba64",
+    "data/token_streams/m3_20261020_yf64k/val_chinese.meta.json": "c7af6088f6a05c9ff89677a3b10ef5328b13de26c97f8c07ac056834959bb767",
+    "data/token_streams/m3_20261020_yf64k/val_code.meta.json": "0314cbb765f000cef31982808cded505879e08a079bb3d3dfaa51257fb56cee4",
+    "data/token_streams/m3_20261020_yf64k/val_encyclopedia.meta.json": "a37373b2d5cfd29f8bee3646ba3710e78e4cbf9c127314c68983ca4c3443a4ea",
+    "data/token_streams/m3_20261020_yf64k/val_math.meta.json": "f93f79d2d961c667489bc302be67b80954ea8775e88cf5c4ad5595ee2e5484ec",
+    "data/token_streams/m3_20261020_yf64k/val_multilingual.meta.json": "3f8c897642318898221ec94a27d66c9cc401c100303dca1cf70fc0ab19ff05a2",
+    "data/token_streams/m3_20261020_yf64k/val_qa.meta.json": "ef705c1ae1dad6409e4e06513779b166c54d8b015ea9a074f14aef23b3be0b54",
+    "data/token_streams/m3_20261020_yf64k/val_web.meta.json": "a15fb8cf6dd942581bbbd46e32f465d20a8f8f2b671b684bcbb2dce3e2d44899"
+  },
+  "world_size": 8
+}

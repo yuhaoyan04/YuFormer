@@ -30,9 +30,12 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import fnmatch
+import hashlib
 import json
 import os
+import re
 import sys
 import time
 from dataclasses import dataclass, field
@@ -51,9 +54,13 @@ class SourceConfig:
     name: str
     domain: str
     repo_id: str
+    enabled: bool = True
+    revision: str = ""
     max_size_gb: float = 0
     include_patterns: list[str] = field(default_factory=list)
     exclude_patterns: list[str] = field(default_factory=list)
+    urls: list[str] = field(default_factory=list)  # 直连 URL（非 HF 托管源）
+    url_sha256: dict[str, str] = field(default_factory=dict)
     notes: str = ""
 
 
@@ -61,6 +68,7 @@ class SourceConfig:
 class FileResult:
     path: str
     size_bytes: int
+    sha256: str = ""
     status: str = ""       # downloaded / skipped / failed / excluded
     local_path: str = ""
     error: str = ""
@@ -71,6 +79,12 @@ class SourceResult:
     name: str
     repo_id: str
     domain: str
+    requested_revision: str = ""
+    resolved_revision: str = ""
+    selected_inventory_sha256: str = ""
+    selection_limited: bool = False
+    selected_files: int = 0
+    selected_bytes: int = 0
     status: str = ""       # ok / partial / failed / empty
     total_files: int = 0
     data_files: int = 0
@@ -93,12 +107,39 @@ def load_config(config_path: str) -> list[SourceConfig]:
             name=s["name"],
             domain=s.get("domain", ""),
             repo_id=s["repo_id"],
+            enabled=bool(s.get("enabled", True)),
+            revision=str(s.get("revision") or ""),
             max_size_gb=float(s.get("max_size_gb", 0)),
             include_patterns=list(s.get("include_patterns", [])),
             exclude_patterns=list(s.get("exclude_patterns", [])),
+            urls=list(s.get("urls", [])),
+            url_sha256=dict(s.get("url_sha256", {})),
             notes=s.get("notes", ""),
         ))
     return sources
+
+
+def select_sources(
+    sources: list[SourceConfig],
+    *,
+    source_name: str | None,
+    include_disabled: bool,
+) -> list[SourceConfig]:
+    """Apply explicit source selection without silently running disabled inputs."""
+    if source_name:
+        selected = [source for source in sources if source.name == source_name]
+        if not selected:
+            raise ValueError(
+                f"source {source_name!r} not in config; available: "
+                f"{[source.name for source in sources]}"
+            )
+        if not selected[0].enabled and not include_disabled:
+            raise ValueError(
+                f"source {source_name!r} is disabled; pass --include-disabled "
+                "only for an intentional exploratory run"
+            )
+        return selected
+    return [source for source in sources if source.enabled or include_disabled]
 
 
 def matches_patterns(path: str, patterns: list[str]) -> bool:
@@ -107,9 +148,24 @@ def matches_patterns(path: str, patterns: list[str]) -> bool:
     return any(fnmatch.fnmatch(path, p) for p in patterns)
 
 
-def get_data_files(api: HfApi, repo_id: str, cfg: SourceConfig) -> list[tuple[str, int]]:
-    """返回 (path, size_bytes) 列表，按路径排序。"""
-    info = api.repo_info(repo_id, repo_type="dataset", files_metadata=True)
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(8 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def get_data_files(
+    api: HfApi, repo_id: str, cfg: SourceConfig
+) -> tuple[list[tuple[str, int]], str]:
+    """返回 (path, size_bytes) 列表与 HF 解析后 commit。"""
+    info = api.repo_info(
+        repo_id,
+        repo_type="dataset",
+        revision=cfg.revision,
+        files_metadata=True,
+    )
     all_sibs = info.siblings or []
     results = []
     for s in all_sibs:
@@ -123,7 +179,7 @@ def get_data_files(api: HfApi, repo_id: str, cfg: SourceConfig) -> list[tuple[st
             continue
         results.append((path, size))
     results.sort(key=lambda x: x[0])
-    return results
+    return results, str(info.sha or "")
 
 
 def format_size(n: int) -> str:
@@ -138,15 +194,98 @@ def format_size(n: int) -> str:
 
 def download_source(api: HfApi, cfg: SourceConfig, data_root: Path,
                     dry_run: bool = False, test_mode: bool = False,
-                    max_size_override: float | None = None) -> SourceResult:
+                    max_size_override: float | None = None,
+                    allow_floating_revision: bool = False) -> SourceResult:
     result = SourceResult(
         name=cfg.name, repo_id=cfg.repo_id, domain=cfg.domain,
+        requested_revision=cfg.revision,
         max_size_gb=max_size_override if max_size_override is not None else cfg.max_size_gb,
         notes=cfg.notes,
     )
 
+    if cfg.urls:
+        # 直连 URL 源（非 HF 托管）：curl 断点续传逐一下载
+        expected_names = {url.rstrip('/').split('/')[-1] for url in cfg.urls}
+        valid_digests = (
+            set(cfg.url_sha256) == expected_names
+            and all(re.fullmatch(r"[0-9a-fA-F]{64}", value) for value in cfg.url_sha256.values())
+        )
+        if not valid_digests and not allow_floating_revision:
+            result.status = "failed"
+            result.error = (
+                "UNPINNED DIRECT URLS — every URL filename requires a 64-hex "
+                "url_sha256 entry"
+            )
+            return result
+        if valid_digests:
+            result.resolved_revision = hashlib.sha256(
+                json.dumps(cfg.url_sha256, sort_keys=True, separators=(",", ":")).encode()
+            ).hexdigest()
+            result.selected_inventory_sha256 = result.resolved_revision
+        result.data_files = len(cfg.urls)
+        result.total_files = len(cfg.urls)
+        local_dir = data_root / cfg.name
+        local_dir.mkdir(parents=True, exist_ok=True)
+        import subprocess
+        for url in cfg.urls:
+            fname = url.rstrip('/').split('/')[-1]
+            dest = local_dir / fname
+            fr = FileResult(path=fname, size_bytes=0)
+            if dest.exists() and dest.stat().st_size > 0:
+                actual = file_sha256(dest)
+                fr.size_bytes = dest.stat().st_size
+                fr.sha256 = actual
+                if valid_digests and actual != cfg.url_sha256[fname].lower():
+                    fr.status = "failed"
+                    fr.error = f"sha256 mismatch: expected {cfg.url_sha256[fname]}, got {actual}"
+                    result.failed_files += 1
+                else:
+                    fr.status = "skipped"
+                    result.skipped_files += 1
+            elif dry_run:
+                fr.status = "dry_run"
+            else:
+                try:
+                    subprocess.run(["curl", "-sfL", "-C", "-", "--retry", "5",
+                                    "--retry-delay", "5", "-o", str(dest), url],
+                                   check=True, timeout=7200)
+                    actual = file_sha256(dest)
+                    fr.size_bytes = dest.stat().st_size
+                    fr.sha256 = actual
+                    if valid_digests and actual != cfg.url_sha256[fname].lower():
+                        raise ValueError(
+                            f"sha256 mismatch: expected {cfg.url_sha256[fname]}, got {actual}"
+                        )
+                    fr.status = "downloaded"
+                    result.downloaded_files += 1
+                except Exception as e:
+                    fr.status = "failed"
+                    fr.error = str(e)[:200]
+                    result.failed_files += 1
+            fr.local_path = str(dest)
+            result.files.append(fr)
+            print(f"  [{fr.status[:4].upper()}] {fname}  {fr.error}", flush=True)
+        result.cumulative_gb = sum(
+            (local_dir / url.rstrip('/').split('/')[-1]).stat().st_size
+            for url in cfg.urls
+            if (local_dir / url.rstrip('/').split('/')[-1]).is_file()
+        ) / 1e9
+        result.selected_files = len(cfg.urls)
+        result.selected_bytes = sum(file.size_bytes for file in result.files)
+        result.status = "ok" if result.failed_files == 0 else "failed"
+        return result
+
+    if not re.fullmatch(r"[0-9a-fA-F]{40,64}", cfg.revision):
+        if not allow_floating_revision:
+            result.status = "failed"
+            result.error = (
+                "UNPINNED REVISION — config must contain an immutable 40-64 hex commit; "
+                "--allow-floating-revision is exploratory only"
+            )
+            return result
+
     try:
-        files = get_data_files(api, cfg.repo_id, cfg)
+        files, result.resolved_revision = get_data_files(api, cfg.repo_id, cfg)
     except GatedRepoError as e:
         result.status = "failed"
         result.error = f"GATED — 需在 HF 页面申请访问权限: https://huggingface.co/datasets/{cfg.repo_id}"
@@ -166,104 +305,198 @@ def download_source(api: HfApi, cfg: SourceConfig, data_root: Path,
         result.error = "NO FILES — 无匹配数据文件（检查 include_patterns）"
         return result
 
-    if dry_run:
-        result.status = "ok"
-        result.data_files = len(files)
-        total = sum(s for _, s in files)
-        result.cumulative_gb = total / 1e9
-        for path, size in files:
-            result.files.append(FileResult(path=path, size_bytes=size, status="dry_run"))
-        print(f"  [DRY] {cfg.name}: {len(files)} files, {format_size(total)}")
-        for path, size in files[:5]:
-            print(f"        {path}  ({format_size(size)})")
-        if len(files) > 5:
-            print(f"        ... ({len(files) - 5} more)")
-        return result
-
     result.data_files = len(files)
     local_dir = data_root / cfg.name
     local_dir.mkdir(parents=True, exist_ok=True)
 
     max_bytes = result.max_size_gb * 1e9 if result.max_size_gb > 0 else float("inf")
+
+    # 确定性选出本源的下载集合（与串行顺序完全一致）：
+    # 按 blake2b 均匀排序后累计到 max_size_gb；test 模式只取第一个。
+    if result.max_size_gb > 0:
+        # 上限抽样：按 blake2b(源名, 路径) 均匀排序，使截断子集是
+        # 全库的确定性均匀样本（跨 CC-MAIN 快照/年份/语言），
+        # 而非按路径字典序截断造成的早期快照偏差。
+        from hashlib import blake2b
+
+        def order_key(item: tuple[str, int]) -> str:
+            path, _ = item
+            h = blake2b(digest_size=16,
+                        person=cfg.name[:16].encode().ljust(16, b"\0"))
+            h.update(path.encode())
+            return h.hexdigest()
+
+        files.sort(key=order_key)
+
+    selected: list[tuple[str, int]] = []
     cumulative = 0
     limit_reached = False
-
     for i, (path, expected_size) in enumerate(files):
         if test_mode and i >= 1:
             break
-
         if cumulative >= max_bytes:
             limit_reached = True
             result.files.append(FileResult(path=path, size_bytes=expected_size,
                                            status="excluded",
                                            error=f"max_size_gb={result.max_size_gb} reached"))
             continue
+        selected.append((path, expected_size))
+        cumulative += expected_size
+    result.selected_inventory_sha256 = hashlib.sha256(
+        json.dumps(selected, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    result.selection_limited = limit_reached
+    result.selected_files = len(selected)
+    result.selected_bytes = cumulative
 
+    if dry_run:
+        result.status = "ok"
+        result.cumulative_gb = cumulative / 1e9
+        for path, size in selected:
+            result.files.append(FileResult(path=path, size_bytes=size, status="dry_run"))
+        print(f"  [DRY] {cfg.name}: {len(selected)} selected files, {format_size(cumulative)}")
+        for path, size in selected[:5]:
+            print(f"        {path}  ({format_size(size)})")
+        if len(selected) > 5:
+            print(f"        ... ({len(selected) - 5} more selected)")
+        return result
+
+    # 并发下载已选集合；文件选择逻辑保持确定性，网络并发只影响完成顺序
+    from concurrent.futures import ThreadPoolExecutor
+
+    def fetch(item: tuple[str, int]) -> FileResult:
+        path, expected_size = item
         local_path = local_dir / path
         fr = FileResult(path=path, size_bytes=expected_size)
-
         if local_path.exists() and local_path.stat().st_size == expected_size:
             fr.status = "skipped"
             fr.local_path = str(local_path)
-            result.skipped_files += 1
-            cumulative += expected_size
-        else:
-            try:
-                downloaded = hf_hub_download(
-                    repo_id=cfg.repo_id,
-                    repo_type="dataset",
-                    filename=path,
-                    local_dir=str(local_dir),
-                )
-                actual = Path(downloaded).stat().st_size
-                fr.status = "downloaded"
-                fr.local_path = str(downloaded)
-                result.downloaded_files += 1
-                cumulative += actual
-            except Exception as e:
+            return fr
+        try:
+            downloaded = hf_hub_download(
+                repo_id=cfg.repo_id,
+                repo_type="dataset",
+                filename=path,
+                revision=result.resolved_revision,
+                local_dir=str(local_dir),
+            )
+            fr.status = "downloaded"
+            fr.local_path = str(downloaded)
+            if expected_size and Path(downloaded).stat().st_size != expected_size:
                 fr.status = "failed"
-                fr.error = str(e)[:200]
+                fr.error = (
+                    f"size mismatch: expected {expected_size}, "
+                    f"got {Path(downloaded).stat().st_size}"
+                )
+            return fr
+        except Exception as e:
+            msg = str(e)
+            if "too large" in msg or "hf_xet" in msg:
+                # >10GB 单文件（如 arxiv-latex-corpus）走 resolve URL + curl 续传
+                try:
+                    import subprocess
+                    url = (f"{HF_ENDPOINT}/datasets/{cfg.repo_id}"
+                           f"/resolve/{result.resolved_revision}/{path}")
+                    dest = local_dir / path
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    subprocess.run(
+                        ["curl", "-sfL", "-C", "-", "--retry", "5",
+                         "--retry-delay", "5", "-o", str(dest), url],
+                        check=True, timeout=7200)
+                    fr.status = "downloaded"
+                    fr.local_path = str(dest)
+                    if expected_size and dest.stat().st_size != expected_size:
+                        fr.status = "failed"
+                        fr.error = (
+                            f"size mismatch: expected {expected_size}, got {dest.stat().st_size}"
+                        )
+                    return fr
+                except Exception as e2:
+                    fr.status = "failed"
+                    fr.error = f"curl fallback: {str(e2)[:150]}"
+                    return fr
+            fr.status = "failed"
+            fr.error = msg[:200]
+            return fr
+
+    workers = 1 if test_mode else int(os.environ.get("YUFORMER_DL_WORKERS", "8"))
+    done_bytes = 0
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for fr in pool.map(fetch, selected):
+            result.files.append(fr)
+            if fr.status == "downloaded":
+                result.downloaded_files += 1
+            elif fr.status == "skipped":
+                result.skipped_files += 1
+            else:
                 result.failed_files += 1
-
-        result.files.append(fr)
-
-        flag = {"downloaded": "OK", "skipped": "SKIP", "failed": "FAIL",
-                "excluded": "SKIP"}[fr.status]
-        print(f"  [{flag}] {path}  ({format_size(expected_size)})  "
-              f"cum={cumulative / 1e9:.2f} GB / {result.max_size_gb} GB")
+            done_bytes += fr.size_bytes
+            flag = {"downloaded": "OK", "skipped": "SKIP", "failed": "FAIL",
+                    "excluded": "SKIP"}[fr.status]
+            print(f"  [{flag}] {fr.path}  ({format_size(fr.size_bytes)})  "
+                  f"done={done_bytes / 1e9:.2f} GB / {cumulative / 1e9:.2f} GB selected", flush=True)
 
     result.cumulative_gb = cumulative / 1e9
-    if result.failed_files > 0 and result.downloaded_files == 0:
-        result.status = "failed"
-    elif limit_reached:
-        result.status = "partial"
+    if result.failed_files > 0:
+        result.status = (
+            "partial"
+            if result.downloaded_files + result.skipped_files > 0
+            else "failed"
+        )
     else:
         result.status = "ok"
 
     return result
 
 
-def write_report(results: list[SourceResult], report_path: Path):
+def write_report(
+    results: list[SourceResult], report_path: Path, *, config_sha256: str
+):
     report = {
-        "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "schema_version": 2,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
         "hf_endpoint": HF_ENDPOINT,
+        "config_sha256": config_sha256,
         "sources": [
             {
                 "name": r.name, "repo_id": r.repo_id, "domain": r.domain,
+                "requested_revision": r.requested_revision,
+                "resolved_revision": r.resolved_revision,
+                "selected_inventory_sha256": r.selected_inventory_sha256,
+                "selection_limited": r.selection_limited,
+                "selected_files": r.selected_files,
+                "selected_bytes": r.selected_bytes,
                 "status": r.status, "max_size_gb": r.max_size_gb,
                 "total_files": r.total_files, "data_files": r.data_files,
                 "downloaded": r.downloaded_files, "skipped": r.skipped_files,
                 "failed": r.failed_files, "cumulative_gb": round(r.cumulative_gb, 3),
                 "error": r.error, "notes": r.notes,
+                "files": [
+                    {
+                        "path": f.path,
+                        "size_bytes": f.size_bytes,
+                        "sha256": f.sha256,
+                        "status": f.status,
+                        "local_path": f.local_path,
+                        "error": f.error,
+                    }
+                    for f in r.files
+                ],
             }
             for r in results
         ],
     }
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    temporary = report_path.with_name(f".{report_path.name}.tmp-{os.getpid()}")
+    with temporary.open("w", encoding="utf-8") as handle:
+        json.dump(report, handle, ensure_ascii=False, indent=2, sort_keys=True)
+        handle.write("\n")
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, report_path)
 
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(description="YuFormer 预训练数据下载器")
     parser.add_argument("--config", default=None,
                         help="配置文件路径（默认同目录下 data_sources.yaml）")
@@ -279,6 +512,16 @@ def main():
                         help="仅列出文件与大小，不下载")
     parser.add_argument("--test", action="store_true",
                         help="每源只下载第一个文件（验证可访问性）")
+    parser.add_argument(
+        "--allow-floating-revision",
+        action="store_true",
+        help="仅探索用：允许未锁定 main/tag；该输出不得进入正式 release",
+    )
+    parser.add_argument(
+        "--include-disabled",
+        action="store_true",
+        help="仅探索用：允许 --all/--source 运行 enabled=false 的数据源",
+    )
     args = parser.parse_args()
 
     script_dir = Path(__file__).resolve().parent
@@ -286,19 +529,29 @@ def main():
 
     if not Path(config_path).exists():
         print(f"ERROR: config not found: {config_path}")
-        sys.exit(1)
+        return 1
 
-    sources = load_config(config_path)
+    all_sources = load_config(config_path)
 
     if args.source:
-        sources = [s for s in sources if s.name == args.source]
-        if not sources:
-            print(f"ERROR: source '{args.source}' not in config. "
-                  f"Available: {[s.name for s in load_config(config_path)]}")
-            sys.exit(1)
+        try:
+            sources = select_sources(
+                all_sources,
+                source_name=args.source,
+                include_disabled=args.include_disabled,
+            )
+        except ValueError as exc:
+            print(f"ERROR: {exc}")
+            return 1
     elif not args.all:
         parser.print_help()
-        sys.exit(0)
+        return 0
+    else:
+        sources = select_sources(
+            all_sources,
+            source_name=None,
+            include_disabled=args.include_disabled,
+        )
 
     data_root = Path(args.data_root).resolve()
     data_root.mkdir(parents=True, exist_ok=True)
@@ -322,7 +575,8 @@ def main():
         r = download_source(api, cfg, data_root,
                             dry_run=args.dry_run,
                             test_mode=args.test,
-                            max_size_override=args.max_size)
+                            max_size_override=args.max_size,
+                            allow_floating_revision=args.allow_floating_revision)
         results.append(r)
 
         status_icon = {"ok": "✓", "partial": "◐", "failed": "✗",
@@ -336,19 +590,22 @@ def main():
 
         time.sleep(1)
 
-    report_path = data_root / "download_report.json"
-    write_report(results, report_path)
+    report_name = "download_report_dryrun.json" if args.dry_run else "download_report.json"
+    report_path = data_root / report_name
+    write_report(results, report_path, config_sha256=file_sha256(Path(config_path)))
 
     print(f"\n{'=' * 70}")
     print(f"  Report saved: {report_path}")
-    ok = sum(1 for r in results if r.status in ("ok", "partial"))
+    ok = sum(1 for r in results if r.status == "ok")
+    partial = sum(1 for r in results if r.status == "partial")
     fail = sum(1 for r in results if r.status == "failed")
     empty = sum(1 for r in results if r.status == "empty")
     total_gb = sum(r.cumulative_gb for r in results)
-    print(f"  Summary: {ok} ok/partial, {fail} failed, {empty} empty, "
+    print(f"  Summary: {ok} ok, {partial} partial, {fail} failed, {empty} empty, "
           f"total {total_gb:.2f} GB")
     print(f"{'=' * 70}")
+    return 0 if ok == len(results) else 2
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
