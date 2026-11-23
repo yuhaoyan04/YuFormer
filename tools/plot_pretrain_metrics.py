@@ -29,10 +29,12 @@ def main(preview_png=None):
     axes[1].set_ylabel('Relative loss')
     axes[1].legend(fontsize=7, ncol=2)
     recent = rows[-7:]
-    axes[2].plot([float(row['training_labels'])/1e9 for row in recent],
-                 [float(row['books']) for row in recent], marker='o', color='#a44b12')
-    axes[2].set_title('Books: last 7 validation points')
-    axes[2].set_ylabel('Cross entropy (local scale)')
+    if recent:
+        for domain in domains:
+            axes[2].plot([float(row['training_labels'])/1e9 for row in recent],
+                [float(row[domain])/float(recent[0][domain]) for row in recent], marker='.')
+    axes[2].set_title('Last 7 points / first shown loss')
+    axes[2].set_ylabel('Relative domain loss (local scale)')
     for ax in axes:
         ax.set_xlabel('Consumed training labels (B)')
         ax.grid(alpha=.2)

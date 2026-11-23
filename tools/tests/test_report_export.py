@@ -59,6 +59,28 @@ class ExportTests(unittest.TestCase):
             source = json.loads((root/'report/metrics/provenance.json').read_text())
             self.assertIn('pretrain_validation.csv', source['exports'])
 
+    def test_recent_rebound_visible_despite_improvement_over_window_start(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self.fixture(Path(directory))
+            review_path = root/'data/health/assistant-half-day-pretrain-review-20261123T0046.json'
+            review = json.loads(review_path.read_text())
+            review['validation_losses'] = {'2000': {}, '4000': {}, '6000': {}}
+            review['training_metrics']['step'] = 6000
+            review['labels_at_last_logged_step'] = 6000*4194304
+            review_path.write_text(json.dumps(review))
+            for step, loss in [(4000, 1.5), (6000, 1.75)]:
+                value = receipt()
+                value['step'] = step
+                for metric in value['metrics'].values():
+                    metric.update(step=step, value=loss)
+                target = root/f'data/health/all-production-nine-domain-validation-receipts-20261115/4096-attempt-step-{step}.json'
+                target.write_text(json.dumps(value))
+            EXPORT.export(root)
+            report = (root/'report/TECHNICAL_REPORT.md').read_text()
+            self.assertIn('第 2000–6000 步', report)
+            self.assertIn('相对前一次第 4000 步变化 +16.666667%', report)
+            self.assertIn('| aggregate | 2.000000000 | 1.500000000 | 1.750000000 |', report)
+
     @staticmethod
     def fixture(root):
         def write(name, value):

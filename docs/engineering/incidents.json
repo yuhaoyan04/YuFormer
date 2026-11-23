@@ -636,6 +636,13 @@
       "evidence": [
         "data/health/books-domain-regression-followup-20261123T0046.json",
         "report/PRETRAIN_HALF_DAY_REVIEW_20261123T0046.md"
+      ],
+      "followups": [
+        {
+          "reviewed_at": "2026-11-23T12:51:56.040119+00:00",
+          "observation": "62000/64000 books loss为2.613039732/2.610648870，均低于56000的2.617864370；原回升事实保留，根因未定，不称为代码修复。",
+          "evidence": "report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md"
+        }
       ]
     },
     {
@@ -654,6 +661,22 @@
         "report/metrics/repository_publication_20261123.json"
       ],
       "initial_blocked_validation": "远端只读检查与推送dry-run确认阻塞；最终发布结果以维护记录为准。"
+    },
+    {
+      "id": "P018",
+      "stage": "validation",
+      "title": "多域短窗回升与比较基准不一致",
+      "status": "OPEN_OBSERVATION",
+      "symptom": "64000相对60000的code/math/multilingual分别回升0.179529%/0.112315%/0.046690%；聚合相对60000下降0.106300%，却相对62000上升0.123285%。",
+      "root_cause": "质量变化根因未定。不同窗口参照导致方向不同；已检查source pins、LR、游标及断点控制状态，未找到对应配置错误，不能凭此排除真实质量变化或宣称只是噪声。",
+      "action": "保留原attention状态，同时报告前一次点和三点窗口参照；展示所有九域近期曲线，继续冻结训练并在下一12小时复核重新评估。",
+      "validation": "259份原生控制记录、6482个实际LR标量和最新三次固定heldout事件前缀通过；九域64000均低于54000，books已低于56000，但短窗域回升仍为开放观察。固定64样本无此处置信区间，最终能力未测。",
+      "reusable_rule": "趋势报告必须写明参照step；总均值改善不能消除单域退步，后续点变好不等于根因已修复。",
+      "evidence": [
+        "report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md",
+        "report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md",
+        "report/metrics/domain_validation_followup_20261123T1246.json"
+      ]
     }
   ],
   "future_scope": "SFT/RL checks in PLAYBOOK are contracts and planned qualification, not completed training results."

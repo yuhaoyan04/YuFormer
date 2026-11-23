@@ -2,7 +2,7 @@
 
 从数据治理、自训 tokenizer、模型实现，到八卡预训练、长上下文和后训练的可审计 LLM 工程项目。
 
-**2026-11-23：1.5166B 正式预训练正在八张 H800 上运行。** 最近半日复核为第 60780 步，已消费 254.930B training labels，处于 stable 阶段；全链路预计 32.01 天，剩余约 24.41 天。这是运行时预测，最终能力尚未完成。最新验证聚合 loss 2.308152，逐域回升观察为 `{"validation_metrics/domain/books/loss": 0.12079104060711554}`。
+**2026-11-23：1.5166B 正式预训练正在八张 H800 上运行。** 最近半日复核为第 64800 步，已消费 271.791B training labels，处于 stable 阶段；全链路预计 31.94 天，剩余约 23.84 天。这是运行时预测，最终能力尚未完成。最新验证聚合 loss 2.305698，逐域回升观察为 `{"validation_metrics/domain/code/loss": 0.17952900417330664, "validation_metrics/domain/math/loss": 0.11231479107300935, "validation_metrics/domain/multilingual/loss": 0.04669020355232423}`。
 
 | 入口 | 内容 |
 |---|---|

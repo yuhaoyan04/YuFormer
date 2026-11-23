@@ -1,39 +1,39 @@
 {
-  "actual_lr_observations": 6080,
+  "actual_lr_observations": 6482,
   "attempt_id": "c5bc01ad619700958f8fdac0967605f2",
-  "checkpoint_receipt_count": 243,
+  "checkpoint_receipt_count": 259,
   "data_cursor_phase": {
-    "consumed_samples": 62208000,
+    "consumed_samples": 66304000,
     "frozen_sample_limits": [
       12207104,
       174868480,
       36620288
     ],
-    "latest_native_step": 60750,
+    "latest_native_step": 64750,
     "phase_index": 1,
     "stream": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/pretrain-1t/stable.tokens.bin"
   },
   "final_capability_completed": false,
-  "labels_at_last_logged_step": 254929797120,
+  "labels_at_last_logged_step": 271790899200,
   "latest_validation_losses": {
-    "academic": 2.3250370025634766,
-    "aggregate": 2.308151960372925,
-    "books": 2.6210265159606934,
-    "chinese": 2.9179296493530273,
-    "code": 1.108367681503296,
-    "encyclopedia": 2.3649234771728516,
-    "math": 1.8694182634353638,
-    "multilingual": 2.5567715167999268,
-    "qa": 2.3179707527160645,
-    "web": 2.6919217109680176
+    "academic": 2.3233089447021484,
+    "aggregate": 2.3056983947753906,
+    "books": 2.6106488704681396,
+    "chinese": 2.915952444076538,
+    "code": 1.1103575229644775,
+    "encyclopedia": 2.3584840297698975,
+    "math": 1.8715178966522217,
+    "multilingual": 2.5579652786254883,
+    "qa": 2.3168137073516846,
+    "web": 2.6862361431121826
   },
-  "latest_validation_step": 60000,
-  "next_review_at": "2026-11-23T12:46:12.619001+00:00",
-  "original_review": "data/health/assistant-half-day-pretrain-review-20261123T0046.json",
-  "original_review_sha256": "984d8e3f83dcb7fd1d46616a240a024e0915baaf57ebab4d909e5a0167eb8d3f",
+  "latest_validation_step": 64000,
+  "next_review_at": "2026-11-24T00:46:12.619001+00:00",
+  "original_review": "data/health/assistant-half-day-pretrain-review-20261123T1246.json",
+  "original_review_sha256": "97153ff0415437cd95f34e3b2d879f0796e1d97ae7d56da29ef4806d5c04edaa",
   "phase": "stable",
-  "projected_completion_utc": "2026-12-17T10:38:16.954814+00:00",
-  "projected_total_days": 32.00969020022445,
+  "projected_completion_utc": "2026-12-17T08:57:58.586868+00:00",
+  "projected_total_days": 31.940033163808188,
   "qualifications": {
     "final-all-cpu-suites.json": {
       "source": "data/health/final-all-cpu-suites.json",
@@ -67,23 +67,25 @@
     }
   },
   "regressed_domains": {
-    "validation_metrics/domain/books/loss": 0.12079104060711554
+    "validation_metrics/domain/code/loss": 0.17952900417330664,
+    "validation_metrics/domain/math/loss": 0.11231479107300935,
+    "validation_metrics/domain/multilingual/loss": 0.04669020355232423
   },
-  "reviewed_at": "2026-11-23T00:46:28.253923+00:00",
+  "reviewed_at": "2026-11-23T12:51:56.040119+00:00",
   "schema_version": 1,
   "scope": "ACTUAL_CONTROL_AND_FIXED_HELDOUT_PROGRESS_NOT_FINAL_CAPABILITY_NOT_REPEATED_FULL_TENSOR_FINITE_SCAN",
   "sft_rl_training_completed": false,
   "status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
   "total_training_labels": 966254395392,
   "training_metrics": {
-    "grad_norm": 0.213,
-    "log_timestamp_utc": "2026-11-23 00:45:37",
-    "loss": 2.3253,
+    "grad_norm": 0.2386,
+    "log_timestamp_utc": "2026-11-23 12:49:12",
+    "loss": 2.29423,
     "loss_is_finite": true,
     "memory_gib": 67.46,
-    "mfu_pct": 46.04,
-    "step": 60780,
-    "tps_per_device": 47746
+    "mfu_pct": 46.88,
+    "step": 64800,
+    "tps_per_device": 48624
   },
-  "whole_chain_remaining_days": 24.411179643586756
+  "whole_chain_remaining_days": 23.837827640362537
 }

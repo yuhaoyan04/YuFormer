@@ -6,9 +6,19 @@
     "scope": "Small bound files rehashed; large files checked by exact stat identity, not a repeated full-data byte audit.",
     "status": "PASS_391_FROZEN_DEPENDENCIES_UNCHANGED_AFTER_CLEANUP"
   },
+  "latest_half_day_followup": {
+    "changed_paths_intersect_original_391_frozen_dependencies": [],
+    "maintenance_tests_passed": 9,
+    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md",
+    "review_status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
+    "scope": "Changed repository paths compared with previous frozen baseline; no claim of repeating full tensor/data byte scans or GPU qualification.",
+    "step": 64800,
+    "validation_rows": 33
+  },
   "maintenance_tests": {
     "command": "python -m unittest discover -s tools/tests -v",
-    "passed": 8
+    "last_run_at": "2026-11-23T12:56:48.096693+00:00",
+    "passed": 9
   },
   "publication_evidence": "report/metrics/repository_publication_20261123.json",
   "remote_write_access": "VERIFIED_YUHAOYAN04_PUSH_TRUE",

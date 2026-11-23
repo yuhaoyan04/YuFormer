@@ -2,7 +2,7 @@
 
 `data/` 与 `report/history/` 路径是外部运行证据；公开源码、轻量指标和对应SHA见 `ops/` 与 `report/metrics/`。保留证据引用不表示原始权重或日志已上传。
 
-已索引 44 条历史记录与 17 条近期案例。原始 E 编号存在重复，H 编号按原文顺序消歧；历史状态和适用版本不改写。机器数据见 [incidents.json](incidents.json)。
+已索引 44 条历史记录与 18 条近期案例。原始 E 编号存在重复，H 编号按原文顺序消歧；历史状态和适用版本不改写。机器数据见 [incidents.json](incidents.json)。
 
 | ID | 阶段 | 案例 | 状态 |
 |---|---|---|---|
@@ -23,6 +23,7 @@
 | P015 | operations | 外围SIGKILL而八卡仍在训练 | RECOVERED_SAME_LIVE_ATTEMPT |
 | P016 | validation | books短窗小幅回升 | OPEN_OBSERVATION |
 | P017 | repository | 旧归档进入待提交集合和远端写权限不足 | RESOLVED_CLEANUP_AND_REMOTE_SNAPSHOT_VERIFIED |
+| P018 | validation | 多域短窗回升与比较基准不一致 | OPEN_OBSERVATION |
 
 ## P001 校准样本与筛选哈希相关
 
@@ -246,6 +247,8 @@
 
 **可复用规则：** 小幅单域取舍要量化并留痕，不通过改数据或抹告警制造单调曲线。
 
+后续测量（2026-11-23T12:51:56.040119+00:00）：62000/64000 books loss为2.613039732/2.610648870，均低于56000的2.617864370；原回升事实保留，根因未定，不称为代码修复。
+
 证据：`data/health/books-domain-regression-followup-20261123T0046.json`, `report/PRETRAIN_HALF_DAY_REVIEW_20261123T0046.md`。
 
 ## P017 旧归档进入待提交集合和远端写权限不足
@@ -261,6 +264,20 @@
 **可复用规则：** 分离重型资产与轻量结果；提交身份、SSH身份、连接器身份和CLI身份分别核验，仓库级隔离凭据避免改全局环境；以实际远端SHA确认发布。
 
 证据：`docs/engineering/REPOSITORY_MAINTENANCE.md`, `report/REPOSITORY_MAINTENANCE_20261123.md`, `report/metrics/repository_publication_20261123.json`。
+
+## P018 多域短窗回升与比较基准不一致
+
+**症状：** 64000相对60000的code/math/multilingual分别回升0.179529%/0.112315%/0.046690%；聚合相对60000下降0.106300%，却相对62000上升0.123285%。
+
+**根因/未知项：** 质量变化根因未定。不同窗口参照导致方向不同；已检查source pins、LR、游标及断点控制状态，未找到对应配置错误，不能凭此排除真实质量变化或宣称只是噪声。
+
+**处置：** 保留原attention状态，同时报告前一次点和三点窗口参照；展示所有九域近期曲线，继续冻结训练并在下一12小时复核重新评估。
+
+**验证与范围：** 259份原生控制记录、6482个实际LR标量和最新三次固定heldout事件前缀通过；九域64000均低于54000，books已低于56000，但短窗域回升仍为开放观察。固定64样本无此处置信区间，最终能力未测。
+
+**可复用规则：** 趋势报告必须写明参照step；总均值改善不能消除单域退步，后续点变好不等于根因已修复。
+
+证据：`report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md`, `report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md`, `report/metrics/domain_validation_followup_20261123T1246.json`。
 
 ## 历史案例索引
 

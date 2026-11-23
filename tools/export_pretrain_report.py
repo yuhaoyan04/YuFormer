@@ -142,6 +142,17 @@ def write_docs(root, review, snapshot, rows, budget, scaling, canary):
     m = review['training_metrics']
     date = review['reviewed_at'][:10]
     regression = json.dumps(review['regressed_domains'], ensure_ascii=False)
+    window = rows[-3:]
+    comparison = f"参考窗口为第 {window[0]['step']}–{window[-1]['step']} 步。"
+    if len(window) > 1:
+        previous = window[-2]
+        delta = (window[-1]['aggregate']/previous['aggregate']-1)*100
+        comparison += f"最新聚合 loss 相对前一次第 {previous['step']} 步变化 {delta:+.6f}%；短窗回退标记使用窗口首点作参照，两种口径不能混用。"
+    recent_rows = '\n'.join(
+        f"| {name} | "+' | '.join(f"{point[name]:.9f}" for point in window)+' |'
+        for name in ['academic', 'books', 'chinese', 'code', 'encyclopedia', 'math', 'multilingual', 'qa', 'web', 'aggregate'])
+    recent_table = ('| 域 | '+' | '.join(str(point['step']) for point in window)+' |\n'
+        +'|---|'+'---:|'*len(window)+'\n'+recent_rows)
     banner = (f'**{date}：1.5166B 正式预训练正在八张 H800 上运行。** 最近半日复核为第 {m["step"]} 步，'
         f'已消费 {review["labels_at_last_logged_step"]/1e9:.3f}B training labels，处于 {review["phase"]} 阶段；'
         f'全链路预计 {review["projected_total_days"]:.2f} 天，剩余约 {review["whole_chain_remaining_days"]:.2f} 天。'
@@ -241,6 +252,10 @@ E1 24 点 × 3 seeds 拟合 NRMSE 3.663% > 3%，保留 FAIL。用户显式豁免
 ![训练期验证曲线](figures/pretrain_validation.svg)
 
 最新固定九域验证第 {rows[-1]['step']} 步，聚合 loss={rows[-1]['aggregate']:.9f}；逐域短窗回升 `{regression}`。每域固定64样本、262144目标 tokens，聚合为等域宏平均。这是早期点估计，无此处置信区间，不代表公开 benchmark 或最终能力。2026-11-23 books +0.1208% 观察的跟进记录保留，未修改原复核状态或配方。
+
+{comparison}
+
+{recent_table}
 
 ## 长阶段与后训练边界
 

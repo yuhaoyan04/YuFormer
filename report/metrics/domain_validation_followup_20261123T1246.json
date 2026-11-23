@@ -1,0 +1,210 @@
+{
+  "attempt_id": "c5bc01ad619700958f8fdac0967605f2",
+  "conclusion": "Books64000 is below56000/60000. Code/math/multilingual64000 are above60000, while all9 domains and aggregate remain below54000. Aggregate64000 is below60000 but above62000. No configuration/cursor/LR fault was identified in the reviewed checks; quality root cause remains unknown. Continue authorized frozen training and reassess at next12h review without changing gates.",
+  "control_evidence": {
+    "actual_lr_observations": 6482,
+    "cursor": {
+      "consumed_samples": 66304000,
+      "frozen_sample_limits": [
+        12207104,
+        174868480,
+        36620288
+      ],
+      "latest_native_step": 64750,
+      "phase_index": 1,
+      "stream": "/opt/huawei/explorer-env/dataset/yyh_arcagi/YUFormer/YuFormer/data/token_streams/pretrain-1t/stable.tokens.bin"
+    },
+    "lr_mismatches": [],
+    "memory_failcnt": 4,
+    "native_checkpoint_receipts": 259,
+    "source_input_bindings_rechecked_by_original_review": 281,
+    "uncorrected_ecc": 0
+  },
+  "latest_relative_changes_percent_by_reference_step": {
+    "52000": {
+      "academic": -0.7289062026453186,
+      "aggregate": -0.8386591829801948,
+      "books": -1.1495690018998528,
+      "chinese": -1.1026739752931114,
+      "code": -1.0015743063677585,
+      "encyclopedia": -0.9382040874285846,
+      "math": -0.6988336116924065,
+      "multilingual": -0.2474826372585892,
+      "qa": -0.754050656647387,
+      "web": -0.917848872007343
+    },
+    "54000": {
+      "academic": -0.6120854363687811,
+      "aggregate": -0.6292310643701837,
+      "books": -0.9100200390645963,
+      "chinese": -0.8259804595316056,
+      "code": -0.2907771831919814,
+      "encyclopedia": -0.7951671009214345,
+      "math": -0.47949704949029615,
+      "multilingual": -0.18060537223760775,
+      "qa": -0.5125271794716335,
+      "web": -0.7796538464790004
+    },
+    "56000": {
+      "academic": -0.4212189721439552,
+      "aggregate": -0.4021689315488963,
+      "books": -0.2756254281032877,
+      "chinese": -0.5769522794382809,
+      "code": -0.5609222693325755,
+      "encyclopedia": -0.5513998275065934,
+      "math": -0.33959405382847363,
+      "multilingual": -0.04469109898086465,
+      "qa": -0.35438953377779914,
+      "web": -0.5452542008274386
+    },
+    "58000": {
+      "academic": -0.2897886367368874,
+      "aggregate": -0.19372374690272975,
+      "books": -0.3656764582267824,
+      "chinese": -0.4615166249996583,
+      "code": 0.10437800831026856,
+      "encyclopedia": -0.32927353572773654,
+      "math": -0.10313294312327415,
+      "multilingual": 0.5773911504437956,
+      "qa": -0.19879268057592103,
+      "web": -0.44214295610964793
+    },
+    "60000": {
+      "academic": -0.07432388643375809,
+      "aggregate": -0.10630000275795304,
+      "books": -0.39593821082538616,
+      "chinese": -0.06776055334053455,
+      "code": 0.17952900417330664,
+      "encyclopedia": -0.272289884434318,
+      "math": 0.11231479107300935,
+      "multilingual": 0.04669020355232423,
+      "qa": -0.04991630558859317,
+      "web": -0.21120851444785815
+    },
+    "62000": {
+      "academic": -0.06679193701437658,
+      "aggregate": 0.12328536233763288,
+      "books": -0.09149732711563052,
+      "chinese": -0.021654470188925412,
+      "code": 0.4601100942287273,
+      "encyclopedia": 0.002648621801770723,
+      "math": 0.2585231140687094,
+      "multilingual": 0.8821192526236254,
+      "qa": 0.1094800198706114,
+      "web": -0.1764538013275141
+    }
+  },
+  "latest_step": 64000,
+  "limits": "Fixed64samples/domain; no per-example uncertainty or causal diagnosis. Lower later books values do not establish a software fix or final capability. Control checks are not a repeated full-floating finite scan.",
+  "loss_history": [
+    {
+      "academic": 2.3403680324554443,
+      "aggregate": 2.3251988887786865,
+      "books": 2.6410090923309326,
+      "chinese": 2.9484643936157227,
+      "code": 1.1215910911560059,
+      "encyclopedia": 2.3808209896087646,
+      "math": 1.8846887350082397,
+      "multilingual": 2.5643115043640137,
+      "qa": 2.334416389465332,
+      "step": 52000,
+      "web": 2.711120128631592
+    },
+    {
+      "academic": 2.3376171588897705,
+      "aggregate": 2.320298433303833,
+      "books": 2.634624481201172,
+      "chinese": 2.9402382373809814,
+      "code": 1.1135956048965454,
+      "encyclopedia": 2.3773882389068604,
+      "math": 1.8805350065231323,
+      "multilingual": 2.562593460083008,
+      "qa": 2.328749179840088,
+      "step": 54000,
+      "web": 2.7073440551757812
+    },
+    {
+      "academic": 2.333136558532715,
+      "aggregate": 2.3150086402893066,
+      "books": 2.6178643703460693,
+      "chinese": 2.9328737258911133,
+      "code": 1.1166208982467651,
+      "encyclopedia": 2.37156081199646,
+      "math": 1.8778951168060303,
+      "multilingual": 2.5591089725494385,
+      "qa": 2.3250534534454346,
+      "step": 56000,
+      "web": 2.700963258743286
+    },
+    {
+      "academic": 2.330061197280884,
+      "aggregate": 2.310173749923706,
+      "books": 2.6202304363250732,
+      "chinese": 2.9294724464416504,
+      "code": 1.1091997623443604,
+      "encyclopedia": 2.3662755489349365,
+      "math": 1.8734500408172607,
+      "multilingual": 2.543280601501465,
+      "qa": 2.3214285373687744,
+      "step": 58000,
+      "web": 2.6981658935546875
+    },
+    {
+      "academic": 2.3250370025634766,
+      "aggregate": 2.308151960372925,
+      "books": 2.6210265159606934,
+      "chinese": 2.9179296493530273,
+      "code": 1.108367681503296,
+      "encyclopedia": 2.3649234771728516,
+      "math": 1.8694182634353638,
+      "multilingual": 2.5567715167999268,
+      "qa": 2.3179707527160645,
+      "step": 60000,
+      "web": 2.6919217109680176
+    },
+    {
+      "academic": 2.324861764907837,
+      "aggregate": 2.302859306335449,
+      "books": 2.61303973197937,
+      "chinese": 2.916584014892578,
+      "code": 1.1052720546722412,
+      "encyclopedia": 2.358421564102173,
+      "math": 1.866692066192627,
+      "multilingual": 2.5355982780456543,
+      "qa": 2.3142800331115723,
+      "step": 62000,
+      "web": 2.6909844875335693
+    },
+    {
+      "academic": 2.3233089447021484,
+      "aggregate": 2.3056983947753906,
+      "books": 2.6106488704681396,
+      "chinese": 2.915952444076538,
+      "code": 1.1103575229644775,
+      "encyclopedia": 2.3584840297698975,
+      "math": 1.8715178966522217,
+      "multilingual": 2.5579652786254883,
+      "qa": 2.3168137073516846,
+      "step": 64000,
+      "web": 2.6862361431121826
+    }
+  ],
+  "original_regressed_domains": {
+    "validation_metrics/domain/code/loss": 0.17952900417330664,
+    "validation_metrics/domain/math/loss": 0.11231479107300935,
+    "validation_metrics/domain/multilingual/loss": 0.04669020355232423
+  },
+  "original_review_status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
+  "reviewed_at": "2026-11-23T12:51:56.040119+00:00",
+  "sources_sha256": {
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-52000.json": "05e50b8e5f79b18cb44ac053992925085b83548cdce4fce8c12e0be517cd5c4a",
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-54000.json": "29465b333929ac16633432871df8c85ee18ad40719574cdb1b8af10f1fe6743d",
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-56000.json": "dd78714cbe9529a66a22907c4d402dc5b3a4af1e7505db0dea5208a77561adac",
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-58000.json": "47138e4baeb1e650c8d92e1aff38211e94fe6b1f320d3b594e04dd73ed511104",
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-60000.json": "992e8d9592d15828efca40d8d461b4d8792c880e44feb8c2220340477462cc8b",
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-62000.json": "79f39a28175dee2531365a94a09d8798d17960e67c80948f346f18274ea9aaab",
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-64000.json": "b9ff87b2eed4bcf5622d3c071f4dc64f96f10483d37c552410d9d254c947035d",
+    "data/health/assistant-half-day-pretrain-review-20261123T1246.json": "97153ff0415437cd95f34e3b2d879f0796e1d97ae7d56da29ef4806d5c04edaa"
+  },
+  "status": "OPEN_OBSERVATION_CONTROL_CHECKS_PASS_NOT_FINAL_CAPABILITY"
+}
