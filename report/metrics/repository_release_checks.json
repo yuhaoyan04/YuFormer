@@ -7,13 +7,13 @@
     "status": "PASS_391_FROZEN_DEPENDENCIES_UNCHANGED_AFTER_CLEANUP"
   },
   "latest_half_day_followup": {
-    "changed_paths_intersect_original_391_frozen_dependencies": [],
-    "maintenance_tests_passed": 9,
-    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md",
-    "review_status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
-    "scope": "Changed repository paths compared with previous frozen baseline; no claim of repeating full tensor/data byte scans or GPU qualification.",
-    "step": 64800,
-    "validation_rows": 33
+    "maintenance_tests_reused_from": "2026-11-23T12:56:48.096693+00:00",
+    "maintenance_tests_source_unchanged": true,
+    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261124T0046.md",
+    "review_status": "PASS_HALF_DAY_OPERATIONAL_REVIEW",
+    "scope": "Only reports/metrics/incident followups changed; reuse9 qualified maintenance tests, no repeated GPU qualification or full tensor/data byte scans.",
+    "step": 68780,
+    "validation_rows": 35
   },
   "maintenance_tests": {
     "command": "python -m unittest discover -s tools/tests -v",

@@ -642,6 +642,11 @@
           "reviewed_at": "2026-11-23T12:51:56.040119+00:00",
           "observation": "62000/64000 books loss为2.613039732/2.610648870，均低于56000的2.617864370；原回升事实保留，根因未定，不称为代码修复。",
           "evidence": "report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md"
+        },
+        {
+          "reviewed_at": "2026-11-24T00:46:27.565310+00:00",
+          "observation": "68000 books loss为2.604212284，低于64000的2.610648870及56000的2.617864370；66000曾小幅回升。只记录后续测量，原事故与未知根因保留。",
+          "evidence": "report/PRETRAIN_HALF_DAY_REVIEW_20261124T0046.md"
         }
       ]
     },
@@ -676,6 +681,13 @@
         "report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md",
         "report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md",
         "report/metrics/domain_validation_followup_20261123T1246.json"
+      ],
+      "followups": [
+        {
+          "reviewed_at": "2026-11-24T00:46:27.565310+00:00",
+          "observation": "68000九域和聚合均低于64000/66000；相对64000聚合-0.565465%，code/math/multilingual分别-1.048489%/-0.585728%/-1.379715%。本次半日运行复核PASS，原attention不改写；未进行配方干预，不宣称因果修复。",
+          "evidence": "report/PRETRAIN_HALF_DAY_REVIEW_20261124T0046.md"
+        }
       ]
     }
   ],
