@@ -1,0 +1,199 @@
+{
+  "attempt_id": "c5bc01ad619700958f8fdac0967605f2",
+  "block_samples": 8,
+  "original_review_status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
+  "reviewed_at": "2026-11-25T12:46:37.393748+00:00",
+  "scope": "Rehashed cached domain-count matrix and actual runtime permutation; checked data/order/source-window geometry. No repeated raw-token byte scan, no old recipe qualification reused, no post-hoc mixing pass threshold, no claim about within-domain language or quality balance or cause of validation changes.",
+  "source_offset_samples": 11795744,
+  "sources_sha256": {
+    "data/health/assistant-half-day-pretrain-review-20261125T1246.json": "aa034dd7657862ae04d8c806a26fca51c28b7176a2c9a4bbd315d117460533a6",
+    "data/health/stable-training-block-permutation.json": "b1757969d06436c581c7777faff676950782495caba7584c2971dd2d2545c4f6",
+    "data/processed/training_permutations/e134-11326994-v1/block-8/window-11795744/stable.block-domain-tokens.npy": "86ef3e27bff718be309c2f5aef4f369736a244ccb2e06cdb325a10e50dd87bcb",
+    "data/processed/training_permutations/pretrain-total-runtime-966254395392-b8/stable.window-11795744.blocks.u32": "e0c0e054f9447bd9dc6b0c57be9d36d04aafea23b81a33c7bb3c51198cd89a67",
+    "data/runs/pretrain-final-1t-8gpu/current_attempt.json": "ac3e07a68d46898a70be92fd23d811b9ca1ca6d37f0c8ab44fe81608a75bb0f6",
+    "data/runs/pretrain-final-1t-8gpu/run_identity.json": "8eeae4ac539490c01ed9987b027434fafc82d8f24df473efb3350a19cff05b5d",
+    "data/token_streams/pretrain-1t/stable.meta.json": "8204123246f36a4600113a4a6ba479664efadc6d0b7bc9a2e7e31be232efa47f"
+  },
+  "status": "EXACT_READ_ONLY_CONSUMED_DOMAIN_CENSUS",
+  "whole_stage_domain_weights": {
+    "academic": 0.034934187728431494,
+    "books": 0.003986386658890281,
+    "chinese": 0.03494723345780042,
+    "code": 0.12028776523051514,
+    "encyclopedia": 0.004986637489029344,
+    "math": 0.03986791774177674,
+    "multilingual": 0.019931686648427864,
+    "qa": 0.000997071920404838,
+    "web": 0.7400611131247239
+  },
+  "windows": [
+    {
+      "after_step": 72000,
+      "difference_from_stage_reference_percentage_points": {
+        "academic": 0.03967376169893427,
+        "books": 0.014570748593088594,
+        "chinese": -0.004170503163006961,
+        "code": 0.024255207600341888,
+        "encyclopedia": 0.005015395479542398,
+        "math": -0.029528602504853146,
+        "multilingual": 0.00638692292576834,
+        "qa": -0.00101714716057048,
+        "web": -0.055185783469247074
+      },
+      "domain_labels": {
+        "academic": 296377283,
+        "books": 34662518,
+        "chinese": 292808795,
+        "code": 1011081584,
+        "encyclopedia": 42251669,
+        "math": 331959295,
+        "multilingual": 167734880,
+        "qa": 8278721,
+        "web": 6203453255
+      },
+      "domain_weights": {
+        "academic": 0.03533092534542084,
+        "books": 0.0041320941448211666,
+        "chinese": 0.03490552842617035,
+        "code": 0.12053031730651856,
+        "encyclopedia": 0.005036791443824768,
+        "math": 0.03957263171672821,
+        "multilingual": 0.019995555877685547,
+        "qa": 0.0009869004487991332,
+        "web": 0.7395092552900314
+      },
+      "stable_sample_range": [
+        61520896,
+        63568896
+      ],
+      "through_step": 74000,
+      "training_labels": 8388608000
+    },
+    {
+      "after_step": 74000,
+      "difference_from_stage_reference_percentage_points": {
+        "academic": 0.010728184554311543,
+        "books": -0.007549393389943548,
+        "chinese": -0.011370625042584487,
+        "code": 0.026689890446410236,
+        "encyclopedia": 0.0021792872718397194,
+        "math": 0.010669640159484406,
+        "multilingual": -0.007155884176435201,
+        "qa": -8.355960945353059e-05,
+        "web": -0.024107540213635925
+      },
+      "domain_labels": {
+        "academic": 293949152,
+        "books": 32806946,
+        "chinese": 292204805,
+        "code": 1011285820,
+        "encyclopedia": 42013759,
+        "math": 335331368,
+        "multilingual": 166598827,
+        "qa": 8357036,
+        "web": 6206060287
+      },
+      "domain_weights": {
+        "academic": 0.03504146957397461,
+        "books": 0.003910892724990845,
+        "chinese": 0.03483352720737457,
+        "code": 0.12055466413497924,
+        "encyclopedia": 0.0050084303617477415,
+        "math": 0.039974614143371584,
+        "multilingual": 0.019860127806663512,
+        "qa": 0.0009962363243103027,
+        "web": 0.7398200377225875
+      },
+      "stable_sample_range": [
+        63568896,
+        65616896
+      ],
+      "through_step": 76000,
+      "training_labels": 8388608000
+    },
+    {
+      "after_step": 76000,
+      "difference_from_stage_reference_percentage_points": {
+        "academic": -0.0009794670608312406,
+        "books": 0.005981993462320784,
+        "chinese": -0.004267932915356931,
+        "code": 0.013708416046843974,
+        "encyclopedia": 0.0020611151031080244,
+        "math": -0.047598108196381106,
+        "multilingual": 0.007133637994585426,
+        "qa": -0.002135187245409342,
+        "web": 0.026095532811121203
+      },
+      "domain_labels": {
+        "academic": 292967043,
+        "books": 33942041,
+        "chinese": 292800622,
+        "code": 1010196855,
+        "encyclopedia": 42003846,
+        "math": 330443515,
+        "multilingual": 167797519,
+        "qa": 8184933,
+        "web": 6210271626
+      },
+      "domain_weights": {
+        "academic": 0.03492439305782318,
+        "books": 0.0040462065935134885,
+        "chinese": 0.03490455412864685,
+        "code": 0.12042484939098358,
+        "encyclopedia": 0.0050072486400604245,
+        "math": 0.03939193665981293,
+        "multilingual": 0.02000302302837372,
+        "qa": 0.0009757200479507446,
+        "web": 0.7403220684528351
+      },
+      "stable_sample_range": [
+        65616896,
+        67664896
+      ],
+      "through_step": 78000,
+      "training_labels": 8388608000
+    },
+    {
+      "after_step": 78000,
+      "difference_from_stage_reference_percentage_points": {
+        "academic": 0.019423226687642625,
+        "books": -0.006378114436391379,
+        "chinese": 0.004637966609331856,
+        "code": 0.006671992363677104,
+        "encyclopedia": -0.0034169332214769275,
+        "math": -0.04411809101117006,
+        "multilingual": 0.002534936994371892,
+        "qa": -3.381357292398142e-05,
+        "web": 0.020678829586939784
+      },
+      "domain_labels": {
+        "academic": 294678545,
+        "books": 32905200,
+        "chinese": 293547703,
+        "code": 1009606597,
+        "encyclopedia": 41544314,
+        "math": 330735440,
+        "multilingual": 167411752,
+        "qa": 8361209,
+        "web": 6209817240
+      },
+      "domain_weights": {
+        "academic": 0.03512841999530792,
+        "books": 0.003922605514526367,
+        "chinese": 0.034993613123893735,
+        "code": 0.12035448515415191,
+        "encyclopedia": 0.004952468156814575,
+        "math": 0.03942673683166504,
+        "multilingual": 0.019957036018371583,
+        "qa": 0.0009967337846755982,
+        "web": 0.7402679014205933
+      },
+      "stable_sample_range": [
+        67664896,
+        69712896
+      ],
+      "through_step": 80000,
+      "training_labels": 8388608000
+    }
+  ]
+}

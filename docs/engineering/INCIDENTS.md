@@ -281,6 +281,8 @@
 
 后续测量（2026-11-24T00:46:27.565310+00:00）：68000九域和聚合均低于64000/66000；相对64000聚合-0.565465%，code/math/multilingual分别-1.048489%/-0.585728%/-1.379715%。本次半日运行复核PASS，原attention不改写；未进行配方干预，不宣称因果修复。 见 `report/PRETRAIN_HALF_DAY_REVIEW_20261124T0046.md`。
 
+后续测量（2026-11-25T12:46:37.393748+00:00）：76000→78000→80000 multilingual loss为2.502657413→2.508134604→2.524358034，累计+0.867103%；相邻四窗实际输入份额1.986%–2.000%，未见粗域供给大幅下降。323份控制记录/8078个LR标量通过；域内组成与质量变化根因仍未知，原attention保留。 见 `report/PRETRAIN_MULTILINGUAL_VALIDATION_FOLLOWUP_20261125T1246.md`。
+
 证据：`report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md`, `report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md`, `report/metrics/domain_validation_followup_20261123T1246.json`。
 
 ## 历史案例索引
