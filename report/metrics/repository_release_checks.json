@@ -9,11 +9,11 @@
   "latest_half_day_followup": {
     "maintenance_tests_reused_from": "2026-11-23T12:56:48.096693+00:00",
     "maintenance_tests_source_unchanged": true,
-    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261124T1246.md",
+    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261125T0046.md",
     "review_status": "PASS_HALF_DAY_OPERATIONAL_REVIEW",
     "scope": "Reports and metrics refreshed; reuse9 source-bound maintenance tests, no repeated GPU qualification or full tensor/data byte scans.",
-    "step": 72780,
-    "validation_rows": 37
+    "step": 76760,
+    "validation_rows": 39
   },
   "maintenance_tests": {
     "command": "python -m unittest discover -s tools/tests -v",

@@ -1,6 +1,6 @@
 # Active pretrain operations
 
-Updated 2026-11-24T12:48:49.130546+00:00. This file is the current handoff. Historical diaries were consolidated into `report/history/operations-consolidation-20261123/`; dated technical evidence remains in the report and incident registry.
+Updated 2026-11-25T00:48:05.704608+00:00. This file is the current handoff. Historical diaries were consolidated into `report/history/operations-consolidation-20261123/`; dated technical evidence remains in the report and incident registry.
 
 ## User instructions
 
@@ -11,7 +11,7 @@ Updated 2026-11-24T12:48:49.130546+00:00. This file is the current handoff. Hist
 
 ## Current training and state
 
-Latest complete review: 2026-11-24T12:47:05.469873+00:00, statusPASS_HALF_DAY_OPERATIONAL_REVIEW, step72780, 305,261,445,120labels, phasestable. Nine-domain latest72000 aggregate2.287684441; all9 improve vs68000. Sameattempt/source/cursor/LR controls pass;291native receipts rechecked. Forecast total31.843days, remaining22.744days. See report/PRETRAIN_HALF_DAY_REVIEW_20261124T1246.md and report/metrics/latest_pretrain_status.json for full actual values. P016/P018 historical attention and unknown causes remain preserved; later lower points are not causal repairs. Fixed64samples/domain remain point estimates and do not establish final capability.
+Latest complete review: 2026-11-25T00:46:29.843851+00:00, statusPASS_HALF_DAY_OPERATIONAL_REVIEW, step76760, 321,954,775,040labels, phasestable. Latest validation76000, regressed_domains={}. Sameattempt/source/cursor/LR controls pass;307native receipts and7678actual LR scalars rechecked. Forecast total31.851days, remaining22.252days. See report/PRETRAIN_HALF_DAY_REVIEW_20261125T0046.md and report/metrics/latest_pretrain_status.json for actual domain values and comparison references. P016/P018 historical attention and unknown causes remain preserved; later lower points are not causal repairs. Fixed64samples/domain remain point estimates and do not establish final capability.
 
 Actual run: `data/runs/pretrain-final-1t-8gpu`, original attempt `c5bc01ad619700958f8fdac0967605f2`, identity85e119790f052669f2950847d93a749649eb21353e676fc01637320d7512521a, training sourceaf54b5e072aafbdae6033e04dc7434a4167ea1654d19b3882f08b8a2711dfc3a. Physical run_identity SHA8eeae4ac539490c01ed9987b027434fafc82d8f24df473efb3350a19cff05b5d.
 
@@ -44,7 +44,7 @@ Use `/opt/yuformer-torchtitan/bin/python`3.12 for CPU audits with CUDA_VISIBLE_D
 
 ## Next review and repository maintenance
 
-Next review 2026-11-25T00:46:12.619001+00:00. CPU-only source `/opt/yuformer-build/review_pretrain_every12h_20261118_v3.py`. Run once when due, inspect real exceptions/domain regression, report briefly, then sleep returned wait_ms. Do not restart a full12h countdown after user input; calculate remaining time from `data/health/assistant-monitoring-cadence.json`. V3 requires actual original process startup times and full history, intentionally requests manual review at a phase/attempt change.
+Next review 2026-11-25T12:46:12.619001+00:00. CPU-only source `/opt/yuformer-build/review_pretrain_every12h_20261118_v3.py`. Run once when due, inspect real exceptions/domain regression, report briefly, then sleep returned wait_ms. Do not restart a full12h countdown after user input; calculate remaining time from `data/health/assistant-monitoring-cadence.json`. V3 requires actual original process startup times and full history, intentionally requests manual review at a phase/attempt change.
 
 After a review, run `python tools/export_pretrain_report.py` and `MPLCONFIGDIR=/tmp/yuformer-report-matplotlib python tools/plot_pretrain_metrics.py`, inspect meaningful changes and publish if credentials permit. Use `tools/audit_repository.py` before commit. GitHub publication is unblocked: the user completed official device authorization as yuhaoyan04; first snapshot b41084f4d14565b1449f59f482d63c507ea12b8b was pushed and remote main independently verified at2026-11-23T04:46:22.980598+00:00. Public receipt: report/metrics/repository_publication_20261123.json. This repository has an HTTPS origin.pushurl and a repository-local credential helper using /opt/yuformer-build/github-cli-2.105.0/gh with isolated GH_CONFIG_DIR=/opt/yuformer-build/github-auth-yuhaoyan04 (directory700, credential file600). No global Git config, SSH identity or chat connector account was changed. Use normal non-force git push origin main, then verify remote SHA. Current publication details and initial bundle are recorded in data/health/repository-publication-20261123.json. Do not expose credential contents or overwrite unknown remote changes.
 
@@ -66,3 +66,8 @@ Actual68780steps/288,484,229,120labels/phasestable/loss2.32859/TPS48621. 275nati
 ### 2026-11-24T12:47:05.469873+00:00 —12h review PASS_HALF_DAY_OPERATIONAL_REVIEW
 
 Actual72780steps/305,261,445,120labels/phasestable/loss2.3427/TPS48506. 291nativecontrolreceipts250..72750 independentlyverified;7280LRscalarsmatched;actualcursorstreamstable.tokens.bin. Fixedvalidation[68000, 70000, 72000],latestaggregate2.287684441,change-0.22%,domainregressions{};prefixesSHAandindependentreadPASS.8GPUECC0,memoryfailcnt4,sourceAF54 unchanged. Forecast31.8430days/remaining22.7442days includes4KWSD/16K/64K. Evidence `data/health/assistant-half-day-pretrain-review-20261124T1246.json`,SHAab8927c6f9bbc254b78c8d6bf8fade41f6cd2901acdd8e5ec0874c08f1e6d7a1;report `report/PRETRAIN_HALF_DAY_REVIEW_20261124T1246.md`. Next2026-11-25T00:46:12.619001+00:00,no pollingbetween.
+
+
+### 2026-11-25T00:46:29.843851+00:00 —12h review PASS_HALF_DAY_OPERATIONAL_REVIEW
+
+Actual76760steps/321,954,775,040labels/phasestable/loss2.33865/TPS48527. 307nativecontrolreceipts250..76750 independentlyverified;7678LRscalarsmatched;actualcursorstreamstable.tokens.bin. Fixedvalidation[72000, 74000, 76000],latestaggregate2.281638384,change-0.26%,domainregressions{};prefixesSHAandindependentreadPASS.8GPUECC0,memoryfailcnt4,sourceAF54 unchanged. Forecast31.8508days/remaining22.2523days includes4KWSD/16K/64K. Evidence `data/health/assistant-half-day-pretrain-review-20261125T0046.json`,SHA78149b64cfb32c15ddc227488581f38b5f34869b50c8e8b846a646c08dd90b8e;report `report/PRETRAIN_HALF_DAY_REVIEW_20261125T0046.md`. Next2026-11-25T12:46:12.619001+00:00,no pollingbetween.
