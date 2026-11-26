@@ -251,6 +251,8 @@
 
 后续测量（2026-11-24T00:46:27.565310+00:00）：68000 books loss为2.604212284，低于64000的2.610648870及56000的2.617864370；66000曾小幅回升。只记录后续测量，原事故与未知根因保留。 见 `report/PRETRAIN_HALF_DAY_REVIEW_20261124T0046.md`。
 
+后续测量（2026-11-26T00:46:28.827005+00:00）：80000→82000→84000 books loss为2.586742878→2.588207722→2.588283300，累计+0.059551%；小幅连续回升保留观察，未改配方或确定根因。 见 `report/PRETRAIN_HALF_DAY_REVIEW_20261126T0046.md`。
+
 证据：`data/health/books-domain-regression-followup-20261123T0046.json`, `report/PRETRAIN_HALF_DAY_REVIEW_20261123T0046.md`。
 
 ## P017 旧归档进入待提交集合和远端写权限不足
@@ -282,6 +284,8 @@
 后续测量（2026-11-24T00:46:27.565310+00:00）：68000九域和聚合均低于64000/66000；相对64000聚合-0.565465%，code/math/multilingual分别-1.048489%/-0.585728%/-1.379715%。本次半日运行复核PASS，原attention不改写；未进行配方干预，不宣称因果修复。 见 `report/PRETRAIN_HALF_DAY_REVIEW_20261124T0046.md`。
 
 后续测量（2026-11-25T12:46:37.393748+00:00）：76000→78000→80000 multilingual loss为2.502657413→2.508134604→2.524358034，累计+0.867103%；相邻四窗实际输入份额1.986%–2.000%，未见粗域供给大幅下降。323份控制记录/8078个LR标量通过；域内组成与质量变化根因仍未知，原attention保留。 见 `report/PRETRAIN_MULTILINGUAL_VALIDATION_FOLLOWUP_20261125T1246.md`。
+
+后续测量（2026-11-26T00:46:28.827005+00:00）：84000 multilingual loss2.497805357，较80000下降1.051859%；code较80000回升0.362229%，聚合下降0.234692%。339份控制记录/8478个实际LR标量通过。原multilingual回升事实保留，未宣称因果修复；本次books/code仍为开放观察。之前72000..80000的只读粗域计数不外推为新窗口的实测。 见 `report/PRETRAIN_HALF_DAY_REVIEW_20261126T0046.md`。
 
 证据：`report/PRETRAIN_HALF_DAY_REVIEW_20261123T1246.md`, `report/PRETRAIN_DOMAIN_VALIDATION_FOLLOWUP_20261123T1246.md`, `report/metrics/domain_validation_followup_20261123T1246.json`。
 

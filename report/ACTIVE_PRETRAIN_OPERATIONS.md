@@ -1,6 +1,6 @@
 # Active pretrain operations
 
-Updated 2026-11-25T12:53:55.159874+00:00. This file is the current handoff. Historical diaries were consolidated into `report/history/operations-consolidation-20261123/`; dated technical evidence remains in the report and incident registry.
+Updated 2026-11-26T00:48:21.949222+00:00. This file is the current handoff. Historical diaries were consolidated into `report/history/operations-consolidation-20261123/`; dated technical evidence remains in the report and incident registry.
 
 ## User instructions
 
@@ -11,7 +11,7 @@ Updated 2026-11-25T12:53:55.159874+00:00. This file is the current handoff. Hist
 
 ## Current training and state
 
-Latest complete review: 2026-11-25T12:46:37.393748+00:00, statusHALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION, step80760, 338,731,991,040labels, phasestable. Validation80000 aggregate2.278514385, vs76000-0.136919%; multilingual76000/78000/80000=2.502657413/2.508134604/2.524358034 (+0.867103%). Sameattempt/source/cursor/LR controls pass;323native receipts and8078LR scalars rechecked. Readonly exact domain census72000..80000 found multilingual input1.986%..2.000%, without a matching broad-domain supply collapse; cannot exclude within-domain language/quality composition or optimization effects. Root cause remains unknown. See report/PRETRAIN_MULTILINGUAL_VALIDATION_FOLLOWUP_20261125T1246.md; P018 updated, no recipe or qualification threshold changed. Forecast total31.736days, remaining21.638days. Fixed64samples/domain are point estimates; final capability remains unmeasured.
+Latest complete review: 2026-11-26T00:46:28.827005+00:00, statusHALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION, step84760, 355,509,207,040labels, phasestable. Validation84000 aggregate2.273166895, vs80000-0.234692%; books/code vs80000+0.059551/+0.362229%, multilingual-1.051859%. Sameattempt/source/cursor/LR controls pass;339native receipts and8478LR scalars rechecked. P016/P018 updated with measured followups; preserve unknown causes and historical attention, no recipe intervention or causal repair claim. Prior input census covered72000..80000 only and does not measure newer windows. Forecast total31.687days, remaining21.088days. See report/PRETRAIN_HALF_DAY_REVIEW_20261126T0046.md and report/metrics/latest_pretrain_status.json for actual values. Fixed64samples/domain are point estimates; final capability remains unmeasured.
 
 Actual run: `data/runs/pretrain-final-1t-8gpu`, original attempt `c5bc01ad619700958f8fdac0967605f2`, identity85e119790f052669f2950847d93a749649eb21353e676fc01637320d7512521a, training sourceaf54b5e072aafbdae6033e04dc7434a4167ea1654d19b3882f08b8a2711dfc3a. Physical run_identity SHA8eeae4ac539490c01ed9987b027434fafc82d8f24df473efb3350a19cff05b5d.
 
@@ -44,7 +44,7 @@ Use `/opt/yuformer-torchtitan/bin/python`3.12 for CPU audits with CUDA_VISIBLE_D
 
 ## Next review and repository maintenance
 
-Next review 2026-11-26T00:46:12.619001+00:00. CPU-only source `/opt/yuformer-build/review_pretrain_every12h_20261118_v3.py`. Run once when due, inspect real exceptions/domain regression, report briefly, then sleep returned wait_ms. Do not restart a full12h countdown after user input; calculate remaining time from `data/health/assistant-monitoring-cadence.json`. V3 requires actual original process startup times and full history, intentionally requests manual review at a phase/attempt change.
+Next review 2026-11-26T12:46:12.619001+00:00. CPU-only source `/opt/yuformer-build/review_pretrain_every12h_20261118_v3.py`. Run once when due, inspect real exceptions/domain regression, report briefly, then sleep returned wait_ms. Do not restart a full12h countdown after user input; calculate remaining time from `data/health/assistant-monitoring-cadence.json`. V3 requires actual original process startup times and full history, intentionally requests manual review at a phase/attempt change.
 
 After a review, run `python tools/export_pretrain_report.py` and `MPLCONFIGDIR=/tmp/yuformer-report-matplotlib python tools/plot_pretrain_metrics.py`, inspect meaningful changes and publish if credentials permit. Use `tools/audit_repository.py` before commit. GitHub publication is unblocked: the user completed official device authorization as yuhaoyan04; first snapshot b41084f4d14565b1449f59f482d63c507ea12b8b was pushed and remote main independently verified at2026-11-23T04:46:22.980598+00:00. Public receipt: report/metrics/repository_publication_20261123.json. This repository has an HTTPS origin.pushurl and a repository-local credential helper using /opt/yuformer-build/github-cli-2.105.0/gh with isolated GH_CONFIG_DIR=/opt/yuformer-build/github-auth-yuhaoyan04 (directory700, credential file600). No global Git config, SSH identity or chat connector account was changed. Use normal non-force git push origin main, then verify remote SHA. Current publication details and initial bundle are recorded in data/health/repository-publication-20261123.json. Do not expose credential contents or overwrite unknown remote changes.
 
@@ -76,3 +76,8 @@ Actual76760steps/321,954,775,040labels/phasestable/loss2.33865/TPS48527. 307nati
 ### 2026-11-25T12:46:37.393748+00:00 —12h review HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION
 
 Actual80760steps/338,731,991,040labels/phasestable/loss2.25622/TPS48377. 323nativecontrolreceipts250..80750 independentlyverified;8078LRscalarsmatched;actualcursorstreamstable.tokens.bin. Fixedvalidation[76000, 78000, 80000],latestaggregate2.278514385,change-0.14%,domainregressions{"validation_metrics/domain/multilingual/loss": 0.8671031254352535};prefixesSHAandindependentreadPASS.8GPUECC0,memoryfailcnt4,sourceAF54 unchanged. Forecast31.7362days/remaining21.6377days includes4KWSD/16K/64K. Evidence `data/health/assistant-half-day-pretrain-review-20261125T1246.json`,SHAaa034dd7657862ae04d8c806a26fca51c28b7176a2c9a4bbd315d117460533a6;report `report/PRETRAIN_HALF_DAY_REVIEW_20261125T1246.md`. Next2026-11-26T00:46:12.619001+00:00,no pollingbetween.
+
+
+### 2026-11-26T00:46:28.827005+00:00 —12h review HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION
+
+Actual84760steps/355,509,207,040labels/phasestable/loss2.28012/TPS47894. 339nativecontrolreceipts250..84750 independentlyverified;8478LRscalarsmatched;actualcursorstreamstable.tokens.bin. Fixedvalidation[80000, 82000, 84000],latestaggregate2.273166895,change-0.23%,domainregressions{"validation_metrics/domain/books/loss": 0.0595506593523476, "validation_metrics/domain/code/loss": 0.3622287703848759};prefixesSHAandindependentreadPASS.8GPUECC0,memoryfailcnt4,sourceAF54 unchanged. Forecast31.6865days/remaining21.0879days includes4KWSD/16K/64K. Evidence `data/health/assistant-half-day-pretrain-review-20261126T0046.json`,SHA2df09b9b44d38c4b9bfeaee2bac0c5294664efd9f4d87bad72d768e36ecad871;report `report/PRETRAIN_HALF_DAY_REVIEW_20261126T0046.md`. Next2026-11-26T12:46:12.619001+00:00,no pollingbetween.

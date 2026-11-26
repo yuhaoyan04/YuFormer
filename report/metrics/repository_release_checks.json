@@ -7,13 +7,13 @@
     "status": "PASS_391_FROZEN_DEPENDENCIES_UNCHANGED_AFTER_CLEANUP"
   },
   "latest_half_day_followup": {
-    "diagnostic": "report/PRETRAIN_MULTILINGUAL_VALIDATION_FOLLOWUP_20261125T1246.md",
-    "maintenance_tests_passed": 12,
-    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261125T1246.md",
+    "maintenance_tests_reused_from": "2026-11-25T12:53:55.178033+00:00",
+    "maintenance_tests_source_unchanged": true,
+    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261126T0046.md",
     "review_status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
-    "scope": "New read-only count diagnostic ran on SHA-bound matrix/runtime order; no repeated raw-token/weight full scan or new quality admission threshold. Training dependencies unchanged.",
-    "step": 80760,
-    "validation_rows": 41
+    "scope": "Reports/metrics/case followups refreshed; reuse12 source-bound maintenance tests, no repeated GPU qualification, raw-token or weight full scan.",
+    "step": 84760,
+    "validation_rows": 43
   },
   "maintenance_tests": {
     "command": "python -m unittest discover -s tools/tests -v",
