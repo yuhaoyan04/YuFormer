@@ -1,3 +1,13 @@
+当前运行状态（2026-11-26T12:46:44.410020+00:00）：**正式八卡1.5166B pretrain半日检查PASS_HALF_DAY_OPERATIONAL_REVIEW。** 最新88740步/loss2.26952，累计372,202,536,960labels，phase=stable，TPS48456每卡，CUDA峰值67.46GiB。原生数据游标对应stable.tokens.bin。
+
+355份250..88750原生结构/完整控制状态验收独立复核，8876个实际LR标量匹配，无数值/源/控制告警。最新88000固定九域aggregate2.266660929，相对84000变化-0.29%；域回退观测{}。事件prefix独立SHA及重读PASS。报告PRETRAIN_HALF_DAY_REVIEW_20261126T1246.md，机器证据assistant-half-day-pretrain-review-20261126T1246.json，SHA11fecff43c788bc9661bdb7f09d6daec26101e5bd8fc9c051d57fda5379c45d8。当前是早期heldout进展，不是最终能力完成。
+
+八卡ECC0、显存读数详见本次机器证据，历史memory.failcnt4未增，同c5bc attempt/sourceAF54。总预算966254395392labels含4K WSD/16K/64K，90%duty保守总工期31.624天、剩余20.526天，预计2026-12-17T01:23:36.253056+00:00完成，目标33天。114冻结输入coordinator仍等待完整4K，长阶段未开始；严禁热改执行源或在active run调用finalcollector。按用户每12h汇总，下次2026-11-27T00:46:12.619001+00:00。
+
+以下为历史时点记录；以上及实时health为准。
+
+---
+
 当前运行状态（2026-11-26T00:46:28.827005+00:00）：**正式八卡1.5166B pretrain半日检查HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION。** 最新84760步/loss2.28012，累计355,509,207,040labels，phase=stable，TPS47894每卡，CUDA峰值67.46GiB。原生数据游标对应stable.tokens.bin。
 
 339份250..84750原生结构/完整控制状态验收独立复核，8478个实际LR标量匹配，无数值/源/控制告警。最新84000固定九域aggregate2.273166895，相对80000变化-0.23%；域回退观测{"validation_metrics/domain/books/loss": 0.0595506593523476, "validation_metrics/domain/code/loss": 0.3622287703848759}。事件prefix独立SHA及重读PASS。报告PRETRAIN_HALF_DAY_REVIEW_20261126T0046.md，机器证据assistant-half-day-pretrain-review-20261126T0046.json，SHA2df09b9b44d38c4b9bfeaee2bac0c5294664efd9f4d87bad72d768e36ecad871。当前是早期heldout进展，不是最终能力完成。

@@ -1,16 +1,16 @@
 {
   "exports": {
     "latest_pretrain_status.json": {
-      "bytes": 3814,
-      "sha256": "0b6b8ee402900bdefb3077a51f251d7b334ed58d5f56e24bbf7333e9a5b26c7a"
+      "bytes": 3666,
+      "sha256": "21078630a2bd9ca9cb7f4b8a09233afcfa8fb8995485cbc12c779652e4ef6f89"
     },
     "model_size_initial_screen.csv": {
       "bytes": 1716,
       "sha256": "650eafd8b9b313e101c2a2c3e7e95d433d37939c3a7634ed750eb94b4caf964e"
     },
     "pretrain_validation.csv": {
-      "bytes": 11673,
-      "sha256": "316cc2679393990ab3a47ebfceb9749577bfca5285c56bf6a837e447e20ae530"
+      "bytes": 12211,
+      "sha256": "b544b4cfedea7e8b828d838c283cce10512c56a3832c19d61a6690c744b97290"
     },
     "qualified_stage_throughput.json": {
       "bytes": 1186,
@@ -19,7 +19,7 @@
   },
   "external_assets": "Paths under data/ refer to local external assets; not bundled or publicly downloadable by this export.",
   "receipt_verification": "Domain roster, finite values, step and macro checked here. Original observer independently verified immutable TensorBoard prefixes; full native/finite proof remains external.",
-  "reviewed_at": "2026-11-26T00:46:28.827005+00:00",
+  "reviewed_at": "2026-11-26T12:46:44.410020+00:00",
   "schema_version": 1,
   "scope": "LIGHTWEIGHT_EXPORT_OF_LOCAL_MACHINE_RECEIPTS_NOT_RAW_TRAINING_DATA",
   "sources": {
@@ -195,9 +195,17 @@
       "bytes": 4521,
       "sha256": "91296c1ea42245ab03575b5ef60ffde68413895dda750b6e826ce1e21e6601d8"
     },
-    "data/health/assistant-half-day-pretrain-review-20261126T0046.json": {
-      "bytes": 116853,
-      "sha256": "2df09b9b44d38c4b9bfeaee2bac0c5294664efd9f4d87bad72d768e36ecad871"
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-86000.json": {
+      "bytes": 4521,
+      "sha256": "62ebc65a26aa4625987977db51f4ce9ec27d5885740485b125ef60fc8fd414b3"
+    },
+    "data/health/all-production-nine-domain-validation-receipts-20261115/4096-c5bc01ad619700958f8fdac0967605f2-step-88000.json": {
+      "bytes": 4522,
+      "sha256": "2668c7416163c8c4dae13c30be1646120db431c3c2343ce34f653b056f736f02"
+    },
+    "data/health/assistant-half-day-pretrain-review-20261126T1246.json": {
+      "bytes": 120334,
+      "sha256": "11fecff43c788bc9661bdb7f09d6daec26101e5bd8fc9c051d57fda5379c45d8"
     },
     "data/health/final-all-cpu-suites.json": {
       "bytes": 6300,
