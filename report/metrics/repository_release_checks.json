@@ -8,11 +8,11 @@
   },
   "latest_half_day_followup": {
     "maintenance_tests_reused_from": "2026-11-26T12:50:44.553553+00:00",
-    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261127T0046.md",
-    "review_status": "HALF_DAY_REVIEW_DOMAIN_REGRESSION_REQUIRES_ATTENTION",
+    "review": "report/PRETRAIN_HALF_DAY_REVIEW_20261127T1246.md",
+    "review_status": "PASS_HALF_DAY_OPERATIONAL_REVIEW",
     "scope": "Refresh report/metrics; existing test evidence covers its recorded source version. No repeated GPU qualification or raw-token/weight full scan. Explicitly included new code needs separate validation.",
-    "step": 92740,
-    "validation_rows": 47
+    "step": 96880,
+    "validation_rows": 49
   },
   "maintenance_tests": {
     "command": "python -m unittest discover -s tools/tests -v",
